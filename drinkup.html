@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
+    <title>DrinkUp — RomGod Case Study</title>
+    <meta
+      content="DrinkUp: a product design case study by Maria Romero Godoy."
+      name="description"
+    />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --pink: #ff00e6;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: #000;
+        color: #000;
+        font: 400 16px/1.6 "Neue Haas Grotesk Display Pro",
+          "Neue Haas Grotesk Text Pro", "Neue Haas Grotesk", Arial, Helvetica,
+          sans-serif;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      img {
+        max-width: 100%;
+      }
+      .sheet {
+        background: #fff;
+        border-radius: 0 0 42px 42px;
+        padding-bottom: 120px;
+      }
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: #fff;
+        padding: 14px clamp(24px, 5vw, 80px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+      }
+      .header-signature {
+        display: flex;
+        gap: 13px;
+        align-items: center;
+        font-size: 13px;
+        font-weight: 500;
+      }
+      .header-signature img {
+        width: 38px;
+        height: 38px;
+        object-fit: contain;
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .nav a {
+        font-size: 12px;
+        padding: 6px 12px;
+        border-radius: 40px;
+      }
+      .nav a:hover,
+      .nav a:focus-visible {
+        background: #000;
+        color: #fff;
+      }
+      .nav .active {
+        background: #000;
+        color: #fff;
+      }
+      main {
+        max-width: 1320px;
+        padding: 0 clamp(25px, 6vw, 85px);
+        margin: auto;
+      }
+      .back {
+        font-size: 12px;
+        display: inline-block;
+        margin: 62px 0 30px;
+        border-bottom: 1px solid #000;
+      }
+      .eyebrow {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+      .hero h1 {
+        font-size: clamp(75px, 13vw, 190px);
+        font-weight: 400;
+        letter-spacing: -0.075em;
+        line-height: 1;
+        margin: 20px 0 25px;
+      }
+      .pink {
+        color: var(--pink);
+      }
+      .lead {
+        font-size: clamp(21px, 2.7vw, 35px);
+        line-height: 1.32;
+        letter-spacing: -0.025em;
+        max-width: 870px;
+        margin: 0 0 45px;
+      }
+      .details {
+        display: flex;
+        gap: 40px;
+        flex-wrap: wrap;
+        font-size: 13px;
+        margin-bottom: 50px;
+      }
+      .details b {
+        font-weight: 500;
+        display: block;
+      }
+      .hero-img {
+        display: block;
+        width: 100%;
+        border-radius: 12px;
+        background: #000;
+      }
+      .chapter {
+        display: grid;
+        grid-template-columns: minmax(160px, 0.7fr) minmax(0, 1.45fr);
+        gap: clamp(30px, 6vw, 95px);
+        padding-top: clamp(90px, 11vw, 160px);
+      }
+      .chapter h2 {
+        font-weight: 400;
+        font-size: clamp(36px, 4.3vw, 62px);
+        letter-spacing: -0.055em;
+        line-height: 1.1;
+        margin: 0 0 22px;
+      }
+      .num {
+        font-size: 12px;
+        letter-spacing: 0.05em;
+      }
+      .chapter p {
+        font-size: clamp(16px, 1.6vw, 21px);
+        line-height: 1.56;
+        margin: 0 0 22px;
+        max-width: 720px;
+      }
+      .chapter small {
+        font-size: 13px;
+      }
+      .section-image {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 12px;
+      }
+      .screen-section {
+        padding-top: 125px;
+      }
+      .screen-section h2 {
+        font-size: clamp(39px, 5vw, 68px);
+        letter-spacing: -0.06em;
+        line-height: 1.1;
+        font-weight: 400;
+        margin: 0 0 25px;
+      }
+      .screen-section > p {
+        max-width: 780px;
+        font-size: 18px;
+        margin: 0 0 35px;
+      }
+      .screen-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+      .screen-tile {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .screen-tile img {
+        width: 100%;
+        object-fit: contain;
+        display: block;
+        max-height: 480px;
+      }
+      .screen-tile h3 {
+        font-size: 17px;
+        font-weight: 500;
+        margin: 0;
+      }
+      .screen-tile p {
+        font-size: 14px;
+        margin: 0;
+        max-width: 33ch;
+      }
+      .takeaway {
+        padding: 65px;
+        background: #000;
+        color: #fff;
+        border-radius: 16px;
+        margin-top: 120px;
+      }
+      .takeaway h2 {
+        font-weight: 400;
+        font-size: clamp(33px, 5vw, 64px);
+        letter-spacing: -0.05em;
+        line-height: 1.1;
+        margin: 0 0 24px;
+      }
+      .takeaway p {
+        max-width: 700px;
+        font-size: 18px;
+        margin: 0;
+      }
+      .end-link {
+        display: inline-block;
+        border: 1px solid #000;
+        padding: 12px 22px;
+        border-radius: 999px;
+        margin-top: 70px;
+        font-size: 14px;
+      }
+      .end-link:hover {
+        background: var(--pink);
+        border-color: var(--pink);
+      }
+      footer {
+        color: #fff;
+        padding: 48px clamp(25px, 6vw, 85px) 115px;
+        font-size: 13px;
+      }
+      footer a {
+        text-decoration: underline;
+      }
+      @media (max-width: 760px) {
+        .site-header {
+          flex-wrap: wrap;
+        }
+        .nav {
+          gap: 2px;
+        }
+        .nav a {
+          font-size: 11px;
+          padding: 5px 8px;
+        }
+        .chapter {
+          grid-template-columns: 1fr;
+        }
+        .screen-grid {
+          grid-template-columns: 1fr;
+          gap: 52px;
+        }
+        .screen-tile img {
+          max-height: 540px;
+        }
+        .takeaway {
+          padding: 30px;
+        }
+        .lead {
+          margin-bottom: 25px;
+        }
+      }
+    </style>
+    <style>
+      /* RomGod streamlined editorial system */
+      html,
+      body,
+      button,
+      a,
+      input {
+        font-family: "Neue Haas Grotesk Display Pro",
+          "Neue Haas Grotesk Text Pro", "Neue Haas Grotesk", Arial, Helvetica,
+          sans-serif !important;
+      }
+      :root {
+        --pink: #000 !important;
+      }
+      .nav a.current,
+      .nav a.active,
+      .nav a:hover,
+      .nav a:focus-visible {
+        background: #000 !important;
+        color: #fff !important;
+      }
+      .gallery-readmore,
+      .gallery-chips li,
+      .chip,
+      .tag-float,
+      .cta,
+      .project-tag,
+      .pill {
+        border-color: #000 !important;
+        color: #000 !important;
+        background: #fff !important;
+      }
+      .pink,
+      .name-accent {
+        color: #000 !important;
+      }
+      .gallery-overlay .gallery-readmore {
+        background: #fff !important;
+        color: #000 !important;
+      }
+      /* Hide the desktop custom dot on mobile only */
+      @media (pointer: coarse) {
+        .cursor-dot {
+          display: none !important;
+        }
+      }
+    </style>
+    <style>
+      .hero-img,
+      .cover {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: 24px 0 54px !important;
+        border-radius: 12px;
+      }
+      .hero,
+      .lead {
+        padding-top: 38px !important;
+      }
+      .hero h1,
+      .lead h1 {
+        margin-top: 20px !important;
+      }
+      .case-pill-row {
+        display: flex;
+        gap: 9px;
+        flex-wrap: wrap;
+        margin: 20px 0 35px;
+      }
+      .case-pill {
+        font-size: 12px;
+        border: 1px solid #000;
+        border-radius: 100px;
+        padding: 7px 14px;
+        color: #000;
+        background: white;
+      }
+      @media (max-width: 700px) {
+        .hero-img,
+        .cover {
+          margin-bottom: 30px !important;
+        }
+      }
+    </style>
+    <style>
+      /* Reduced case-study introduction, aligned to the supplied visual reference */
+      section.hero,
+      section.lead {
+        padding-top: 25px !important;
+      }
+      .hero h1,
+      .lead h1 {
+        margin: 24px 0 24px !important;
+        font-size: clamp(57px, 8.2vw, 124px) !important;
+        line-height: 1.02 !important;
+      }
+      .hero p.lead,
+      .lead > p {
+        margin: 0 0 32px !important;
+        font-size: clamp(19px, 2.15vw, 29px) !important;
+        line-height: 1.35 !important;
+        max-width: 990px !important;
+      }
+      .case-pill-row {
+        margin: 0 0 35px !important;
+        gap: 11px !important;
+      }
+      .case-pill {
+        font-size: 12px !important;
+        padding: 8px 16px !important;
+      }
+      .hero-img,
+      .cover {
+        margin-bottom: 50px !important;
+      }
+      @media (max-width: 700px) {
+        .hero-img,
+        .cover {
+          margin-bottom: 24px !important;
+        }
+        .hero h1,
+        .lead h1 {
+          margin: 17px 0 !important;
+        }
+        .case-pill-row {
+          gap: 8px !important;
+        }
+      }
+    </style>
+    <link href="navigation.css" rel="stylesheet" />
+    <link href="navigation.css" rel="stylesheet" />
+    <link href="cursor.css" rel="stylesheet" />
+    <link href="footer.css" rel="stylesheet" />
+    <style>
+      .hero-img[src*="drinkup-new-cover"] {
+        background: #fff !important;
+      }
+    </style>
+    <style>
+      .screen-tile video {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        background: #fff;
+      }
+      .screen-tile img {
+        object-fit: contain;
+        background: #fff;
+      }
+    </style>
+    <style>
+      .screen-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: clamp(18px, 3vw, 44px) !important;
+        align-items: start !important;
+      }
+      .screen-grid .screen-tile {
+        min-width: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+      }
+      .screen-grid .screen-tile > img,
+      .screen-grid .screen-tile > video {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 9 / 16 !important;
+        object-fit: contain !important;
+        background: #fff !important;
+        max-height: none !important;
+        border-radius: 0 !important;
+      }
+      .screen-grid .screen-tile h3 {
+        margin: 14px 0 8px !important;
+      }
+      @media (max-width: 700px) {
+        .screen-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        }
+      }
+      @media (max-width: 440px) {
+        .screen-grid {
+          grid-template-columns: 1fr !important;
+        }
+      }
+    </style>
+    <link href="consistent-margins.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="sheet">
+      <header class="site-header">
+        <div class="header-signature">
+          <a aria-label="RomGod home" class="brand" href="index.html"
+            ><img alt="RomGod flower" src="romgod-flower.png" /></a
+          ><span class="header-name"
+            ><img
+              alt="Maria Romero Godoy"
+              class="rg-nav-logo"
+              src="romgod-name.svg"
+          /></span>
+        </div>
+        <nav aria-label="Main navigation" class="nav">
+          <a aria-current="page" href="index.html#work">Selected work</a
+          ><a href="about.html">About</a><a href="arcade.html">RomGod Arcade</a>
+        </nav>
+      </header>
+      <main>
+        <section class="hero">
+          <img
+            alt="DrinkUp interface collection on black background"
+            class="hero-img"
+            src="assets/drinkup-new-cover.png"
+          />
+          <h1>Drink<span class="pink">Up</span></h1>
+          <p class="lead">
+            Discover your next favorite drink spot or save the places you love
+            and see where everyone else is going
+          </p>
+          <div class="case-pill-row">
+            <span class="case-pill">UI/UX</span
+            ><span class="case-pill">Product Design</span
+            ><span class="case-pill">Mobile App</span>
+          </div>
+        </section>
+        <section class="chapter">
+          <div class="num">01 / The idea</div>
+          <div>
+            <h2>Finding a good drink shouldn't be complicated.</h2>
+            <p>
+              DrinkUp is designed for people who love trying new coffee, matcha,
+              cocktails and other drinks, but struggle to discover new spots or
+              remember the ones they want to visit.
+            </p>
+            <p>
+              Instead of being another general review app, DrinkUp focuses
+              specifically on drinks, making it easier to decide where to go
+              based on what you're in the mood for.
+            </p>
+          </div>
+        </section>
+        <section class="chapter">
+          <div class="num">02 / Audience &amp; problem</div>
+          <div>
+            <h2>We save so many places. Then we lose them.</h2>
+            <p>
+              One of the frustrations I explored was how people find spots
+              through social media, save them in different places, and then
+              forget where those recommendations went. It's also hard to know
+              whether a spot is actually good or just trending.
+            </p>
+            <p>
+              In my project persona, Jenna is a 22-year-old student with a
+              part-time job who regularly goes out for coffee, searches
+              Instagram and TikTok for recommendations, and struggles to
+              organize all the spots she wants to try.
+            </p>
+            <img
+              alt="Persona slide outlining Jenna's goals, pain points and habits"
+              class="section-image"
+              src="assets/drinkup-persona.png"
+            />
+          </div>
+        </section>
+        <section class="chapter">
+          <div class="num">03 / Design direction</div>
+          <div>
+            <h2>A more social way to discover drinks.</h2>
+            <p>
+              I designed DrinkUp around a few simple actions: browse posts and
+              recommendations, explore drink spots on a map, and look through
+              other people's saved collections.
+            </p>
+            <p>
+              Making discovery feel visual and personal was important. A photo
+              can catch your attention but seeing the location and what someone
+              thought about the experience helps you decide if it's somewhere
+              you'd want to go.
+            </p>
+          </div>
+        </section>
+        <section class="screen-section">
+          <span class="eyebrow">04 / Screens &amp; flows</span>
+          <h2>From curiosity to a saved spot<span class="pink">.</span></h2>
+          <p>
+            The experience connects visual recommendations with location-based
+            exploration, so finding somewhere new and keeping track of it can
+            happen in one place.
+          </p>
+          <div class="screen-grid">
+            <div class="screen-tile">
+              <video
+                aria-label="Opening DrinkUp"
+                autoplay=""
+                loop=""
+                muted=""
+                playsinline=""
+                preload="metadata"
+                src="assets/drinkup-opening-final.mp4"
+              ></video>
+              <h3>Opening DrinkUp</h3>
+              <p>A first look at the app</p>
+            </div>
+            <div class="screen-tile">
+              <video
+                aria-label="Finding a spot"
+                autoplay=""
+                loop=""
+                muted=""
+                playsinline=""
+                preload="metadata"
+                src="assets/drinkup-finding-final.mp4"
+              ></video>
+              <h3>Finding a spot</h3>
+              <p>Exploring drink recommendations through the interface</p>
+            </div>
+            <div class="screen-tile">
+              <video
+                aria-label="The social"
+                autoplay=""
+                loop=""
+                muted=""
+                playsinline=""
+                preload="metadata"
+                src="assets/drinkup-social-final.mp4"
+              ></video>
+              <h3>The social</h3>
+              <p>Sharing saved places and recommendations</p>
+            </div>
+          </div>
+        </section>
+        <section class="chapter">
+          <div class="num">05 / Saved collections</div>
+          <div>
+            <h2>Recommendations you can come back to.</h2>
+            <p>
+              DrinkUp also lets people discover spots through other people's
+              saved collections. Rather than losing a place in a list of
+              screenshots or social posts, users can explore collections built
+              around different occasions and interests.
+            </p>
+            <img
+              alt="DrinkUp project presentation showing four mobile screens"
+              class="section-image"
+              src="assets/drinkup-screens.png"
+            />
+          </div>
+        </section>
+      </main>
+    </div>
+    <footer class="rg-footer">
+      <div class="rg-footer-top">
+        <div class="rg-footer-contact">
+          <a class="rg-contact-link" href="mailto:Marg4rg@gmail.com"
+            >Get in contact ↗</a
+          >
+          <a class="rg-email-link" href="mailto:Marg4rg@gmail.com"
+            >Marg4rg@gmail.com</a
+          >
+        </div>
+        <div aria-label="Social profiles" class="rg-footer-social">
+          <a
+            aria-label="Instagram"
+            href="https://www.instagram.com/romgod.designs/"
+            rel="noopener noreferrer"
+            target="_blank"
+            ><svg
+              aria-hidden="true"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.8"
+              viewbox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect height="18" rx="5" width="18" x="3" y="3"></rect>
+              <circle cx="12" cy="12" r="4"></circle>
+              <circle
+                cx="17.3"
+                cy="6.7"
+                fill="currentColor"
+                r="1"
+                stroke="none"
+              ></circle></svg></a
+          ><a
+            aria-label="GitHub"
+            href="https://github.com/mariaromerogodoy"
+            rel="noopener noreferrer"
+            target="_blank"
+            ><svg
+              aria-hidden="true"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.8"
+              viewbox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"
+              ></path></svg></a
+          ><a
+            aria-label="LinkedIn"
+            href="https://www.linkedin.com/in/mariaromgod"
+            rel="noopener noreferrer"
+            target="_blank"
+            ><svg
+              aria-hidden="true"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.8"
+              viewbox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect height="18" rx="3" width="18" x="3" y="3"></rect>
+              <path
+                d="M8 11v5M8 8v.01M12 16v-5m0 2.5c0-1.5 1-2.5 2.3-2.5s2.2 1 2.2 2.5V16"
+              ></path></svg></a
+          ><a
+            aria-label="Spotify"
+            href="https://open.spotify.com/user/4rlfytwvic0ai12sfbmx7o3oh?si=44ad739174264706"
+            rel="noopener noreferrer"
+            target="_blank"
+            ><svg
+              aria-hidden="true"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.8"
+              viewbox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="12" cy="12" r="9"></circle>
+              <path
+                d="M7 9.5c3.5-1 7-.7 10 1M7.5 12.5c3-.8 6-.5 8.5 1M8 15.3c2.5-.6 5-.4 7 .8"
+              ></path></svg
+          ></a>
+        </div>
+      </div>
+      <div class="rg-footer-name">
+        <img alt="Maria Romero Godoy" src="romgod-name.svg" />
+      </div>
+    </footer>
+  </body>
+</html>

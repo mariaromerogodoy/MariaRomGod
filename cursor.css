@@ -1,0 +1,8 @@
+
+/* Global black dot pointer, with thin white hairline so it remains visible on dark areas. */
+@media (pointer:fine) {
+  html, body, body *, a, button, input, textarea, select, label,
+  a:hover, button:hover, [role="button"], [tabindex] {
+    cursor: url("assets/black-dot-cursor.svg") 8 8, auto !important;
+  }
+}

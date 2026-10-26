@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
+    <meta
+      content="Curlsmith packaging and creative coding case study by Maria Romero Godoy"
+      name="description"
+    />
+    <title>Curlsmith — RomGod</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --pink: #ff00e6;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: black;
+        color: black;
+        font: 400 16px/1.6 "Neue Haas Grotesk Display Pro",
+          "Neue Haas Grotesk Text Pro", "Neue Haas Grotesk", Arial, Helvetica,
+          sans-serif;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      img {
+        display: block;
+        max-width: 100%;
+      }
+      .sheet {
+        background: white;
+        border-radius: 0 0 42px 42px;
+        padding-bottom: 120px;
+      }
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 16px clamp(23px, 5vw, 72px);
+      }
+      .signature {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        font-size: 13px;
+        font-weight: 500;
+      }
+      .signature img {
+        width: 36px;
+        height: 36px;
+        object-fit: contain;
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .nav a {
+        font-size: 12px;
+        padding: 7px 13px;
+        border-radius: 30px;
+        white-space: nowrap;
+      }
+      .nav a:hover,
+      .nav a:focus-visible {
+        background: var(--pink);
+        color: white;
+      }
+      .nav .current {
+        background: black;
+        color: white;
+      }
+      main {
+        max-width: 1320px;
+        padding: 0 clamp(23px, 5vw, 72px);
+        margin: auto;
+      }
+      .back {
+        font-size: 12px;
+        display: inline-block;
+        margin: 56px 0 28px;
+        border-bottom: 1px solid black;
+      }
+      .eyebrow {
+        font-size: 12px;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+      }
+      .lead h1 {
+        font-size: clamp(60px, 9vw, 134px);
+        font-weight: 400;
+        letter-spacing: -0.07em;
+        line-height: 1.03;
+        margin: 17px 0 25px;
+      }
+      .lead > p {
+        max-width: 850px;
+        font-size: clamp(19px, 2.3vw, 30px);
+        line-height: 1.35;
+        letter-spacing: -0.02em;
+        margin: 0 0 40px;
+      }
+      .pink {
+        color: var(--pink);
+      }
+      .metadata {
+        display: flex;
+        gap: 28px;
+        flex-wrap: wrap;
+        font-size: 12px;
+        margin-bottom: 45px;
+      }
+      .metadata strong {
+        display: block;
+        font-weight: 500;
+      }
+      .cover {
+        width: 100%;
+        height: auto;
+        border-radius: 13px;
+      }
+      .section {
+        padding-top: clamp(86px, 12vw, 150px);
+      }
+      .two-col {
+        display: grid;
+        grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.35fr);
+        gap: clamp(26px, 7vw, 120px);
+      }
+      .number {
+        font-size: 12px;
+      }
+      .section h2 {
+        font-size: clamp(34px, 4.4vw, 64px);
+        letter-spacing: -0.045em;
+        line-height: 1.12;
+        font-weight: 400;
+        margin: 0 0 26px;
+      }
+      .section p {
+        max-width: 670px;
+        font-size: clamp(16px, 1.55vw, 20px);
+        line-height: 1.65;
+        margin: 0 0 17px;
+      }
+      .fullimg {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+      }
+      .note {
+        font-size: 12px !important;
+        margin-top: 14px !important;
+      }
+      .grid2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+      .visual {
+        margin-top: 36px;
+      }
+      .video-wrap {
+        overflow: hidden;
+        border-radius: 12px;
+        background: white;
+      }
+      .video-wrap video {
+        width: 100%;
+        display: block;
+        max-height: 700px;
+        object-fit: contain;
+      }
+      .small-title {
+        font-size: 14px !important;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 8px !important;
+      }
+      .points {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+        margin-top: 34px;
+      }
+      .points h3 {
+        font-weight: 500;
+        font-size: 21px;
+        margin: 0 0 10px;
+      }
+      .points p {
+        font-size: 15px;
+      }
+      .cta {
+        display: inline-block;
+        border: 1px solid black;
+        border-radius: 100px;
+        padding: 12px 23px;
+        margin-top: 12px;
+        font-size: 14px;
+      }
+      .cta:hover {
+        background: black;
+        color: white;
+      }
+      .end {
+        padding: 130px 0 25px;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      .end a {
+        text-decoration: underline;
+        text-underline-offset: 5px;
+      }
+      .footer {
+        background: black;
+        color: white;
+        padding: 46px clamp(23px, 5vw, 72px);
+        font-size: 12px;
+      }
+      .cursor-dot {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 8px;
+        height: 8px;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background: black;
+        pointer-events: none;
+        z-index: 9999;
+        display: none;
+      }
+      @media (pointer: fine) {
+        body,
+        body a {
+          cursor: none;
+        }
+        .cursor-dot {
+          display: block;
+        }
+      }
+      @media (max-width: 760px) {
+        .signature span {
+          display: none;
+        }
+        .site-header {
+          padding: 13px 20px;
+        }
+        .nav a {
+          padding: 6px 8px;
+          font-size: 11px;
+        }
+        .two-col,
+        .grid2,
+        .points {
+          grid-template-columns: 1fr;
+        }
+        .section {
+          padding-top: 85px;
+        }
+        .points {
+          gap: 15px;
+        }
+        .metadata {
+          gap: 15px;
+        }
+      }
+    </style>
+    <style>
+      /* RomGod streamlined editorial system */
+      html,
+      body,
+      button,
+      a,
+      input {
+        font-family: "Neue Haas Grotesk Display Pro",
+          "Neue Haas Grotesk Text Pro", "Neue Haas Grotesk", Arial, Helvetica,
+          sans-serif !important;
+      }
+      :root {
+        --pink: #000 !important;
+      }
+      .nav a.current,
+      .nav a.active,
+      .nav a:hover,
+      .nav a:focus-visible {
+        background: #000 !important;
+        color: #fff !important;
+      }
+      .gallery-readmore,
+      .gallery-chips li,
+      .chip,
+      .tag-float,
+      .cta,
+      .project-tag,
+      .pill {
+        border-color: #000 !important;
+        color: #000 !important;
+        background: #fff !important;
+      }
+      .pink,
+      .name-accent {
+        color: #000 !important;
+      }
+      .gallery-overlay .gallery-readmore {
+        background: #fff !important;
+        color: #000 !important;
+      }
+      /* Hide the desktop custom dot on mobile only */
+      @media (pointer: coarse) {
+        .cursor-dot {
+          display: none !important;
+        }
+      }
+    </style>
+    <style>
+      .hero-img,
+      .cover {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: 24px 0 54px !important;
+        border-radius: 12px;
+      }
+      .hero,
+      .lead {
+        padding-top: 38px !important;
+      }
+      .hero h1,
+      .lead h1 {
+        margin-top: 20px !important;
+      }
+      .case-pill-row {
+        display: flex;
+        gap: 9px;
+        flex-wrap: wrap;
+        margin: 20px 0 35px;
+      }
+      .case-pill {
+        font-size: 12px;
+        border: 1px solid #000;
+        border-radius: 100px;
+        padding: 7px 14px;
+        color: #000;
+        background: white;
+      }
+      @media (max-width: 700px) {
+        .hero-img,
+        .cover {
+          margin-bottom: 30px !important;
+        }
+      }
+    </style>
+    <style>
+      /* Reduced case-study introduction, aligned to the supplied visual reference */
+      section.hero,
+      section.lead {
+        padding-top: 25px !important;
+      }
+      .hero h1,
+      .lead h1 {
+        margin: 24px 0 24px !important;
+        font-size: clamp(57px, 8.2vw, 124px) !important;
+        line-height: 1.02 !important;
+      }
+      .hero p.lead,
+      .lead > p {
+        margin: 0 0 32px !important;
+        font-size: clamp(19px, 2.15vw, 29px) !important;
+        line-height: 1.35 !important;
+        max-width: 990px !important;
+      }
+      .case-pill-row {
+        margin: 0 0 35px !important;
+        gap: 11px !important;
+      }
+      .case-pill {
+        font-size: 12px !important;
+        padding: 8px 16px !important;
+      }
+      .hero-img,
+      .cover {
+        margin-bottom: 50px !important;
+      }
+      @media (max-width: 700px) {
+        .hero-img,
+        .cover {
+          margin-bottom: 24px !important;
+        }
+        .hero h1,
+        .lead h1 {
+          margin: 17px 0 !important;
+        }
+        .case-pill-row {
+          gap: 8px !important;
+        }
+      }
+    </style>
+    <link href="navigation.css" rel="stylesheet" />
+    <link href="navigation.css" rel="stylesheet" />
+    <link href="cursor.css" rel="stylesheet" />
+    <link href="footer.css" rel="stylesheet" />
+    <link href="consistent-margins.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="sheet">
+      <header class="site-header">
+        <div class="header-signature">
+          <a aria-label="RomGod home" class="brand" href="index.html"
+            ><img alt="RomGod flower" src="romgod-flower.png" /></a
+          ><span class="header-name"
+            ><img
+              alt="Maria Romero Godoy"
+              class="rg-nav-logo"
+              src="romgod-name.svg"
+          /></span>
+        </div>
+        <nav aria-label="Main navigation" class="nav">
+          <a aria-current="page" href="index.html#work">Selected work</a
+          ><a href="about.html">About</a><a href="arcade.html">RomGod Arcade</a>
+        </nav>
+      </header>
+      <main>
+        <section class="lead">
+          <img
+            alt="Three Curlsmith packaging redesign mockups with bright pink, violet and red labels"
+            class="cover"
+            src="assets/curlsmith-collection.png"
+          />
+          <h1>Curl<span class="pink">smith</span></h1>
+          <p>
+            Reimagining curly hair packaging so finding the right product feels
+            a little less confusing and a lot more intuitive
+          </p>
+          <div class="case-pill-row">
+            <span class="case-pill">Packaging Design</span
+            ><span class="case-pill">Creative Coding</span
+            ><span class="case-pill">Visual Identity</span>
+          </div>
+        </section>
+        <section class="section two-col">
+          <div><span class="number">01 / The idea</span></div>
+          <div>
+            <h2>
+              Finding the right curl product shouldn't be a guessing game.
+            </h2>
+            <p>
+              Growing up with curly hair, I struggled to find products that
+              actually worked for my curl type. Some were too heavy others were
+              too light and it wasn't always easy to tell what I was buying from
+              the packaging.
+            </p>
+            <p>
+              I used Curlsmith, one of my favorite curly hair brands, to explore
+              a packaging system that makes it easier to recognize your curl
+              type, desired volume or definition, and level of hold before
+              choosing a product.
+            </p>
+          </div>
+        </section>
+        <section class="section">
+          <span class="number">02 / Visual system</span>
+          <h2>Making the differences visible.</h2>
+          <p>
+            I created a set of visual cues for three things people think about
+            when styling curls:
+            <b>hair type, volume versus definition, and hold.</b> The goal was
+            to make the information easy to compare without needing to read
+            every bottle.
+          </p>
+          <img
+            alt="Curlsmith design system showing six hair types, three volume and definition options and three levels of hold"
+            class="fullimg visual"
+            src="assets/curlsmith-system.png"
+          />
+          <p class="note">
+            Hair type moves from wavy to coily; the visual language changes with
+            curl pattern and product characteristics.
+          </p>
+        </section>
+        <section class="section two-col">
+          <div><span class="number">03 / Art direction</span></div>
+          <div>
+            <h2>Curls have energy. The packaging should too.</h2>
+            <p>
+              I used bright, expressive gradients and curling lines inspired by
+              the movement of hair. As the curl pattern becomes tighter, the
+              colors get more intense to communicate different characteristics.
+            </p>
+            <p>
+              Typography was informed by Curlsmith's existing identity. I kept
+              that brand connection in mind while exploring a softer type
+              treatment that wouldn't compete with the graphic elements.
+            </p>
+          </div>
+        </section>
+        <div class="grid2 visual">
+          <img
+            alt="Pink and blue packaging label exploration"
+            class="fullimg"
+            src="assets/curlsmith-label.png"
+          /><img
+            alt="Single Curlsmith redesign bottle mockup"
+            class="fullimg"
+            src="assets/curlsmith-single.png"
+          />
+        </div>
+        <section class="section">
+          <span class="number">04 / Packaging explorations</span>
+          <h2>One family, different curl needs.</h2>
+          <p>
+            Even with different colors and patterns, the bottles use a
+            consistent structure so the range feels connected, and differences
+            between products are easier to spot.
+          </p>
+          <img
+            alt="Three-product Curlsmith packaging family"
+            class="fullimg visual"
+            src="assets/curlsmith-collection.png"
+          />
+        </section>
+        <section class="section two-col">
+          <div><span class="number">05 / Beyond the bottle</span></div>
+          <div>
+            <h2>A packaging system you can actually interact with.</h2>
+            <p>
+              I also designed and coded a website using HTML, CSS, and
+              JavaScript. It explores two directions: customizing a product's
+              packaging and displaying products automatically from
+              spreadsheet-based information.
+            </p>
+            <p>
+              Instead of redesigning each label manually, the idea was to let
+              updates to the underlying data populate packaging variations
+              through the same design system.
+            </p>
+            <a
+              class="cta"
+              href="https://mariaromerogodoy.github.io/NotYourMothers/index.html"
+              rel="noopener noreferrer"
+              target="_blank"
+              >Visit the interactive project ↗</a
+            >
+          </div>
+        </section>
+        <div class="video-wrap visual">
+          <video
+            autoplay=""
+            loop=""
+            muted=""
+            playsinline=""
+            poster="assets/curlsmith-demo-cover.jpg"
+            preload="auto"
+          >
+            <source src="assets/curlsmith-demo.mp4" type="video/mp4" />
+            Your browser does not support video playback.
+          </video>
+        </div>
+        <section class="section two-col">
+          <div><span class="number">06 / Reflection</span></div>
+          <div>
+            <h2>Designing for clarity and personality.</h2>
+            <p>
+              This project let me combine packaging, visual systems, and coding
+              in one experience. My goal wasn't only to make the bottles look
+              more fun, but to explore how a visual system could help someone
+              understand their options and how the same design can scale across
+              products.
+            </p>
+            <p>
+              It's a concept exploration, so I haven't included performance
+              metrics or user-testing results that weren't part of the project.
+            </p>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script>
+      const d = document.getElementById("cursor");
+      document.addEventListener("pointermove", (e) => {
+        if (e.pointerType === "mouse") {
+          d.style.left = e.clientX + "px";
+          d.style.top = e.clientY + "px";
+        }
+      });
+    </script>
+    <footer class="rg-footer">
+      <div class="rg-footer-top">
+        <div class="rg-footer-contact">
+          <a class="rg-contact-link" href="mailto:Marg4rg@gmail.com"
+            >Get in contact ↗</a
+          >
+          <a class="rg-email-link" href="mailto:Marg4rg@gmail.com"
+            >Marg4rg@gmail.com</a
+          >
+        </div>
+        <div aria-label="Social profiles" class="rg-footer-social">
+          <a
+            aria-label="Instagram"
+            href="https://www.instagram.com/romgod.designs/"
+            rel="noopener noreferrer"
+            target="_blank"
+            ><svg
+              aria-hidden="true"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.8"
+              viewbox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect height="18" rx="5" width="18" x="3" y="3"></rect>
+              <circle cx="12" cy="12" r="4"></circle>
+              <circle
+                cx="17.3"
+                cy="6.7"
+                fill="currentColor"
+                r="1"
+                stroke="none"
+              ></circle></svg></a
+          ><a
+            aria-label="GitHub"
+            href="https://github.com/mariaromerogodoy"
+            rel="noopener noreferrer"
+            target="_blank"
+            ><svg
+              aria-hidden="true"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.8"
+              viewbox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"
+              ></path></svg></a
+          ><a
+            aria-label="LinkedIn"
+            href="https://www.linkedin.com/in/mariaromgod"
+            rel="noopener noreferrer"
+            target="_blank"
+            ><svg
+              aria-hidden="true"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.8"
+              viewbox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect height="18" rx="3" width="18" x="3" y="3"></rect>
+              <path
+                d="M8 11v5M8 8v.01M12 16v-5m0 2.5c0-1.5 1-2.5 2.3-2.5s2.2 1 2.2 2.5V16"
+              ></path></svg></a
+          ><a
+            aria-label="Spotify"
+            href="https://open.spotify.com/user/4rlfytwvic0ai12sfbmx7o3oh?si=44ad739174264706"
+            rel="noopener noreferrer"
+            target="_blank"
+            ><svg
+              aria-hidden="true"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.8"
+              viewbox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="12" cy="12" r="9"></circle>
+              <path
+                d="M7 9.5c3.5-1 7-.7 10 1M7.5 12.5c3-.8 6-.5 8.5 1M8 15.3c2.5-.6 5-.4 7 .8"
+              ></path></svg
+          ></a>
+        </div>
+      </div>
+      <div class="rg-footer-name">
+        <img alt="Maria Romero Godoy" src="romgod-name.svg" />
+      </div>
+    </footer>
+  </body>
+</html>

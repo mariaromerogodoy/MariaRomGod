@@ -1,0 +1,29 @@
+/* One shared footer style for every page, matching the supplied reference. */
+.rg-footer,footer.rg-footer {
+  background:#000!important;color:#fff!important;
+  width:100%!important;max-width:none!important;margin:0!important;
+  padding:clamp(35px,3vw,58px) clamp(24px,3.2vw,66px) clamp(22px,2.5vw,42px)!important;
+  box-sizing:border-box!important;display:block!important;
+  border:0!important;border-radius:0!important;
+}
+.rg-footer *{box-sizing:border-box}
+.rg-footer-top{display:flex!important;justify-content:space-between!important;align-items:flex-start!important;gap:28px!important;margin:0 0 clamp(22px,2.4vw,42px)!important}
+.rg-footer-contact{display:flex!important;flex-direction:column!important;gap:10px!important}
+.rg-footer-contact a{color:#fff!important;text-decoration:underline!important;text-underline-offset:6px!important;text-decoration-thickness:1px!important;line-height:1.25!important;font-weight:400!important}
+.rg-footer-contact .rg-contact-link,.rg-footer-contact .rg-email-link{font-size:clamp(15px,1.18vw,20px)!important}
+.rg-footer-social{display:flex!important;align-items:center!important;gap:clamp(10px,1vw,17px)!important;flex-wrap:wrap!important}
+.rg-footer-social a{width:clamp(42px,3.3vw,66px)!important;height:clamp(42px,3.3vw,66px)!important;display:flex!important;align-items:center!important;justify-content:center!important;border:2px solid #fff!important;border-radius:50%!important;color:#fff!important;background:transparent!important;transition:background .2s,color .2s,transform .2s!important}
+.rg-footer-social a:hover,.rg-footer-social a:focus-visible{background:#fff!important;color:#000!important;transform:translateY(-2px)!important}
+.rg-footer-social svg{width:52%!important;height:52%!important;display:block!important}
+.rg-footer-name{display:block!important;width:100%!important;max-width:none!important;margin:0!important;padding:0!important}
+.rg-footer-name img{display:block!important;width:100%!important;max-width:none!important;height:auto!important;filter:invert(1)!important;opacity:1!important}
+@media(max-width:650px){
+ .rg-footer-top{flex-direction:column!important;gap:28px!important}
+ .rg-footer-name{width:100%!important}
+}
+
+/* Refined, lighter footer icons */
+.rg-footer-social{gap:13px!important}
+.rg-footer-social a{width:40px!important;height:40px!important;border-width:1.25px!important}
+.rg-footer-social svg{width:20px!important;height:20px!important;stroke-width:1.5px!important}
+@media(max-width:650px){.rg-footer-social a{width:38px!important;height:38px!important}.rg-footer-social svg{width:19px!important;height:19px!important}}

@@ -1,0 +1,23 @@
+/* Unified content edges across RomGod: desktop 50px, tablet 32px, mobile 21px. */
+:root{--rg-outer:50px;--rg-content:1160px}
+@media(max-width:850px){:root{--rg-outer:32px}}
+@media(max-width:600px){:root{--rg-outer:21px}}
+.site-header{padding-left:var(--rg-outer)!important;padding-right:var(--rg-outer)!important}
+.gallery-grid.arcade-grid,.gallery-page-head{
+ width:calc(100% - (2 * var(--rg-outer)))!important;
+ max-width:var(--rg-content)!important;margin-left:auto!important;margin-right:auto!important;
+ box-sizing:border-box!important;padding-left:0!important;padding-right:0!important;
+}
+#work.gallery-grid{width:calc(100% - (2 * var(--rg-outer)))!important;
+ max-width:var(--rg-content)!important;margin-left:auto!important;margin-right:auto!important;
+ padding-left:0!important;padding-right:0!important;box-sizing:border-box!important}
+.rg-new-hero{width:calc(100% - (2 * var(--rg-outer)))!important;
+ max-width:var(--rg-content)!important;margin-left:auto!important;margin-right:auto!important;
+ padding-left:0!important;padding-right:0!important;box-sizing:border-box!important}
+.about-white-sheet .page,.about-white-sheet .resume-section{
+ width:calc(100% - (2 * var(--rg-outer)))!important;max-width:var(--rg-content)!important;
+ margin-left:auto!important;margin-right:auto!important;padding-left:0!important;padding-right:0!important;box-sizing:border-box!important}
+.sheet main{width:calc(100% - (2 * var(--rg-outer)))!important;
+ max-width:var(--rg-content)!important;margin-left:auto!important;margin-right:auto!important;
+ padding-left:0!important;padding-right:0!important;box-sizing:border-box!important}
+@media(max-width:600px){.site-header{padding-left:var(--rg-outer)!important;padding-right:var(--rg-outer)!important}}

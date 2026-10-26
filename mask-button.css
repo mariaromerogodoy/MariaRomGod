@@ -1,0 +1,28 @@
+
+/* The reference's mask-sprite method, served locally to guarantee it actually displays */
+.rg-slot {position:relative!important;display:inline-flex!important;align-items:center!important;
+ justify-content:center!important;isolation:isolate!important;overflow:hidden!important;
+ width:auto!important;min-width:164px!important;height:42px!important;
+ padding:0 18px!important;background:#fff!important;color:#000!important;
+ border:1.5px solid #000!important;border-radius:999px!important;
+ font-family:Arial,Helvetica,sans-serif!important;font-weight:400!important;font-size:13px!important;
+ letter-spacing:0!important;opacity:1!important}
+.rg-slot:before{display:none!important}
+.rg-slot .rg-slot-text{position:relative!important;z-index:1!important;color:#000!important;font-size:inherit!important}
+.rg-slot .rg-ink-overlay{position:absolute!important;inset:0!important;display:flex!important;
+ align-items:center!important;justify-content:center!important;z-index:2!important;
+ background:#000!important;color:#fff!important;pointer-events:none!important;
+ -webkit-mask-image:url("assets/ink-reveal-strip.png")!important;
+ mask-image:url("assets/ink-reveal-strip.png")!important;
+ -webkit-mask-size:3100% 100%!important;mask-size:3100% 100%!important;
+ -webkit-mask-repeat:no-repeat!important;mask-repeat:no-repeat!important;
+ -webkit-mask-position:0% 0%;mask-position:0% 0%;
+ animation:rom-mask-hide .7s steps(30,end) both!important;
+}
+.rg-slot:hover .rg-ink-overlay,.rg-slot:focus-visible .rg-ink-overlay{
+ animation:rom-mask-show .7s steps(30,end) both!important;
+}
+.rg-slot .rg-ink-text{position:relative!important;color:#fff!important;white-space:nowrap!important;font-size:inherit!important;font-weight:400!important}
+@keyframes rom-mask-show { from{-webkit-mask-position:0% 0%;mask-position:0% 0%} to{-webkit-mask-position:100% 0%;mask-position:100% 0%}}
+@keyframes rom-mask-hide { from{-webkit-mask-position:100% 0%;mask-position:100% 0%} to{-webkit-mask-position:0% 0%;mask-position:0% 0%}}
+@media(prefers-reduced-motion:reduce){.rg-slot .rg-ink-overlay{animation:none!important;opacity:0!important}.rg-slot:hover .rg-ink-overlay,.rg-slot:focus-visible .rg-ink-overlay{opacity:1!important;-webkit-mask-image:none!important;mask-image:none!important}}

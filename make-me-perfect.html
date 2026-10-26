@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
+    <title>Make Me Perfect — RomGod</title>
+    <link href="navigation.css" rel="stylesheet" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: #000;
+        color: #000;
+        font-family: "Neue Haas Grotesk Display Pro", "Helvetica Neue",
+          Helvetica, Arial, sans-serif;
+      }
+      a {
+        color: inherit;
+      }
+      .sheet {
+        background: #fff;
+        border-radius: 0 0 42px 42px;
+        min-height: 100vh;
+        padding-bottom: 110px;
+      }
+      main {
+        max-width: 1240px;
+        margin: auto;
+        padding: 60px clamp(24px, 5vw, 75px) 0;
+      }
+      .lead {
+        width: 100%;
+        max-height: 650px;
+        object-fit: contain;
+        background: #000;
+        display: block;
+        border-radius: 12px;
+      }
+      .title {
+        font-size: clamp(62px, 10vw, 145px);
+        line-height: 0.95;
+        font-weight: 400;
+        letter-spacing: -0.07em;
+        margin: 60px 0 25px;
+      }
+      .dek {
+        font-size: clamp(21px, 2.5vw, 34px);
+        max-width: 800px;
+        line-height: 1.28;
+        letter-spacing: -0.027em;
+        margin: 0 0 30px;
+      }
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 100px;
+      }
+      .tags span {
+        border: 1px solid #000;
+        border-radius: 999px;
+        padding: 9px 18px;
+        font-size: 13px;
+      }
+      .section {
+        margin: 0 0 110px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1.35fr;
+        gap: 70px;
+      }
+      .section h2 {
+        font-weight: 400;
+        font-size: clamp(30px, 4vw, 55px);
+        line-height: 1.1;
+        letter-spacing: -0.04em;
+        margin: 0 0 20px;
+      }
+      .section p {
+        font-size: 17px;
+        line-height: 1.65;
+        max-width: 610px;
+        margin: 0 0 16px;
+      }
+      .wide {
+        width: 100%;
+        display: block;
+        object-fit: contain;
+        background: #000;
+        border-radius: 10px;
+      }
+      .motion {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        align-items: center;
+      }
+      .motion img,
+      .motion video {
+        width: 100%;
+        display: block;
+        max-height: 600px;
+        object-fit: contain;
+        border-radius: 9px;
+        background: #000;
+      }
+      .try {
+        display: inline-flex;
+        margin-top: 20px;
+        border: 1px solid #000;
+        border-radius: 999px;
+        padding: 12px 22px;
+        text-decoration: none;
+      }
+      .try:hover {
+        background: #000;
+        color: #fff;
+      }
+      footer {
+        background: #000;
+        color: #fff;
+        padding: 55px 5vw 90px;
+        font-size: 13px;
+      }
+      @media (max-width: 700px) {
+        main {
+          padding-top: 30px;
+        }
+        .grid,
+        .motion {
+          grid-template-columns: 1fr;
+          gap: 26px;
+        }
+        .tags {
+          margin-bottom: 65px;
+        }
+        .section {
+          margin-bottom: 75px;
+        }
+      }
+    </style>
+    <link href="navigation.css" rel="stylesheet" />
+    <link href="cursor.css" rel="stylesheet" />
+    <link href="footer.css" rel="stylesheet" />
+    <style>
+      video.lead,
+      video.wide {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        background: #000;
+      }
+      video.wide {
+        max-width: 100%;
+      }
+      .motion video {
+        display: block;
+      }
+    </style>
+    <link href="consistent-margins.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="sheet">
+      <header class="site-header">
+        <div class="header-signature">
+          <a aria-label="RomGod home" class="brand" href="index.html"
+            ><img alt="RomGod flower" src="romgod-flower.png" /></a
+          ><span class="header-name"
+            ><img
+              alt="Maria Romero Godoy"
+              class="rg-nav-logo"
+              src="romgod-name.svg"
+          /></span>
+        </div>
+        <nav aria-label="Main navigation" class="nav">
+          <a aria-current="page" href="index.html#work">Selected work</a
+          ><a href="about.html">About</a><a href="arcade.html">RomGod Arcade</a>
+        </nav>
+      </header>
+      <main>
+        <video
+          aria-label="Make Me Perfect experimental print book in motion"
+          autoplay=""
+          class="lead"
+          loop=""
+          muted=""
+          playsinline=""
+          preload="metadata"
+          src="assets/make-me-perfect-new-video.mp4"
+        ></video>
+        <h1 class="title">Make Me Perfect</h1>
+        <p class="dek">
+          Finding beauty in mistakes and imperfect images and the things we
+          usually try to fix
+        </p>
+        <div class="tags">
+          <span>Book Design</span><span>Experimental Design</span
+          ><span>Creative Coding</span><span>Web Experience</span>
+        </div>
+        <section class="section grid">
+          <div><h2>The idea</h2></div>
+          <div>
+            <p>
+              As a designer, I am always looking for inspiration, even in things
+              that don't seem beautiful at first. Make Me Perfect explores how
+              mistakes, unusual images, and things that feel out of place can
+              become beautiful when you look at them differently.
+            </p>
+            <p>
+              I created a print book and a digital experience to question why
+              design is always expected to be perfect.
+            </p>
+          </div>
+        </section>
+        <section class="section">
+          <video
+            aria-label="Make Me Perfect experimental print book in motion"
+            autoplay=""
+            class="wide"
+            loop=""
+            muted=""
+            playsinline=""
+            preload="metadata"
+            src="assets/make-me-perfect-new-video.mp4"
+          ></video>
+        </section>
+        <section class="section grid">
+          <div><h2>Process</h2></div>
+          <div>
+            <p>
+              I collected images that felt imperfect and experimented with
+              placing them at slanted angles to create a kind of structured
+              imperfection. The book uses red throughout because it is a color
+              we often associate with mistakes and things going wrong.
+            </p>
+            <p>
+              I chose Helvetica because it is often seen as such a perfect
+              typeface. I thought it would be funny to start with something so
+              clean and controlled, then distort it and make it imperfect on
+              purpose.
+            </p>
+            <p>
+              The contrast between the organized type and red layouts became the
+              visual language of the book.
+            </p>
+          </div>
+        </section>
+        <section class="section">
+          <h2>From print to digital</h2>
+          <p>
+            I expanded the idea into an interactive website built with HTML,
+            CSS, and JavaScript. Rather than trying to make every interaction
+            perfectly polished, the site embraces rough edges, play, and
+            experimentation.
+          </p>
+          <div class="motion">
+            <video
+              aria-label="Make Me Perfect experimental digital experience walkthrough"
+              autoplay=""
+              controls=""
+              loop=""
+              muted=""
+              playsinline=""
+              preload="metadata"
+              src="assets/make-me-perfect-video.mp4"
+            ></video
+            ><video
+              aria-label="Make Me Perfect experimental print book in motion"
+              autoplay=""
+              class=""
+              loop=""
+              muted=""
+              playsinline=""
+              preload="metadata"
+              src="assets/make-me-perfect-new-video.mp4"
+            ></video>
+          </div>
+          <a
+            class="try"
+            href="https://mariaromerogodoy.github.io/ImPERF/"
+            rel="noopener noreferrer"
+            target="_blank"
+            >Explore interactive website ↗</a
+          >
+        </section>
+      </main>
+    </div>
+    <script>
+      document.querySelectorAll("video").forEach((v) => {
+        v.loop = true;
+        v.muted = true;
+        v.setAttribute("playsinline", "");
+        v.play().catch(() => {});
+      });
+    </script>
+    <footer class="rg-footer">
+      <div class="rg-footer-top">
+        <div class="rg-footer-contact">
+          <a class="rg-contact-link" href="mailto:Marg4rg@gmail.com"
+            >Get in contact ↗</a
+          >
+          <a class="rg-email-link" href="mailto:Marg4rg@gmail.com"
+            >Marg4rg@gmail.com</a
+          >
+        </div>
+        <div aria-label="Social profiles" class="rg-footer-social">
+          <a
+            aria-label="Instagram"
+            href="https://www.instagram.com/romgod.designs/"
+            rel="noopener noreferrer"
+            target="_blank"
+            ><svg
+              aria-hidden="true"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.8"
+              viewbox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect height="18" rx="5" width="18" x="3" y="3"></rect>
+              <circle cx="12" cy="12" r="4"></circle>
+              <circle
+                cx="17.3"
+                cy="6.7"
+                fill="currentColor"
+                r="1"
+                stroke="none"
+              ></circle></svg></a
+          ><a
+            aria-label="GitHub"
+            href="https://github.com/mariaromerogodoy"
+            rel="noopener noreferrer"
+            target="_blank"
+            ><svg
+              aria-hidden="true"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.8"
+              viewbox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"
+              ></path></svg></a
+          ><a
+            aria-label="LinkedIn"
+            href="https://www.linkedin.com/in/mariaromgod"
+            rel="noopener noreferrer"
+            target="_blank"
+            ><svg
+              aria-hidden="true"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.8"
+              viewbox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect height="18" rx="3" width="18" x="3" y="3"></rect>
+              <path
+                d="M8 11v5M8 8v.01M12 16v-5m0 2.5c0-1.5 1-2.5 2.3-2.5s2.2 1 2.2 2.5V16"
+              ></path></svg></a
+          ><a
+            aria-label="Spotify"
+            href="https://open.spotify.com/user/4rlfytwvic0ai12sfbmx7o3oh?si=44ad739174264706"
+            rel="noopener noreferrer"
+            target="_blank"
+            ><svg
+              aria-hidden="true"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.8"
+              viewbox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="12" cy="12" r="9"></circle>
+              <path
+                d="M7 9.5c3.5-1 7-.7 10 1M7.5 12.5c3-.8 6-.5 8.5 1M8 15.3c2.5-.6 5-.4 7 .8"
+              ></path></svg
+          ></a>
+        </div>
+      </div>
+      <div class="rg-footer-name">
+        <img alt="Maria Romero Godoy" src="romgod-name.svg" />
+      </div>
+    </footer>
+  </body>
+</html>
