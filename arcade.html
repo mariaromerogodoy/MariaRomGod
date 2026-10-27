@@ -2266,6 +2266,49 @@
       }
     </style>
     <link href="consistent-margins.css" rel="stylesheet" />
+
+    <style>
+      /* Show projects in curated order on one-column screens. */
+      @media (max-width: 600px) {
+        .gallery-grid.arcade-grid .arcade-stack {
+          display: contents !important;
+        }
+        .gallery-grid.arcade-grid .gallery-item {
+          order: 20;
+        }
+        .gallery-grid.arcade-grid
+          .gallery-item:has([aria-controls="arcade-image-dialog-1"]) {
+          order: 1;
+        }
+        .gallery-grid.arcade-grid .gallery-item:has(.arcade-game-link) {
+          order: 2;
+        }
+        .gallery-grid.arcade-grid
+          .gallery-item:has([aria-controls="en-mi-casa-dialog"]) {
+          order: 3;
+        }
+        .gallery-grid.arcade-grid
+          .gallery-item:has([aria-controls="arcade-image-dialog-6"]) {
+          order: 4;
+        }
+        .gallery-grid.arcade-grid
+          .gallery-item:has([aria-controls="arcade-image-dialog-inverse"]) {
+          order: 5;
+        }
+        .gallery-grid.arcade-grid
+          .gallery-item:has([aria-controls="arcade-image-dialog-visa-versa"]) {
+          order: 6;
+        }
+        .gallery-grid.arcade-grid
+          .gallery-item:has([aria-controls="arcade-image-dialog-4"]) {
+          order: 7;
+        }
+        .gallery-grid.arcade-grid
+          .gallery-item:has([aria-controls="arcade-image-dialog-lost"]) {
+          order: 8;
+        }
+      }
+    </style>
   </head>
   <body>
     <!-- Reusable flower icon (swap for assets/icon.svg if you prefer your exact file) -->
@@ -2374,6 +2417,29 @@
             </article>
             <article class="gallery-item">
               <button
+                aria-controls="arcade-image-dialog-6"
+                aria-haspopup="dialog"
+                class="gallery-action"
+                type="button"
+              >
+                <div class="gallery-thumbnail">
+                  <img
+                    alt="Our Digital Best Friend"
+                    src="assets/arcade-6.gif"
+                  />
+                  <div class="gallery-overlay">
+                    <span class="gallery-readmore">Read More</span>
+                  </div>
+                </div>
+                <h2 class="gallery-name">Our Digital Best Friend</h2>
+                <ul class="gallery-chips">
+                  <li>Book Design</li>
+                  <li>UI/UX</li>
+                </ul>
+              </button>
+            </article>
+            <article class="gallery-item">
+              <button
                 aria-controls="arcade-image-dialog-4"
                 aria-haspopup="dialog"
                 class="gallery-action"
@@ -2411,6 +2477,29 @@
                   <li>Creative Coding</li>
                 </ul></a
               >
+            </article>
+            <article class="gallery-item">
+              <button
+                aria-controls="arcade-image-dialog-inverse"
+                aria-haspopup="dialog"
+                class="gallery-action"
+                type="button"
+              >
+                <div class="gallery-thumbnail">
+                  <img
+                    alt="Inverse, a landscape silkscreen of a yellow flower with red and dark ink"
+                    src="assets/inverse-landscape.jpg"
+                  />
+                  <div class="gallery-overlay">
+                    <span class="gallery-readmore">Read More</span>
+                  </div>
+                </div>
+                <h2 class="gallery-name">Inverse</h2>
+                <ul class="gallery-chips">
+                  <li>Silkscreen</li>
+                  <li>Printmaking</li>
+                </ul>
+              </button>
             </article>
             <article class="gallery-item">
               <button
@@ -2461,24 +2550,24 @@
             </article>
             <article class="gallery-item">
               <button
-                aria-controls="arcade-image-dialog-6"
+                aria-controls="arcade-image-dialog-visa-versa"
                 aria-haspopup="dialog"
                 class="gallery-action"
                 type="button"
               >
                 <div class="gallery-thumbnail">
                   <img
-                    alt="Our Digital Best Friend"
-                    src="assets/arcade-6.gif"
+                    alt="Visa Versa, experimental pink and green silkscreen presented in a landscape thumbnail"
+                    src="assets/visa-versa-landscape.jpg"
                   />
                   <div class="gallery-overlay">
                     <span class="gallery-readmore">Read More</span>
                   </div>
                 </div>
-                <h2 class="gallery-name">Our Digital Best Friend</h2>
+                <h2 class="gallery-name">Visa Versa</h2>
                 <ul class="gallery-chips">
-                  <li>Book Design</li>
-                  <li>UI/UX</li>
+                  <li>Silkscreen</li>
+                  <li>Printmaking</li>
                 </ul>
               </button>
             </article>
@@ -2825,6 +2914,71 @@
         </p>
         <div class="rg-popup-pills">
           <span>Screen Print</span><span>Printmaking</span>
+        </div>
+      </div>
+      <span aria-hidden="true" class="rg-mini-scroll-indicator"></span>
+    </dialog>
+    <dialog
+      aria-label="Inverse silkscreen project"
+      class="mini-case-dialog arcade-image-dialog"
+      id="arcade-image-dialog-inverse"
+    >
+      <form method="dialog">
+        <button aria-label="Close image" class="mini-case-close">×</button>
+      </form>
+      <div class="mini-case-scroll">
+        <img
+          alt="Inverse silkscreen featuring a yellow flower against vibrant red and dark ink"
+          class="arcade-enlarged-image"
+          src="assets/inverse-landscape.jpg"
+        />
+        <img
+          alt="Inverse silkscreen print photographed in the studio, showing the physical artwork"
+          class="arcade-enlarged-image"
+          src="assets/inverse-process.jpg"
+          loading="lazy"
+          style="margin-top: 22px"
+        />
+        <h2 class="arcade-image-title">Inverse</h2>
+        <p class="arcade-popup-summary">
+          A silkscreen exploration of contrast, layered color, and expressive
+          floral forms.
+        </p>
+        <div class="rg-popup-pills">
+          <span>Silkscreen</span><span>Printmaking</span>
+        </div>
+      </div>
+      <span aria-hidden="true" class="rg-mini-scroll-indicator"></span>
+    </dialog>
+    <dialog
+      aria-label="Visa Versa silkscreen project"
+      class="mini-case-dialog arcade-image-dialog"
+      id="arcade-image-dialog-visa-versa"
+    >
+      <form method="dialog">
+        <button aria-label="Close image" class="mini-case-close">×</button>
+      </form>
+      <div class="mini-case-scroll">
+        <img
+          alt="Visa Versa framed print featuring overlapping green and pink silkscreen textures"
+          class="arcade-enlarged-image"
+          src="assets/visa-versa-landscape.jpg"
+        />
+        <img
+          alt="Visa Versa print held by hand, showing the silkscreen on paper"
+          class="arcade-enlarged-image"
+          src="assets/visa-versa-print.jpg"
+          loading="lazy"
+          style="margin-top: 22px"
+        />
+        <h2 class="arcade-image-title">Visa Versa</h2>
+        <p class="arcade-popup-summary">
+          An experimental silkscreen study of layered textures and shifting pink
+          and green forms, shown as a finished framed piece and a print on
+          paper.
+        </p>
+        <div class="rg-popup-pills">
+          <span>Silkscreen</span><span>Printmaking</span>
         </div>
       </div>
       <span aria-hidden="true" class="rg-mini-scroll-indicator"></span>
