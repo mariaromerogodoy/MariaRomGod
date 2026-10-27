@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>RomGod Arcade — Maria Romero Godoy</title>
-<meta content="Portfolio of Maria Romero Godoy: UI/UX, creative coding, branding, graphic and experimental design." name="description"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400&amp;display=swap" rel="stylesheet"/>
-<style>
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>RomGod Arcade — Maria Romero Godoy</title>
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <meta
+      content="Portfolio of Maria Romero Godoy: UI/UX, creative coding, branding, graphic and experimental design."
+      name="description"
+    />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
       :root {
         --black: #000;
         --white: #fff;
@@ -27,7 +34,9 @@
         scroll-behavior: smooth;
       }
       body {
-        font-family: 'Neue Haas Grotesk Display Pro','Neue Haas Grotesk Text Pro','Neue Haas Grotesk',Arial,Helvetica,sans-serif;
+        font-family: "Neue Haas Grotesk Display Pro",
+          "Neue Haas Grotesk Text Pro", "Neue Haas Grotesk", Arial, Helvetica,
+          sans-serif;
         font-weight: 400;
         background: var(--black);
         color: var(--black);
@@ -304,27 +313,104 @@
         }
       }
 
-      
       /* Updated project card direction — inspired by reference: refined, airy, and image-forward */
-      :root { --maxw: 1180px; --gutter: clamp(22px, 5vw, 72px); --radius-card: 22px; --soft-bg:#f3f3f3; --ink:#111; --muted:#666; --pink:#ff2ae6; }
-      .sheet { border-radius: 0 0 28px 28px; padding-bottom: 110px; }
-      .site-header { max-width: 1440px; margin: auto; padding-top: 25px; padding-bottom: 25px; }
-      .brand { width: 42px; height: 42px; }
-      .brand img { width: 27px; height: 27px; }
-      .nav { background: transparent; height: auto; gap: 5px; }
-      .nav a { color: #242424; font-size: 12px; padding: 9px 13px; border: 1px solid transparent; transition: border-color .2s; }
-      .nav a:hover, .nav a:focus-visible { border-color: #bbb; }
-      .hero { padding-top: clamp(75px, 10vw, 145px); }
-      .hero-intro { font-size: 13px; letter-spacing: .035em; }
-      .wordmark-wrap { width: min(600px, 72%); margin: clamp(80px, 10vw, 130px) auto clamp(120px, 15vw, 195px); }
-      .tag-float { font-size: clamp(9px, .9vw, 11px); padding: .63em 1.1em; letter-spacing: .02em; }
-      .tag-float.t3 { left: -8%; }
-      .tag-float.t4 { right: -12%; }
-      .section-intro { max-width: var(--maxw); padding: 0 var(--gutter); margin: 0 auto 32px; display:flex; justify-content:space-between; align-items:end; gap:26px; border-bottom: 1px solid #d9d9d9; padding-bottom: 20px; }
-      .eyebrow { font-size: 10px; text-transform: uppercase; letter-spacing: .17em; color: #777; }
-      .section-intro h2 { font-size: clamp(24px,3vw,38px); line-height: 1.15; margin-top: 8px; font-weight: 400; }
-      .section-intro p { max-width: 30ch; font-size: 12px; line-height:1.6; color:#666; }
-      .projects { gap: 26px; }
+      :root {
+        --maxw: 1180px;
+        --gutter: clamp(22px, 5vw, 72px);
+        --radius-card: 22px;
+        --soft-bg: #f3f3f3;
+        --ink: #111;
+        --muted: #666;
+        --pink: #ff2ae6;
+      }
+      .sheet {
+        border-radius: 0 0 28px 28px;
+        padding-bottom: 110px;
+      }
+      .site-header {
+        max-width: 1440px;
+        margin: auto;
+        padding-top: 25px;
+        padding-bottom: 25px;
+      }
+      .brand {
+        width: 42px;
+        height: 42px;
+      }
+      .brand img {
+        width: 27px;
+        height: 27px;
+      }
+      .nav {
+        background: transparent;
+        height: auto;
+        gap: 5px;
+      }
+      .nav a {
+        color: #242424;
+        font-size: 12px;
+        padding: 9px 13px;
+        border: 1px solid transparent;
+        transition: border-color 0.2s;
+      }
+      .nav a:hover,
+      .nav a:focus-visible {
+        border-color: #bbb;
+      }
+      .hero {
+        padding-top: clamp(75px, 10vw, 145px);
+      }
+      .hero-intro {
+        font-size: 13px;
+        letter-spacing: 0.035em;
+      }
+      .wordmark-wrap {
+        width: min(600px, 72%);
+        margin: clamp(80px, 10vw, 130px) auto clamp(120px, 15vw, 195px);
+      }
+      .tag-float {
+        font-size: clamp(9px, 0.9vw, 11px);
+        padding: 0.63em 1.1em;
+        letter-spacing: 0.02em;
+      }
+      .tag-float.t3 {
+        left: -8%;
+      }
+      .tag-float.t4 {
+        right: -12%;
+      }
+      .section-intro {
+        max-width: var(--maxw);
+        padding: 0 var(--gutter);
+        margin: 0 auto 32px;
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 26px;
+        border-bottom: 1px solid #d9d9d9;
+        padding-bottom: 20px;
+      }
+      .eyebrow {
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.17em;
+        color: #777;
+      }
+      .section-intro h2 {
+        font-size: clamp(24px, 3vw, 38px);
+        line-height: 1.15;
+        margin-top: 8px;
+        font-weight: 400;
+      }
+      .section-intro p {
+        max-width: 30ch;
+        font-size: 12px;
+        line-height: 1.6;
+        color: #666;
+      }
+      .projects {
+        gap: 26px;
+      }
       .card {
         position: relative;
         background: var(--soft-bg);
@@ -333,20 +419,20 @@
         border-radius: 28px;
         padding: clamp(26px, 3.7vw, 48px);
         display: grid;
-        grid-template-columns: minmax(290px,.95fr) minmax(0,1.08fr);
+        grid-template-columns: minmax(290px, 0.95fr) minmax(0, 1.08fr);
         gap: clamp(28px, 4vw, 56px);
         align-items: center;
         min-height: 430px;
       }
       .card-info {
         min-height: 320px;
-        display:flex;
-        flex-direction:column;
-        align-items:flex-start;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
       }
       .project-number {
         font-size: 11px;
-        letter-spacing: .16em;
+        letter-spacing: 0.16em;
         text-transform: uppercase;
         color: #7b7b7b;
         margin-bottom: 22px;
@@ -354,22 +440,22 @@
       .card-title {
         font-size: clamp(38px, 4vw, 60px);
         line-height: 1.04;
-        letter-spacing: -.03em;
+        letter-spacing: -0.03em;
         max-width: 9ch;
       }
       .chips {
         margin-top: 26px;
         gap: 14px;
-        list-style:none;
+        list-style: none;
       }
       .chip {
         background: transparent;
         color: var(--pink);
         border: 1.5px solid var(--pink);
         font-size: 14px;
-        padding: .72em 1.45em;
+        padding: 0.72em 1.45em;
         border-radius: 999px;
-        letter-spacing: .01em;
+        letter-spacing: 0.01em;
       }
       .card-desc {
         margin-top: 28px;
@@ -389,8 +475,8 @@
       .project-link {
         margin-top: 34px;
         display: inline-flex;
-        align-items:center;
-        justify-content:center;
+        align-items: center;
+        justify-content: center;
         min-width: 182px;
         min-height: 64px;
         padding: 0 1.45em;
@@ -398,7 +484,7 @@
         background: #000;
         color: #fff;
         font-size: 18px;
-        letter-spacing: -.01em;
+        letter-spacing: -0.01em;
       }
       .card-media {
         background: transparent;
@@ -406,7 +492,7 @@
         height: auto;
         padding: 0;
         overflow: visible;
-        display:block;
+        display: block;
       }
       .media-frame {
         border: 2px solid var(--pink);
@@ -414,9 +500,9 @@
         background: #f7f7f7;
         overflow: hidden;
         min-height: 374px;
-        display:flex;
-        align-items:center;
-        justify-content:center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         padding: clamp(14px, 2vw, 22px);
       }
       .media-frame img {
@@ -424,45 +510,126 @@
         height: auto;
         max-height: 330px;
         object-fit: contain;
-        display:block;
+        display: block;
         margin: 0 auto;
       }
       .card-media .ph {
-        color:#888;
-        font-size:13px;
-        text-align:center;
-        line-height:1.7;
+        color: #888;
+        font-size: 13px;
+        text-align: center;
+        line-height: 1.7;
       }
-      .design-note { max-width: var(--maxw); margin: 28px auto 0; padding: 0 var(--gutter); font-size: 12px; color: #777; line-height: 1.6; }
-      .site-footer { max-width: 1440px; margin: auto; padding-top: 40px; padding-bottom: 100px; justify-content:space-between; align-items:center; }
-      .footer-label { color:white; font-size:12px; max-width:38ch; line-height:1.6; }
-      .footer-label span { display:block; color:#999; font-size:10px; letter-spacing:.1em; text-transform:uppercase; margin-bottom:8px; }
-      .social { width:36px; height:36px; border-width:1px; opacity:.9; }
-      .social svg { width:17px; height:17px; }
-      .social[href="#"] { pointer-events:none; opacity:.35; }
-      @media(max-width:980px) {
-        .card { grid-template-columns: 1fr; min-height: 0; }
-        .card-info { min-height: 0; }
-        .card-title { max-width: 100%; }
-        .card-media { order: -1; }
-        .media-frame { min-height: 290px; }
-        .media-frame img { width: 88%; max-height: 250px; }
+      .design-note {
+        max-width: var(--maxw);
+        margin: 28px auto 0;
+        padding: 0 var(--gutter);
+        font-size: 12px;
+        color: #777;
+        line-height: 1.6;
       }
-      @media(max-width:560px) {
-        .section-intro { display:block; }
-        .section-intro p { margin-top:14px; }
-        .wordmark-wrap { width:74%; margin-bottom:130px; }
-        .tag-float { font-size:9px; }
-        .tag-float.t3{left:-13%} .tag-float.t4{right:-15%}
-        .card { border-radius: 24px; padding: 24px; }
-        .card-title { font-size: 32px; }
-        .chips { gap: 10px; }
-        .chip { font-size: 12px; }
-        .project-link { min-height: 56px; font-size: 16px; }
-        .media-frame { min-height: 230px; border-radius: 22px; }
-        .site-footer { flex-wrap:wrap; }
+      .site-footer {
+        max-width: 1440px;
+        margin: auto;
+        padding-top: 40px;
+        padding-bottom: 100px;
+        justify-content: space-between;
+        align-items: center;
       }
-
+      .footer-label {
+        color: white;
+        font-size: 12px;
+        max-width: 38ch;
+        line-height: 1.6;
+      }
+      .footer-label span {
+        display: block;
+        color: #999;
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+      .social {
+        width: 36px;
+        height: 36px;
+        border-width: 1px;
+        opacity: 0.9;
+      }
+      .social svg {
+        width: 17px;
+        height: 17px;
+      }
+      .social[href="#"] {
+        pointer-events: none;
+        opacity: 0.35;
+      }
+      @media (max-width: 980px) {
+        .card {
+          grid-template-columns: 1fr;
+          min-height: 0;
+        }
+        .card-info {
+          min-height: 0;
+        }
+        .card-title {
+          max-width: 100%;
+        }
+        .card-media {
+          order: -1;
+        }
+        .media-frame {
+          min-height: 290px;
+        }
+        .media-frame img {
+          width: 88%;
+          max-height: 250px;
+        }
+      }
+      @media (max-width: 560px) {
+        .section-intro {
+          display: block;
+        }
+        .section-intro p {
+          margin-top: 14px;
+        }
+        .wordmark-wrap {
+          width: 74%;
+          margin-bottom: 130px;
+        }
+        .tag-float {
+          font-size: 9px;
+        }
+        .tag-float.t3 {
+          left: -13%;
+        }
+        .tag-float.t4 {
+          right: -15%;
+        }
+        .card {
+          border-radius: 24px;
+          padding: 24px;
+        }
+        .card-title {
+          font-size: 32px;
+        }
+        .chips {
+          gap: 10px;
+        }
+        .chip {
+          font-size: 12px;
+        }
+        .project-link {
+          min-height: 56px;
+          font-size: 16px;
+        }
+        .media-frame {
+          min-height: 230px;
+          border-radius: 22px;
+        }
+        .site-footer {
+          flex-wrap: wrap;
+        }
+      }
 
       /* Restored original black pill navigation */
       .nav {
@@ -481,14 +648,26 @@
         padding: 10px 15px;
         font-size: 13px;
         white-space: nowrap;
-        transition: background-color .2s ease, color .2s ease;
+        transition: background-color 0.2s ease, color 0.2s ease;
       }
-      .nav a:hover, .nav a:focus-visible { background: #292929; border-color: transparent; color:#fff; }
+      .nav a:hover,
+      .nav a:focus-visible {
+        background: #292929;
+        border-color: transparent;
+        color: #fff;
+      }
       @media (max-width: 560px) {
-        .nav { gap: 0; padding: 5px; min-height: 44px; }
-        .nav a { font-size: 10px; padding: 9px 8px; }
+        .nav {
+          gap: 0;
+          padding: 5px;
+          min-height: 44px;
+        }
+        .nav a {
+          font-size: 10px;
+          padding: 9px 8px;
+        }
       }
-    
+
       /* Hero floating labels updated to white pills with black text + outline */
       .tag-float {
         background: #fff;
@@ -498,585 +677,2157 @@
         box-shadow: none;
         font-size: clamp(12px, 1.1vw, 16px);
         font-weight: 400;
-        padding: .78em 1.55em;
-        letter-spacing: -.01em;
+        padding: 0.78em 1.55em;
+        letter-spacing: -0.01em;
       }
-      .tag-float.t1 { top: 1%; left: 25%; }
-      .tag-float.t2 { top: 8%; right: 18%; }
-      .tag-float.t3 { left: 0; top: 48%; }
-      .tag-float.t4 { right: -1%; top: 48%; }
-      .tag-float.t5 { left: 43%; bottom: -8%; }
+      .tag-float.t1 {
+        top: 1%;
+        left: 25%;
+      }
+      .tag-float.t2 {
+        top: 8%;
+        right: 18%;
+      }
+      .tag-float.t3 {
+        left: 0;
+        top: 48%;
+      }
+      .tag-float.t4 {
+        right: -1%;
+        top: 48%;
+      }
+      .tag-float.t5 {
+        left: 43%;
+        bottom: -8%;
+      }
       @media (max-width: 560px) {
         .tag-float {
           font-size: 10px;
-          padding: .72em 1.2em;
+          padding: 0.72em 1.2em;
         }
-        .tag-float.t1 { left: 24%; top: 2%; }
-        .tag-float.t2 { right: 8%; top: 11%; }
-        .tag-float.t3 { left: -3%; top: 46%; }
-        .tag-float.t4 { right: -5%; top: 46%; }
-        .tag-float.t5 { left: 40%; bottom: -10%; }
+        .tag-float.t1 {
+          left: 24%;
+          top: 2%;
+        }
+        .tag-float.t2 {
+          right: 8%;
+          top: 11%;
+        }
+        .tag-float.t3 {
+          left: -3%;
+          top: 46%;
+        }
+        .tag-float.t4 {
+          right: -5%;
+          top: 46%;
+        }
+        .tag-float.t5 {
+          left: 40%;
+          bottom: -10%;
+        }
       }
 
-    
-/* Final minimalist palette + restored floating label positions */
-:root { --black:#000; --white:#fff; --pink:#ff00e6; --soft-bg:#fff; --ink:#000; --muted:#000; }
-body, .sheet { background:#fff; color:#000; }
-.nav, .brand, .project-link { background:#000; color:#fff; }
-.nav a:hover, .nav a:focus-visible { background:#ff00e6; color:#000; }
-.hero-intro { color:#000; }
-.tag-float { background:#fff; color:#000; border:1.5px solid #000; box-shadow:none; padding:.66em 1.35em; font-size:clamp(11px,1.15vw,15px); }
-/* Positions preserved from the original RomGod hero design */
-.tag-float.t1 { top:-12%; left:20%; right:auto; bottom:auto; translate:none; }
-.tag-float.t2 { top:2%; right:6%; left:auto; bottom:auto; translate:none; }
-.tag-float.t3 { top:66%; left:-13%; right:auto; bottom:auto; translate:none; }
-.tag-float.t4 { top:66%; right:-17%; left:auto; bottom:auto; translate:none; }
-.tag-float.t5 { top:106%; left:50%; right:auto; bottom:auto; translate:-50% 0; }
-.section-intro { border-bottom:1px solid #000; margin-bottom:24px; padding-bottom:13px; }
-.section-intro h2 { color:#000; }
-.projects { gap:20px; }
-.card { background:#fff; color:#000; border:1.7px solid #000; min-height:340px; padding:clamp(22px,3vw,36px); gap:clamp(24px,3vw,42px); border-radius:24px; }
-.card-info { min-height:240px; }
-.card-title { font-size:clamp(33px,3.4vw,48px); }
-.chips { margin-top:19px; gap:9px; }
-.chip { border:1.4px solid #ff00e6; color:#000; background:#fff; padding:.55em 1em; font-size:12px; }
-.card-desc { color:#000; margin-top:18px; font-size:15px; }
-.project-link { margin-top:auto; min-width:154px; min-height:49px; font-size:15px; padding:0 1.35em; }
-.project-link:hover { background:#ff00e6; color:#000; }
-.media-frame { background:#fff; border:1.7px solid #ff00e6; border-radius:22px; min-height:265px; padding:15px; }
-.media-frame img { width:88%; max-height:247px; }
-.card-media .ph { color:#000; }
-.footer-label span { color:#fff; }
-@media(max-width:980px) { .card-info{ min-height:0; } .project-link{ margin-top:28px; } }
-@media(max-width:560px) {
- .tag-float { font-size:9px; padding:.6em .9em; }
- .tag-float.t1 { top:-12%; left:15%; right:auto; }
- .tag-float.t2 { top:2%; right:5%; left:auto; }
- .tag-float.t3 { top:66%; left:-13%; right:auto; }
- .tag-float.t4 { top:66%; right:-17%; left:auto; }
- .tag-float.t5 { top:106%; left:50%; right:auto; translate:-50% 0; }
- .card { padding:20px; }
- .media-frame { min-height:200px; }
-}
-
-
-/* Final project-card refinements */
-.section-intro { display: none; border: 0; }
-.projects { padding-top: 16px; }
-.chip { color: #ff00e6; border-color: #ff00e6; background: #fff; }
-.card-info { justify-content: flex-start; }
-.card-desc { margin-top: 24px; }
-.project-link {
-  margin-top: 42px;
-  min-width: 0;
-  min-height: 0;
-  padding: .65em 1.3em;
-  font-size: 12px;
-  line-height: 1.35;
-  align-self: flex-start;
-}
-@media(max-width:980px) { .project-link { margin-top: 36px; } }
-
-
-/* Full-screen RomGod intro and refined finishing details */
-html { background:#000; }
-body { background:#000; }
-.sheet {
-  background:#fff;
-  border-radius:0 0 40px 40px;
-  overflow:clip;
-  padding-bottom:clamp(65px,8vw,115px);
-}
-.hero {
-  min-height:calc(100svh - 94px);
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  padding:clamp(55px,8vh,100px) var(--gutter) clamp(120px,15vh,180px);
-}
-.hero-intro { flex:none; }
-.wordmark-wrap {
-  width:min(600px,72%);
-  margin:clamp(75px,12vh,130px) auto clamp(60px,10vh,100px);
-}
-.tag-float {font-size:clamp(10px,.94vw,12px);padding:.58em 1.1em;}
-.card {border-radius:17px;}
-.site-footer {background:#000;}
-@media(max-width:560px) {
-  .sheet {border-radius:0 0 29px 29px;}
-  .hero {min-height:calc(100svh - 85px);padding:45px var(--gutter) 120px;}
-  .wordmark-wrap {width:74%;margin:100px auto 75px;}
-  .tag-float {font-size:8px;padding:.55em .84em;}
-  .card {border-radius:15px;}
-}
-
-          .hero-intro .name-accent { color: #ff00e6; }
-    
-/* Restrained, Rhode-inspired corner system for site navigation. */
-.nav { border-radius: 16px !important; }
-.nav a { border-radius: 10px !important; }
-@media (max-width: 560px) { .nav { border-radius: 13px !important; } .nav a { border-radius: 8px !important; } }
-
-/* Slimmer navigation, same restrained corner treatment across pages */
-.nav { min-height: 40px !important; padding: 3px 7px !important; gap: 4px !important; border-radius: 14px !important; }
-.nav a { padding: 7px 12px !important; font-size: 12px !important; line-height: 1.2 !important; border-radius: 9px !important; }
-@media (max-width: 560px) { .nav { min-height: 36px !important; padding: 3px 5px !important; border-radius: 12px !important; } .nav a { padding: 6px 7px !important; font-size: 10px !important; border-radius: 8px !important; } }
-
-/* Shared navigation: centered, sticky, white with black outline */
-.site-header {
-  position: sticky !important;
-  top: 0;
-  z-index: 1000;
-  width: 100%;
-  max-width: none !important;
-  display: grid !important;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-  align-items: center;
-  background: #fff;
-  padding: 16px var(--gutter, clamp(20px, 5vw, 72px)) !important;
-}
-.site-header .brand { grid-column: 1; justify-self: start; }
-.site-header .nav {
-  grid-column: 2;
-  justify-self: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #fff !important;
-  color: #000 !important;
-  border: 1px solid #000 !important;
-  border-radius: 12px !important;
-  min-height: 40px !important;
-  padding: 3px 7px !important;
-  gap: 4px !important;
-  box-shadow: none !important;
-}
-.site-header .nav a {
-  color: #000 !important;
-  background: #fff !important;
-  border: 1px solid transparent !important;
-  border-radius: 8px !important;
-  padding: 7px 12px !important;
-  font-size: 12px !important;
-  line-height: 1.2 !important;
-  white-space: nowrap;
-}
-.site-header .nav a:hover, .site-header .nav a:focus-visible {
-  background: #fff !important;
-  color: #000 !important;
-  border-color: #000 !important;
-}
-@media (max-width: 560px) {
-  .site-header { padding: 12px 12px !important; gap: 6px; }
-  .site-header .brand { width: 33px !important; height: 33px !important; }
-  .site-header .brand img { width: 22px !important; height: 22px !important; }
-  .site-header .nav { padding: 3px !important; gap: 0 !important; min-height: 34px !important; border-radius: 10px !important; }
-  .site-header .nav a { padding: 6px 7px !important; font-size: 10px !important; border-radius: 6px !important; }
-}
-
-/* Project and Arcade gallery */
-:root { --pink: #ff00e6; }
-.gallery-grid { max-width: 1240px; margin: 0 auto; padding: 0 clamp(22px,5vw,72px) 90px; display:grid; grid-template-columns: repeat(2,minmax(0,1fr)); column-gap:clamp(28px,5vw,66px); row-gap:clamp(50px,6vw,80px); }
-.gallery-grid.arcade-grid { grid-template-columns:repeat(3,minmax(0,1fr)); column-gap:clamp(20px,3vw,35px); }
-.gallery-item { min-width:0; }
-.gallery-thumbnail { width:100%; aspect-ratio: 1.56 / 1; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; border-radius:16px; background:#ededed; }
-.gallery-thumbnail img { display:block; width:100%; height:100%; object-fit:contain; }
-.gallery-overlay { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,.06); opacity:0; transition:opacity .22s ease; }
-.gallery-item:hover .gallery-overlay,.gallery-item:focus-within .gallery-overlay { opacity:1; }
-.gallery-readmore { font-size:12px; line-height:1; border:1.5px solid var(--pink); border-radius:999px; padding:11px 19px; background:#fff; color:var(--pink); }
-.gallery-name { font-size:clamp(17px,1.7vw,22px); font-weight:400; letter-spacing:-.025em; margin:13px 0 7px; line-height:1.25; }
-.gallery-chips { display:flex; align-items:center; flex-wrap:wrap; gap:6px; padding:0; margin:0; list-style:none; }
-.gallery-chips li { font-size:11px; border:1px solid #000; border-radius:999px; padding:4px 11px; }
-.gallery-page-head { max-width:1240px; margin:0 auto; padding:clamp(80px,11vw,140px) clamp(22px,5vw,72px) 44px; }
-.gallery-page-head h1 { font-weight:400; font-size:clamp(32px,5vw,60px); letter-spacing:-.045em; }
-.gallery-page-head p { margin-top:15px; font-size:14px; max-width:56ch; line-height:1.6; }
-.gallery-placeholder {font-size:12px; color:#000; text-align:center; padding:24px}
-.gallery-action {display:block; width:100%; text-align:left; background:transparent; border:0; padding:0; font:inherit; cursor:pointer; color:inherit;}
-.gallery-action:focus-visible {outline:2px solid var(--pink);outline-offset:4px; border-radius:16px;}
-.gallery-action .gallery-readmore {display:inline-block;}
-.gallery-panel[hidden]{display:none}
-.gallery-panel {margin-top:15px; padding:16px 18px; border:1px solid #000; border-radius:12px; font-size:13px; line-height:1.6;}
-.gallery-panel p + p {margin-top:8px}
-@media(max-width:850px){.gallery-grid.arcade-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
-@media(max-width:640px){.gallery-grid,.gallery-grid.arcade-grid{grid-template-columns:1fr;row-gap:35px;}.gallery-thumbnail{border-radius:12px;}.gallery-page-head{padding-top:80px}.gallery-overlay{opacity:1;background:transparent;align-items:flex-end;justify-content:flex-end;padding:12px}.gallery-readmore{font-size:11px;}}
-@media(prefers-reduced-motion:reduce){.gallery-overlay{transition:none}}
-</style>
-<style>/* RomGod small black dot cursor */
-@media (pointer: fine) { html, body, body *, a, button, input, textarea, select, label { cursor: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%224.5%22%20fill%3D%22%23000000%22%2F%3E%3C%2Fsvg%3E") 8 8, auto !important; } }
-@media (prefers-reduced-motion: reduce) { .gallery-thumbnail video { transition: none; } }
-.gallery-thumbnail video { width:100%;height:100%;object-fit:contain;display:block; }
-.gallery-item:hover .gallery-thumbnail video { filter:brightness(.95); }
-/* RomGod menu: three independent pink outline pills, consistent across all pages */
-.site-header .nav {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  flex-wrap: wrap !important;
-  gap: 12px !important;
-  padding: 0 !important;
-  min-height: 0 !important;
-  background: transparent !important;
-  border: 0 !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-  width: max-content;
-  max-width: 100%;
-}
-.site-header .nav a,
-.site-header .nav a[aria-current="page"] {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  background: #fff !important;
-  color: #ff00e6 !important;
-  border: 2px solid #ff00e6 !important;
-  border-radius: 999px !important;
-  box-shadow: none !important;
-  font-family: 'Neue Haas Grotesk Display Pro','Neue Haas Grotesk Text Pro','Neue Haas Grotesk',Arial,Helvetica,sans-serif !important;
-  font-size: 15px !important;
-  font-weight: 400 !important;
-  line-height: 1.25 !important;
-  letter-spacing: 0 !important;
-  padding: 10px 21px !important;
-  text-decoration: none !important;
-  white-space: nowrap;
-  transition: background-color .18s ease, color .18s ease !important;
-}
-.site-header .nav a:hover,
-.site-header .nav a:focus-visible {
-  color: #fff !important;
-  background: #ff00e6 !important;
-  border-color: #ff00e6 !important;
-}
-@media(max-width:700px) {
-  .site-header .nav { gap: 7px !important; }
-  .site-header .nav a,
-  .site-header .nav a[aria-current="page"] { font-size: 11px !important; padding: 8px 11px !important; border-width: 1.5px !important; }
-}
-@media(max-width:380px) {
-  .site-header .nav { gap: 5px !important; }
-  .site-header .nav a,
-  .site-header .nav a[aria-current="page"] { font-size: 10px !important; padding: 7px 8px !important; }
-}
-
-</style><style>
-/* Editorial navigation: screenshot-inspired, left aligned links and name at right */
-.site-header{
- position:sticky !important;top:0 !important;z-index:1000 !important;
- background:#fff !important; width:100% !important;max-width:none !important;
- padding:22px clamp(24px,4.5vw,68px) !important;
- display:flex !important; align-items:center !important;justify-content:space-between !important;
- gap:24px !important; transform:none !important;
-}
-.site-header .nav{
- display:flex !important;position:static !important;transform:none !important;
- background:transparent !important; border:0 !important;box-shadow:none !important;
- padding:0 !important;margin:0 !important;height:auto !important;min-height:0 !important;
- gap:clamp(9px,1.4vw,22px) !important;justify-content:flex-start !important;flex-wrap:wrap !important;
- width:auto !important;border-radius:0 !important;
-}
-.site-header .nav a,
-.site-header .nav a[aria-current="page"]{
- display:inline-flex !important;align-items:center !important;justify-content:center !important;
- white-space:nowrap !important;min-width:0 !important;
- font-family:'Neue Haas Grotesk Display Pro','Neue Haas Grotesk Text Pro','Neue Haas Grotesk',Arial,Helvetica,sans-serif !important;
- font-size:clamp(13px,1.1vw,16px) !important;line-height:1.25 !important;
- color:#000 !important;background:transparent !important;border:0 !important;
- padding:8px 17px !important;border-radius:999px !important;
- letter-spacing:0 !important;font-weight:400 !important;
- text-decoration:none !important;transition:background .2s,color .2s !important;
-}
-.site-header .nav a[aria-current="page"]{
- color:#fff !important;background:#000 !important;
-}
-.site-header .nav a:hover:not([aria-current="page"]),
-.site-header .nav a:focus-visible:not([aria-current="page"]){
- color:#fff !important;background:#000 !important;
-}
-.site-header .header-signature{display:flex;align-items:center;gap:12px;flex-shrink:0;white-space:nowrap;}
-.site-header .header-name{font-size:clamp(13px,1.05vw,16px);font-weight:500;color:#000;}
-.site-header .header-signature .brand{display:flex !important;position:static !important;width:29px !important;height:29px !important;flex:0 0 29px !important;background:#000 !important;border-radius:50% !important;align-items:center;justify-content:center;}
-.site-header .header-signature .brand img{width:20px !important;height:20px !important;object-fit:contain;}
-@media (max-width:680px){
- .site-header{padding:15px 17px !important;gap:8px !important;flex-wrap:wrap !important;}
- .site-header .nav{order:2;width:100% !important;gap:5px !important;justify-content:space-between !important;}
- .site-header .nav a,.site-header .nav a[aria-current="page"]{font-size:11px !important;padding:8px 11px !important;}
- .site-header .header-signature{order:1;width:100%;justify-content:flex-end;}
-}
-</style><style>
-/* Smaller, swapped editorial navigation */
-.site-header{padding:12px clamp(20px,3.7vw,55px) !important;gap:18px !important;}
-.site-header .header-signature{order:1 !important;gap:9px !important;}
-.site-header .header-signature .brand{order:0 !important;width:25px !important;height:25px !important;flex-basis:25px !important;}
-.site-header .header-signature .brand img{width:17px !important;height:17px !important;}
-.site-header .header-name{order:1 !important;font-size:12px !important;}
-.site-header .nav{order:2 !important;gap:clamp(5px,1vw,14px) !important;margin-left:auto !important;}
-.site-header .nav a,.site-header .nav a[aria-current="page"]{font-size:12px !important;padding:6px 11px !important;}
-@media(max-width:680px){
- .site-header{padding:10px 15px !important;gap:9px !important;}
- .site-header .header-signature{order:1 !important;width:100% !important;justify-content:flex-start !important;}
- .site-header .nav{order:2 !important;width:100% !important;margin-left:0 !important;justify-content:flex-start !important;gap:6px !important;}
- .site-header .nav a,.site-header .nav a[aria-current="page"]{font-size:11px !important;padding:6px 9px !important;}
-}
-</style><style>
-/* RomGod streamlined editorial system */
-html,body,button,a,input{font-family:'Neue Haas Grotesk Display Pro','Neue Haas Grotesk Text Pro','Neue Haas Grotesk',Arial,Helvetica,sans-serif !important}
-:root{--pink:#000!important}
-.nav a.current,.nav a.active,.nav a:hover,.nav a:focus-visible{background:#000!important;color:#fff!important}
-.gallery-readmore,.gallery-chips li,.chip,.tag-float,.cta,.project-tag,.pill{border-color:#000!important;color:#000!important;background:#fff!important}
-.pink,.name-accent{color:#000!important}
-.gallery-overlay .gallery-readmore{background:#fff!important;color:#000!important}
-/* Hide the desktop custom dot on mobile only */
-@media(pointer:coarse){.cursor-dot{display:none!important}}
-</style><link href="navigation.css" rel="stylesheet"/><link href="navigation.css" rel="stylesheet"/><link href="cursor.css" rel="stylesheet"/><style>
-/* Arcade: equal column widths, natural aspect-ratio media heights. */
-.gallery-grid.arcade-grid {align-items:start!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;column-gap:clamp(18px,2.6vw,34px)!important;row-gap:clamp(38px,5vw,72px)!important}
-.arcade-grid .gallery-item {align-self:start!important;min-width:0!important}
-.arcade-grid .gallery-thumbnail{aspect-ratio:auto!important;height:auto!important;display:block!important;background:#fff!important;overflow:hidden!important;border-radius:13px!important}
-.arcade-grid .gallery-thumbnail img,.arcade-grid .gallery-thumbnail video{display:block!important;width:100%!important;height:auto!important;max-width:100%!important;object-fit:contain!important;aspect-ratio:auto!important}
-.arcade-grid .gallery-overlay{position:absolute;inset:0}
-.arcade-grid .gallery-name{font-size:clamp(15px,1.4vw,19px)!important;line-height:1.3!important}
-@media(max-width:850px){.gallery-grid.arcade-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
-@media(max-width:640px){.gallery-grid.arcade-grid{grid-template-columns:1fr!important}}
-</style><style>
-/* Compact Pinterest-style Arcade masonry. No row-height gaps. */
-.gallery-grid.arcade-grid{
- position:relative!important;display:block!important;max-width:1240px!important;
- padding-bottom:30px!important;
-}
-.gallery-grid.arcade-grid .gallery-item{
- position:absolute!important;top:0;left:0;box-sizing:border-box;
- margin:0!important;transition:none!important;
-}
-@media(max-width:640px){.gallery-grid.arcade-grid{padding-bottom:25px!important}}
-</style><style>
-/* Center the gallery with more generous left/right page margins. */
-.gallery-grid.arcade-grid{
- width:calc(100% - 96px)!important;
- max-width:1080px!important;
- margin-left:auto!important;
- margin-right:auto!important;
-}
-.gallery-grid.arcade-grid .gallery-thumbnail{display:flex!important;align-items:center!important;justify-content:center!important}
-.gallery-grid.arcade-grid .gallery-thumbnail img,
-.gallery-grid.arcade-grid .gallery-thumbnail video{margin-left:auto!important;margin-right:auto!important}
-@media(max-width:850px){.gallery-grid.arcade-grid{width:calc(100% - 48px)!important}}
-@media(max-width:640px){.gallery-grid.arcade-grid{width:calc(100% - 30px)!important}}
-</style><style>
-/* Editorial/Pinterest columns: independent vertical stacks, no row alignment gaps */
-.gallery-grid.arcade-grid{
- display:grid!important;position:relative!important;height:auto!important;
- grid-template-columns:repeat(3,minmax(0,1fr))!important;
- gap:clamp(18px,2.5vw,34px)!important;align-items:start!important;
- max-width:1160px!important;width:calc(100% - 100px)!important;
- margin:0 auto!important;padding:0 0 40px!important;
-}
-.gallery-grid.arcade-grid .arcade-stack{display:flex!important;flex-direction:column!important;gap:clamp(21px,2.8vw,38px)!important;min-width:0!important}
-.gallery-grid.arcade-grid .arcade-stack>.gallery-item{
- position:relative!important;inset:auto!important;top:auto!important;left:auto!important;
- width:100%!important;height:auto!important;margin:0!important;
-}
-.gallery-grid.arcade-grid .gallery-thumbnail{width:100%!important;height:auto!important;aspect-ratio:auto!important}
-.gallery-grid.arcade-grid .gallery-thumbnail img,
-.gallery-grid.arcade-grid .gallery-thumbnail video{width:100%!important;height:auto!important;object-fit:contain!important}
-@media(max-width:850px){.gallery-grid.arcade-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;width:calc(100% - 64px)!important}}
-@media(max-width:600px){.gallery-grid.arcade-grid{grid-template-columns:1fr!important;width:calc(100% - 42px)!important}}
-</style><link href="footer.css" rel="stylesheet"/><style>
-.arcade-game-link{display:block;text-decoration:none;color:inherit}
-.arcade-game-link .gallery-overlay{pointer-events:none}
-.mini-case-dialog{border:0;border-radius:19px;background:#fff;color:#000;max-width:min(660px,calc(100vw - 32px));width:100%;padding:28px;box-shadow:0 12px 55px #0002}
-.mini-case-dialog::backdrop{background:rgba(0,0,0,.45)}
-.mini-case-close{position:absolute;right:15px;top:12px;border:1px solid #000;border-radius:50%;background:#fff;width:39px;height:39px;font-size:26px;line-height:1;display:grid;place-items:center}
-.mini-case-inner{display:grid;gap:17px}
-.mini-case-inner img{width:100%;max-height:360px;object-fit:contain;background:#f6f4f1}
-.mini-case-copy h2{font-size:clamp(20px,2.2vw,27px);font-weight:400;margin:0 0 7px}
-.mini-case-copy p{font-size:14px;line-height:1.5;margin:0 0 7px}
-.mini-case-copy .mini-case-tags{font-size:12px}
-@media(max-width:600px){.mini-case-dialog{padding:15px}.mini-case-inner img{max-height:280px}}
-</style><style>
-.mini-case-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
-.mini-case-cards img{width:100%;height:140px;object-fit:contain;background:#fff}
-.mini-case-dialog .mini-case-note{font-size:12px;line-height:1.45;margin-top:8px}
-@media(max-width:600px){.mini-case-cards img{height:105px}}
-</style><style>
-/* Centered, scrollable popup with floating close icon */
-#en-mi-casa-dialog{position:fixed!important;inset:0!important;margin:auto!important;
- width:min(740px,calc(100vw - 110px))!important;max-width:none!important;
- height:min(720px,calc(100dvh - 110px))!important;max-height:none!important;
- padding:0!important;overflow:visible!important;border:0!important;border-radius:19px!important;
- background:#fff!important;box-shadow:0 15px 65px rgba(0,0,0,.20)!important}
-#en-mi-casa-dialog:not([open]){display:none!important}
-#en-mi-casa-dialog .mini-case-scroll{height:100%;overflow-y:auto;overscroll-behavior:contain;
- padding:clamp(22px,4vw,46px);border-radius:19px;scrollbar-width:thin}
-#en-mi-casa-dialog .mini-case-close{position:absolute!important;right:-66px!important;top:0!important;
- width:51px!important;height:51px!important;z-index:2;border:0!important;border-radius:50%!important;
- background:#fff!important;color:#000!important;font-size:32px!important;cursor:pointer!important;
- box-shadow:none!important}
-#en-mi-casa-dialog .mini-case-inner{width:100%;text-align:center;gap:22px}
-#en-mi-casa-dialog .mini-case-inner>img{max-height:none!important;width:100%;object-fit:contain}
-#en-mi-casa-dialog .mini-case-copy{max-width:520px;margin:0 auto;text-align:center}
-#en-mi-casa-dialog .mini-case-cards img{height:auto;max-height:260px;object-fit:contain}
-@media(max-width:620px){
- #en-mi-casa-dialog{width:calc(100vw - 55px)!important;height:min(680px,calc(100dvh - 85px))!important;margin:auto 12px!important}
- #en-mi-casa-dialog .mini-case-close{right:-44px!important;width:37px!important;height:37px!important;font-size:25px!important}
- #en-mi-casa-dialog .mini-case-scroll{padding:18px}
-}
-</style><style>
-/* Arcade universal modal system */
-#en-mi-casa-dialog,.arcade-image-dialog{position:fixed!important;inset:0!important;margin:auto!important;width:min(1000px,calc(100vw - 110px))!important;height:min(790px,calc(100dvh - 90px))!important;max-width:none!important;max-height:none!important;padding:0!important;overflow:visible!important;border:0!important;border-radius:20px!important;background:#fff!important;color:#000!important}
-#en-mi-casa-dialog:not([open]),.arcade-image-dialog:not([open]){display:none!important}
-#en-mi-casa-dialog .mini-case-scroll,.arcade-image-dialog .mini-case-scroll{height:100%;overflow:auto;padding:clamp(25px,5vw,62px)!important;overscroll-behavior:contain;text-align:left;border-radius:20px;scrollbar-width:thin}
-#en-mi-casa-dialog .mini-case-close,.arcade-image-dialog .mini-case-close{position:absolute!important;right:-65px!important;top:0!important;width:51px!important;height:51px!important;border:1.5px solid #000!important;border-radius:999px!important;background:#fff!important;color:#000!important;font-size:30px!important;font-weight:400!important;display:grid!important;place-items:center!important;padding:0!important;line-height:1!important;box-shadow:none!important;z-index:20}
-#en-mi-casa-dialog .mini-case-inner{display:flex!important;flex-direction:column!important;gap:0!important;text-align:left!important;align-items:stretch!important}
-#en-mi-casa-dialog .mini-case-hero{display:block;width:100%;max-width:780px;margin:0 auto 44px;max-height:470px;object-fit:contain;background:#fff}
-#en-mi-casa-dialog .mini-case-copy{max-width:780px!important;margin:0!important;text-align:left!important}
-#en-mi-casa-dialog .mini-case-eyebrow{font-size:13px!important;text-transform:uppercase;letter-spacing:.06em;margin:0 0 14px!important}
-#en-mi-casa-dialog .mini-case-copy h2{font-size:clamp(34px,5vw,62px)!important;line-height:1.04!important;letter-spacing:-.045em;margin:0 0 18px!important;font-weight:400!important}
-#en-mi-casa-dialog .mini-case-lead{font-size:clamp(19px,2.3vw,28px)!important;line-height:1.26!important;margin:0 0 22px!important;max-width:660px}
-#en-mi-casa-dialog .mini-case-description{font-size:15px!important;line-height:1.6!important;max-width:640px;margin:0 0 55px!important}
-#en-mi-casa-dialog .mini-case-chapter-intro{text-align:left;margin:0 0 22px}
-#en-mi-casa-dialog .mini-case-chapter-intro h3{font-size:30px;font-weight:400;letter-spacing:-.04em;margin:0 0 9px}
-#en-mi-casa-dialog .mini-case-chapter-intro p{font-size:15px;line-height:1.5;margin:0;max-width:550px}
-#en-mi-casa-dialog .mini-case-cards{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:16px!important;align-items:start;margin-bottom:45px}
-#en-mi-casa-dialog .mini-case-cards img{display:block!important;width:100%!important;height:auto!important;max-height:none!important;object-fit:contain!important}
-#en-mi-casa-dialog .mini-case-final img{width:100%;height:auto;object-fit:contain}
-.arcade-image-dialog .arcade-enlarged-image{width:100%;height:auto;max-height:570px;object-fit:contain;display:block;margin:0 auto 24px}
-.arcade-image-dialog .arcade-image-title{font-size:clamp(24px,3vw,38px);font-weight:400;margin:0 0 10px;letter-spacing:-.035em}
-.arcade-image-dialog .arcade-image-tags{font-size:13px;margin:0}
-@media(max-width:650px){#en-mi-casa-dialog,.arcade-image-dialog{width:calc(100vw - 58px)!important;height:calc(100dvh - 65px)!important;margin:auto 10px!important}#en-mi-casa-dialog .mini-case-close,.arcade-image-dialog .mini-case-close{right:-43px!important;width:37px!important;height:37px!important;font-size:25px!important}#en-mi-casa-dialog .mini-case-scroll,.arcade-image-dialog .mini-case-scroll{padding:20px!important}#en-mi-casa-dialog .mini-case-cards{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px!important}}
-</style><style>
-/* Matching project case-study type hierarchy */
-#en-mi-casa-dialog .mini-case-eyebrow{display:none!important}
-#en-mi-casa-dialog .mini-case-copy h2,
-.arcade-image-dialog .arcade-image-title{
-  font-size:clamp(38px,5.3vw,70px)!important;
-  line-height:1.04!important;letter-spacing:-.052em!important;
-  font-weight:400!important;margin:0 0 19px!important;text-transform:none!important}
-#en-mi-casa-dialog .mini-case-lead,.arcade-popup-summary{
- font-size:clamp(20px,2.45vw,30px)!important;
- line-height:1.23!important;letter-spacing:-.025em!important;
- margin:0 0 24px!important;max-width:750px!important}
-.rg-popup-pills{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 32px}
-.rg-popup-pills span{display:inline-flex;align-items:center;justify-content:center;
- padding:9px 16px;border:1.3px solid #000;border-radius:999px;
- background:#fff;color:#000;font-size:13px;line-height:1.2}
-#en-mi-casa-dialog .mini-case-description{font-size:15px!important;max-width:650px}
-.arcade-image-dialog .arcade-enlarged-image{margin-bottom:30px!important}
-</style><style>
-.trading-story{max-width:740px;margin:28px 0 32px}
-.trading-story p{font-size:clamp(16px,1.65vw,21px);line-height:1.4;margin:0 0 15px}
-.trading-story h3{font-size:clamp(22px,3vw,34px);font-weight:400;letter-spacing:-.035em;margin:0 0 14px}
-.trading-work{display:grid;gap:28px;margin-top:26px}
-.trading-work>img{display:block;width:100%;height:auto;object-fit:contain;background:#fff;border-radius:6px}
-</style><style>
-/* Keep the headings aligned to the exact left edge of the first thumbnail */
-.gallery-page-head{
- width:calc(100% - 100px)!important;max-width:1160px!important;
- box-sizing:border-box!important;margin-left:auto!important;margin-right:auto!important;
- padding-left:0!important;padding-right:0!important;text-align:left!important;
-}
-@media(max-width:900px){.gallery-page-head{width:calc(100% - 64px)!important}}
-@media(max-width:600px){.gallery-page-head{width:calc(100% - 42px)!important}}
-</style><style>
-/* Minimal scroll indicator: 3px black and only 48px high */
-#en-mi-casa-dialog .mini-case-scroll,
-.arcade-image-dialog .mini-case-scroll {
-  scrollbar-width:none!important;
-  -ms-overflow-style:none!important;
-}
-#en-mi-casa-dialog .mini-case-scroll::-webkit-scrollbar,
-.arcade-image-dialog .mini-case-scroll::-webkit-scrollbar {display:none!important;width:0!important}
-.mini-case-dialog .rg-mini-scroll-indicator {
-  position:absolute;top:50%;right:5px;width:3px;height:48px;
-  transform:translateY(-50%);background:#000;border-radius:3px;
-  pointer-events:none;z-index:12;opacity:1;
-}
-.mini-case-dialog .rg-mini-scroll-indicator[hidden]{display:none!important}
-/* Smaller popup paragraphs, while preserving editorial headings and tags */
-.arcade-image-dialog .arcade-popup-summary,
-#en-mi-casa-dialog .mini-case-lead {
-  font-size:clamp(17px,1.6vw,21px)!important;
-  line-height:1.35!important;
-  letter-spacing:-.012em!important;
-}
-.arcade-image-dialog .trading-story p,
-.arcade-image-dialog .mini-case-scroll p:not(.arcade-popup-summary),
-#en-mi-casa-dialog .mini-case-description,
-#en-mi-casa-dialog .mini-case-chapter-intro p {
-  font-size:14px!important;
-  line-height:1.55!important;
-  letter-spacing:0!important;
-}
-</style><link href="consistent-margins.css" rel="stylesheet"/></head>
-<body>
-<!-- Reusable flower icon (swap for assets/icon.svg if you prefer your exact file) -->
-<svg aria-hidden="true" height="0" style="position: absolute" width="0">
-<symbol id="flower" viewbox="0 0 100 100">
-<g fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="7">
-<ellipse cx="50" cy="50" rx="15" ry="14"></ellipse>
-<ellipse cx="22" cy="24" rx="9" ry="16" transform="rotate(-35 22 24)"></ellipse>
-<ellipse cx="50" cy="15" rx="6" ry="10"></ellipse>
-<ellipse cx="78" cy="24" rx="9" ry="16" transform="rotate(35 78 24)"></ellipse>
-<ellipse cx="14" cy="50" rx="10" ry="6"></ellipse>
-<ellipse cx="86" cy="50" rx="10" ry="6"></ellipse>
-<ellipse cx="22" cy="77" rx="9" ry="16" transform="rotate(35 22 77)"></ellipse>
-<ellipse cx="50" cy="86" rx="6" ry="10"></ellipse>
-<ellipse cx="78" cy="77" rx="9" ry="16" transform="rotate(-35 78 77)"></ellipse>
-</g>
-<circle cx="50" cy="50" fill="currentColor" r="6"></circle>
-</symbol>
-</svg>
-<div class="sheet">
-<header class="site-header"><div class="header-signature"><a aria-label="RomGod home" class="brand" href="index.html"><img alt="RomGod flower" src="romgod-flower.png"/></a><span class="header-name"><img alt="Maria Romero Godoy" class="rg-nav-logo" src="romgod-name.svg"/></span></div><nav aria-label="Main navigation" class="nav"><a href="index.html#work">Selected work</a><a href="about.html">About</a><a aria-current="page" href="arcade.html">RomGod Arcade</a></nav></header>
-<main id="top"><div class="gallery-page-head"><h1>RomGod Arcade</h1><p>Welcome to my Arcade of Designs, a playground for ideas, concepts, and visuals made purely for fun and fueled by my love of design and technology</p></div>
-<section aria-label="RomGod Arcade projects" class="gallery-grid arcade-grid" id="arcade"><div class="arcade-stack"><article class="gallery-item"><button aria-controls="arcade-image-dialog-1" aria-haspopup="dialog" class="gallery-action" type="button"><div class="gallery-thumbnail"><img alt="Your Guide to Trading Cards" src="assets/arcade-1.gif"/><div class="gallery-overlay"><span class="gallery-readmore">Read More</span></div></div><h2 class="gallery-name">Your Guide to Trading Cards</h2><ul class="gallery-chips"><li>Experimental Coding</li><li>Packaging Design</li><li>Print Design</li><li>Experimental Design</li></ul></button></article><article class="gallery-item"><button aria-controls="arcade-image-dialog-4" aria-haspopup="dialog" class="gallery-action" type="button"><div class="gallery-thumbnail"><img alt="Para Mi Mama" src="assets/arcade-4.jpg"/><div class="gallery-overlay"><span class="gallery-readmore">Read More</span></div></div><h2 class="gallery-name">Para Mi Mama</h2><ul class="gallery-chips"><li>Woodcut Print</li></ul></button></article></div><div class="arcade-stack"><article class="gallery-item"><a class="gallery-action arcade-game-link" href="https://mariaromerogodoy.github.io/RomGod-Arcade/neartheocean/index.html" rel="noopener noreferrer" target="_blank"><div class="gallery-thumbnail"><img alt="Don’t Hurt the Coral" src="assets/arcade-5.gif"/><div class="gallery-overlay"><span class="gallery-readmore">Play Game ↗</span></div></div><h2 class="gallery-name">Don’t Hurt the Coral</h2><ul class="gallery-chips"><li>Video Game Design</li><li>Creative Coding</li></ul></a></article><article class="gallery-item"><button aria-controls="arcade-image-dialog-lost" aria-haspopup="dialog" class="gallery-action" type="button"><div class="gallery-thumbnail"><img alt="Lost Till Found, vivid pink-red screen print on white paper" src="assets/lost-till-found-screenprint.png"/><div class="gallery-overlay"><span class="gallery-readmore">Read More</span></div></div><h2 class="gallery-name">Lost Till Found</h2><ul class="gallery-chips"><li>Screen Print</li><li>Printmaking</li></ul></button></article></div><div class="arcade-stack"><article class="gallery-item"><button aria-controls="en-mi-casa-dialog" aria-haspopup="dialog" class="gallery-action" type="button"><div class="gallery-thumbnail"><img alt="en mi casa y con mi gente" src="assets/arcade-3.gif"/><div class="gallery-overlay"><span class="gallery-readmore">Read More</span></div></div><h2 class="gallery-name">en mi casa y con mi gente</h2><ul class="gallery-chips"><li>Book Design</li></ul></button></article><article class="gallery-item"><button aria-controls="arcade-image-dialog-6" aria-haspopup="dialog" class="gallery-action" type="button"><div class="gallery-thumbnail"><img alt="Our Digital Best Friend" src="assets/arcade-6.gif"/><div class="gallery-overlay"><span class="gallery-readmore">Read More</span></div></div><h2 class="gallery-name">Our Digital Best Friend</h2><ul class="gallery-chips"><li>Book Design</li><li>UI/UX</li></ul></button></article></div></section>
-</main>
-</div>
-<script>document.querySelectorAll('button.gallery-action[aria-haspopup="dialog"]').forEach(button=>{button.addEventListener('click',()=>{document.getElementById(button.getAttribute('aria-controls'))?.showModal()})});document.querySelectorAll('dialog.mini-case-dialog').forEach(dialog=>{dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close()})});</script><footer class="rg-footer">
-<div class="rg-footer-top">
-<div class="rg-footer-contact">
-<a class="rg-contact-link" href="mailto:Marg4rg@gmail.com">Get in contact ↗</a>
-<a class="rg-email-link" href="mailto:Marg4rg@gmail.com">Marg4rg@gmail.com</a>
-</div>
-<div aria-label="Social profiles" class="rg-footer-social"><a aria-label="Instagram" href="https://www.instagram.com/romgod.designs/" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect height="18" rx="5" width="18" x="3" y="3"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.3" cy="6.7" fill="currentColor" r="1" stroke="none"></circle></svg></a><a aria-label="GitHub" href="https://github.com/mariaromerogodoy" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"></path></svg></a><a aria-label="LinkedIn" href="https://www.linkedin.com/in/mariaromgod" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect height="18" rx="3" width="18" x="3" y="3"></rect><path d="M8 11v5M8 8v.01M12 16v-5m0 2.5c0-1.5 1-2.5 2.3-2.5s2.2 1 2.2 2.5V16"></path></svg></a><a aria-label="Spotify" href="https://open.spotify.com/user/4rlfytwvic0ai12sfbmx7o3oh?si=44ad739174264706" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9"></circle><path d="M7 9.5c3.5-1 7-.7 10 1M7.5 12.5c3-.8 6-.5 8.5 1M8 15.3c2.5-.6 5-.4 7 .8"></path></svg></a></div>
-</div>
-<div class="rg-footer-name"><img alt="Maria Romero Godoy" src="romgod-name.svg"/></div>
-</footer>
-<dialog aria-labelledby="mini-case-title" class="mini-case-dialog" id="en-mi-casa-dialog">
-<form method="dialog"><button aria-label="Close case study" class="mini-case-close">×</button></form>
-<div class="mini-case-scroll"><div class="mini-case-inner"><img alt="Animated preview of en mi casa y con mi gente" class="mini-case-hero" src="assets/arcade-3.gif"/><div class="mini-case-copy"><h2 id="mini-case-title">en mi casa y con mi gente</h2><p class="mini-case-lead">A book about finding home in family, culture, and the memories we carry</p><div class="rg-popup-pills"><span>Book Design</span><span>Editorial Design</span></div><p class="mini-case-description">I used family photos, recipes, and stories to bring together the little things that make a place feel like home</p></div><div class="mini-case-chapter-intro"><h3>Chapter covers</h3><p>Each chapter opens with a Lotería-inspired card created using imagery from my family album</p></div><div class="mini-case-cards"><img alt="Lotería-inspired chapter cover" src="assets/lotteriatarjetas-10.png"/><img alt="Lotería-inspired chapter cover" src="assets/lotteriatarjetas-03.png"/><img alt="Lotería-inspired chapter cover" src="assets/lotteriatarjetas-06.png"/><img alt="Lotería-inspired chapter cover" src="assets/lotteriatarjetas-12.png"/><img alt="Lotería-inspired chapter cover" src="assets/lotteriatarjetas-05.png"/><img alt="Lotería-inspired chapter cover" src="assets/lotteriatarjetas-11.png"/></div><div class="mini-case-final"><img alt="Selected book spreads" src="assets/en-mi-casa-detail.png"/></div></div></div>
-<span aria-hidden="true" class="rg-mini-scroll-indicator"></span></dialog><dialog aria-label="Your Guide to Trading Cards" class="mini-case-dialog arcade-image-dialog" id="arcade-image-dialog-1"><form method="dialog"><button aria-label="Close image" class="mini-case-close">×</button></form><div class="mini-case-scroll"><img alt="Your Guide to Trading Cards" class="arcade-enlarged-image" src="assets/arcade-1.gif"/><h2 class="arcade-image-title">Your Guide to Trading Cards</h2><p class="arcade-popup-summary">A trading card collection inspired by the cards I grew up playing with my brothers</p><div class="rg-popup-pills"><span>Experimental Coding</span><span>Packaging Design</span><span>Print Design</span><span>Experimental Design</span></div>
-<div class="trading-work">
-<img alt="Printed trading card packaging, card holders and sealed cards" src="assets/trading-cards-packaging.png"/>
-<img alt="Three Instagram mockups for Your Guide to Trading Cards" src="assets/trading-cards-social.png"/>
-</div><div class="trading-story">
-<h3>From the cards to the screen</h3>
-<p>I brought that early-2000s feeling into a coded website using HTML, CSS, and JavaScript, then designed an imaginary Instagram account and reels to show how the project could live online</p>
-</div><div class="trading-story">
-<p>I wanted to bring back the fun of collecting cards, but make a guide that you can read in order or pick up anywhere</p>
-<p>Since every card looks different, I designed plastic holders inspired by PSA verification cases, each with a RomGod authenticity tag to bring the collection together</p>
-</div></div><span aria-hidden="true" class="rg-mini-scroll-indicator"></span></dialog><dialog aria-label="Para Mi Mama" class="mini-case-dialog arcade-image-dialog" id="arcade-image-dialog-4"><form method="dialog"><button aria-label="Close image" class="mini-case-close">×</button></form><div class="mini-case-scroll"><img alt="Para Mi Mama" class="arcade-enlarged-image" src="assets/arcade-4.jpg"/><h2 class="arcade-image-title">Para Mi Mama</h2><p class="arcade-popup-summary">A woodcut print exploring a familiar image through texture, contrast, and handmade details</p><div class="rg-popup-pills"><span>Woodcut Print</span></div></div><span aria-hidden="true" class="rg-mini-scroll-indicator"></span></dialog><dialog aria-label="Our Digital Best Friend" class="mini-case-dialog arcade-image-dialog" id="arcade-image-dialog-6"><form method="dialog"><button aria-label="Close image" class="mini-case-close">×</button></form><div class="mini-case-scroll"><img alt="Our Digital Best Friend" class="arcade-enlarged-image" src="assets/arcade-6.gif"/><h2 class="arcade-image-title">Our Digital Best Friend</h2><p class="arcade-popup-summary">A book about our relationship with digital interfaces and the technology we use every day</p><div class="rg-popup-pills"><span>Book Design</span><span>UI</span><span>UX</span></div></div><span aria-hidden="true" class="rg-mini-scroll-indicator"></span></dialog><script>
-(() => {
-  document.querySelectorAll('dialog.mini-case-dialog').forEach(dialog => {
-    const scroller = dialog.querySelector('.mini-case-scroll');
-    const indicator = dialog.querySelector('.rg-mini-scroll-indicator');
-    if (!scroller || !indicator) return;
-    const update = () => {
-      const range = scroller.scrollHeight - scroller.clientHeight;
-      indicator.hidden = range <= 2;
-      if (range > 2) {
-        const percent = scroller.scrollTop / range;
-        const available = Math.max(0, dialog.clientHeight - 100);
-        indicator.style.top = `${50 + (percent - 0.5) * available / dialog.clientHeight * 100}%`;
+      /* Final minimalist palette + restored floating label positions */
+      :root {
+        --black: #000;
+        --white: #fff;
+        --pink: #ff00e6;
+        --soft-bg: #fff;
+        --ink: #000;
+        --muted: #000;
       }
-    };
-    scroller.addEventListener('scroll', update, {passive:true});
-    dialog.addEventListener('close', () => {scroller.scrollTop=0;update();});
-    new MutationObserver(update).observe(dialog,{attributes:true,attributeFilter:['open']});
-    window.addEventListener('resize',update);
-    update();
-  });
-})();
-</script><dialog aria-label="Lost Till Found" class="mini-case-dialog arcade-image-dialog" id="arcade-image-dialog-lost"><form method="dialog"><button aria-label="Close image" class="mini-case-close">×</button></form><div class="mini-case-scroll"><img alt="Lost Till Found screen print in pink-red ink" class="arcade-enlarged-image" src="assets/lost-till-found-screenprint.png"/><h2 class="arcade-image-title">Lost Till Found</h2><p class="arcade-popup-summary">An experimental screen print exploring texture and image through bright color and imperfect marks</p><div class="rg-popup-pills"><span>Screen Print</span><span>Printmaking</span></div></div><span aria-hidden="true" class="rg-mini-scroll-indicator"></span></dialog></body>
+      body,
+      .sheet {
+        background: #fff;
+        color: #000;
+      }
+      .nav,
+      .brand,
+      .project-link {
+        background: #000;
+        color: #fff;
+      }
+      .nav a:hover,
+      .nav a:focus-visible {
+        background: #ff00e6;
+        color: #000;
+      }
+      .hero-intro {
+        color: #000;
+      }
+      .tag-float {
+        background: #fff;
+        color: #000;
+        border: 1.5px solid #000;
+        box-shadow: none;
+        padding: 0.66em 1.35em;
+        font-size: clamp(11px, 1.15vw, 15px);
+      }
+      /* Positions preserved from the original RomGod hero design */
+      .tag-float.t1 {
+        top: -12%;
+        left: 20%;
+        right: auto;
+        bottom: auto;
+        translate: none;
+      }
+      .tag-float.t2 {
+        top: 2%;
+        right: 6%;
+        left: auto;
+        bottom: auto;
+        translate: none;
+      }
+      .tag-float.t3 {
+        top: 66%;
+        left: -13%;
+        right: auto;
+        bottom: auto;
+        translate: none;
+      }
+      .tag-float.t4 {
+        top: 66%;
+        right: -17%;
+        left: auto;
+        bottom: auto;
+        translate: none;
+      }
+      .tag-float.t5 {
+        top: 106%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        translate: -50% 0;
+      }
+      .section-intro {
+        border-bottom: 1px solid #000;
+        margin-bottom: 24px;
+        padding-bottom: 13px;
+      }
+      .section-intro h2 {
+        color: #000;
+      }
+      .projects {
+        gap: 20px;
+      }
+      .card {
+        background: #fff;
+        color: #000;
+        border: 1.7px solid #000;
+        min-height: 340px;
+        padding: clamp(22px, 3vw, 36px);
+        gap: clamp(24px, 3vw, 42px);
+        border-radius: 24px;
+      }
+      .card-info {
+        min-height: 240px;
+      }
+      .card-title {
+        font-size: clamp(33px, 3.4vw, 48px);
+      }
+      .chips {
+        margin-top: 19px;
+        gap: 9px;
+      }
+      .chip {
+        border: 1.4px solid #ff00e6;
+        color: #000;
+        background: #fff;
+        padding: 0.55em 1em;
+        font-size: 12px;
+      }
+      .card-desc {
+        color: #000;
+        margin-top: 18px;
+        font-size: 15px;
+      }
+      .project-link {
+        margin-top: auto;
+        min-width: 154px;
+        min-height: 49px;
+        font-size: 15px;
+        padding: 0 1.35em;
+      }
+      .project-link:hover {
+        background: #ff00e6;
+        color: #000;
+      }
+      .media-frame {
+        background: #fff;
+        border: 1.7px solid #ff00e6;
+        border-radius: 22px;
+        min-height: 265px;
+        padding: 15px;
+      }
+      .media-frame img {
+        width: 88%;
+        max-height: 247px;
+      }
+      .card-media .ph {
+        color: #000;
+      }
+      .footer-label span {
+        color: #fff;
+      }
+      @media (max-width: 980px) {
+        .card-info {
+          min-height: 0;
+        }
+        .project-link {
+          margin-top: 28px;
+        }
+      }
+      @media (max-width: 560px) {
+        .tag-float {
+          font-size: 9px;
+          padding: 0.6em 0.9em;
+        }
+        .tag-float.t1 {
+          top: -12%;
+          left: 15%;
+          right: auto;
+        }
+        .tag-float.t2 {
+          top: 2%;
+          right: 5%;
+          left: auto;
+        }
+        .tag-float.t3 {
+          top: 66%;
+          left: -13%;
+          right: auto;
+        }
+        .tag-float.t4 {
+          top: 66%;
+          right: -17%;
+          left: auto;
+        }
+        .tag-float.t5 {
+          top: 106%;
+          left: 50%;
+          right: auto;
+          translate: -50% 0;
+        }
+        .card {
+          padding: 20px;
+        }
+        .media-frame {
+          min-height: 200px;
+        }
+      }
+
+      /* Final project-card refinements */
+      .section-intro {
+        display: none;
+        border: 0;
+      }
+      .projects {
+        padding-top: 16px;
+      }
+      .chip {
+        color: #ff00e6;
+        border-color: #ff00e6;
+        background: #fff;
+      }
+      .card-info {
+        justify-content: flex-start;
+      }
+      .card-desc {
+        margin-top: 24px;
+      }
+      .project-link {
+        margin-top: 42px;
+        min-width: 0;
+        min-height: 0;
+        padding: 0.65em 1.3em;
+        font-size: 12px;
+        line-height: 1.35;
+        align-self: flex-start;
+      }
+      @media (max-width: 980px) {
+        .project-link {
+          margin-top: 36px;
+        }
+      }
+
+      /* Full-screen RomGod intro and refined finishing details */
+      html {
+        background: #000;
+      }
+      body {
+        background: #000;
+      }
+      .sheet {
+        background: #fff;
+        border-radius: 0 0 40px 40px;
+        overflow: clip;
+        padding-bottom: clamp(65px, 8vw, 115px);
+      }
+      .hero {
+        min-height: calc(100svh - 94px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: clamp(55px, 8vh, 100px) var(--gutter) clamp(120px, 15vh, 180px);
+      }
+      .hero-intro {
+        flex: none;
+      }
+      .wordmark-wrap {
+        width: min(600px, 72%);
+        margin: clamp(75px, 12vh, 130px) auto clamp(60px, 10vh, 100px);
+      }
+      .tag-float {
+        font-size: clamp(10px, 0.94vw, 12px);
+        padding: 0.58em 1.1em;
+      }
+      .card {
+        border-radius: 17px;
+      }
+      .site-footer {
+        background: #000;
+      }
+      @media (max-width: 560px) {
+        .sheet {
+          border-radius: 0 0 29px 29px;
+        }
+        .hero {
+          min-height: calc(100svh - 85px);
+          padding: 45px var(--gutter) 120px;
+        }
+        .wordmark-wrap {
+          width: 74%;
+          margin: 100px auto 75px;
+        }
+        .tag-float {
+          font-size: 8px;
+          padding: 0.55em 0.84em;
+        }
+        .card {
+          border-radius: 15px;
+        }
+      }
+
+      .hero-intro .name-accent {
+        color: #ff00e6;
+      }
+
+      /* Restrained, Rhode-inspired corner system for site navigation. */
+      .nav {
+        border-radius: 16px !important;
+      }
+      .nav a {
+        border-radius: 10px !important;
+      }
+      @media (max-width: 560px) {
+        .nav {
+          border-radius: 13px !important;
+        }
+        .nav a {
+          border-radius: 8px !important;
+        }
+      }
+
+      /* Slimmer navigation, same restrained corner treatment across pages */
+      .nav {
+        min-height: 40px !important;
+        padding: 3px 7px !important;
+        gap: 4px !important;
+        border-radius: 14px !important;
+      }
+      .nav a {
+        padding: 7px 12px !important;
+        font-size: 12px !important;
+        line-height: 1.2 !important;
+        border-radius: 9px !important;
+      }
+      @media (max-width: 560px) {
+        .nav {
+          min-height: 36px !important;
+          padding: 3px 5px !important;
+          border-radius: 12px !important;
+        }
+        .nav a {
+          padding: 6px 7px !important;
+          font-size: 10px !important;
+          border-radius: 8px !important;
+        }
+      }
+
+      /* Shared navigation: centered, sticky, white with black outline */
+      .site-header {
+        position: sticky !important;
+        top: 0;
+        z-index: 1000;
+        width: 100%;
+        max-width: none !important;
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+        align-items: center;
+        background: #fff;
+        padding: 16px var(--gutter, clamp(20px, 5vw, 72px)) !important;
+      }
+      .site-header .brand {
+        grid-column: 1;
+        justify-self: start;
+      }
+      .site-header .nav {
+        grid-column: 2;
+        justify-self: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff !important;
+        color: #000 !important;
+        border: 1px solid #000 !important;
+        border-radius: 12px !important;
+        min-height: 40px !important;
+        padding: 3px 7px !important;
+        gap: 4px !important;
+        box-shadow: none !important;
+      }
+      .site-header .nav a {
+        color: #000 !important;
+        background: #fff !important;
+        border: 1px solid transparent !important;
+        border-radius: 8px !important;
+        padding: 7px 12px !important;
+        font-size: 12px !important;
+        line-height: 1.2 !important;
+        white-space: nowrap;
+      }
+      .site-header .nav a:hover,
+      .site-header .nav a:focus-visible {
+        background: #fff !important;
+        color: #000 !important;
+        border-color: #000 !important;
+      }
+      @media (max-width: 560px) {
+        .site-header {
+          padding: 12px 12px !important;
+          gap: 6px;
+        }
+        .site-header .brand {
+          width: 33px !important;
+          height: 33px !important;
+        }
+        .site-header .brand img {
+          width: 22px !important;
+          height: 22px !important;
+        }
+        .site-header .nav {
+          padding: 3px !important;
+          gap: 0 !important;
+          min-height: 34px !important;
+          border-radius: 10px !important;
+        }
+        .site-header .nav a {
+          padding: 6px 7px !important;
+          font-size: 10px !important;
+          border-radius: 6px !important;
+        }
+      }
+
+      /* Project and Arcade gallery */
+      :root {
+        --pink: #ff00e6;
+      }
+      .gallery-grid {
+        max-width: 1240px;
+        margin: 0 auto;
+        padding: 0 clamp(22px, 5vw, 72px) 90px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: clamp(28px, 5vw, 66px);
+        row-gap: clamp(50px, 6vw, 80px);
+      }
+      .gallery-grid.arcade-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        column-gap: clamp(20px, 3vw, 35px);
+      }
+      .gallery-item {
+        min-width: 0;
+      }
+      .gallery-thumbnail {
+        width: 100%;
+        aspect-ratio: 1.56 / 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        border-radius: 16px;
+        background: #ededed;
+      }
+      .gallery-thumbnail img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+      .gallery-overlay {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.06);
+        opacity: 0;
+        transition: opacity 0.22s ease;
+      }
+      .gallery-item:hover .gallery-overlay,
+      .gallery-item:focus-within .gallery-overlay {
+        opacity: 1;
+      }
+      .gallery-readmore {
+        font-size: 12px;
+        line-height: 1;
+        border: 1.5px solid var(--pink);
+        border-radius: 999px;
+        padding: 11px 19px;
+        background: #fff;
+        color: var(--pink);
+      }
+      .gallery-name {
+        font-size: clamp(17px, 1.7vw, 22px);
+        font-weight: 400;
+        letter-spacing: -0.025em;
+        margin: 13px 0 7px;
+        line-height: 1.25;
+      }
+      .gallery-chips {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 6px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+      .gallery-chips li {
+        font-size: 11px;
+        border: 1px solid #000;
+        border-radius: 999px;
+        padding: 4px 11px;
+      }
+      .gallery-page-head {
+        max-width: 1240px;
+        margin: 0 auto;
+        padding: clamp(80px, 11vw, 140px) clamp(22px, 5vw, 72px) 44px;
+      }
+      .gallery-page-head h1 {
+        font-weight: 400;
+        font-size: clamp(32px, 5vw, 60px);
+        letter-spacing: -0.045em;
+      }
+      .gallery-page-head p {
+        margin-top: 15px;
+        font-size: 14px;
+        max-width: 56ch;
+        line-height: 1.6;
+      }
+      .gallery-placeholder {
+        font-size: 12px;
+        color: #000;
+        text-align: center;
+        padding: 24px;
+      }
+      .gallery-action {
+        display: block;
+        width: 100%;
+        text-align: left;
+        background: transparent;
+        border: 0;
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+        color: inherit;
+      }
+      .gallery-action:focus-visible {
+        outline: 2px solid var(--pink);
+        outline-offset: 4px;
+        border-radius: 16px;
+      }
+      .gallery-action .gallery-readmore {
+        display: inline-block;
+      }
+      .gallery-panel[hidden] {
+        display: none;
+      }
+      .gallery-panel {
+        margin-top: 15px;
+        padding: 16px 18px;
+        border: 1px solid #000;
+        border-radius: 12px;
+        font-size: 13px;
+        line-height: 1.6;
+      }
+      .gallery-panel p + p {
+        margin-top: 8px;
+      }
+      @media (max-width: 850px) {
+        .gallery-grid.arcade-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+      @media (max-width: 640px) {
+        .gallery-grid,
+        .gallery-grid.arcade-grid {
+          grid-template-columns: 1fr;
+          row-gap: 35px;
+        }
+        .gallery-thumbnail {
+          border-radius: 12px;
+        }
+        .gallery-page-head {
+          padding-top: 80px;
+        }
+        .gallery-overlay {
+          opacity: 1;
+          background: transparent;
+          align-items: flex-end;
+          justify-content: flex-end;
+          padding: 12px;
+        }
+        .gallery-readmore {
+          font-size: 11px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .gallery-overlay {
+          transition: none;
+        }
+      }
+    </style>
+    <style>
+      /* RomGod small black dot cursor */
+      @media (pointer: fine) {
+        html,
+        body,
+        body *,
+        a,
+        button,
+        input,
+        textarea,
+        select,
+        label {
+          cursor: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%224.5%22%20fill%3D%22%23000000%22%2F%3E%3C%2Fsvg%3E")
+              8 8,
+            auto !important;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .gallery-thumbnail video {
+          transition: none;
+        }
+      }
+      .gallery-thumbnail video {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+      }
+      .gallery-item:hover .gallery-thumbnail video {
+        filter: brightness(0.95);
+      }
+      /* RomGod menu: three independent pink outline pills, consistent across all pages */
+      .site-header .nav {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+        gap: 12px !important;
+        padding: 0 !important;
+        min-height: 0 !important;
+        background: transparent !important;
+        border: 0 !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        width: max-content;
+        max-width: 100%;
+      }
+      .site-header .nav a,
+      .site-header .nav a[aria-current="page"] {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: #fff !important;
+        color: #ff00e6 !important;
+        border: 2px solid #ff00e6 !important;
+        border-radius: 999px !important;
+        box-shadow: none !important;
+        font-family: "Neue Haas Grotesk Display Pro",
+          "Neue Haas Grotesk Text Pro", "Neue Haas Grotesk", Arial, Helvetica,
+          sans-serif !important;
+        font-size: 15px !important;
+        font-weight: 400 !important;
+        line-height: 1.25 !important;
+        letter-spacing: 0 !important;
+        padding: 10px 21px !important;
+        text-decoration: none !important;
+        white-space: nowrap;
+        transition: background-color 0.18s ease, color 0.18s ease !important;
+      }
+      .site-header .nav a:hover,
+      .site-header .nav a:focus-visible {
+        color: #fff !important;
+        background: #ff00e6 !important;
+        border-color: #ff00e6 !important;
+      }
+      @media (max-width: 700px) {
+        .site-header .nav {
+          gap: 7px !important;
+        }
+        .site-header .nav a,
+        .site-header .nav a[aria-current="page"] {
+          font-size: 11px !important;
+          padding: 8px 11px !important;
+          border-width: 1.5px !important;
+        }
+      }
+      @media (max-width: 380px) {
+        .site-header .nav {
+          gap: 5px !important;
+        }
+        .site-header .nav a,
+        .site-header .nav a[aria-current="page"] {
+          font-size: 10px !important;
+          padding: 7px 8px !important;
+        }
+      }
+    </style>
+    <style>
+      /* Editorial navigation: screenshot-inspired, left aligned links and name at right */
+      .site-header {
+        position: sticky !important;
+        top: 0 !important;
+        z-index: 1000 !important;
+        background: #fff !important;
+        width: 100% !important;
+        max-width: none !important;
+        padding: 22px clamp(24px, 4.5vw, 68px) !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 24px !important;
+        transform: none !important;
+      }
+      .site-header .nav {
+        display: flex !important;
+        position: static !important;
+        transform: none !important;
+        background: transparent !important;
+        border: 0 !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        height: auto !important;
+        min-height: 0 !important;
+        gap: clamp(9px, 1.4vw, 22px) !important;
+        justify-content: flex-start !important;
+        flex-wrap: wrap !important;
+        width: auto !important;
+        border-radius: 0 !important;
+      }
+      .site-header .nav a,
+      .site-header .nav a[aria-current="page"] {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        white-space: nowrap !important;
+        min-width: 0 !important;
+        font-family: "Neue Haas Grotesk Display Pro",
+          "Neue Haas Grotesk Text Pro", "Neue Haas Grotesk", Arial, Helvetica,
+          sans-serif !important;
+        font-size: clamp(13px, 1.1vw, 16px) !important;
+        line-height: 1.25 !important;
+        color: #000 !important;
+        background: transparent !important;
+        border: 0 !important;
+        padding: 8px 17px !important;
+        border-radius: 999px !important;
+        letter-spacing: 0 !important;
+        font-weight: 400 !important;
+        text-decoration: none !important;
+        transition: background 0.2s, color 0.2s !important;
+      }
+      .site-header .nav a[aria-current="page"] {
+        color: #fff !important;
+        background: #000 !important;
+      }
+      .site-header .nav a:hover:not([aria-current="page"]),
+      .site-header .nav a:focus-visible:not([aria-current="page"]) {
+        color: #fff !important;
+        background: #000 !important;
+      }
+      .site-header .header-signature {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-shrink: 0;
+        white-space: nowrap;
+      }
+      .site-header .header-name {
+        font-size: clamp(13px, 1.05vw, 16px);
+        font-weight: 500;
+        color: #000;
+      }
+      .site-header .header-signature .brand {
+        display: flex !important;
+        position: static !important;
+        width: 29px !important;
+        height: 29px !important;
+        flex: 0 0 29px !important;
+        background: #000 !important;
+        border-radius: 50% !important;
+        align-items: center;
+        justify-content: center;
+      }
+      .site-header .header-signature .brand img {
+        width: 20px !important;
+        height: 20px !important;
+        object-fit: contain;
+      }
+      @media (max-width: 680px) {
+        .site-header {
+          padding: 15px 17px !important;
+          gap: 8px !important;
+          flex-wrap: wrap !important;
+        }
+        .site-header .nav {
+          order: 2;
+          width: 100% !important;
+          gap: 5px !important;
+          justify-content: space-between !important;
+        }
+        .site-header .nav a,
+        .site-header .nav a[aria-current="page"] {
+          font-size: 11px !important;
+          padding: 8px 11px !important;
+        }
+        .site-header .header-signature {
+          order: 1;
+          width: 100%;
+          justify-content: flex-end;
+        }
+      }
+    </style>
+    <style>
+      /* Smaller, swapped editorial navigation */
+      .site-header {
+        padding: 12px clamp(20px, 3.7vw, 55px) !important;
+        gap: 18px !important;
+      }
+      .site-header .header-signature {
+        order: 1 !important;
+        gap: 9px !important;
+      }
+      .site-header .header-signature .brand {
+        order: 0 !important;
+        width: 25px !important;
+        height: 25px !important;
+        flex-basis: 25px !important;
+      }
+      .site-header .header-signature .brand img {
+        width: 17px !important;
+        height: 17px !important;
+      }
+      .site-header .header-name {
+        order: 1 !important;
+        font-size: 12px !important;
+      }
+      .site-header .nav {
+        order: 2 !important;
+        gap: clamp(5px, 1vw, 14px) !important;
+        margin-left: auto !important;
+      }
+      .site-header .nav a,
+      .site-header .nav a[aria-current="page"] {
+        font-size: 12px !important;
+        padding: 6px 11px !important;
+      }
+      @media (max-width: 680px) {
+        .site-header {
+          padding: 10px 15px !important;
+          gap: 9px !important;
+        }
+        .site-header .header-signature {
+          order: 1 !important;
+          width: 100% !important;
+          justify-content: flex-start !important;
+        }
+        .site-header .nav {
+          order: 2 !important;
+          width: 100% !important;
+          margin-left: 0 !important;
+          justify-content: flex-start !important;
+          gap: 6px !important;
+        }
+        .site-header .nav a,
+        .site-header .nav a[aria-current="page"] {
+          font-size: 11px !important;
+          padding: 6px 9px !important;
+        }
+      }
+    </style>
+    <style>
+      /* RomGod streamlined editorial system */
+      html,
+      body,
+      button,
+      a,
+      input {
+        font-family: "Neue Haas Grotesk Display Pro",
+          "Neue Haas Grotesk Text Pro", "Neue Haas Grotesk", Arial, Helvetica,
+          sans-serif !important;
+      }
+      :root {
+        --pink: #000 !important;
+      }
+      .nav a.current,
+      .nav a.active,
+      .nav a:hover,
+      .nav a:focus-visible {
+        background: #000 !important;
+        color: #fff !important;
+      }
+      .gallery-readmore,
+      .gallery-chips li,
+      .chip,
+      .tag-float,
+      .cta,
+      .project-tag,
+      .pill {
+        border-color: #000 !important;
+        color: #000 !important;
+        background: #fff !important;
+      }
+      .pink,
+      .name-accent {
+        color: #000 !important;
+      }
+      .gallery-overlay .gallery-readmore {
+        background: #fff !important;
+        color: #000 !important;
+      }
+      /* Hide the desktop custom dot on mobile only */
+      @media (pointer: coarse) {
+        .cursor-dot {
+          display: none !important;
+        }
+      }
+    </style>
+    <link href="navigation.css" rel="stylesheet" />
+    <link href="navigation.css" rel="stylesheet" />
+    <link href="cursor.css" rel="stylesheet" />
+    <style>
+      /* Arcade: equal column widths, natural aspect-ratio media heights. */
+      .gallery-grid.arcade-grid {
+        align-items: start !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        column-gap: clamp(18px, 2.6vw, 34px) !important;
+        row-gap: clamp(38px, 5vw, 72px) !important;
+      }
+      .arcade-grid .gallery-item {
+        align-self: start !important;
+        min-width: 0 !important;
+      }
+      .arcade-grid .gallery-thumbnail {
+        aspect-ratio: auto !important;
+        height: auto !important;
+        display: block !important;
+        background: #fff !important;
+        overflow: hidden !important;
+        border-radius: 13px !important;
+      }
+      .arcade-grid .gallery-thumbnail img,
+      .arcade-grid .gallery-thumbnail video {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        max-width: 100% !important;
+        object-fit: contain !important;
+        aspect-ratio: auto !important;
+      }
+      .arcade-grid .gallery-overlay {
+        position: absolute;
+        inset: 0;
+      }
+      .arcade-grid .gallery-name {
+        font-size: clamp(15px, 1.4vw, 19px) !important;
+        line-height: 1.3 !important;
+      }
+      @media (max-width: 850px) {
+        .gallery-grid.arcade-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        }
+      }
+      @media (max-width: 640px) {
+        .gallery-grid.arcade-grid {
+          grid-template-columns: 1fr !important;
+        }
+      }
+    </style>
+    <style>
+      /* Compact Pinterest-style Arcade masonry. No row-height gaps. */
+      .gallery-grid.arcade-grid {
+        position: relative !important;
+        display: block !important;
+        max-width: 1240px !important;
+        padding-bottom: 30px !important;
+      }
+      .gallery-grid.arcade-grid .gallery-item {
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        box-sizing: border-box;
+        margin: 0 !important;
+        transition: none !important;
+      }
+      @media (max-width: 640px) {
+        .gallery-grid.arcade-grid {
+          padding-bottom: 25px !important;
+        }
+      }
+    </style>
+    <style>
+      /* Center the gallery with more generous left/right page margins. */
+      .gallery-grid.arcade-grid {
+        width: calc(100% - 96px) !important;
+        max-width: 1080px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+      .gallery-grid.arcade-grid .gallery-thumbnail {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+      }
+      .gallery-grid.arcade-grid .gallery-thumbnail img,
+      .gallery-grid.arcade-grid .gallery-thumbnail video {
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+      @media (max-width: 850px) {
+        .gallery-grid.arcade-grid {
+          width: calc(100% - 48px) !important;
+        }
+      }
+      @media (max-width: 640px) {
+        .gallery-grid.arcade-grid {
+          width: calc(100% - 30px) !important;
+        }
+      }
+    </style>
+    <style>
+      /* Editorial/Pinterest columns: independent vertical stacks, no row alignment gaps */
+      .gallery-grid.arcade-grid {
+        display: grid !important;
+        position: relative !important;
+        height: auto !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: clamp(18px, 2.5vw, 34px) !important;
+        align-items: start !important;
+        max-width: 1160px !important;
+        width: calc(100% - 100px) !important;
+        margin: 0 auto !important;
+        padding: 0 0 40px !important;
+      }
+      .gallery-grid.arcade-grid .arcade-stack {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: clamp(21px, 2.8vw, 38px) !important;
+        min-width: 0 !important;
+      }
+      .gallery-grid.arcade-grid .arcade-stack > .gallery-item {
+        position: relative !important;
+        inset: auto !important;
+        top: auto !important;
+        left: auto !important;
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 !important;
+      }
+      .gallery-grid.arcade-grid .gallery-thumbnail {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: auto !important;
+      }
+      .gallery-grid.arcade-grid .gallery-thumbnail img,
+      .gallery-grid.arcade-grid .gallery-thumbnail video {
+        width: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
+      }
+      @media (max-width: 850px) {
+        .gallery-grid.arcade-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+          width: calc(100% - 64px) !important;
+        }
+      }
+      @media (max-width: 600px) {
+        .gallery-grid.arcade-grid {
+          grid-template-columns: 1fr !important;
+          width: calc(100% - 42px) !important;
+        }
+      }
+    </style>
+    <link href="footer.css" rel="stylesheet" />
+    <style>
+      .arcade-game-link {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+      }
+      .arcade-game-link .gallery-overlay {
+        pointer-events: none;
+      }
+      .mini-case-dialog {
+        border: 0;
+        border-radius: 19px;
+        background: #fff;
+        color: #000;
+        max-width: min(660px, calc(100vw - 32px));
+        width: 100%;
+        padding: 28px;
+        box-shadow: 0 12px 55px #0002;
+      }
+      .mini-case-dialog::backdrop {
+        background: rgba(0, 0, 0, 0.45);
+      }
+      .mini-case-close {
+        position: absolute;
+        right: 15px;
+        top: 12px;
+        border: 1px solid #000;
+        border-radius: 50%;
+        background: #fff;
+        width: 39px;
+        height: 39px;
+        font-size: 26px;
+        line-height: 1;
+        display: grid;
+        place-items: center;
+      }
+      .mini-case-inner {
+        display: grid;
+        gap: 17px;
+      }
+      .mini-case-inner img {
+        width: 100%;
+        max-height: 360px;
+        object-fit: contain;
+        background: #f6f4f1;
+      }
+      .mini-case-copy h2 {
+        font-size: clamp(20px, 2.2vw, 27px);
+        font-weight: 400;
+        margin: 0 0 7px;
+      }
+      .mini-case-copy p {
+        font-size: 14px;
+        line-height: 1.5;
+        margin: 0 0 7px;
+      }
+      .mini-case-copy .mini-case-tags {
+        font-size: 12px;
+      }
+      @media (max-width: 600px) {
+        .mini-case-dialog {
+          padding: 15px;
+        }
+        .mini-case-inner img {
+          max-height: 280px;
+        }
+      }
+    </style>
+    <style>
+      .mini-case-cards {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+      }
+      .mini-case-cards img {
+        width: 100%;
+        height: 140px;
+        object-fit: contain;
+        background: #fff;
+      }
+      .mini-case-dialog .mini-case-note {
+        font-size: 12px;
+        line-height: 1.45;
+        margin-top: 8px;
+      }
+      @media (max-width: 600px) {
+        .mini-case-cards img {
+          height: 105px;
+        }
+      }
+    </style>
+    <style>
+      /* Centered, scrollable popup with floating close icon */
+      #en-mi-casa-dialog {
+        position: fixed !important;
+        inset: 0 !important;
+        margin: auto !important;
+        width: min(740px, calc(100vw - 110px)) !important;
+        max-width: none !important;
+        height: min(720px, calc(100dvh - 110px)) !important;
+        max-height: none !important;
+        padding: 0 !important;
+        overflow: visible !important;
+        border: 0 !important;
+        border-radius: 19px !important;
+        background: #fff !important;
+        box-shadow: 0 15px 65px rgba(0, 0, 0, 0.2) !important;
+      }
+      #en-mi-casa-dialog:not([open]) {
+        display: none !important;
+      }
+      #en-mi-casa-dialog .mini-case-scroll {
+        height: 100%;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        padding: clamp(22px, 4vw, 46px);
+        border-radius: 19px;
+        scrollbar-width: thin;
+      }
+      #en-mi-casa-dialog .mini-case-close {
+        position: absolute !important;
+        right: -66px !important;
+        top: 0 !important;
+        width: 51px !important;
+        height: 51px !important;
+        z-index: 2;
+        border: 0 !important;
+        border-radius: 50% !important;
+        background: #fff !important;
+        color: #000 !important;
+        font-size: 32px !important;
+        cursor: pointer !important;
+        box-shadow: none !important;
+      }
+      #en-mi-casa-dialog .mini-case-inner {
+        width: 100%;
+        text-align: center;
+        gap: 22px;
+      }
+      #en-mi-casa-dialog .mini-case-inner > img {
+        max-height: none !important;
+        width: 100%;
+        object-fit: contain;
+      }
+      #en-mi-casa-dialog .mini-case-copy {
+        max-width: 520px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      #en-mi-casa-dialog .mini-case-cards img {
+        height: auto;
+        max-height: 260px;
+        object-fit: contain;
+      }
+      @media (max-width: 620px) {
+        #en-mi-casa-dialog {
+          width: calc(100vw - 55px) !important;
+          height: min(680px, calc(100dvh - 85px)) !important;
+          margin: auto 12px !important;
+        }
+        #en-mi-casa-dialog .mini-case-close {
+          right: -44px !important;
+          width: 37px !important;
+          height: 37px !important;
+          font-size: 25px !important;
+        }
+        #en-mi-casa-dialog .mini-case-scroll {
+          padding: 18px;
+        }
+      }
+    </style>
+    <style>
+      /* Arcade universal modal system */
+      #en-mi-casa-dialog,
+      .arcade-image-dialog {
+        position: fixed !important;
+        inset: 0 !important;
+        margin: auto !important;
+        width: min(1000px, calc(100vw - 110px)) !important;
+        height: min(790px, calc(100dvh - 90px)) !important;
+        max-width: none !important;
+        max-height: none !important;
+        padding: 0 !important;
+        overflow: visible !important;
+        border: 0 !important;
+        border-radius: 20px !important;
+        background: #fff !important;
+        color: #000 !important;
+      }
+      #en-mi-casa-dialog:not([open]),
+      .arcade-image-dialog:not([open]) {
+        display: none !important;
+      }
+      #en-mi-casa-dialog .mini-case-scroll,
+      .arcade-image-dialog .mini-case-scroll {
+        height: 100%;
+        overflow: auto;
+        padding: clamp(25px, 5vw, 62px) !important;
+        overscroll-behavior: contain;
+        text-align: left;
+        border-radius: 20px;
+        scrollbar-width: thin;
+      }
+      #en-mi-casa-dialog .mini-case-close,
+      .arcade-image-dialog .mini-case-close {
+        position: absolute !important;
+        right: -65px !important;
+        top: 0 !important;
+        width: 51px !important;
+        height: 51px !important;
+        border: 1.5px solid #000 !important;
+        border-radius: 999px !important;
+        background: #fff !important;
+        color: #000 !important;
+        font-size: 30px !important;
+        font-weight: 400 !important;
+        display: grid !important;
+        place-items: center !important;
+        padding: 0 !important;
+        line-height: 1 !important;
+        box-shadow: none !important;
+        z-index: 20;
+      }
+      #en-mi-casa-dialog .mini-case-inner {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0 !important;
+        text-align: left !important;
+        align-items: stretch !important;
+      }
+      #en-mi-casa-dialog .mini-case-hero {
+        display: block;
+        width: 100%;
+        max-width: 780px;
+        margin: 0 auto 44px;
+        max-height: 470px;
+        object-fit: contain;
+        background: #fff;
+      }
+      #en-mi-casa-dialog .mini-case-copy {
+        max-width: 780px !important;
+        margin: 0 !important;
+        text-align: left !important;
+      }
+      #en-mi-casa-dialog .mini-case-eyebrow {
+        font-size: 13px !important;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        margin: 0 0 14px !important;
+      }
+      #en-mi-casa-dialog .mini-case-copy h2 {
+        font-size: clamp(34px, 5vw, 62px) !important;
+        line-height: 1.04 !important;
+        letter-spacing: -0.045em;
+        margin: 0 0 18px !important;
+        font-weight: 400 !important;
+      }
+      #en-mi-casa-dialog .mini-case-lead {
+        font-size: clamp(19px, 2.3vw, 28px) !important;
+        line-height: 1.26 !important;
+        margin: 0 0 22px !important;
+        max-width: 660px;
+      }
+      #en-mi-casa-dialog .mini-case-description {
+        font-size: 15px !important;
+        line-height: 1.6 !important;
+        max-width: 640px;
+        margin: 0 0 55px !important;
+      }
+      #en-mi-casa-dialog .mini-case-chapter-intro {
+        text-align: left;
+        margin: 0 0 22px;
+      }
+      #en-mi-casa-dialog .mini-case-chapter-intro h3 {
+        font-size: 30px;
+        font-weight: 400;
+        letter-spacing: -0.04em;
+        margin: 0 0 9px;
+      }
+      #en-mi-casa-dialog .mini-case-chapter-intro p {
+        font-size: 15px;
+        line-height: 1.5;
+        margin: 0;
+        max-width: 550px;
+      }
+      #en-mi-casa-dialog .mini-case-cards {
+        display: grid !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 16px !important;
+        align-items: start;
+        margin-bottom: 45px;
+      }
+      #en-mi-casa-dialog .mini-case-cards img {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        max-height: none !important;
+        object-fit: contain !important;
+      }
+      #en-mi-casa-dialog .mini-case-final img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+      .arcade-image-dialog .arcade-enlarged-image {
+        width: 100%;
+        height: auto;
+        max-height: 570px;
+        object-fit: contain;
+        display: block;
+        margin: 0 auto 24px;
+      }
+      .arcade-image-dialog .arcade-image-title {
+        font-size: clamp(24px, 3vw, 38px);
+        font-weight: 400;
+        margin: 0 0 10px;
+        letter-spacing: -0.035em;
+      }
+      .arcade-image-dialog .arcade-image-tags {
+        font-size: 13px;
+        margin: 0;
+      }
+      @media (max-width: 650px) {
+        #en-mi-casa-dialog,
+        .arcade-image-dialog {
+          width: calc(100vw - 58px) !important;
+          height: calc(100dvh - 65px) !important;
+          margin: auto 10px !important;
+        }
+        #en-mi-casa-dialog .mini-case-close,
+        .arcade-image-dialog .mini-case-close {
+          right: -43px !important;
+          width: 37px !important;
+          height: 37px !important;
+          font-size: 25px !important;
+        }
+        #en-mi-casa-dialog .mini-case-scroll,
+        .arcade-image-dialog .mini-case-scroll {
+          padding: 20px !important;
+        }
+        #en-mi-casa-dialog .mini-case-cards {
+          grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+          gap: 9px !important;
+        }
+      }
+    </style>
+    <style>
+      /* Matching project case-study type hierarchy */
+      #en-mi-casa-dialog .mini-case-eyebrow {
+        display: none !important;
+      }
+      #en-mi-casa-dialog .mini-case-copy h2,
+      .arcade-image-dialog .arcade-image-title {
+        font-size: clamp(38px, 5.3vw, 70px) !important;
+        line-height: 1.04 !important;
+        letter-spacing: -0.052em !important;
+        font-weight: 400 !important;
+        margin: 0 0 19px !important;
+        text-transform: none !important;
+      }
+      #en-mi-casa-dialog .mini-case-lead,
+      .arcade-popup-summary {
+        font-size: clamp(20px, 2.45vw, 30px) !important;
+        line-height: 1.23 !important;
+        letter-spacing: -0.025em !important;
+        margin: 0 0 24px !important;
+        max-width: 750px !important;
+      }
+      .rg-popup-pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 0 0 32px;
+      }
+      .rg-popup-pills span {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 9px 16px;
+        border: 1.3px solid #000;
+        border-radius: 999px;
+        background: #fff;
+        color: #000;
+        font-size: 13px;
+        line-height: 1.2;
+      }
+      #en-mi-casa-dialog .mini-case-description {
+        font-size: 15px !important;
+        max-width: 650px;
+      }
+      .arcade-image-dialog .arcade-enlarged-image {
+        margin-bottom: 30px !important;
+      }
+    </style>
+    <style>
+      .trading-story {
+        max-width: 740px;
+        margin: 28px 0 32px;
+      }
+      .trading-story p {
+        font-size: clamp(16px, 1.65vw, 21px);
+        line-height: 1.4;
+        margin: 0 0 15px;
+      }
+      .trading-story h3 {
+        font-size: clamp(22px, 3vw, 34px);
+        font-weight: 400;
+        letter-spacing: -0.035em;
+        margin: 0 0 14px;
+      }
+      .trading-work {
+        display: grid;
+        gap: 28px;
+        margin-top: 26px;
+      }
+      .trading-work > img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        background: #fff;
+        border-radius: 6px;
+      }
+    </style>
+    <style>
+      /* Keep the headings aligned to the exact left edge of the first thumbnail */
+      .gallery-page-head {
+        width: calc(100% - 100px) !important;
+        max-width: 1160px !important;
+        box-sizing: border-box !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        text-align: left !important;
+      }
+      @media (max-width: 900px) {
+        .gallery-page-head {
+          width: calc(100% - 64px) !important;
+        }
+      }
+      @media (max-width: 600px) {
+        .gallery-page-head {
+          width: calc(100% - 42px) !important;
+        }
+      }
+    </style>
+    <style>
+      /* Minimal scroll indicator: 3px black and only 48px high */
+      #en-mi-casa-dialog .mini-case-scroll,
+      .arcade-image-dialog .mini-case-scroll {
+        scrollbar-width: none !important;
+        -ms-overflow-style: none !important;
+      }
+      #en-mi-casa-dialog .mini-case-scroll::-webkit-scrollbar,
+      .arcade-image-dialog .mini-case-scroll::-webkit-scrollbar {
+        display: none !important;
+        width: 0 !important;
+      }
+      .mini-case-dialog .rg-mini-scroll-indicator {
+        position: absolute;
+        top: 50%;
+        right: 5px;
+        width: 3px;
+        height: 48px;
+        transform: translateY(-50%);
+        background: #000;
+        border-radius: 3px;
+        pointer-events: none;
+        z-index: 12;
+        opacity: 1;
+      }
+      .mini-case-dialog .rg-mini-scroll-indicator[hidden] {
+        display: none !important;
+      }
+      /* Smaller popup paragraphs, while preserving editorial headings and tags */
+      .arcade-image-dialog .arcade-popup-summary,
+      #en-mi-casa-dialog .mini-case-lead {
+        font-size: clamp(17px, 1.6vw, 21px) !important;
+        line-height: 1.35 !important;
+        letter-spacing: -0.012em !important;
+      }
+      .arcade-image-dialog .trading-story p,
+      .arcade-image-dialog .mini-case-scroll p:not(.arcade-popup-summary),
+      #en-mi-casa-dialog .mini-case-description,
+      #en-mi-casa-dialog .mini-case-chapter-intro p {
+        font-size: 14px !important;
+        line-height: 1.55 !important;
+        letter-spacing: 0 !important;
+      }
+    </style>
+    <link href="consistent-margins.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Reusable flower icon (swap for assets/icon.svg if you prefer your exact file) -->
+    <svg aria-hidden="true" height="0" style="position: absolute" width="0">
+      <symbol id="flower" viewbox="0 0 100 100">
+        <g
+          fill="none"
+          stroke="currentColor"
+          stroke-linejoin="round"
+          stroke-width="7"
+        >
+          <ellipse cx="50" cy="50" rx="15" ry="14"></ellipse>
+          <ellipse
+            cx="22"
+            cy="24"
+            rx="9"
+            ry="16"
+            transform="rotate(-35 22 24)"
+          ></ellipse>
+          <ellipse cx="50" cy="15" rx="6" ry="10"></ellipse>
+          <ellipse
+            cx="78"
+            cy="24"
+            rx="9"
+            ry="16"
+            transform="rotate(35 78 24)"
+          ></ellipse>
+          <ellipse cx="14" cy="50" rx="10" ry="6"></ellipse>
+          <ellipse cx="86" cy="50" rx="10" ry="6"></ellipse>
+          <ellipse
+            cx="22"
+            cy="77"
+            rx="9"
+            ry="16"
+            transform="rotate(35 22 77)"
+          ></ellipse>
+          <ellipse cx="50" cy="86" rx="6" ry="10"></ellipse>
+          <ellipse
+            cx="78"
+            cy="77"
+            rx="9"
+            ry="16"
+            transform="rotate(-35 78 77)"
+          ></ellipse>
+        </g>
+        <circle cx="50" cy="50" fill="currentColor" r="6"></circle>
+      </symbol>
+    </svg>
+    <div class="sheet">
+      <header class="site-header">
+        <div class="header-signature">
+          <a aria-label="RomGod home" class="brand" href="index.html"
+            ><img alt="RomGod flower" src="romgod-flower.png" /></a
+          ><span class="header-name"
+            ><img
+              alt="Maria Romero Godoy"
+              class="rg-nav-logo"
+              src="romgod-name.svg"
+          /></span>
+        </div>
+        <nav aria-label="Main navigation" class="nav">
+          <a href="index.html#work">Selected work</a
+          ><a href="about.html">About</a
+          ><a aria-current="page" href="arcade.html">RomGod Arcade</a>
+        </nav>
+      </header>
+      <main id="top">
+        <div class="gallery-page-head">
+          <h1>RomGod Arcade</h1>
+          <p>
+            Welcome to my Arcade of Designs, a playground for ideas, concepts,
+            and visuals made purely for fun and fueled by my love of design and
+            technology
+          </p>
+        </div>
+        <section
+          aria-label="RomGod Arcade projects"
+          class="gallery-grid arcade-grid"
+          id="arcade"
+        >
+          <div class="arcade-stack">
+            <article class="gallery-item">
+              <button
+                aria-controls="arcade-image-dialog-1"
+                aria-haspopup="dialog"
+                class="gallery-action"
+                type="button"
+              >
+                <div class="gallery-thumbnail">
+                  <img
+                    alt="Your Guide to Trading Cards"
+                    src="assets/arcade-1.gif"
+                  />
+                  <div class="gallery-overlay">
+                    <span class="gallery-readmore">Read More</span>
+                  </div>
+                </div>
+                <h2 class="gallery-name">Your Guide to Trading Cards</h2>
+                <ul class="gallery-chips">
+                  <li>Experimental Coding</li>
+                  <li>Packaging Design</li>
+                  <li>Print Design</li>
+                  <li>Experimental Design</li>
+                </ul>
+              </button>
+            </article>
+            <article class="gallery-item">
+              <button
+                aria-controls="arcade-image-dialog-4"
+                aria-haspopup="dialog"
+                class="gallery-action"
+                type="button"
+              >
+                <div class="gallery-thumbnail">
+                  <img alt="Para Mi Mama" src="assets/arcade-4.jpg" />
+                  <div class="gallery-overlay">
+                    <span class="gallery-readmore">Read More</span>
+                  </div>
+                </div>
+                <h2 class="gallery-name">Para Mi Mama</h2>
+                <ul class="gallery-chips">
+                  <li>Woodcut Print</li>
+                </ul>
+              </button>
+            </article>
+          </div>
+          <div class="arcade-stack">
+            <article class="gallery-item">
+              <a
+                class="gallery-action arcade-game-link"
+                href="https://mariaromerogodoy.github.io/RomGod-Arcade/neartheocean/index.html"
+                rel="noopener noreferrer"
+                target="_blank"
+                ><div class="gallery-thumbnail">
+                  <img alt="Don’t Hurt the Coral" src="assets/arcade-5.gif" />
+                  <div class="gallery-overlay">
+                    <span class="gallery-readmore">Play Game ↗</span>
+                  </div>
+                </div>
+                <h2 class="gallery-name">Don’t Hurt the Coral</h2>
+                <ul class="gallery-chips">
+                  <li>Video Game Design</li>
+                  <li>Creative Coding</li>
+                </ul></a
+              >
+            </article>
+            <article class="gallery-item">
+              <button
+                aria-controls="arcade-image-dialog-lost"
+                aria-haspopup="dialog"
+                class="gallery-action"
+                type="button"
+              >
+                <div class="gallery-thumbnail">
+                  <img
+                    alt="Lost Till Found, vivid pink-red screen print on white paper"
+                    src="assets/lost-till-found-screenprint.png"
+                  />
+                  <div class="gallery-overlay">
+                    <span class="gallery-readmore">Read More</span>
+                  </div>
+                </div>
+                <h2 class="gallery-name">Lost Till Found</h2>
+                <ul class="gallery-chips">
+                  <li>Screen Print</li>
+                  <li>Printmaking</li>
+                </ul>
+              </button>
+            </article>
+          </div>
+          <div class="arcade-stack">
+            <article class="gallery-item">
+              <button
+                aria-controls="en-mi-casa-dialog"
+                aria-haspopup="dialog"
+                class="gallery-action"
+                type="button"
+              >
+                <div class="gallery-thumbnail">
+                  <img
+                    alt="en mi casa y con mi gente"
+                    src="assets/arcade-3.gif"
+                  />
+                  <div class="gallery-overlay">
+                    <span class="gallery-readmore">Read More</span>
+                  </div>
+                </div>
+                <h2 class="gallery-name">en mi casa y con mi gente</h2>
+                <ul class="gallery-chips">
+                  <li>Book Design</li>
+                </ul>
+              </button>
+            </article>
+            <article class="gallery-item">
+              <button
+                aria-controls="arcade-image-dialog-6"
+                aria-haspopup="dialog"
+                class="gallery-action"
+                type="button"
+              >
+                <div class="gallery-thumbnail">
+                  <img
+                    alt="Our Digital Best Friend"
+                    src="assets/arcade-6.gif"
+                  />
+                  <div class="gallery-overlay">
+                    <span class="gallery-readmore">Read More</span>
+                  </div>
+                </div>
+                <h2 class="gallery-name">Our Digital Best Friend</h2>
+                <ul class="gallery-chips">
+                  <li>Book Design</li>
+                  <li>UI/UX</li>
+                </ul>
+              </button>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script>
+      document
+        .querySelectorAll('button.gallery-action[aria-haspopup="dialog"]')
+        .forEach((button) => {
+          button.addEventListener("click", () => {
+            document
+              .getElementById(button.getAttribute("aria-controls"))
+              ?.showModal();
+          });
+        });
+      document.querySelectorAll("dialog.mini-case-dialog").forEach((dialog) => {
+        dialog.addEventListener("click", (e) => {
+          if (e.target === dialog) dialog.close();
+        });
+      });
+    </script>
+    <footer class="rg-footer">
+      <div class="rg-footer-top">
+        <div class="rg-footer-contact">
+          <a class="rg-contact-link" href="mailto:Marg4rg@gmail.com"
+            >Get in contact ↗</a
+          >
+          <a class="rg-email-link" href="mailto:Marg4rg@gmail.com"
+            >Marg4rg@gmail.com</a
+          >
+        </div>
+        <div aria-label="Social profiles" class="rg-footer-social">
+          <a
+            aria-label="Instagram"
+            href="https://www.instagram.com/romgod.designs/"
+            rel="noopener noreferrer"
+            target="_blank"
+            ><svg
+              aria-hidden="true"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.8"
+              viewbox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect height="18" rx="5" width="18" x="3" y="3"></rect>
+              <circle cx="12" cy="12" r="4"></circle>
+              <circle
+                cx="17.3"
+                cy="6.7"
+                fill="currentColor"
+                r="1"
+                stroke="none"
+              ></circle></svg></a
+          ><a
+            aria-label="GitHub"
+            href="https://github.com/mariaromerogodoy"
+            rel="noopener noreferrer"
+            target="_blank"
+            ><svg
+              aria-hidden="true"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.8"
+              viewbox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"
+              ></path></svg></a
+          ><a
+            aria-label="LinkedIn"
+            href="https://www.linkedin.com/in/mariaromgod"
+            rel="noopener noreferrer"
+            target="_blank"
+            ><svg
+              aria-hidden="true"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.8"
+              viewbox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect height="18" rx="3" width="18" x="3" y="3"></rect>
+              <path
+                d="M8 11v5M8 8v.01M12 16v-5m0 2.5c0-1.5 1-2.5 2.3-2.5s2.2 1 2.2 2.5V16"
+              ></path></svg></a
+          ><a
+            aria-label="Spotify"
+            href="https://open.spotify.com/user/4rlfytwvic0ai12sfbmx7o3oh?si=44ad739174264706"
+            rel="noopener noreferrer"
+            target="_blank"
+            ><svg
+              aria-hidden="true"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.8"
+              viewbox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="12" cy="12" r="9"></circle>
+              <path
+                d="M7 9.5c3.5-1 7-.7 10 1M7.5 12.5c3-.8 6-.5 8.5 1M8 15.3c2.5-.6 5-.4 7 .8"
+              ></path></svg
+          ></a>
+        </div>
+      </div>
+      <div class="rg-footer-name">
+        <img alt="Maria Romero Godoy" src="romgod-name.svg" />
+      </div>
+    </footer>
+    <dialog
+      aria-labelledby="mini-case-title"
+      class="mini-case-dialog"
+      id="en-mi-casa-dialog"
+    >
+      <form method="dialog">
+        <button aria-label="Close case study" class="mini-case-close">×</button>
+      </form>
+      <div class="mini-case-scroll">
+        <div class="mini-case-inner">
+          <img
+            alt="Animated preview of en mi casa y con mi gente"
+            class="mini-case-hero"
+            src="assets/arcade-3.gif"
+          />
+          <div class="mini-case-copy">
+            <h2 id="mini-case-title">en mi casa y con mi gente</h2>
+            <p class="mini-case-lead">
+              A book about finding home in family, culture, and the memories we
+              carry
+            </p>
+            <div class="rg-popup-pills">
+              <span>Book Design</span><span>Editorial Design</span>
+            </div>
+            <p class="mini-case-description">
+              I used family photos, recipes, and stories to bring together the
+              little things that make a place feel like home
+            </p>
+          </div>
+          <div class="mini-case-chapter-intro">
+            <h3>Chapter covers</h3>
+            <p>
+              Each chapter opens with a Lotería-inspired card created using
+              imagery from my family album
+            </p>
+          </div>
+          <div class="mini-case-cards">
+            <img
+              alt="Lotería-inspired chapter cover"
+              src="assets/lotteriatarjetas-10.png"
+            /><img
+              alt="Lotería-inspired chapter cover"
+              src="assets/lotteriatarjetas-03.png"
+            /><img
+              alt="Lotería-inspired chapter cover"
+              src="assets/lotteriatarjetas-06.png"
+            /><img
+              alt="Lotería-inspired chapter cover"
+              src="assets/lotteriatarjetas-12.png"
+            /><img
+              alt="Lotería-inspired chapter cover"
+              src="assets/lotteriatarjetas-05.png"
+            /><img
+              alt="Lotería-inspired chapter cover"
+              src="assets/lotteriatarjetas-11.png"
+            />
+          </div>
+          <div class="mini-case-final">
+            <img
+              alt="Selected book spreads"
+              src="assets/en-mi-casa-detail.png"
+            />
+          </div>
+        </div>
+      </div>
+      <span aria-hidden="true" class="rg-mini-scroll-indicator"></span>
+    </dialog>
+    <dialog
+      aria-label="Your Guide to Trading Cards"
+      class="mini-case-dialog arcade-image-dialog"
+      id="arcade-image-dialog-1"
+    >
+      <form method="dialog">
+        <button aria-label="Close image" class="mini-case-close">×</button>
+      </form>
+      <div class="mini-case-scroll">
+        <img
+          alt="Your Guide to Trading Cards"
+          class="arcade-enlarged-image"
+          src="assets/arcade-1.gif"
+        />
+        <h2 class="arcade-image-title">Your Guide to Trading Cards</h2>
+        <p class="arcade-popup-summary">
+          A trading card collection inspired by the cards I grew up playing with
+          my brothers
+        </p>
+        <div class="rg-popup-pills">
+          <span>Experimental Coding</span><span>Packaging Design</span
+          ><span>Print Design</span><span>Experimental Design</span>
+        </div>
+        <div class="trading-work">
+          <img
+            alt="Printed trading card packaging, card holders and sealed cards"
+            src="assets/trading-cards-packaging.png"
+          />
+          <img
+            alt="Three Instagram mockups for Your Guide to Trading Cards"
+            src="assets/trading-cards-social.png"
+          />
+        </div>
+        <div class="trading-story">
+          <h3>From the cards to the screen</h3>
+          <p>
+            I brought that early-2000s feeling into a coded website using HTML,
+            CSS, and JavaScript, then designed an imaginary Instagram account
+            and reels to show how the project could live online
+          </p>
+        </div>
+        <div class="trading-story">
+          <p>
+            I wanted to bring back the fun of collecting cards, but make a guide
+            that you can read in order or pick up anywhere
+          </p>
+          <p>
+            Since every card looks different, I designed plastic holders
+            inspired by PSA verification cases, each with a RomGod authenticity
+            tag to bring the collection together
+          </p>
+        </div>
+      </div>
+      <span aria-hidden="true" class="rg-mini-scroll-indicator"></span>
+    </dialog>
+    <dialog
+      aria-label="Para Mi Mama"
+      class="mini-case-dialog arcade-image-dialog"
+      id="arcade-image-dialog-4"
+    >
+      <form method="dialog">
+        <button aria-label="Close image" class="mini-case-close">×</button>
+      </form>
+      <div class="mini-case-scroll">
+        <img
+          alt="Para Mi Mama"
+          class="arcade-enlarged-image"
+          src="assets/arcade-4.jpg"
+        />
+        <h2 class="arcade-image-title">Para Mi Mama</h2>
+        <p class="arcade-popup-summary">
+          A woodcut print exploring a familiar image through texture, contrast,
+          and handmade details
+        </p>
+        <div class="rg-popup-pills"><span>Woodcut Print</span></div>
+      </div>
+      <span aria-hidden="true" class="rg-mini-scroll-indicator"></span>
+    </dialog>
+    <dialog
+      aria-label="Our Digital Best Friend"
+      class="mini-case-dialog arcade-image-dialog"
+      id="arcade-image-dialog-6"
+    >
+      <form method="dialog">
+        <button aria-label="Close image" class="mini-case-close">×</button>
+      </form>
+      <div class="mini-case-scroll">
+        <img
+          alt="Our Digital Best Friend"
+          class="arcade-enlarged-image"
+          src="assets/arcade-6.gif"
+        />
+        <h2 class="arcade-image-title">Our Digital Best Friend</h2>
+        <p class="arcade-popup-summary">
+          A book about our relationship with digital interfaces and the
+          technology we use every day
+        </p>
+        <div class="rg-popup-pills">
+          <span>Book Design</span><span>UI</span><span>UX</span>
+        </div>
+      </div>
+      <span aria-hidden="true" class="rg-mini-scroll-indicator"></span>
+    </dialog>
+    <script>
+      (() => {
+        document
+          .querySelectorAll("dialog.mini-case-dialog")
+          .forEach((dialog) => {
+            const scroller = dialog.querySelector(".mini-case-scroll");
+            const indicator = dialog.querySelector(".rg-mini-scroll-indicator");
+            if (!scroller || !indicator) return;
+            const update = () => {
+              const range = scroller.scrollHeight - scroller.clientHeight;
+              indicator.hidden = range <= 2;
+              if (range > 2) {
+                const percent = scroller.scrollTop / range;
+                const available = Math.max(0, dialog.clientHeight - 100);
+                indicator.style.top = `${
+                  50 +
+                  (((percent - 0.5) * available) / dialog.clientHeight) * 100
+                }%`;
+              }
+            };
+            scroller.addEventListener("scroll", update, { passive: true });
+            dialog.addEventListener("close", () => {
+              scroller.scrollTop = 0;
+              update();
+            });
+            new MutationObserver(update).observe(dialog, {
+              attributes: true,
+              attributeFilter: ["open"],
+            });
+            window.addEventListener("resize", update);
+            update();
+          });
+      })();
+    </script>
+    <dialog
+      aria-label="Lost Till Found"
+      class="mini-case-dialog arcade-image-dialog"
+      id="arcade-image-dialog-lost"
+    >
+      <form method="dialog">
+        <button aria-label="Close image" class="mini-case-close">×</button>
+      </form>
+      <div class="mini-case-scroll">
+        <img
+          alt="Lost Till Found screen print in pink-red ink"
+          class="arcade-enlarged-image"
+          src="assets/lost-till-found-screenprint.png"
+        />
+        <h2 class="arcade-image-title">Lost Till Found</h2>
+        <p class="arcade-popup-summary">
+          An experimental screen print exploring texture and image through
+          bright color and imperfect marks
+        </p>
+        <div class="rg-popup-pills">
+          <span>Screen Print</span><span>Printmaking</span>
+        </div>
+      </div>
+      <span aria-hidden="true" class="rg-mini-scroll-indicator"></span>
+    </dialog>
+  </body>
 </html>
