@@ -2128,6 +2128,15 @@
       }
     </style>
     <link href="consistent-margins.css" rel="stylesheet" />
+      <style>
+      /* Ensure the contact arrow renders as a plain text glyph on iOS. */
+      .rg-contact-link .contact-text-arrow {
+        font-family: Arial, Helvetica, sans-serif !important;
+        font-weight: 400;
+        font-variant-emoji: text;
+        display: inline;
+      }
+    </style>
   </head>
   <body>
     <!-- Reusable flower icon (swap for assets/icon.svg if you prefer your exact file) -->
@@ -2242,7 +2251,7 @@
                   autoplay=""
                   loop=""
                   muted=""
-                  playsinline=""
+                  playsinline webkit-playsinline
                   poster="assets/curlsmith-poster.jpg"
                   preload="auto"
                 >
@@ -2271,7 +2280,7 @@
                   autoplay=""
                   loop=""
                   muted=""
-                  playsinline=""
+                  playsinline webkit-playsinline
                   poster="assets/illustration-poster.jpg"
                   preload="metadata"
                 >
@@ -2301,7 +2310,7 @@
                   autoplay
                   muted
                   loop
-                  playsinline
+                  playsinline webkit-playsinline
                   preload="metadata"
                 ></video>
                 <div class="gallery-overlay">
@@ -2423,11 +2432,52 @@
         update();
       })();
     </script>
+    <script>
+      // Keep project previews playing inline and looping on mobile browsers.
+      (() => {
+        const previews = document.querySelectorAll(".gallery-thumbnail video");
+        const start = (video) => {
+          if (document.hidden) return;
+          video.muted = true;
+          video.defaultMuted = true;
+          video.loop = true;
+          video.autoplay = true;
+          video.playsInline = true;
+          video.setAttribute("playsinline", "");
+          video.setAttribute("webkit-playsinline", "");
+          const promise = video.play();
+          if (promise && typeof promise.catch === "function") {
+            promise.catch(() => {
+              // Mobile Low Power Mode or user settings may block autoplay.
+            });
+          }
+        };
+        previews.forEach((video) => {
+          video.addEventListener("loadeddata", () => start(video));
+          video.addEventListener("canplay", () => {
+            if (video.paused) start(video);
+          });
+          video.addEventListener("ended", () => {
+            video.currentTime = 0;
+            start(video);
+          });
+          start(video);
+        });
+        document.addEventListener("visibilitychange", () => {
+          if (!document.hidden) previews.forEach(start);
+        });
+        window.addEventListener("pageshow", () => previews.forEach(start));
+        // If autoplay is blocked, the first user interaction can unlock playback.
+        document.addEventListener("touchstart", () => {
+          previews.forEach((video) => { if (video.paused) start(video); });
+        }, { passive: true, once: true });
+      })();
+    </script>
     <footer class="rg-footer">
       <div class="rg-footer-top">
         <div class="rg-footer-contact">
           <a class="rg-contact-link" href="mailto:Marg4rg@gmail.com"
-            >Get in contact ↗</a
+            >Get in contact <span class="contact-text-arrow" aria-hidden="true">&#8599;&#65038;</span></a
           >
           <a class="rg-email-link" href="mailto:Marg4rg@gmail.com"
             >Marg4rg@gmail.com</a
