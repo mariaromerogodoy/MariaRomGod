@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width,initial-scale=1" name="viewport" />
-    <title>WIRED Article Illustration — Maria Romero Godoy</title>
-    <link rel="icon" type="image/png" href="logo.png" />
-    <link href="navigation.css" rel="stylesheet" />
-    <style>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>WIRED Article Illustration — Maria Romero Godoy</title>
+<link href="logo.png" rel="icon" type="image/png"/>
+<link href="navigation.css" rel="stylesheet"/>
+<style>
       * {
         box-sizing: border-box;
       }
@@ -147,9 +147,9 @@
         }
       }
     </style>
-    <link href="navigation.css" rel="stylesheet" />
-    <link href="cursor.css" rel="stylesheet" />
-    <style>
+<link href="navigation.css" rel="stylesheet"/>
+<link href="cursor.css" rel="stylesheet"/>
+<style>
       /* WIRED coded illustration case study */
       .wired-intro {
         padding-top: 35px;
@@ -252,7 +252,7 @@
         }
       }
     </style>
-    <style>
+<style>
       /* Four-up animation strip; portrait crops echo the supplied reference */
       .wired-disclaimer {
         font-size: 13px;
@@ -282,183 +282,231 @@
         }
       }
     </style>
-    <link href="footer.css" rel="stylesheet" />
-    <link href="consistent-margins.css" rel="stylesheet" />
-  </head>
-  <body>
-    <div class="sheet">
-      <header class="site-header">
-        <div class="header-signature">
-          <a aria-label="RomGod home" class="brand" href="index.html"
-            ><img alt="RomGod flower" src="romgod-flower.png" /></a
-          ><span class="header-name"
-            ><img
-              alt="Maria Romero Godoy"
-              class="rg-nav-logo"
-              src="romgod-name.svg"
-          /></span>
-        </div>
-        <nav aria-label="Main navigation" class="nav">
-          <a aria-current="page" href="index.html#work">Selected work</a
-          ><a href="about.html">About</a><a href="arcade.html">RomGod Arcade</a>
-        </nav>
-      </header>
-      <main>
-        <section class="wired-intro">
-          <video
-            aria-label="Animated WIRED Human Design cover shown across laptop and phone"
-            autoplay=""
-            class="wired-cover"
-            loop=""
-            muted=""
-            playsinline=""
-            poster="assets/illustration-poster.jpg"
-            preload="metadata"
-          >
-            <source src="assets/illustration-cover.mp4" type="video/mp4" />
-          </video>
-          <h1 class="wired-title">WIRED Article Illustration</h1>
-          <p class="wired-dek">
+<link href="footer.css" rel="stylesheet"/>
+<link href="consistent-margins.css" rel="stylesheet"/>
+<style id="romgod-case-study-consistency">
+/* Shared RomGod case-study style: matches About, Arcade, and Home. */
+:root { --pink: #FF00E6 !important; --footer: #D9D9D9 !important; }
+html, body { background: #D9D9D9 !important; }
+.sheet { background: white !important; }
+.site-header { position: sticky !important; top: 0 !important; z-index: 1000 !important; background: white !important; }
+.site-header .nav { display: flex !important; flex-wrap: wrap !important; gap: 6px !important; align-items: center !important; background: transparent !important; }
+.site-header .nav a, .site-header .nav a:link, .site-header .nav a:visited {
+  display: inline-flex !important; align-items: center !important; justify-content: center !important;
+  border: none !important; border-radius: 999px !important; padding: 9px 15px !important;
+  font-size: 13px !important; font-weight: 400 !important; line-height: 1.2 !important;
+  background: transparent !important; color: #000 !important; transition: transform .22s ease, color .22s ease !important;
+}
+.site-header .nav a:hover:not([aria-current="page"]), .site-header .nav a:focus-visible:not([aria-current="page"]) {
+  background: transparent !important; color: #FF00E6 !important; transform: translateY(-3px) !important;
+}
+.site-header .nav a[aria-current="page"], .site-header .nav a[aria-current="page"]:hover,
+.site-header .nav a[aria-current="page"]:focus-visible, .site-header .nav a.active {
+  background: #FF00E6 !important; color: #EEEEEE !important; border: none !important;
+}
+/* Existing medium/category tags: light-gray strokes on white. */
+.case-pill-row .case-pill, .case-pill, .gallery-chips li, .case-tags span {
+  border: 1px solid #D9D9D9 !important; border-radius: 999px !important;
+  background: #fff !important; color: #000 !important; box-shadow: none !important;
+}
+/* Pink section markers: 01 / ..., 03 / Design direction, and case-study labels. */
+main .section .number, main .section .eyebrow, main .eyebrow, main .number,
+main .section-label, main .case-study-label { color: #FF00E6 !important; }
+/* Keep the original page design and photos intact. */
+.rg-footer, footer.rg-footer {
+  display: block !important; width: 100% !important; max-width: none !important;
+  background: #D9D9D9 !important; color: #FF00E6 !important;
+  border: none !important; border-radius: 0 !important;
+  padding: clamp(35px,3vw,58px) clamp(24px,3.2vw,66px) clamp(22px,2.5vw,42px) !important;
+}
+.rg-footer .rg-footer-top { display: flex !important; justify-content: space-between !important; align-items: flex-start !important; gap: 28px !important; margin-bottom: clamp(22px,2.4vw,42px) !important; }
+.rg-footer .rg-footer-contact { display: flex !important; flex-direction: column !important; align-items: flex-start !important; gap: 9px !important; }
+.rg-footer .rg-footer-contact a, .rg-footer .rg-footer-contact a:link,
+.rg-footer .rg-footer-contact a:visited, .rg-footer .rg-footer-contact a:hover,
+.rg-footer .rg-footer-contact a:active, .rg-footer .rg-footer-contact a:focus-visible {
+  display: inline-block !important; color: #FF00E6 !important; -webkit-text-fill-color: #FF00E6 !important;
+  font-size: clamp(12px,.95vw,15px) !important; text-decoration: none !important;
+  border: none !important; background: transparent !important; opacity: 1 !important;
+}
+.rg-footer .rg-footer-social { display: flex !important; align-items: center !important; gap: 16px !important; }
+.rg-footer .rg-footer-social a, .rg-footer .rg-footer-social a:hover,
+.rg-footer .rg-footer-social a:focus-visible, .rg-footer .rg-footer-social a:active {
+  display: inline-flex !important; align-items: center !important; justify-content: center !important;
+  width: 23px !important; height: 25px !important; padding: 0 !important;
+  border: none !important; border-radius: 0 !important; box-shadow: none !important;
+  color: #FF00E6 !important; background: transparent !important; opacity: 1 !important;
+}
+.rg-footer .rg-footer-social svg { width: 20px !important; height: 20px !important; color: #FF00E6 !important; opacity: 1 !important; fill: currentColor; stroke: none; }
+.rg-footer .rg-footer-social a[aria-label="Instagram"] rect,
+.rg-footer .rg-footer-social a[aria-label="Instagram"] circle:nth-child(2) { fill: none !important; stroke: currentColor !important; stroke-width: 1.65px !important; }
+.rg-footer .rg-footer-name { width: 100% !important; max-width: none !important; margin: 0 !important; }
+.rg-footer .rg-footer-name img { display: block !important; width: 100% !important; max-width: none !important; height: auto !important; filter: brightness(0) saturate(100%) invert(27%) sepia(100%) saturate(7200%) hue-rotate(302deg) brightness(105%) contrast(115%) !important; opacity: 1 !important; }
+@keyframes rg-footer-bounce { 0%,100% {transform:translateY(0)} 45% {transform:translateY(-5px)} 75% {transform:translateY(1px)} }
+.rg-footer .rg-footer-contact a:hover, .rg-footer .rg-footer-contact a:focus-visible,
+.rg-footer .rg-footer-social a:hover, .rg-footer .rg-footer-social a:focus-visible { animation: rg-footer-bounce .43s ease-out 1 !important; }
+/* One consistent pink cursor across backgrounds, buttons, media, and links. */
+@media (pointer:fine) {
+  html, body, body *, a, button, input, textarea, select {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='4.5' fill='%23FF00E6'/%3E%3C/svg%3E") 8 8, auto !important;
+  }
+  .cursor-dot { background: #FF00E6 !important; border-color:#FF00E6 !important; }
+}
+@media(max-width:700px) { .rg-footer .rg-footer-top { flex-direction: column !important; } .site-header .nav a {font-size:11px !important; padding:8px 11px !important;} }
+@media(prefers-reduced-motion:reduce) { .rg-footer .rg-footer-contact a:hover, .rg-footer .rg-footer-social a:hover {animation:none !important;} }
+</style><style id="rg-targeted-final-accents">main .wired-index {color:#FF00E6 !important;} main .wired-title {color:#000 !important;} main .wired-tags span {border-color:#D9D9D9 !important;background:#fff !important;color:#000 !important;} .wired-action {background:#FF00E6 !important;color:#fff !important;border-color:#FF00E6 !important;} .wired-action:hover {background:#FF00E6 !important;color:#fff !important;transform:translateY(-2px);}
+/* Inherit exact Curlsmith footer styling, including same pink contact links and filled icons. */</style>
+<style id="rg-unified-dark-gray-footer-background">
+/* The area behind the rounded white sheet and the footer are ONE gray surface. */
+html, body, body::before, body::after { background-color: #D9D9D9 !important; }
+body > .sheet { background-color: #FFFFFF !important; }
+body > .rg-footer, body > footer.rg-footer, footer.rg-footer,
+.rg-footer::before, .rg-footer::after { background-color: #D9D9D9 !important; }
+/* Keep the existing pink footer typography and icons. */
+</style>
+<style id="rg-unified-gray-and-no-duplicates">
+/* Final unified gray surface: one continuous color at the bottom of each page. */
+:root { --rg-footer-gray: #D9D9D9; }
+html, body { background: var(--rg-footer-gray) !important; }
+body > .sheet { background: #fff !important; }
+body > footer.rg-footer, body > .rg-footer,
+html body footer.rg-footer, html body .rg-footer {
+  background: var(--rg-footer-gray) !important;
+  background-color: var(--rg-footer-gray) !important;
+  background-image: none !important;
+  color: #FF00E6 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+body > footer.rg-footer::before, body > footer.rg-footer::after,
+body > .sheet::after { background-color: var(--rg-footer-gray) !important; }
+/* No decorative gray strip or gap between sheet and footer */
+body > .sheet { margin-bottom: 0 !important; }
+body > footer.rg-footer { margin-top: 0 !important; }
+/* Matching pink text and consistent links regardless of old footer.css */
+body > footer.rg-footer .rg-footer-contact a,
+body > footer.rg-footer .rg-footer-contact a:visited,
+body > footer.rg-footer .rg-footer-contact a:hover {
+  color: #FF00E6 !important;
+  -webkit-text-fill-color: #FF00E6 !important;
+  text-decoration: none !important;
+}
+body > footer.rg-footer .rg-footer-social a,
+body > footer.rg-footer .rg-footer-social svg { color: #FF00E6 !important; }
+</style>
+<style id="rg-footer-icons-no-stroke">
+/* Filled icon silhouettes, without decorative SVG stroke or icon borders. */
+html body .rg-footer .rg-footer-social a,
+html body .rg-footer .rg-footer-social a:hover,
+html body .rg-footer .rg-footer-social a:focus-visible {
+  border: 0 !important; outline: 0 !important; box-shadow: none !important;
+  background: transparent !important; color: #ff00e6 !important;
+}
+html body .rg-footer .rg-footer-social svg,
+html body .rg-footer .rg-footer-social svg * {
+  stroke: none !important; stroke-width: 0 !important;
+}
+html body .rg-footer .rg-footer-social svg path { fill: currentColor !important; }
+</style>
+</head>
+<body>
+<div class="sheet">
+<header class="site-header">
+<div class="header-signature">
+<a aria-label="RomGod home" class="brand" href="index.html"><img alt="RomGod flower" src="romgod-flower.png"/></a><span class="header-name"><img alt="Maria Romero Godoy" class="rg-nav-logo" src="romgod-name.svg"/></span>
+</div>
+<nav aria-label="Main navigation" class="nav">
+<a aria-current="page" href="index.html#work">Selected work</a><a href="about.html">About</a><a href="arcade.html">RomGod Arcade</a>
+<a href="mailto:Marg4rg@gmail.com">Contact</a></nav>
+</header>
+<main>
+<section class="wired-intro">
+<video aria-label="Animated WIRED Human Design cover shown across laptop and phone" autoplay="" class="wired-cover" loop="" muted="" playsinline="" poster="assets/illustration-poster.jpg" preload="metadata">
+<source src="assets/illustration-cover.mp4" type="video/mp4"/>
+</video>
+<h1 class="wired-title">WIRED Article Illustration</h1>
+<p class="wired-dek">
             A coded illustration exploring how our differences can also bring us
             together
           </p>
-          <div class="wired-tags">
-            <span>Creative Coding</span><span>Illustration</span
-            ><span>Web Design</span>
-          </div>
-          <p class="wired-disclaimer">
+<div class="wired-tags">
+<span>Creative Coding</span><span>Illustration</span><span>Web Design</span>
+</div>
+<p class="wired-disclaimer">
             This is an Independent concept project / a fictional WIRED article
             presentation created as a design mockup, not commissioned by or
             affiliated with WIRED
           </p>
-        </section>
-        <section class="wired-chapter">
-          <div class="wired-index">01 / The idea</div>
-          <div>
-            <h2>What makes us different</h2>
-            <p>
+</section>
+<section class="wired-chapter">
+<div class="wired-index">01 / The idea</div>
+<div>
+<h2>What makes us different</h2>
+<p>
               This project started with a speculative illustration mockup
               inspired by the WIRED article “Human Design Is Blowing Up.
               Following It Might Make You Leave Your Spouse.” I wanted to
               explore how people can be completely different from one another,
               but still find ways to connect
             </p>
-            <p>
+<p>
               I created a digital illustration using JavaScript, HTML, and CSS,
               bringing the idea of Human Design into a visual and interactive
               experience
             </p>
-          </div>
-        </section>
-        <section class="wired-chapter">
-          <div class="wired-index">02 / Visual system</div>
-          <div>
-            <h2>Five types, five colors</h2>
-            <p>
+</div>
+</section>
+<section class="wired-chapter">
+<div class="wired-index">02 / Visual system</div>
+<div>
+<h2>Five types, five colors</h2>
+<p>
               Each of the five colors represents one of the five Human Design
               types. Some parts of the figures connect and overlap to suggest
               compatibility, while others stay separate to show individuality
             </p>
-            <p>
+<p>
               I liked the idea of creating people out of little pieces that
               don't all have to fit together perfectly
             </p>
-          </div>
-        </section>
-        <div class="wired-film">
-          <video
-            aria-label="Animated illustration in the WIRED article mockup"
-            autoplay=""
-            loop=""
-            muted=""
-            playsinline=""
-            poster="assets/illustration-poster.jpg"
-            preload="metadata"
-          >
-            <source src="assets/illustration-process.mp4" type="video/mp4" />
-          </video>
-          <p class="wired-caption">
+</div>
+</section>
+<div class="wired-film">
+<video aria-label="Animated illustration in the WIRED article mockup" autoplay="" loop="" muted="" playsinline="" poster="assets/illustration-poster.jpg" preload="metadata">
+<source src="assets/illustration-process.mp4" type="video/mp4"/>
+</video>
+<p class="wired-caption">
             The coded illustration in the editorial context
           </p>
-        </div>
-        <section class="wired-chapter">
-          <div class="wired-index">03 / From code to interaction</div>
-          <div>
-            <h2>An illustration that moves</h2>
-            <p>
+</div>
+<section class="wired-chapter">
+<div class="wired-index">03 / From code to interaction</div>
+<div>
+<h2>An illustration that moves</h2>
+<p>
               Instead of making a static image, I explored what happens when
               illustration becomes a digital experience. Through code and
               motion, the figures feel like they are constantly changing,
               connecting, and separating
             </p>
-            <p>
+<p>
               The project brings together illustration and front-end
               development, while experimenting with how an editorial image can
               become interactive
             </p>
-            <a
-              class="wired-action"
-              href="https://mariaromerogodoy.github.io/Illustration/"
-              rel="noopener noreferrer"
-              target="_blank"
-              >Explore the interactive illustration ↗</a
-            >
-          </div>
-        </section>
-        <section
-          aria-label="Four synchronized examples of the animated illustration"
-          class="wired-quad-showcase"
-        >
-          <video
-            aria-label="Looping figure illustration 1"
-            autoplay=""
-            loop=""
-            muted=""
-            playsinline=""
-            preload="metadata"
-          >
-            <source
-              src="assets/wired-user-recording.mp4"
-              type="video/mp4"
-            /></video
-          ><video
-            aria-label="Looping figure illustration 2"
-            autoplay=""
-            loop=""
-            muted=""
-            playsinline=""
-            preload="metadata"
-          >
-            <source
-              src="assets/wired-user-recording.mp4"
-              type="video/mp4"
-            /></video
-          ><video
-            aria-label="Looping figure illustration 3"
-            autoplay=""
-            loop=""
-            muted=""
-            playsinline=""
-            preload="metadata"
-          >
-            <source
-              src="assets/wired-user-recording.mp4"
-              type="video/mp4"
-            /></video
-          ><video
-            aria-label="Looping figure illustration 4"
-            autoplay=""
-            loop=""
-            muted=""
-            playsinline=""
-            preload="metadata"
-          >
-            <source src="assets/wired-user-recording.mp4" type="video/mp4" />
-          </video>
-        </section>
-      </main>
-    </div>
-    <script>
+<a class="wired-action" href="https://mariaromerogodoy.github.io/Illustration/" rel="noopener noreferrer" target="_blank">Explore the interactive illustration ↗</a>
+</div>
+</section>
+<section aria-label="Four synchronized examples of the animated illustration" class="wired-quad-showcase">
+<video aria-label="Looping figure illustration 1" autoplay="" loop="" muted="" playsinline="" preload="metadata">
+<source src="assets/wired-user-recording.mp4" type="video/mp4"/></video><video aria-label="Looping figure illustration 2" autoplay="" loop="" muted="" playsinline="" preload="metadata">
+<source src="assets/wired-user-recording.mp4" type="video/mp4"/></video><video aria-label="Looping figure illustration 3" autoplay="" loop="" muted="" playsinline="" preload="metadata">
+<source src="assets/wired-user-recording.mp4" type="video/mp4"/></video><video aria-label="Looping figure illustration 4" autoplay="" loop="" muted="" playsinline="" preload="metadata">
+<source src="assets/wired-user-recording.mp4" type="video/mp4"/>
+</video>
+</section>
+</main>
+</div>
+<script>
       document.querySelectorAll("video").forEach((v) => {
         v.loop = true;
         v.muted = true;
@@ -466,103 +514,19 @@
         v.play().catch(() => {});
       });
     </script>
-    <footer class="rg-footer">
-      <div class="rg-footer-top">
-        <div class="rg-footer-contact">
-          <a class="rg-contact-link" href="mailto:Marg4rg@gmail.com"
-            >Get in contact ↗</a
-          >
-          <a class="rg-email-link" href="mailto:Marg4rg@gmail.com"
-            >Marg4rg@gmail.com</a
-          >
-        </div>
-        <div aria-label="Social profiles" class="rg-footer-social">
-          <a
-            aria-label="Instagram"
-            href="https://www.instagram.com/romgod.designs/"
-            rel="noopener noreferrer"
-            target="_blank"
-            ><svg
-              aria-hidden="true"
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="1.8"
-              viewbox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect height="18" rx="5" width="18" x="3" y="3"></rect>
-              <circle cx="12" cy="12" r="4"></circle>
-              <circle
-                cx="17.3"
-                cy="6.7"
-                fill="currentColor"
-                r="1"
-                stroke="none"
-              ></circle></svg></a
-          ><a
-            aria-label="GitHub"
-            href="https://github.com/mariaromerogodoy"
-            rel="noopener noreferrer"
-            target="_blank"
-            ><svg
-              aria-hidden="true"
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="1.8"
-              viewbox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"
-              ></path></svg></a
-          ><a
-            aria-label="LinkedIn"
-            href="https://www.linkedin.com/in/mariaromgod"
-            rel="noopener noreferrer"
-            target="_blank"
-            ><svg
-              aria-hidden="true"
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="1.8"
-              viewbox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect height="18" rx="3" width="18" x="3" y="3"></rect>
-              <path
-                d="M8 11v5M8 8v.01M12 16v-5m0 2.5c0-1.5 1-2.5 2.3-2.5s2.2 1 2.2 2.5V16"
-              ></path></svg></a
-          ><a
-            aria-label="Spotify"
-            href="https://open.spotify.com/user/4rlfytwvic0ai12sfbmx7o3oh?si=44ad739174264706"
-            rel="noopener noreferrer"
-            target="_blank"
-            ><svg
-              aria-hidden="true"
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="1.8"
-              viewbox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle cx="12" cy="12" r="9"></circle>
-              <path
-                d="M7 9.5c3.5-1 7-.7 10 1M7.5 12.5c3-.8 6-.5 8.5 1M8 15.3c2.5-.6 5-.4 7 .8"
-              ></path></svg
-          ></a>
-        </div>
-      </div>
-      <div class="rg-footer-name">
-        <img alt="Maria Romero Godoy" src="romgod-name.svg" />
-      </div>
-    </footer>
-  </body>
+<footer class="rg-footer" style="background: #D9D9D9 !important; background-color: #D9D9D9 !important; background-image: none !important; color: #FF00E6 !important; margin-top: 0 !important;">
+<div class="rg-footer-top">
+<div class="rg-footer-contact">
+<a class="rg-contact-link" href="mailto:Marg4rg@gmail.com">Get in contact ↗</a>
+<a class="rg-email-link" href="mailto:Marg4rg@gmail.com">Marg4rg@gmail.com</a>
+</div>
+<div aria-label="Social profiles" class="rg-footer-social">
+<a aria-label="Instagram" href="https://www.instagram.com/romgod.designs/" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M7.1 2h9.8A5.1 5.1 0 0 1 22 7.1v9.8a5.1 5.1 0 0 1-5.1 5.1H7.1A5.1 5.1 0 0 1 2 16.9V7.1A5.1 5.1 0 0 1 7.1 2Zm0 2.2a2.9 2.9 0 0 0-2.9 2.9v9.8a2.9 2.9 0 0 0 2.9 2.9h9.8a2.9 2.9 0 0 0 2.9-2.9V7.1a2.9 2.9 0 0 0-2.9-2.9H7.1ZM12 6.7a5.3 5.3 0 1 1 0 10.6 5.3 5.3 0 0 1 0-10.6Zm0 2.2a3.1 3.1 0 1 0 0 6.2 3.1 3.1 0 0 0 0-6.2Zm5.7-3.1a1.35 1.35 0 1 1 0 2.7 1.35 1.35 0 0 1 0-2.7Z" fill-rule="evenodd"></path></svg></a><a aria-label="GitHub" href="https://github.com/mariaromerogodoy" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .9a11.1 11.1 0 0 0-3.51 21.64c.56.1.76-.24.76-.53v-2.12c-3.1.67-3.76-1.32-3.76-1.32-.5-1.28-1.24-1.62-1.24-1.62-1.01-.69.08-.68.08-.68 1.12.08 1.7 1.15 1.7 1.15 1 .1.98 2.5 3.23 1.8.1-.73.39-1.23.71-1.52-2.48-.28-5.08-1.24-5.08-5.5 0-1.22.44-2.22 1.14-3-.12-.28-.49-1.42.11-2.96 0 0 .94-.3 3.06 1.14A10.7 10.7 0 0 1 12 6.3c.95 0 1.9.13 2.8.38 2.12-1.44 3.06-1.14 3.06-1.14.6 1.54.23 2.68.11 2.96.71.78 1.14 1.78 1.14 3 0 4.27-2.6 5.22-5.09 5.5.4.35.76 1.03.76 2.08v2.93c0 .29.2.64.77.53A11.1 11.1 0 0 0 12 .9Z"></path></svg></a><a aria-label="LinkedIn" href="https://www.linkedin.com/in/mariaromgod" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 2.5a2.3 2.3 0 1 0 0 4.6 2.3 2.3 0 0 0 0-4.6ZM2 9h3.8v12H2V9Zm6.1 0h3.65v1.64h.05A4 4 0 0 1 15.4 8.7c3.84 0 4.55 2.53 4.55 5.81V21h-3.8v-5.75c0-1.37-.03-3.13-1.91-3.13-1.91 0-2.2 1.5-2.2 3.04V21H8.1V9Z"></path></svg></a><a aria-label="Spotify" href="https://open.spotify.com/user/4rlfytwvic0ai12sfbmx7o3oh?si=44ad739174264706" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 1.5a10.5 10.5 0 1 0 0 21 10.5 10.5 0 0 0 0-21Zm4.8 15.1a.7.7 0 0 1-.96.23c-2.6-1.59-5.87-1.95-9.71-1.07a.7.7 0 0 1-.31-1.37c4.22-.97 7.84-.55 10.76 1.23a.7.7 0 0 1 .22.97Zm1.28-2.86a.88.88 0 0 1-1.2.28c-2.98-1.83-7.52-2.36-11.04-1.29a.88.88 0 0 1-.51-1.68c4.03-1.22 9.06-.63 12.46 1.45.41.25.54.79.29 1.24Zm.11-2.98c-3.57-2.12-9.45-2.31-12.85-1.28a1.05 1.05 0 0 1-.61-2.01c3.9-1.18 10.43-.95 14.54 1.49a1.05 1.05 0 1 1-1.08 1.8Z"></path></svg></a>
+</div>
+</div>
+<div class="rg-footer-name">
+<img alt="Maria Romero Godoy" src="romgod-name.svg"/>
+</div>
+</footer>
+</body>
 </html>

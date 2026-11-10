@@ -1,29 +1,205 @@
-/* One shared footer style for every page, matching the supplied reference. */
-.rg-footer,footer.rg-footer {
-  background:#000!important;color:#fff!important;
-  width:100%!important;max-width:none!important;margin:0!important;
-  padding:clamp(35px,3vw,58px) clamp(24px,3.2vw,66px) clamp(22px,2.5vw,42px)!important;
-  box-sizing:border-box!important;display:block!important;
-  border:0!important;border-radius:0!important;
+/* RomGod shared footer — minimal, no icon containers or link underlines */
+.rg-footer,
+footer.rg-footer {
+  background: #000 !important;
+  color: #fff !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: clamp(35px, 3vw, 58px) clamp(24px, 3.2vw, 66px)
+    clamp(22px, 2.5vw, 42px) !important;
+  box-sizing: border-box !important;
+  display: block !important;
+  border: none !important;
+  border-radius: 0 !important;
 }
-.rg-footer *{box-sizing:border-box}
-.rg-footer-top{display:flex!important;justify-content:space-between!important;align-items:flex-start!important;gap:28px!important;margin:0 0 clamp(22px,2.4vw,42px)!important}
-.rg-footer-contact{display:flex!important;flex-direction:column!important;gap:10px!important}
-.rg-footer-contact a{color:#fff!important;text-decoration:underline!important;text-underline-offset:6px!important;text-decoration-thickness:1px!important;line-height:1.25!important;font-weight:400!important}
-.rg-footer-contact .rg-contact-link,.rg-footer-contact .rg-email-link{font-size:clamp(15px,1.18vw,20px)!important}
-.rg-footer-social{display:flex!important;align-items:center!important;gap:clamp(10px,1vw,17px)!important;flex-wrap:wrap!important}
-.rg-footer-social a{width:clamp(42px,3.3vw,66px)!important;height:clamp(42px,3.3vw,66px)!important;display:flex!important;align-items:center!important;justify-content:center!important;border:2px solid #fff!important;border-radius:50%!important;color:#fff!important;background:transparent!important;transition:background .2s,color .2s,transform .2s!important}
-.rg-footer-social a:hover,.rg-footer-social a:focus-visible{background:#fff!important;color:#000!important;transform:translateY(-2px)!important}
-.rg-footer-social svg{width:52%!important;height:52%!important;display:block!important}
-.rg-footer-name{display:block!important;width:100%!important;max-width:none!important;margin:0!important;padding:0!important}
-.rg-footer-name img{display:block!important;width:100%!important;max-width:none!important;height:auto!important;filter:invert(1)!important;opacity:1!important}
-@media(max-width:650px){
- .rg-footer-top{flex-direction:column!important;gap:28px!important}
- .rg-footer-name{width:100%!important}
+.rg-footer * {
+  box-sizing: border-box;
 }
 
-/* Refined, lighter footer icons */
-.rg-footer-social{gap:13px!important}
-.rg-footer-social a{width:40px!important;height:40px!important;border-width:1.25px!important}
-.rg-footer-social svg{width:20px!important;height:20px!important;stroke-width:1.5px!important}
-@media(max-width:650px){.rg-footer-social a{width:38px!important;height:38px!important}.rg-footer-social svg{width:19px!important;height:19px!important}}
+.rg-footer .rg-footer-top {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: flex-start !important;
+  gap: 28px !important;
+  margin: 0 0 clamp(22px, 2.4vw, 42px) !important;
+}
+.rg-footer .rg-footer-contact {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 9px !important;
+}
+
+/* No underline, smaller type, stays white in every link state */
+.rg-footer .rg-footer-contact .rg-contact-link,
+.rg-footer .rg-footer-contact .rg-email-link,
+.rg-footer .rg-footer-contact .rg-contact-link:link,
+.rg-footer .rg-footer-contact .rg-email-link:link,
+.rg-footer .rg-footer-contact .rg-contact-link:visited,
+.rg-footer .rg-footer-contact .rg-email-link:visited,
+.rg-footer .rg-footer-contact .rg-contact-link:hover,
+.rg-footer .rg-footer-contact .rg-email-link:hover,
+.rg-footer .rg-footer-contact .rg-contact-link:focus-visible,
+.rg-footer .rg-footer-contact .rg-email-link:focus-visible,
+.rg-footer .rg-footer-contact .rg-contact-link:active,
+.rg-footer .rg-footer-contact .rg-email-link:active {
+  display: inline-block !important;
+  align-self: flex-start !important;
+  color: #fff !important;
+  font-size: clamp(12px, 0.95vw, 15px) !important;
+  font-weight: 400 !important;
+  line-height: 1.35 !important;
+  text-decoration: none !important;
+  text-decoration-line: none !important;
+  text-underline-offset: initial !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  opacity: 1 !important;
+}
+
+/* Icons are naked white SVGs, never white outlined circles */
+.rg-footer .rg-footer-social {
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 16px !important;
+}
+.rg-footer .rg-footer-social a,
+.rg-footer .rg-footer-social a:link,
+.rg-footer .rg-footer-social a:visited,
+.rg-footer .rg-footer-social a:hover,
+.rg-footer .rg-footer-social a:focus,
+.rg-footer .rg-footer-social a:focus-visible,
+.rg-footer .rg-footer-social a:active {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 0 0 20px !important;
+  width: 20px !important;
+  height: 22px !important;
+  min-width: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  border-width: 0 !important;
+  outline: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  color: white !important;
+  opacity: 1 !important;
+  filter: none !important;
+  text-decoration: none !important;
+}
+.rg-footer .rg-footer-social svg {
+  display: block !important;
+  width: 18px !important;
+  height: 18px !important;
+  color: #fff !important;
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+/* Slight spring/bounce like the top navigation */
+@keyframes rg-footer-subtle-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  45% {
+    transform: translateY(-5px);
+  }
+  75% {
+    transform: translateY(1px);
+  }
+}
+.rg-footer .rg-footer-contact .rg-contact-link:hover,
+.rg-footer .rg-footer-contact .rg-contact-link:focus-visible,
+.rg-footer .rg-footer-contact .rg-email-link:hover,
+.rg-footer .rg-footer-contact .rg-email-link:focus-visible,
+.rg-footer .rg-footer-social a:hover,
+.rg-footer .rg-footer-social a:focus-visible {
+  animation: rg-footer-subtle-bounce 0.43s ease-out 1 !important;
+}
+
+.rg-footer .rg-footer-name {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.rg-footer .rg-footer-name img {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  height: auto !important;
+  filter: invert(1) !important;
+  opacity: 1 !important;
+}
+@media (max-width: 650px) {
+  .rg-footer .rg-footer-top {
+    flex-direction: column !important;
+    gap: 28px !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rg-footer .rg-footer-contact a:hover,
+  .rg-footer .rg-footer-contact a:focus-visible,
+  .rg-footer .rg-footer-social a:hover,
+  .rg-footer .rg-footer-social a:focus-visible {
+    animation: none !important;
+  }
+}
+
+/* Brand-blue footer across all pages. */
+.rg-footer,
+footer.rg-footer {
+  background: #ff00e6 !important;
+}
+.rg-footer .rg-footer-contact a,
+.rg-footer .rg-footer-contact a:visited,
+.rg-footer .rg-footer-social a,
+.rg-footer .rg-footer-social a:visited {
+  color: #fff !important;
+  opacity: 1 !important;
+}
+
+/* 2026-11-09: updated shared footer palette */
+html,
+body {
+  background-color: #eeeeee !important;
+}
+html body .rg-footer,
+html body footer.rg-footer {
+  background: #eeeeee !important;
+  color: #ff00e6 !important;
+}
+html body .rg-footer .rg-footer-contact a,
+html body .rg-footer .rg-footer-contact a:link,
+html body .rg-footer .rg-footer-contact a:visited,
+html body .rg-footer .rg-footer-contact a:hover,
+html body .rg-footer .rg-footer-contact a:focus-visible,
+html body .rg-footer .rg-footer-contact a:active,
+html body .rg-footer .rg-footer-social a,
+html body .rg-footer .rg-footer-social a:link,
+html body .rg-footer .rg-footer-social a:visited,
+html body .rg-footer .rg-footer-social a:hover,
+html body .rg-footer .rg-footer-social a:focus-visible,
+html body .rg-footer .rg-footer-social a:active {
+  color: #ff00e6 !important;
+  background: transparent !important;
+  opacity: 1 !important;
+  border: 0 !important;
+  text-decoration: none !important;
+}
+html body .rg-footer .rg-footer-social svg {
+  color: #ff00e6 !important;
+  stroke: currentColor !important;
+}
+html body .rg-footer .rg-footer-name img {
+  filter: brightness(0) saturate(100%) invert(21%) sepia(99%) saturate(7379%)
+    hue-rotate(300deg) brightness(107%) contrast(115%) !important;
+}

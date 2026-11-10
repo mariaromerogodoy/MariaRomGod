@@ -1,22 +1,15 @@
 <!DOCTYPE html>
 
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width,initial-scale=1" name="viewport" />
-    <title>DrinkUp — RomGod Case Study</title>
-    <link rel="icon" type="image/png" href="logo.png" />
-    <meta
-      content="DrinkUp: a product design case study by Maria Romero Godoy."
-      name="description"
-    />
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap"
-      rel="stylesheet"
-    />
-    <style>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>DrinkUp — RomGod Case Study</title>
+<meta content="DrinkUp: a product design case study by Maria Romero Godoy." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
       :root {
         --pink: #ff00e6;
       }
@@ -279,7 +272,7 @@
         }
       }
     </style>
-    <style>
+<style>
       /* RomGod streamlined editorial system */
       html,
       body,
@@ -326,7 +319,7 @@
         }
       }
     </style>
-    <style>
+<style>
       .hero-img,
       .cover {
         display: block;
@@ -364,7 +357,7 @@
         }
       }
     </style>
-    <style>
+<style>
       /* Reduced case-study introduction, aligned to the supplied visual reference */
       section.hero,
       section.lead {
@@ -409,16 +402,16 @@
         }
       }
     </style>
-    <link href="navigation.css" rel="stylesheet" />
-    <link href="navigation.css" rel="stylesheet" />
-    <link href="cursor.css" rel="stylesheet" />
-    <link href="footer.css" rel="stylesheet" />
-    <style>
+<link href="navigation.css" rel="stylesheet"/>
+<link href="navigation.css" rel="stylesheet"/>
+<link href="cursor.css" rel="stylesheet"/>
+<link href="footer.css" rel="stylesheet"/>
+<style>
       .hero-img[src*="drinkup-new-cover"] {
         background: #fff !important;
       }
     </style>
-    <style>
+<style>
       .screen-tile video {
         display: block;
         width: 100%;
@@ -431,7 +424,7 @@
         background: #fff;
       }
     </style>
-    <style>
+<style>
       .screen-grid {
         display: grid !important;
         grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
@@ -468,266 +461,253 @@
         }
       }
     </style>
-    <link href="consistent-margins.css" rel="stylesheet" />
-  </head>
-  <body>
-    <div class="sheet">
-      <header class="site-header">
-        <div class="header-signature">
-          <a aria-label="RomGod home" class="brand" href="index.html"
-            ><img alt="RomGod flower" src="romgod-flower.png" /></a
-          ><span class="header-name"
-            ><img
-              alt="Maria Romero Godoy"
-              class="rg-nav-logo"
-              src="romgod-name.svg"
-          /></span>
-        </div>
-        <nav aria-label="Main navigation" class="nav">
-          <a aria-current="page" href="index.html#work">Selected work</a
-          ><a href="about.html">About</a><a href="arcade.html">RomGod Arcade</a>
-        </nav>
-      </header>
-      <main>
-        <section class="hero">
-          <img
-            alt="DrinkUp interface collection on black background"
-            class="hero-img"
-            src="assets/drinkup-new-cover.png"
-          />
-          <h1>Drink<span class="pink">Up</span></h1>
-          <p class="lead">
+<link href="consistent-margins.css" rel="stylesheet"/>
+<style id="romgod-case-study-consistency">
+/* Shared RomGod case-study style: matches About, Arcade, and Home. */
+:root { --pink: #FF00E6 !important; --footer: #D9D9D9 !important; }
+html, body { background: #D9D9D9 !important; }
+.sheet { background: white !important; }
+.site-header { position: sticky !important; top: 0 !important; z-index: 1000 !important; background: white !important; }
+.site-header .nav { display: flex !important; flex-wrap: wrap !important; gap: 6px !important; align-items: center !important; background: transparent !important; }
+.site-header .nav a, .site-header .nav a:link, .site-header .nav a:visited {
+  display: inline-flex !important; align-items: center !important; justify-content: center !important;
+  border: none !important; border-radius: 999px !important; padding: 9px 15px !important;
+  font-size: 13px !important; font-weight: 400 !important; line-height: 1.2 !important;
+  background: transparent !important; color: #000 !important; transition: transform .22s ease, color .22s ease !important;
+}
+.site-header .nav a:hover:not([aria-current="page"]), .site-header .nav a:focus-visible:not([aria-current="page"]) {
+  background: transparent !important; color: #FF00E6 !important; transform: translateY(-3px) !important;
+}
+.site-header .nav a[aria-current="page"], .site-header .nav a[aria-current="page"]:hover,
+.site-header .nav a[aria-current="page"]:focus-visible, .site-header .nav a.active {
+  background: #FF00E6 !important; color: #EEEEEE !important; border: none !important;
+}
+/* Existing medium/category tags: light-gray strokes on white. */
+.case-pill-row .case-pill, .case-pill, .gallery-chips li, .case-tags span {
+  border: 1px solid #D9D9D9 !important; border-radius: 999px !important;
+  background: #fff !important; color: #000 !important; box-shadow: none !important;
+}
+/* Pink section markers: 01 / ..., 03 / Design direction, and case-study labels. */
+main .section .number, main .section .eyebrow, main .eyebrow, main .number,
+main .section-label, main .case-study-label { color: #FF00E6 !important; }
+/* Keep the original page design and photos intact. */
+.rg-footer, footer.rg-footer {
+  display: block !important; width: 100% !important; max-width: none !important;
+  background: #D9D9D9 !important; color: #FF00E6 !important;
+  border: none !important; border-radius: 0 !important;
+  padding: clamp(35px,3vw,58px) clamp(24px,3.2vw,66px) clamp(22px,2.5vw,42px) !important;
+}
+.rg-footer .rg-footer-top { display: flex !important; justify-content: space-between !important; align-items: flex-start !important; gap: 28px !important; margin-bottom: clamp(22px,2.4vw,42px) !important; }
+.rg-footer .rg-footer-contact { display: flex !important; flex-direction: column !important; align-items: flex-start !important; gap: 9px !important; }
+.rg-footer .rg-footer-contact a, .rg-footer .rg-footer-contact a:link,
+.rg-footer .rg-footer-contact a:visited, .rg-footer .rg-footer-contact a:hover,
+.rg-footer .rg-footer-contact a:active, .rg-footer .rg-footer-contact a:focus-visible {
+  display: inline-block !important; color: #FF00E6 !important; -webkit-text-fill-color: #FF00E6 !important;
+  font-size: clamp(12px,.95vw,15px) !important; text-decoration: none !important;
+  border: none !important; background: transparent !important; opacity: 1 !important;
+}
+.rg-footer .rg-footer-social { display: flex !important; align-items: center !important; gap: 16px !important; }
+.rg-footer .rg-footer-social a, .rg-footer .rg-footer-social a:hover,
+.rg-footer .rg-footer-social a:focus-visible, .rg-footer .rg-footer-social a:active {
+  display: inline-flex !important; align-items: center !important; justify-content: center !important;
+  width: 23px !important; height: 25px !important; padding: 0 !important;
+  border: none !important; border-radius: 0 !important; box-shadow: none !important;
+  color: #FF00E6 !important; background: transparent !important; opacity: 1 !important;
+}
+.rg-footer .rg-footer-social svg { width: 20px !important; height: 20px !important; color: #FF00E6 !important; opacity: 1 !important; fill: currentColor; stroke: none; }
+.rg-footer .rg-footer-social a[aria-label="Instagram"] rect,
+.rg-footer .rg-footer-social a[aria-label="Instagram"] circle:nth-child(2) { fill: none !important; stroke: currentColor !important; stroke-width: 1.65px !important; }
+.rg-footer .rg-footer-name { width: 100% !important; max-width: none !important; margin: 0 !important; }
+.rg-footer .rg-footer-name img { display: block !important; width: 100% !important; max-width: none !important; height: auto !important; filter: brightness(0) saturate(100%) invert(27%) sepia(100%) saturate(7200%) hue-rotate(302deg) brightness(105%) contrast(115%) !important; opacity: 1 !important; }
+@keyframes rg-footer-bounce { 0%,100% {transform:translateY(0)} 45% {transform:translateY(-5px)} 75% {transform:translateY(1px)} }
+.rg-footer .rg-footer-contact a:hover, .rg-footer .rg-footer-contact a:focus-visible,
+.rg-footer .rg-footer-social a:hover, .rg-footer .rg-footer-social a:focus-visible { animation: rg-footer-bounce .43s ease-out 1 !important; }
+/* One consistent pink cursor across backgrounds, buttons, media, and links. */
+@media (pointer:fine) {
+  html, body, body *, a, button, input, textarea, select {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='4.5' fill='%23FF00E6'/%3E%3C/svg%3E") 8 8, auto !important;
+  }
+  .cursor-dot { background: #FF00E6 !important; border-color:#FF00E6 !important; }
+}
+@media(max-width:700px) { .rg-footer .rg-footer-top { flex-direction: column !important; } .site-header .nav a {font-size:11px !important; padding:8px 11px !important;} }
+@media(prefers-reduced-motion:reduce) { .rg-footer .rg-footer-contact a:hover, .rg-footer .rg-footer-social a:hover {animation:none !important;} }
+</style>
+<style id="rg-footer-icons-no-extra-strokes">
+/* Exact same clean footer icon treatment as the other updated case studies. */
+.rg-footer .rg-footer-social a,
+.rg-footer .rg-footer-social a:hover,
+.rg-footer .rg-footer-social a:focus-visible,
+.rg-footer .rg-footer-social a:active {
+  border: 0 !important; outline: 0 !important; box-shadow: none !important;
+  background: transparent !important; color: #FF00E6 !important; opacity: 1 !important;
+}
+.rg-footer .rg-footer-social svg {
+  width: 20px !important; height: 20px !important;
+  fill: currentColor !important; stroke: none !important; stroke-width: 0 !important;
+}
+.rg-footer .rg-footer-social svg * {
+  stroke: none !important; stroke-width: 0 !important;
+}
+/* Instagram's original camera lines are the artwork itself, not added outlines. */
+.rg-footer .rg-footer-social a[aria-label="Instagram"] svg rect,
+.rg-footer .rg-footer-social a[aria-label="Instagram"] svg circle:nth-child(2) {
+  fill: none !important; stroke: currentColor !important; stroke-width: 1.65px !important;
+}
+</style>
+<style id="rg-drinkup-pink-sections-darkgray-footer">
+/* Match the WIRED/Curlsmith section labels without recoloring the project title. */
+html body main .chapter .num,
+html body main .screen-section .eyebrow,
+html body main .eyebrow,
+html body main .num {
+  color: #FF00E6 !important;
+  -webkit-text-fill-color: #FF00E6 !important;
+}
+/* A single gray surface behind the white rounded page and across the footer. */
+html, html body { background-color: #D9D9D9 !important; }
+html body .sheet { background-color: #FFFFFF !important; }
+html body footer.rg-footer,
+html body .rg-footer {
+  background-color: #D9D9D9 !important;
+  color: #FF00E6 !important;
+}
+html body .rg-footer .rg-footer-contact a,
+html body .rg-footer .rg-footer-contact a:visited,
+html body .rg-footer .rg-footer-contact a:hover {
+  color: #FF00E6 !important;
+  -webkit-text-fill-color: #FF00E6 !important;
+  text-decoration: none !important;
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+<header class="site-header">
+<div class="header-signature">
+<a aria-label="RomGod home" class="brand" href="index.html"><img alt="RomGod flower" src="romgod-flower.png"/></a><span class="header-name"><img alt="Maria Romero Godoy" class="rg-nav-logo" src="romgod-name.svg"/></span>
+</div>
+<nav aria-label="Main navigation" class="nav">
+<a aria-current="page" href="index.html#work">Selected work</a><a href="about.html">About</a><a href="arcade.html">RomGod Arcade</a>
+<a href="mailto:Marg4rg@gmail.com">Contact</a></nav>
+</header>
+<main>
+<section class="hero">
+<img alt="DrinkUp interface collection on black background" class="hero-img" src="assets/drinkup-new-cover.png"/>
+<h1>Drink<span class="pink">Up</span></h1>
+<p class="lead">
             Discover your next favorite drink spot or save the places you love
             and see where everyone else is going
           </p>
-          <div class="case-pill-row">
-            <span class="case-pill">UI/UX</span
-            ><span class="case-pill">Product Design</span
-            ><span class="case-pill">Mobile App</span>
-          </div>
-        </section>
-        <section class="chapter">
-          <div class="num">01 / The idea</div>
-          <div>
-            <h2>Finding a good drink shouldn't be complicated</h2>
-            <p>
+<div class="case-pill-row">
+<span class="case-pill">UI/UX</span><span class="case-pill">Product Design</span><span class="case-pill">Mobile App</span>
+</div>
+</section>
+<section class="chapter">
+<div class="num">01 / The idea</div>
+<div>
+<h2>Finding a good drink shouldn't be complicated.</h2>
+<p>
               DrinkUp is designed for people who love trying new coffee, matcha,
               cocktails and other drinks, but struggle to discover new spots or
               remember the ones they want to visit.
             </p>
-            <p>
+<p>
               Instead of being another general review app, DrinkUp focuses
               specifically on drinks, making it easier to decide where to go
               based on what you're in the mood for.
             </p>
-          </div>
-        </section>
-        <section class="chapter">
-          <div class="num">02 / Audience &amp; problem</div>
-          <div>
-            <h2>We save so many places, Then we lose them</h2>
-            <p>
+</div>
+</section>
+<section class="chapter">
+<div class="num">02 / Audience &amp; problem</div>
+<div>
+<h2>We save so many places. Then we lose them.</h2>
+<p>
               One of the frustrations I explored was how people find spots
               through social media, save them in different places, and then
               forget where those recommendations went. It's also hard to know
               whether a spot is actually good or just trending.
             </p>
-            <p>
+<p>
               In my project persona, Jenna is a 22-year-old student with a
               part-time job who regularly goes out for coffee, searches
               Instagram and TikTok for recommendations, and struggles to
               organize all the spots she wants to try.
             </p>
-            <img
-              alt="Persona slide outlining Jenna's goals, pain points and habits"
-              class="section-image"
-              src="assets/drinkup-persona.png"
-            />
-          </div>
-        </section>
-        <section class="chapter">
-          <div class="num">03 / Design direction</div>
-          <div>
-            <h2>A more social way to discover drinks</h2>
-            <p>
+<img alt="Persona slide outlining Jenna's goals, pain points and habits" class="section-image" src="assets/drinkup-persona.png"/>
+</div>
+</section>
+<section class="chapter">
+<div class="num">03 / Design direction</div>
+<div>
+<h2>A more social way to discover drinks.</h2>
+<p>
               I designed DrinkUp around a few simple actions: browse posts and
               recommendations, explore drink spots on a map, and look through
               other people's saved collections.
             </p>
-            <p>
+<p>
               Making discovery feel visual and personal was important. A photo
               can catch your attention but seeing the location and what someone
               thought about the experience helps you decide if it's somewhere
               you'd want to go.
             </p>
-          </div>
-        </section>
-        <section class="screen-section">
-          <span class="eyebrow">04 / Screens &amp; flows</span>
-          <h2>From curiosity to a saved spot<span class="pink">.</span></h2>
-          <p>
+</div>
+</section>
+<section class="screen-section">
+<span class="eyebrow">04 / Screens &amp; flows</span>
+<h2>From curiosity to a saved spot<span class="pink">.</span></h2>
+<p>
             The experience connects visual recommendations with location-based
             exploration, so finding somewhere new and keeping track of it can
             happen in one place.
           </p>
-          <div class="screen-grid">
-            <div class="screen-tile">
-              <video
-                aria-label="Opening DrinkUp"
-                autoplay=""
-                loop=""
-                muted=""
-                playsinline=""
-                preload="metadata"
-                src="assets/drinkup-opening-final.mp4"
-              ></video>
-              <h3>Opening DrinkUp</h3>
-              <p>A first look at the app</p>
-            </div>
-            <div class="screen-tile">
-              <video
-                aria-label="Finding a spot"
-                autoplay=""
-                loop=""
-                muted=""
-                playsinline=""
-                preload="metadata"
-                src="assets/drinkup-finding-final.mp4"
-              ></video>
-              <h3>Finding a spot</h3>
-              <p>Exploring drink recommendations through the interface</p>
-            </div>
-            <div class="screen-tile">
-              <video
-                aria-label="The social"
-                autoplay=""
-                loop=""
-                muted=""
-                playsinline=""
-                preload="metadata"
-                src="assets/drinkup-social-final.mp4"
-              ></video>
-              <h3>The social</h3>
-              <p>Sharing saved places and recommendations</p>
-            </div>
-          </div>
-        </section>
-        <section class="chapter">
-          <div class="num">05 / Saved collections</div>
-          <div>
-            <h2>Recommendations you can come back to.</h2>
-            <p>
+<div class="screen-grid">
+<div class="screen-tile">
+<video aria-label="Opening DrinkUp" autoplay="" loop="" muted="" playsinline="" preload="metadata" src="assets/drinkup-opening-final.mp4"></video>
+<h3>Opening DrinkUp</h3>
+<p>A first look at the app</p>
+</div>
+<div class="screen-tile">
+<video aria-label="Finding a spot" autoplay="" loop="" muted="" playsinline="" preload="metadata" src="assets/drinkup-finding-final.mp4"></video>
+<h3>Finding a spot</h3>
+<p>Exploring drink recommendations through the interface</p>
+</div>
+<div class="screen-tile">
+<video aria-label="The social" autoplay="" loop="" muted="" playsinline="" preload="metadata" src="assets/drinkup-social-final.mp4"></video>
+<h3>The social</h3>
+<p>Sharing saved places and recommendations</p>
+</div>
+</div>
+</section>
+<section class="chapter">
+<div class="num">05 / Saved collections</div>
+<div>
+<h2>Recommendations you can come back to.</h2>
+<p>
               DrinkUp also lets people discover spots through other people's
               saved collections. Rather than losing a place in a list of
               screenshots or social posts, users can explore collections built
               around different occasions and interests.
             </p>
-            <img
-              alt="DrinkUp project presentation showing four mobile screens"
-              class="section-image"
-              src="assets/drinkup-screens.png"
-            />
-          </div>
-        </section>
-      </main>
-    </div>
-    <footer class="rg-footer">
-      <div class="rg-footer-top">
-        <div class="rg-footer-contact">
-          <a class="rg-contact-link" href="mailto:Marg4rg@gmail.com"
-            >Get in contact ↗</a
-          >
-          <a class="rg-email-link" href="mailto:Marg4rg@gmail.com"
-            >Marg4rg@gmail.com</a
-          >
-        </div>
-        <div aria-label="Social profiles" class="rg-footer-social">
-          <a
-            aria-label="Instagram"
-            href="https://www.instagram.com/romgod.designs/"
-            rel="noopener noreferrer"
-            target="_blank"
-            ><svg
-              aria-hidden="true"
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="1.8"
-              viewbox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect height="18" rx="5" width="18" x="3" y="3"></rect>
-              <circle cx="12" cy="12" r="4"></circle>
-              <circle
-                cx="17.3"
-                cy="6.7"
-                fill="currentColor"
-                r="1"
-                stroke="none"
-              ></circle></svg></a
-          ><a
-            aria-label="GitHub"
-            href="https://github.com/mariaromerogodoy"
-            rel="noopener noreferrer"
-            target="_blank"
-            ><svg
-              aria-hidden="true"
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="1.8"
-              viewbox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"
-              ></path></svg></a
-          ><a
-            aria-label="LinkedIn"
-            href="https://www.linkedin.com/in/mariaromgod"
-            rel="noopener noreferrer"
-            target="_blank"
-            ><svg
-              aria-hidden="true"
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="1.8"
-              viewbox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect height="18" rx="3" width="18" x="3" y="3"></rect>
-              <path
-                d="M8 11v5M8 8v.01M12 16v-5m0 2.5c0-1.5 1-2.5 2.3-2.5s2.2 1 2.2 2.5V16"
-              ></path></svg></a
-          ><a
-            aria-label="Spotify"
-            href="https://open.spotify.com/user/4rlfytwvic0ai12sfbmx7o3oh?si=44ad739174264706"
-            rel="noopener noreferrer"
-            target="_blank"
-            ><svg
-              aria-hidden="true"
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="1.8"
-              viewbox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle cx="12" cy="12" r="9"></circle>
-              <path
-                d="M7 9.5c3.5-1 7-.7 10 1M7.5 12.5c3-.8 6-.5 8.5 1M8 15.3c2.5-.6 5-.4 7 .8"
-              ></path></svg
-          ></a>
-        </div>
-      </div>
-      <div class="rg-footer-name">
-        <img alt="Maria Romero Godoy" src="romgod-name.svg" />
-      </div>
-    </footer>
-  </body>
+<img alt="DrinkUp project presentation showing four mobile screens" class="section-image" src="assets/drinkup-screens.png"/>
+</div>
+</section>
+</main>
+</div>
+<footer class="rg-footer">
+<div class="rg-footer-top">
+<div class="rg-footer-contact">
+<a class="rg-contact-link" href="mailto:Marg4rg@gmail.com">Get in contact ↗</a>
+<a class="rg-email-link" href="mailto:Marg4rg@gmail.com">Marg4rg@gmail.com</a>
+</div>
+<div aria-label="Social profiles" class="rg-footer-social">
+<a aria-label="Instagram" href="https://www.instagram.com/romgod.designs/" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect fill="none" height="19" rx="5.5" stroke="currentColor" stroke-width="1.65" width="19" x="2.5" y="2.5"></rect><circle cx="12" cy="12" fill="none" r="4.3" stroke="currentColor" stroke-width="1.65"></circle><circle cx="17.6" cy="6.5" r="1.25"></circle></svg></a><a aria-label="GitHub" href="https://github.com/mariaromerogodoy" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .9a11.1 11.1 0 0 0-3.51 21.64c.56.1.76-.24.76-.53v-2.12c-3.1.67-3.76-1.32-3.76-1.32-.5-1.28-1.24-1.62-1.24-1.62-1.01-.69.08-.68.08-.68 1.12.08 1.7 1.15 1.7 1.15 1 .1.98 2.5 3.23 1.8.1-.73.39-1.23.71-1.52-2.48-.28-5.08-1.24-5.08-5.5 0-1.22.44-2.22 1.14-3-.12-.28-.49-1.42.11-2.96 0 0 .94-.3 3.06 1.14A10.7 10.7 0 0 1 12 6.3c.95 0 1.9.13 2.8.38 2.12-1.44 3.06-1.14 3.06-1.14.6 1.54.23 2.68.11 2.96.71.78 1.14 1.78 1.14 3 0 4.27-2.6 5.22-5.09 5.5.4.35.76 1.03.76 2.08v2.93c0 .29.2.64.77.53A11.1 11.1 0 0 0 12 .9Z"></path></svg></a><a aria-label="LinkedIn" href="https://www.linkedin.com/in/mariaromgod" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 2.5a2.3 2.3 0 1 0 0 4.6 2.3 2.3 0 0 0 0-4.6ZM2 9h3.8v12H2V9Zm6.1 0h3.65v1.64h.05A4 4 0 0 1 15.4 8.7c3.84 0 4.55 2.53 4.55 5.81V21h-3.8v-5.75c0-1.37-.03-3.13-1.91-3.13-1.91 0-2.2 1.5-2.2 3.04V21H8.1V9Z"></path></svg></a><a aria-label="Spotify" href="https://open.spotify.com/user/4rlfytwvic0ai12sfbmx7o3oh?si=44ad739174264706" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 1.5a10.5 10.5 0 1 0 0 21 10.5 10.5 0 0 0 0-21Zm4.8 15.1a.7.7 0 0 1-.96.23c-2.6-1.59-5.87-1.95-9.71-1.07a.7.7 0 0 1-.31-1.37c4.22-.97 7.84-.55 10.76 1.23a.7.7 0 0 1 .22.97Zm1.28-2.86a.88.88 0 0 1-1.2.28c-2.98-1.83-7.52-2.36-11.04-1.29a.88.88 0 0 1-.51-1.68c4.03-1.22 9.06-.63 12.46 1.45.41.25.54.79.29 1.24Zm.11-2.98c-3.57-2.12-9.45-2.31-12.85-1.28a1.05 1.05 0 0 1-.61-2.01c3.9-1.18 10.43-.95 14.54 1.49a1.05 1.05 0 1 1-1.08 1.8Z"></path></svg></a>
+</div>
+</div>
+<div class="rg-footer-name">
+<img alt="Maria Romero Godoy" src="romgod-name.svg"/>
+</div>
+</footer>
+</body>
 </html>

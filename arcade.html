@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <title>RomGod Arcade — Maria Romero Godoy</title>
-    <link rel="icon" type="image/png" href="logo.png" />
+    <link href="logo.png" rel="icon" type="image/png" />
     <meta
       content="Portfolio of Maria Romero Godoy: UI/UX, creative coding, branding, graphic and experimental design."
       name="description"
@@ -2266,7 +2266,6 @@
       }
     </style>
     <link href="consistent-margins.css" rel="stylesheet" />
-
     <style>
       /* Show projects in curated order on one-column screens. */
       @media (max-width: 600px) {
@@ -2306,6 +2305,492 @@
         .gallery-grid.arcade-grid
           .gallery-item:has([aria-controls="arcade-image-dialog-lost"]) {
           order: 8;
+        }
+      }
+    </style>
+    <style id="rg-consistent-site-ui">
+      /* Shared visual language from the RomGod homepage — appended last to win the cascade */
+      :root {
+        --rg-pink: #ff00e6;
+        --rg-dark-gray: #d9d9d9;
+      }
+      html,
+      body {
+        background-color: var(--rg-dark-gray) !important;
+      }
+      .site-header {
+        position: relative !important;
+        background: #fff !important;
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 12px clamp(20px, 3.7vw, 55px) !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 18px !important;
+        z-index: 100 !important;
+      }
+      .site-header .header-signature {
+        display: flex !important;
+        align-items: center !important;
+        gap: 9px !important;
+        flex: 0 1 auto !important;
+      }
+      .site-header .header-signature .brand {
+        width: 25px !important;
+        height: 25px !important;
+        flex: 0 0 25px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border-radius: 50% !important;
+        background: #000 !important;
+      }
+      .site-header .header-signature .brand img {
+        width: 17px !important;
+        height: 17px !important;
+        object-fit: contain !important;
+      }
+      .site-header .header-name img,
+      .site-header .header-name .rg-nav-logo {
+        width: clamp(148px, 17vw, 220px) !important;
+        height: auto !important;
+        max-width: 100% !important;
+      }
+      .site-header .nav {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        width: auto !important;
+        min-height: 0 !important;
+        height: auto !important;
+        padding: 0 !important;
+        margin: 0 0 0 auto !important;
+        gap: clamp(5px, 1vw, 14px) !important;
+        background: transparent !important;
+        border: 0 !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+      }
+      .site-header .nav a,
+      .site-header .nav a:visited {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 7px 13px !important;
+        border: 0 !important;
+        border-radius: 999px !important;
+        background: transparent !important;
+        color: #000 !important;
+        opacity: 1 !important;
+        font-size: 12px !important;
+        font-weight: 400 !important;
+        line-height: 1.3 !important;
+        white-space: nowrap !important;
+        text-decoration: none !important;
+        transition: transform 0.23s cubic-bezier(0.2, 0.8, 0.2, 1),
+          color 0.2s ease !important;
+      }
+      .site-header .nav a:hover:not([aria-current="page"]),
+      .site-header .nav a:focus-visible:not([aria-current="page"]) {
+        transform: translateY(-3px) !important;
+        background: transparent !important;
+        color: var(--rg-pink) !important;
+      }
+      .site-header .nav a[aria-current="page"],
+      .site-header .nav a[aria-current="page"]:visited,
+      .site-header .nav a[aria-current="page"]:hover,
+      .site-header .nav a[aria-current="page"]:focus-visible {
+        background: var(--rg-pink) !important;
+        color: #eeeeee !important;
+        border: 0 !important;
+      }
+      .site-header .nav a[aria-current="page"]:hover {
+        transform: translateY(-3px) !important;
+      }
+      /* Pink dot cursor, consistent over all interactive targets */
+      @media (pointer: fine) {
+        html,
+        body,
+        body *,
+        a,
+        button,
+        input,
+        textarea,
+        select,
+        label,
+        summary,
+        a:hover,
+        button:hover,
+        a:active,
+        button:active {
+          cursor: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%224.5%22%20fill%3D%22%23FF00E6%22%2F%3E%3C%2Fsvg%3E")
+              8 8,
+            auto !important;
+        }
+        .cursor-dot {
+          background: var(--rg-pink) !important;
+          opacity: 1 !important;
+        }
+      }
+      /* Darker gray footer / pink contact text and wordmark, with no circular icon buttons */
+      html body .rg-footer,
+      html body footer.rg-footer {
+        background: var(--rg-dark-gray) !important;
+        color: var(--rg-pink) !important;
+        margin: 0 !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        width: 100% !important;
+        max-width: none !important;
+        padding: clamp(35px, 3vw, 58px) clamp(24px, 3.2vw, 66px)
+          clamp(22px, 2.5vw, 42px) !important;
+      }
+      html body .rg-footer .rg-footer-top {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: flex-start !important;
+        gap: 24px !important;
+        margin-bottom: clamp(22px, 2.4vw, 42px) !important;
+      }
+      html body .rg-footer .rg-footer-contact {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 9px !important;
+      }
+      html body .rg-footer .rg-footer-contact a,
+      html body .rg-footer .rg-footer-contact a:visited,
+      html body .rg-footer .rg-footer-contact a:hover,
+      html body .rg-footer .rg-footer-contact a:active,
+      html body .rg-footer .rg-footer-contact a:focus-visible {
+        display: inline-block !important;
+        font-size: clamp(12px, 0.95vw, 15px) !important;
+        color: var(--rg-pink) !important;
+        -webkit-text-fill-color: var(--rg-pink) !important;
+        line-height: 1.35 !important;
+        font-weight: 400 !important;
+        text-decoration: none !important;
+        border: 0 !important;
+        background: transparent !important;
+        opacity: 1 !important;
+      }
+      html body .rg-footer .rg-footer-social {
+        display: flex !important;
+        align-items: center !important;
+        gap: 16px !important;
+        flex-wrap: wrap !important;
+      }
+      html body .rg-footer .rg-footer-social a,
+      html body .rg-footer .rg-footer-social a:visited,
+      html body .rg-footer .rg-footer-social a:hover,
+      html body .rg-footer .rg-footer-social a:focus-visible,
+      html body .rg-footer .rg-footer-social a:active {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 20px !important;
+        height: 22px !important;
+        min-width: 0 !important;
+        padding: 0 !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        outline: 0 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        color: var(--rg-pink) !important;
+        opacity: 1 !important;
+      }
+      html body .rg-footer .rg-footer-social svg {
+        width: 18px !important;
+        height: 18px !important;
+        color: var(--rg-pink) !important;
+        opacity: 1 !important;
+        stroke-width: 1.35 !important;
+      }
+      html body .rg-footer .rg-footer-name {
+        width: 100% !important;
+        max-width: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+      html body .rg-footer .rg-footer-name img {
+        display: block !important;
+        width: 100% !important;
+        max-width: none !important;
+        height: auto !important;
+        filter: brightness(0) saturate(100%) invert(21%) sepia(99%)
+          saturate(7379%) hue-rotate(300deg) brightness(107%) contrast(115%) !important;
+        opacity: 1 !important;
+      }
+      @keyframes rg-small-bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        45% {
+          transform: translateY(-5px);
+        }
+        75% {
+          transform: translateY(1px);
+        }
+      }
+      html body .rg-footer .rg-footer-contact a:hover,
+      html body .rg-footer .rg-footer-contact a:focus-visible,
+      html body .rg-footer .rg-footer-social a:hover,
+      html body .rg-footer .rg-footer-social a:focus-visible {
+        animation: rg-small-bounce 0.43s ease-out 1 !important;
+      }
+      @media (max-width: 700px) {
+        .site-header {
+          flex-wrap: wrap !important;
+          padding: 12px 17px !important;
+          gap: 10px !important;
+        }
+        .site-header .nav {
+          width: 100% !important;
+          justify-content: flex-start !important;
+          margin-left: 0 !important;
+          flex-wrap: wrap !important;
+          gap: 4px !important;
+        }
+        .site-header .nav a {
+          padding: 7px 10px !important;
+          font-size: 11px !important;
+        }
+        html body .rg-footer .rg-footer-top {
+          flex-direction: column !important;
+          gap: 28px !important;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .site-header .nav a,
+        .rg-footer a {
+          transition: none !important;
+          animation: none !important;
+        }
+      }
+
+      /* The same clean centered Read More pill as the current homepage:
+   no black slider dot, no stroke, continuous left-to-right text. */
+      .arcade-grid .gallery-overlay {
+        position: absolute !important;
+        inset: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 12px !important;
+        background: transparent !important;
+        pointer-events: none !important;
+      }
+      .arcade-grid .gallery-readmore {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        position: relative !important;
+        width: 113px !important;
+        min-width: 113px !important;
+        height: 38px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        overflow: hidden !important;
+        border: 0 !important;
+        outline: none !important;
+        box-shadow: none !important;
+        border-radius: 999px !important;
+        background: #ff00e6 !important;
+        color: #eeeeee !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        font-size: 12px !important;
+        line-height: 1 !important;
+        white-space: nowrap !important;
+      }
+      .arcade-grid .rg-readmore-window {
+        display: block !important;
+        width: 100% !important;
+        overflow: hidden !important;
+        white-space: nowrap !important;
+      }
+      .arcade-grid .rg-readmore-track {
+        display: flex !important;
+        align-items: center !important;
+        width: max-content !important;
+        gap: 20px !important;
+        animation: rg-arcade-ticker 5s linear infinite !important;
+      }
+      .arcade-grid .rg-readmore-track span {
+        display: inline-block !important;
+        flex: none !important;
+        font-size: 12px !important;
+        color: #eeeeee !important;
+        text-shadow: none !important;
+      }
+      @keyframes rg-arcade-ticker {
+        from {
+          transform: translateX(-50%);
+        }
+        to {
+          transform: translateX(0);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .arcade-grid .rg-readmore-track {
+          animation: none !important;
+          transform: none !important;
+        }
+      }
+    </style>
+    <style id="rg-final-icon-and-arcade-refinements">
+      /* Shared footer icon artwork: identical vector geometry to Home */
+      html body .rg-footer .rg-footer-social a,
+      html body .rg-footer .rg-footer-social a:hover,
+      html body .rg-footer .rg-footer-social a:active,
+      html body .rg-footer .rg-footer-social a:focus-visible {
+        width: 23px !important;
+        height: 25px !important;
+        padding: 0 !important;
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        background: transparent !important;
+        color: #ff00e6 !important;
+        opacity: 1 !important;
+        filter: none !important;
+      }
+      html body .rg-footer .rg-footer-social svg {
+        width: 20px !important;
+        height: 20px !important;
+        color: #ff00e6 !important;
+        opacity: 1 !important;
+        fill: currentColor !important;
+        stroke: none !important;
+      }
+      html body .rg-footer .rg-footer-social svg * {
+        stroke: none !important;
+      }
+      /* Instagram is intentionally outlined; the other three are solid marks. */
+      html body .rg-footer .rg-footer-social a[aria-label="Instagram"] svg rect,
+      html
+        body
+        .rg-footer
+        .rg-footer-social
+        a[aria-label="Instagram"]
+        svg
+        circle:nth-child(2) {
+        fill: none !important;
+        stroke: currentColor !important;
+        stroke-width: 1.65px !important;
+      }
+      html
+        body
+        .rg-footer
+        .rg-footer-social
+        a[aria-label="Instagram"]
+        svg
+        circle:last-child {
+        fill: currentColor !important;
+        stroke: none !important;
+      }
+
+      /* Arcade projects: calm spacing, homepage-style outlined category chips */
+      html body .gallery-grid.arcade-grid {
+        column-gap: clamp(22px, 3vw, 42px) !important;
+        row-gap: clamp(38px, 5vw, 64px) !important;
+      }
+      html body .gallery-grid.arcade-grid .arcade-stack {
+        gap: clamp(44px, 5.5vw, 75px) !important;
+      }
+      html body .gallery-grid.arcade-grid .gallery-item {
+        padding: 8px 8px 14px !important;
+      }
+      html body .gallery-grid.arcade-grid .gallery-name {
+        transition: color 0.2s ease !important;
+        color: #000 !important;
+      }
+      html body .gallery-grid.arcade-grid .gallery-action:hover .gallery-name,
+      html
+        body
+        .gallery-grid.arcade-grid
+        .gallery-action:focus-visible
+        .gallery-name,
+      html body .gallery-grid.arcade-grid .gallery-item:hover .gallery-name {
+        color: #ff00e6 !important;
+      }
+      html body .gallery-grid.arcade-grid .gallery-chips li {
+        border: 1px solid #d9d9d9 !important;
+        color: #000 !important;
+        background: white !important;
+        border-radius: 999px !important;
+        box-shadow: none !important;
+        padding: 5px 12px !important;
+      }
+      @media (max-width: 600px) {
+        html body .gallery-grid.arcade-grid .arcade-stack {
+          gap: 45px !important;
+        }
+      }
+    </style>
+    <style id="rg-arcade-modal-refinement-final">
+      /* Shared corner radius: 15px on all Arcade preview images and image panels. */
+      html body .arcade-grid .gallery-thumbnail,
+      html body .arcade-grid .gallery-thumbnail > img,
+      html body .arcade-grid .gallery-thumbnail > video,
+      html body .arcade-grid .gallery-thumbnail .gallery-overlay {
+        border-radius: 15px !important;
+      }
+      html body .arcade-grid .gallery-thumbnail {
+        overflow: hidden !important;
+      }
+      /* The enlarged project popup and its content use the same gentle rounding. */
+      html body #en-mi-casa-dialog,
+      html body .arcade-image-dialog,
+      html body #en-mi-casa-dialog .mini-case-scroll,
+      html body .arcade-image-dialog .mini-case-scroll {
+        border-radius: 15px !important;
+      }
+      html body #en-mi-casa-dialog .mini-case-scroll img,
+      html body .arcade-image-dialog .mini-case-scroll img,
+      html body #en-mi-casa-dialog .mini-case-cards img,
+      html body .arcade-image-dialog .mini-case-scroll video {
+        border-radius: 15px !important;
+      }
+      /* Medium tags inside EVERY popup match the light-gray outlines on project cards. */
+      html body #en-mi-casa-dialog .rg-popup-pills span,
+      html body .arcade-image-dialog .rg-popup-pills span,
+      html body #en-mi-casa-dialog .arcade-image-tags span,
+      html body .arcade-image-dialog .arcade-image-tags span {
+        border: 1px solid #d9d9d9 !important;
+        background: #fff !important;
+        color: #000 !important;
+        border-radius: 999px !important;
+        box-shadow: none !important;
+      }
+      /* Pink close control, white X, less rounded than the original circle. */
+      html body #en-mi-casa-dialog .mini-case-close,
+      html body .arcade-image-dialog .mini-case-close,
+      html body #en-mi-casa-dialog .mini-case-close:hover,
+      html body .arcade-image-dialog .mini-case-close:hover,
+      html body #en-mi-casa-dialog .mini-case-close:focus-visible,
+      html body .arcade-image-dialog .mini-case-close:focus-visible {
+        border: 0 !important;
+        border-radius: 15px !important;
+        background: #ff00e6 !important;
+        color: #fff !important;
+        box-shadow: none !important;
+        opacity: 1 !important;
+        font-weight: 400 !important;
+        transition: transform 0.2s ease !important;
+      }
+      html body #en-mi-casa-dialog .mini-case-close:hover,
+      html body .arcade-image-dialog .mini-case-close:hover {
+        transform: scale(1.05);
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html body #en-mi-casa-dialog .mini-case-close,
+        html body .arcade-image-dialog .mini-case-close {
+          transition: none !important;
         }
       }
     </style>
@@ -2372,7 +2857,8 @@
         <nav aria-label="Main navigation" class="nav">
           <a href="index.html#work">Selected work</a
           ><a href="about.html">About</a
-          ><a aria-current="page" href="arcade.html">RomGod Arcade</a>
+          ><a aria-current="page" href="arcade.html">RomGod Arcade</a
+          ><a href="mailto:Marg4rg@gmail.com">Contact</a>
         </nav>
       </header>
       <main id="top">
@@ -2403,7 +2889,14 @@
                     src="assets/arcade-1.gif"
                   />
                   <div class="gallery-overlay">
-                    <span class="gallery-readmore">Read More</span>
+                    <span aria-hidden="true" class="gallery-readmore"
+                      ><span class="rg-readmore-window"
+                        ><span class="rg-readmore-track"
+                          ><span>Read More</span><span>Read More</span
+                          ><span>Read More</span><span>Read More</span></span
+                        ></span
+                      ></span
+                    >
                   </div>
                 </div>
                 <h2 class="gallery-name">Your Guide to Trading Cards</h2>
@@ -2428,7 +2921,14 @@
                     src="assets/arcade-6.gif"
                   />
                   <div class="gallery-overlay">
-                    <span class="gallery-readmore">Read More</span>
+                    <span aria-hidden="true" class="gallery-readmore"
+                      ><span class="rg-readmore-window"
+                        ><span class="rg-readmore-track"
+                          ><span>Read More</span><span>Read More</span
+                          ><span>Read More</span><span>Read More</span></span
+                        ></span
+                      ></span
+                    >
                   </div>
                 </div>
                 <h2 class="gallery-name">Our Digital Best Friend</h2>
@@ -2448,7 +2948,14 @@
                 <div class="gallery-thumbnail">
                   <img alt="Para Mi Mama" src="assets/arcade-4.jpg" />
                   <div class="gallery-overlay">
-                    <span class="gallery-readmore">Read More</span>
+                    <span aria-hidden="true" class="gallery-readmore"
+                      ><span class="rg-readmore-window"
+                        ><span class="rg-readmore-track"
+                          ><span>Read More</span><span>Read More</span
+                          ><span>Read More</span><span>Read More</span></span
+                        ></span
+                      ></span
+                    >
                   </div>
                 </div>
                 <h2 class="gallery-name">Para Mi Mama</h2>
@@ -2468,7 +2975,14 @@
                 ><div class="gallery-thumbnail">
                   <img alt="Don’t Hurt the Coral" src="assets/arcade-5.gif" />
                   <div class="gallery-overlay">
-                    <span class="gallery-readmore">Play Game <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.12em;margin-left:3px"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+                    <span aria-hidden="true" class="gallery-readmore"
+                      ><span class="rg-readmore-window"
+                        ><span class="rg-readmore-track"
+                          ><span>Play Game</span><span>Play Game</span
+                          ><span>Play Game</span><span>Play Game</span></span
+                        ></span
+                      ></span
+                    >
                   </div>
                 </div>
                 <h2 class="gallery-name">Don’t Hurt the Coral</h2>
@@ -2491,7 +3005,14 @@
                     src="assets/inverse-landscape.jpg"
                   />
                   <div class="gallery-overlay">
-                    <span class="gallery-readmore">Read More</span>
+                    <span aria-hidden="true" class="gallery-readmore"
+                      ><span class="rg-readmore-window"
+                        ><span class="rg-readmore-track"
+                          ><span>Read More</span><span>Read More</span
+                          ><span>Read More</span><span>Read More</span></span
+                        ></span
+                      ></span
+                    >
                   </div>
                 </div>
                 <h2 class="gallery-name">Inverse</h2>
@@ -2514,7 +3035,14 @@
                     src="assets/lost-till-found-screenprint.png"
                   />
                   <div class="gallery-overlay">
-                    <span class="gallery-readmore">Read More</span>
+                    <span aria-hidden="true" class="gallery-readmore"
+                      ><span class="rg-readmore-window"
+                        ><span class="rg-readmore-track"
+                          ><span>Read More</span><span>Read More</span
+                          ><span>Read More</span><span>Read More</span></span
+                        ></span
+                      ></span
+                    >
                   </div>
                 </div>
                 <h2 class="gallery-name">Lost Till Found</h2>
@@ -2539,7 +3067,14 @@
                     src="assets/arcade-3.gif"
                   />
                   <div class="gallery-overlay">
-                    <span class="gallery-readmore">Read More</span>
+                    <span aria-hidden="true" class="gallery-readmore"
+                      ><span class="rg-readmore-window"
+                        ><span class="rg-readmore-track"
+                          ><span>Read More</span><span>Read More</span
+                          ><span>Read More</span><span>Read More</span></span
+                        ></span
+                      ></span
+                    >
                   </div>
                 </div>
                 <h2 class="gallery-name">en mi casa y con mi gente</h2>
@@ -2561,7 +3096,14 @@
                     src="assets/visa-versa-landscape.jpg"
                   />
                   <div class="gallery-overlay">
-                    <span class="gallery-readmore">Read More</span>
+                    <span aria-hidden="true" class="gallery-readmore"
+                      ><span class="rg-readmore-window"
+                        ><span class="rg-readmore-track"
+                          ><span>Read More</span><span>Read More</span
+                          ><span>Read More</span><span>Read More</span></span
+                        ></span
+                      ></span
+                    >
                   </div>
                 </div>
                 <h2 class="gallery-name">Visa Versa</h2>
@@ -2595,8 +3137,25 @@
       <div class="rg-footer-top">
         <div class="rg-footer-contact">
           <a class="rg-contact-link" href="mailto:Marg4rg@gmail.com"
-            >Get in contact <svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.15em;margin-left:3px"><path d="M7 17 17 7M8 7h9v9"/></svg></a
-          >
+            >Get in contact
+            <svg
+              aria-hidden="true"
+              fill="none"
+              height="19"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.8"
+              style="
+                display: inline-block;
+                vertical-align: -0.15em;
+                margin-left: 3px;
+              "
+              viewbox="0 0 24 24"
+              width="19"
+            >
+              <path d="M7 17 17 7M8 7h9v9"></path></svg
+          ></a>
           <a class="rg-email-link" href="mailto:Marg4rg@gmail.com"
             >Marg4rg@gmail.com</a
           >
@@ -2609,23 +3168,29 @@
             target="_blank"
             ><svg
               aria-hidden="true"
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="1.8"
+              fill="currentColor"
               viewbox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <rect height="18" rx="5" width="18" x="3" y="3"></rect>
-              <circle cx="12" cy="12" r="4"></circle>
+              <rect
+                fill="none"
+                height="19"
+                rx="5.5"
+                stroke="currentColor"
+                stroke-width="1.65"
+                width="19"
+                x="2.5"
+                y="2.5"
+              ></rect>
               <circle
-                cx="17.3"
-                cy="6.7"
-                fill="currentColor"
-                r="1"
-                stroke="none"
-              ></circle></svg></a
+                cx="12"
+                cy="12"
+                fill="none"
+                r="4.3"
+                stroke="currentColor"
+                stroke-width="1.65"
+              ></circle>
+              <circle cx="17.6" cy="6.5" r="1.25"></circle></svg></a
           ><a
             aria-label="GitHub"
             href="https://github.com/mariaromerogodoy"
@@ -2633,16 +3198,12 @@
             target="_blank"
             ><svg
               aria-hidden="true"
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="1.8"
+              fill="currentColor"
               viewbox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"
+                d="M12 .9a11.1 11.1 0 0 0-3.51 21.64c.56.1.76-.24.76-.53v-2.12c-3.1.67-3.76-1.32-3.76-1.32-.5-1.28-1.24-1.62-1.24-1.62-1.01-.69.08-.68.08-.68 1.12.08 1.7 1.15 1.7 1.15 1 .1.98 2.5 3.23 1.8.1-.73.39-1.23.71-1.52-2.48-.28-5.08-1.24-5.08-5.5 0-1.22.44-2.22 1.14-3-.12-.28-.49-1.42.11-2.96 0 0 .94-.3 3.06 1.14A10.7 10.7 0 0 1 12 6.3c.95 0 1.9.13 2.8.38 2.12-1.44 3.06-1.14 3.06-1.14.6 1.54.23 2.68.11 2.96.71.78 1.14 1.78 1.14 3 0 4.27-2.6 5.22-5.09 5.5.4.35.76 1.03.76 2.08v2.93c0 .29.2.64.77.53A11.1 11.1 0 0 0 12 .9Z"
               ></path></svg></a
           ><a
             aria-label="LinkedIn"
@@ -2651,17 +3212,12 @@
             target="_blank"
             ><svg
               aria-hidden="true"
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="1.8"
+              fill="currentColor"
               viewbox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <rect height="18" rx="3" width="18" x="3" y="3"></rect>
               <path
-                d="M8 11v5M8 8v.01M12 16v-5m0 2.5c0-1.5 1-2.5 2.3-2.5s2.2 1 2.2 2.5V16"
+                d="M3.9 2.5a2.3 2.3 0 1 0 0 4.6 2.3 2.3 0 0 0 0-4.6ZM2 9h3.8v12H2V9Zm6.1 0h3.65v1.64h.05A4 4 0 0 1 15.4 8.7c3.84 0 4.55 2.53 4.55 5.81V21h-3.8v-5.75c0-1.37-.03-3.13-1.91-3.13-1.91 0-2.2 1.5-2.2 3.04V21H8.1V9Z"
               ></path></svg></a
           ><a
             aria-label="Spotify"
@@ -2670,17 +3226,12 @@
             target="_blank"
             ><svg
               aria-hidden="true"
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="1.8"
+              fill="currentColor"
               viewbox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <circle cx="12" cy="12" r="9"></circle>
               <path
-                d="M7 9.5c3.5-1 7-.7 10 1M7.5 12.5c3-.8 6-.5 8.5 1M8 15.3c2.5-.6 5-.4 7 .8"
+                d="M12 1.5a10.5 10.5 0 1 0 0 21 10.5 10.5 0 0 0 0-21Zm4.8 15.1a.7.7 0 0 1-.96.23c-2.6-1.59-5.87-1.95-9.71-1.07a.7.7 0 0 1-.31-1.37c4.22-.97 7.84-.55 10.76 1.23a.7.7 0 0 1 .22.97Zm1.28-2.86a.88.88 0 0 1-1.2.28c-2.98-1.83-7.52-2.36-11.04-1.29a.88.88 0 0 1-.51-1.68c4.03-1.22 9.06-.63 12.46 1.45.41.25.54.79.29 1.24Zm.11-2.98c-3.57-2.12-9.45-2.31-12.85-1.28a1.05 1.05 0 0 1-.61-2.01c3.9-1.18 10.43-.95 14.54 1.49a1.05 1.05 0 1 1-1.08 1.8Z"
               ></path></svg
           ></a>
         </div>
@@ -2935,8 +3486,8 @@
         <img
           alt="Inverse silkscreen print photographed in the studio, showing the physical artwork"
           class="arcade-enlarged-image"
-          src="assets/inverse-process.jpg"
           loading="lazy"
+          src="assets/inverse-process.jpg"
           style="margin-top: 22px"
         />
         <h2 class="arcade-image-title">Inverse</h2>
@@ -2967,8 +3518,8 @@
         <img
           alt="Visa Versa print held by hand, showing the silkscreen on paper"
           class="arcade-enlarged-image"
-          src="assets/visa-versa-print.jpg"
           loading="lazy"
+          src="assets/visa-versa-print.jpg"
           style="margin-top: 22px"
         />
         <h2 class="arcade-image-title">Versa</h2>
