@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
+    <meta
+      content="Companion: a mobile healthcare travel assistant UX case study by Maria Romero Godoy"
+      name="description"
+    />
+    <title>Companion — RomGod</title>
+    <link href="logo.png" rel="icon" type="image/png" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --pink: #ff00e6;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: black;
+        color: black;
+        font: 400 16px/1.6 "Neue Haas Grotesk Display Pro",
+          "Neue Haas Grotesk Text Pro", "Neue Haas Grotesk", Arial, Helvetica,
+          sans-serif;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      img {
+        display: block;
+        max-width: 100%;
+      }
+      .sheet {
+        background: white;
+        border-radius: 0 0 42px 42px;
+        padding-bottom: 120px;
+      }
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 16px clamp(23px, 5vw, 72px);
+      }
+      .signature {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        font-size: 13px;
+        font-weight: 500;
+      }
+      .signature img {
+        width: 36px;
+        height: 36px;
+        object-fit: contain;
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .nav a {
+        font-size: 12px;
+        padding: 7px 13px;
+        border-radius: 30px;
+        white-space: nowrap;
+      }
+      .nav a:hover,
+      .nav a:focus-visible {
+        background: var(--pink);
+        color: white;
+      }
+      .nav .current {
+        background: black;
+        color: white;
+      }
+      main {
+        max-width: 1320px;
+        padding: 0 clamp(23px, 5vw, 72px);
+        margin: auto;
+      }
+      .back {
+        font-size: 12px;
+        display: inline-block;
+        margin: 56px 0 28px;
+        border-bottom: 1px solid black;
+      }
+      .eyebrow {
+        font-size: 12px;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+      }
+      .lead h1 {
+        font-size: clamp(60px, 9vw, 134px);
+        font-weight: 400;
+        letter-spacing: -0.07em;
+        line-height: 1.03;
+        margin: 17px 0 25px;
+      }
+      .lead > p {
+        max-width: 850px;
+        font-size: clamp(19px, 2.3vw, 30px);
+        line-height: 1.35;
+        letter-spacing: -0.02em;
+        margin: 0 0 40px;
+      }
+      .pink {
+        color: var(--pink);
+      }
+      .metadata {
+        display: flex;
+        gap: 28px;
+        flex-wrap: wrap;
+        font-size: 12px;
+        margin-bottom: 45px;
+      }
+      .metadata strong {
+        display: block;
+        font-weight: 500;
+      }
+      .cover {
+        width: 100%;
+        height: auto;
+        border-radius: 13px;
+      }
+      .section {
+        padding-top: clamp(86px, 12vw, 150px);
+      }
+      .two-col {
+        display: grid;
+        grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.35fr);
+        gap: clamp(26px, 7vw, 120px);
+      }
+      .number {
+        font-size: 12px;
+      }
+      .section h2 {
+        font-size: clamp(34px, 4.4vw, 64px);
+        letter-spacing: -0.045em;
+        line-height: 1.12;
+        font-weight: 400;
+        margin: 0 0 26px;
+      }
+      .section p {
+        max-width: 670px;
+        font-size: clamp(16px, 1.55vw, 20px);
+        line-height: 1.65;
+        margin: 0 0 17px;
+      }
+      .fullimg {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+      }
+      .note {
+        font-size: 12px !important;
+        margin-top: 14px !important;
+      }
+      .grid2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+      .visual {
+        margin-top: 36px;
+      }
+      .video-wrap {
+        overflow: hidden;
+        border-radius: 12px;
+        background: white;
+      }
+      .video-wrap video {
+        width: 100%;
+        display: block;
+        max-height: 700px;
+        object-fit: contain;
+      }
+      .small-title {
+        font-size: 14px !important;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 8px !important;
+      }
+      .points {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+        margin-top: 34px;
+      }
+      .points h3 {
+        font-weight: 500;
+        font-size: 21px;
+        margin: 0 0 10px;
+      }
+      .points p {
+        font-size: 15px;
+      }
+      .cta {
+        display: inline-block;
+        border: 1px solid black;
+        border-radius: 100px;
+        padding: 12px 23px;
+        margin-top: 12px;
+        font-size: 14px;
+      }
+      .cta:hover {
+        background: black;
+        color: white;
+      }
+      .end {
+        padding: 130px 0 25px;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      .end a {
+        text-decoration: underline;
+        text-underline-offset: 5px;
+      }
+      .footer {
+        background: black;
+        color: white;
+        padding: 46px clamp(23px, 5vw, 72px);
+        font-size: 12px;
+      }
+      .cursor-dot {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 8px;
+        height: 8px;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background: black;
+        pointer-events: none;
+        z-index: 9999;
+        display: none;
+      }
+      @media (pointer: fine) {
+        body,
+        body a {
+          cursor: none;
+        }
+        .cursor-dot {
+          display: block;
+        }
+      }
+      @media (max-width: 760px) {
+        .signature span {
+          display: none;
+        }
+        .site-header {
+          padding: 13px 20px;
+        }
+        .nav a {
+          padding: 6px 8px;
+          font-size: 11px;
+        }
+        .two-col,
+        .grid2,
+        .points {
+          grid-template-columns: 1fr;
+        }
+        .section {
+          padding-top: 85px;
+        }
+        .points {
+          gap: 15px;
+        }
+        .metadata {
+          gap: 15px;
+        }
+      }
+    </style>
+    <style>
+      /* RomGod streamlined editorial system */
+      html,
+      body,
+      button,
+      a,
+      input {
+        font-family: "Neue Haas Grotesk Display Pro",
+          "Neue Haas Grotesk Text Pro", "Neue Haas Grotesk", Arial, Helvetica,
+          sans-serif !important;
+      }
+      :root {
+        --pink: #000 !important;
+      }
+      .nav a.current,
+      .nav a.active,
+      .nav a:hover,
+      .nav a:focus-visible {
+        background: #000 !important;
+        color: #fff !important;
+      }
+      .gallery-readmore,
+      .gallery-chips li,
+      .chip,
+      .tag-float,
+      .cta,
+      .project-tag,
+      .pill {
+        border-color: #000 !important;
+        color: #000 !important;
+        background: #fff !important;
+      }
+      .pink,
+      .name-accent {
+        color: #000 !important;
+      }
+      .gallery-overlay .gallery-readmore {
+        background: #fff !important;
+        color: #000 !important;
+      }
+      /* Hide the desktop custom dot on mobile only */
+      @media (pointer: coarse) {
+        .cursor-dot {
+          display: none !important;
+        }
+      }
+    </style>
+    <style>
+      .hero-img,
+      .cover {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: 24px 0 54px !important;
+        border-radius: 12px;
+      }
+      .hero,
+      .lead {
+        padding-top: 38px !important;
+      }
+      .hero h1,
+      .lead h1 {
+        margin-top: 20px !important;
+      }
+      .case-pill-row {
+        display: flex;
+        gap: 9px;
+        flex-wrap: wrap;
+        margin: 20px 0 35px;
+      }
+      .case-pill {
+        font-size: 12px;
+        border: 1px solid #000;
+        border-radius: 100px;
+        padding: 7px 14px;
+        color: #000;
+        background: white;
+      }
+      @media (max-width: 700px) {
+        .hero-img,
+        .cover {
+          margin-bottom: 30px !important;
+        }
+      }
+    </style>
+    <style>
+      /* Reduced case-study introduction, aligned to the supplied visual reference */
+      section.hero,
+      section.lead {
+        padding-top: 25px !important;
+      }
+      .hero h1,
+      .lead h1 {
+        margin: 24px 0 24px !important;
+        font-size: clamp(57px, 8.2vw, 124px) !important;
+        line-height: 1.02 !important;
+      }
+      .hero p.lead,
+      .lead > p {
+        margin: 0 0 32px !important;
+        font-size: clamp(19px, 2.15vw, 29px) !important;
+        line-height: 1.35 !important;
+        max-width: 990px !important;
+      }
+      .case-pill-row {
+        margin: 0 0 35px !important;
+        gap: 11px !important;
+      }
+      .case-pill {
+        font-size: 12px !important;
+        padding: 8px 16px !important;
+      }
+      .hero-img,
+      .cover {
+        margin-bottom: 50px !important;
+      }
+      @media (max-width: 700px) {
+        .hero-img,
+        .cover {
+          margin-bottom: 24px !important;
+        }
+        .hero h1,
+        .lead h1 {
+          margin: 17px 0 !important;
+        }
+        .case-pill-row {
+          gap: 8px !important;
+        }
+      }
+    </style>
+    <link href="navigation.css" rel="stylesheet" />
+    <link href="navigation.css" rel="stylesheet" />
+    <link href="cursor.css" rel="stylesheet" />
+    <link href="footer.css" rel="stylesheet" />
+    <link href="consistent-margins.css" rel="stylesheet" />
+    <style id="romgod-case-study-consistency">
+      /* Shared RomGod case-study style: matches About, Arcade, and Home. */
+      :root {
+        --pink: #ff00e6 !important;
+        --footer: #d9d9d9 !important;
+      }
+      html,
+      body {
+        background: #d9d9d9 !important;
+      }
+      .sheet {
+        background: white !important;
+      }
+      .site-header {
+        position: sticky !important;
+        top: 0 !important;
+        z-index: 1000 !important;
+        background: white !important;
+      }
+      .site-header .nav {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 6px !important;
+        align-items: center !important;
+        background: transparent !important;
+      }
+      .site-header .nav a,
+      .site-header .nav a:link,
+      .site-header .nav a:visited {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border: none !important;
+        border-radius: 999px !important;
+        padding: 9px 15px !important;
+        font-size: 13px !important;
+        font-weight: 400 !important;
+        line-height: 1.2 !important;
+        background: transparent !important;
+        color: #000 !important;
+        transition: transform 0.22s ease, color 0.22s ease !important;
+      }
+      .site-header .nav a:hover:not([aria-current="page"]),
+      .site-header .nav a:focus-visible:not([aria-current="page"]) {
+        background: transparent !important;
+        color: #ff00e6 !important;
+        transform: translateY(-3px) !important;
+      }
+      .site-header .nav a[aria-current="page"],
+      .site-header .nav a[aria-current="page"]:hover,
+      .site-header .nav a[aria-current="page"]:focus-visible,
+      .site-header .nav a.active {
+        background: #ff00e6 !important;
+        color: #eeeeee !important;
+        border: none !important;
+      }
+      /* Existing medium/category tags: light-gray strokes on white. */
+      .case-pill-row .case-pill,
+      .case-pill,
+      .gallery-chips li,
+      .case-tags span {
+        border: 1px solid #d9d9d9 !important;
+        border-radius: 999px !important;
+        background: #fff !important;
+        color: #000 !important;
+        box-shadow: none !important;
+      }
+      /* Pink section markers: 01 / ..., 03 / Design direction, and case-study labels. */
+      main .section .number,
+      main .section .eyebrow,
+      main .eyebrow,
+      main .number,
+      main .section-label,
+      main .case-study-label {
+        color: #ff00e6 !important;
+      }
+      /* Keep the original page design and photos intact. */
+      .rg-footer,
+      footer.rg-footer {
+        display: block !important;
+        width: 100% !important;
+        max-width: none !important;
+        background: #d9d9d9 !important;
+        color: #ff00e6 !important;
+        border: none !important;
+        border-radius: 0 !important;
+        padding: clamp(35px, 3vw, 58px) clamp(24px, 3.2vw, 66px)
+          clamp(22px, 2.5vw, 42px) !important;
+      }
+      .rg-footer .rg-footer-top {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: flex-start !important;
+        gap: 28px !important;
+        margin-bottom: clamp(22px, 2.4vw, 42px) !important;
+      }
+      .rg-footer .rg-footer-contact {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 9px !important;
+      }
+      .rg-footer .rg-footer-contact a,
+      .rg-footer .rg-footer-contact a:link,
+      .rg-footer .rg-footer-contact a:visited,
+      .rg-footer .rg-footer-contact a:hover,
+      .rg-footer .rg-footer-contact a:active,
+      .rg-footer .rg-footer-contact a:focus-visible {
+        display: inline-block !important;
+        color: #ff00e6 !important;
+        -webkit-text-fill-color: #ff00e6 !important;
+        font-size: clamp(12px, 0.95vw, 15px) !important;
+        text-decoration: none !important;
+        border: none !important;
+        background: transparent !important;
+        opacity: 1 !important;
+      }
+      .rg-footer .rg-footer-social {
+        display: flex !important;
+        align-items: center !important;
+        gap: 16px !important;
+      }
+      .rg-footer .rg-footer-social a,
+      .rg-footer .rg-footer-social a:hover,
+      .rg-footer .rg-footer-social a:focus-visible,
+      .rg-footer .rg-footer-social a:active {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 23px !important;
+        height: 25px !important;
+        padding: 0 !important;
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        color: #ff00e6 !important;
+        background: transparent !important;
+        opacity: 1 !important;
+      }
+      .rg-footer .rg-footer-social svg {
+        width: 20px !important;
+        height: 20px !important;
+        color: #ff00e6 !important;
+        opacity: 1 !important;
+        fill: currentColor;
+        stroke: none;
+      }
+      .rg-footer .rg-footer-social a[aria-label="Instagram"] rect,
+      .rg-footer
+        .rg-footer-social
+        a[aria-label="Instagram"]
+        circle:nth-child(2) {
+        fill: none !important;
+        stroke: currentColor !important;
+        stroke-width: 1.65px !important;
+      }
+      .rg-footer .rg-footer-name {
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+      }
+      .rg-footer .rg-footer-name img {
+        display: block !important;
+        width: 100% !important;
+        max-width: none !important;
+        height: auto !important;
+        filter: brightness(0) saturate(100%) invert(27%) sepia(100%)
+          saturate(7200%) hue-rotate(302deg) brightness(105%) contrast(115%) !important;
+        opacity: 1 !important;
+      }
+      @keyframes rg-footer-bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        45% {
+          transform: translateY(-5px);
+        }
+        75% {
+          transform: translateY(1px);
+        }
+      }
+      .rg-footer .rg-footer-contact a:hover,
+      .rg-footer .rg-footer-contact a:focus-visible,
+      .rg-footer .rg-footer-social a:hover,
+      .rg-footer .rg-footer-social a:focus-visible {
+        animation: rg-footer-bounce 0.43s ease-out 1 !important;
+      }
+      /* One consistent pink cursor across backgrounds, buttons, media, and links. */
+      @media (pointer: fine) {
+        html,
+        body,
+        body *,
+        a,
+        button,
+        input,
+        textarea,
+        select {
+          cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='4.5' fill='%23FF00E6'/%3E%3C/svg%3E")
+              8 8,
+            auto !important;
+        }
+        .cursor-dot {
+          background: #ff00e6 !important;
+          border-color: #ff00e6 !important;
+        }
+      }
+      @media (max-width: 700px) {
+        .rg-footer .rg-footer-top {
+          flex-direction: column !important;
+        }
+        .site-header .nav a {
+          font-size: 11px !important;
+          padding: 8px 11px !important;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .rg-footer .rg-footer-contact a:hover,
+        .rg-footer .rg-footer-social a:hover {
+          animation: none !important;
+        }
+      }
+    </style>
+    <style id="rg-interactive-cta-pink">
+      /* Curlsmith: interactive-project CTA, using the shared RomGod pink. */
+      html body a.cta,
+      html body a.cta:link,
+      html body a.cta:visited,
+      html body a.cta:hover,
+      html body a.cta:focus-visible,
+      html body a.cta:active {
+        background: #ff00e6 !important;
+        color: #ffffff !important;
+        border: 1px solid #ff00e6 !important;
+        text-decoration: none !important;
+      }
+      html body a.cta {
+        transition: transform 0.2s ease, background 0.2s ease;
+      }
+      html body a.cta:hover,
+      html body a.cta:focus-visible {
+        transform: translateY(-2px);
+      }
+    </style>
+    <style id="nyc-sound-final-adjustments">
+      /* Exact darker footer gray from Index(6).html. */
+      html,
+      body {
+        background: #d9d9d9 !important;
+      }
+      html body .rg-footer,
+      html body footer.rg-footer {
+        background: #d9d9d9 !important;
+      }
+      /* Annotated filter diagram intentionally smaller with generous whitespace. */
+      .filter-diagram-wrap {
+        max-width: 900px;
+        margin: 42px auto 0;
+      }
+      .filter-diagram {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+      @media (max-width: 700px) {
+        .filter-diagram-wrap {
+          margin-top: 24px;
+        }
+      }
+    </style>
+    <style id="companion-case-enhancements">
+      :root {
+        --companion-violet: #5550ff;
+      }
+      .companion-cover {
+        background: #f1f1f2;
+        object-fit: cover;
+      }
+      .companion-flow {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: clamp(10px, 2vw, 28px);
+        align-items: start;
+        margin: 36px 0 0;
+      }
+      .companion-flow img {
+        max-height: 620px;
+        width: 100%;
+        object-fit: contain;
+        object-position: top;
+      }
+      .companion-flow.four {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+      .companion-flow-label {
+        font-size: 12px !important;
+        line-height: 1.5 !important;
+        text-align: center;
+        margin-top: 12px !important;
+        color: #666;
+      }
+      .companion-demo {
+        margin-top: 32px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+      }
+      .companion-demo video {
+        width: 100%;
+        height: 460px;
+        object-fit: contain;
+        background: #f2f2f2;
+        border-radius: 15px;
+      }
+      .companion-screen-solo {
+        max-width: 470px;
+        margin: 38px auto 0;
+        display: block;
+        width: 100%;
+      }
+      .companion-cover-note {
+        color: #777;
+        font-size: 12px !important;
+      }
+      .companion-violet {
+        color: #5550ff;
+      }
+      @media (max-width: 760px) {
+        .companion-flow,
+        .companion-flow.four {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .companion-demo {
+          grid-template-columns: 1fr;
+        }
+        .companion-demo video {
+          height: 350px;
+        }
+      }
+      @media (max-width: 450px) {
+        .companion-flow {
+          gap: 12px;
+        }
+        .companion-flow img {
+          max-height: 400px;
+        }
+      }
+    </style>
+    <style>
+      /* The original iOS app dock image is a wide-format cover. */
+      .companion-cover {
+        object-fit: contain;
+        background: #f5f5f5;
+      }
+    </style>
+    <style id="companion-screen-refinements">
+      /* A fine gray outline frames the mobile screenshots, without adding a heavy device mockup. */
+      .companion-flow {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+        align-items: start;
+      }
+      .companion-flow img,
+      .passport-grid img,
+      .prototype-grid img,
+      .companion-screen-solo {
+        width: 100%;
+        height: auto;
+        border: none !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        box-sizing: border-box;
+        box-shadow: none !important;
+      }
+      .companion-flow-label {
+        margin-top: 10px;
+      }
+      .passport-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+        align-items: start;
+        margin-top: 36px;
+      }
+      .passport-hero {
+        max-width: 420px;
+        margin: 28px auto 0;
+      }
+      .prototype-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+        margin-top: 36px;
+      }
+      .prototype-grid figure {
+        margin: 0;
+      }
+      .prototype-grid figcaption,
+      .passport-grid figcaption {
+        font-size: 12px;
+        margin-top: 10px;
+      }
+      @media (max-width: 980px) {
+        .companion-flow,
+        .prototype-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+      @media (max-width: 760px) {
+        .companion-flow,
+        .passport-grid,
+        .prototype-grid {
+          grid-template-columns: 1fr;
+        }
+        .passport-hero {
+          max-width: 360px;
+        }
+      }
+    </style>
+    <style id="wallet-display-sizing">
+      /* Keep just the English and Spanish wallet mockups, smaller and centered. */
+      .passport-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 245px)) !important;
+        justify-content: center !important;
+        column-gap: clamp(24px, 5vw, 62px) !important;
+        row-gap: 26px !important;
+        max-width: 780px !important;
+        margin: 34px auto 0 !important;
+      }
+      .passport-grid figure {
+        margin: 0;
+        min-width: 0;
+      }
+      .passport-grid img {
+        width: 100% !important;
+        height: auto !important;
+        border: 0 !important;
+        box-shadow: none !important;
+      }
+      @media (max-width: 560px) {
+        .passport-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+          gap: 14px !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sheet">
+      <header class="site-header">
+        <div class="header-signature">
+          <a aria-label="RomGod home" class="brand" href="index.html"
+            ><img alt="RomGod flower" src="romgod-flower.png" /></a
+          ><span class="header-name"
+            ><img
+              alt="Maria Romero Godoy"
+              class="rg-nav-logo"
+              src="romgod-name.svg"
+          /></span>
+        </div>
+        <nav aria-label="Main navigation" class="nav">
+          <a aria-current="page" href="index.html#work">Selected work</a
+          ><a href="about.html">About</a><a href="arcade.html">RomGod Arcade</a
+          ><a href="mailto:Marg4rg@gmail.com">Contact</a>
+        </nav>
+      </header>
+      <main>
+        <section class="lead">
+          <img
+            class="cover companion-cover"
+            src="assets/iOS app dock.png"
+            alt="Companion app icon on an iPhone dock"
+          />
+          <h1>Com<span class="pink">panion</span></h1>
+          <p>
+            Companion is the app that allows travelers to find medical needs by
+            providing reassurance and guidance when they need medical advice
+            abroad 
+          </p>
+          <div class="case-pill-row">
+            <span class="case-pill">UI/UX Design</span
+            ><span class="case-pill">Product Design</span
+            ><span class="case-pill">Mobile App</span
+            ><span class="case-pill">Healthcare & Travel</span>
+          </div>
+        </section>
+        <section class="section two-col">
+          <div><span class="number">01 / The beginning</span></div>
+          <div>
+            <h2>
+              When you're away from home, even a pharmacy can feel
+              <span class="pink">unfamiliar</span>
+            </h2>
+            <p>
+              Imagine feeling sick in a country where the medicine has a
+              different name, the packaging is unfamiliar, and you don't speak
+              the language. At home, you know what to reach for. Abroad, even a
+              simple decision can turn into a long search.
+            </p>
+            <p>
+              That's where Companion began: a concept for a travel healthcare
+              assistant that helps people feel less lost when they need
+              medication or medical support outside their home country.
+            </p>
+          </div>
+        </section>
+        <section class="section two-col">
+          <div><span class="number">02 / The question</span></div>
+          <div>
+            <h2>
+              How might we make healthcare abroad feel
+              <span class="pink">less uncertain?</span>
+            </h2>
+            <p>
+              My research started with a simple question: how might we help
+              travelers find the medical resources they need for a safer, less
+              stressful trip?
+            </p>
+            <p>
+              I focused on three connected challenges<br />
+              understanding unfamiliar medication, locating appropriate care,
+              and communicating essential health information in a new country
+            </p>
+          </div>
+        </section>
+        <section class="section">
+          <span class="number">03 / Thinking about the traveler</span>
+          <h2>
+            It isn't just about finding a medicine it's about
+            <span class="pink">feeling sure</span>
+          </h2>
+          <p>
+            I explored scenarios around travelers who feel sick and aren't sure
+            what medicine to buy, worry about interactions with their usual
+            medication, or struggle to explain their history to a local
+            provider. Through personas, an empathy map, and a journey map, the
+            moments that stood out were the moments of hesitation:
+            <em
+              >Is this the right medicine? Is it safe for me? Where can I get
+              help?</em
+            >
+          </p>
+          <p>
+            The product needed to do more than return search results. It needed
+            to organize information in a way that feels familiar and helps
+            travelers know what to ask next
+          </p>
+        </section>
+        <section class="section two-col">
+          <div><span class="number">04 / From uncertainty to a plan</span></div>
+          <div>
+            <h2>
+              Start helping <span class="pink">before</span> something goes
+              wrong
+            </h2>
+            <p>
+              Companion begins with trip preparation. A traveler selects a
+              destination, chooses travel dates, and shares a few details about
+              their trip and medications. The concept then offers a simple
+              checklist for what to pack and consider before leaving.
+            </p>
+            <p>
+              I wanted the setup to feel like planning a trip, not filling out a
+              complicated medical form
+            </p>
+          </div>
+        </section>
+        <div class="companion-flow visual">
+          <div>
+            <img
+              loading="lazy"
+              src="assets/Flow1-1.png"
+              alt="Companion home screen with travel setup and medical comparison entry points"
+            />
+            <p class="companion-flow-label">Home — a place to start</p>
+          </div>
+          <div>
+            <img
+              loading="lazy"
+              src="assets/Flow1-2.png"
+              alt="Destination search and country selection screen"
+            />
+            <p class="companion-flow-label">Choose a destination</p>
+          </div>
+          <div>
+            <img
+              loading="lazy"
+              src="assets/Flow1-3.png"
+              alt="Trip length date selection calendar"
+            />
+            <p class="companion-flow-label">Add travel dates</p>
+          </div>
+          <div>
+            <img
+              loading="lazy"
+              src="assets/Flow1-3-1.png"
+              alt="Trip type selection screen with work, vacation, study abroad, and other options"
+            />
+            <p class="companion-flow-label">Define the trip</p>
+          </div>
+          <div>
+            <img
+              loading="lazy"
+              src="assets/Flow1-3-4.png"
+              alt="Medication entry screen asking what medicine a traveler takes"
+            />
+            <p class="companion-flow-label">List current medication</p>
+          </div>
+          <div>
+            <img
+              loading="lazy"
+              src="assets/Flow1-3-3.png"
+              alt="Packing and pre-departure checklist with medications and nearby pharmacies"
+            />
+            <p class="companion-flow-label">Pack and prepare</p>
+          </div>
+        </div>
+        <section class="section two-col">
+          <div><span class="number">05 / Finding something familiar</span></div>
+          <div>
+            <h2>
+              What if you could search for the medicine you
+              <span class="pink">already know?</span>
+            </h2>
+            <p>
+              The medicine comparison feature starts with a familiar product
+              from home. Instead of making the traveler decode a local shelf
+              from scratch, it presents possible local products side by side and
+              makes the ingredient information easier to compare.
+            </p>
+            <p>
+              I built the visual language around recognizable packaging and
+              highlighted active ingredients. Because availability, strengths,
+              and regulations change across countries, the comparisons in this
+              design are illustrative—not clinical advice or a claim that two
+              products are interchangeable.
+            </p>
+          </div>
+        </section>
+        <div class="companion-flow four visual">
+          <div>
+            <img
+              loading="lazy"
+              src="assets/Flow3-4.png"
+              alt="Medicine comparison browsing screen with product cards"
+            />
+            <p class="companion-flow-label">Browse by what feels familiar</p>
+          </div>
+          <div>
+            <img
+              loading="lazy"
+              src="assets/Flow3-5.png"
+              alt="Medicine search interface with keyboard open and an empty result state"
+            />
+            <p class="companion-flow-label">Search by the product you know</p>
+          </div>
+          <div>
+            <img
+              loading="lazy"
+              src="assets/Flow3-6(1).png"
+              alt="Search results for familiar medicines such as Advil and Tylenol"
+            />
+            <p class="companion-flow-label">See possible matches</p>
+          </div>
+          <div>
+            <img
+              loading="lazy"
+              src="assets/Flow3-7(1).png"
+              alt="Medicine detail and comparison view showing ingredient information and a recommended local alternative"
+            />
+            <p class="companion-flow-label">Compare product information</p>
+          </div>
+        </div>
+        <section class="section two-col">
+          <div>
+            <span class="number">06 / Finding care in a new place</span>
+          </div>
+          <div>
+            <h2>
+              Not every answer comes from a <span class="pink">pharmacy</span>
+            </h2>
+            <p>
+              Sometimes a traveler needs a hospital, clinic, or emergency care
+              rather than a product comparison. The interface brings medical
+              locations into the same browsing experience, with cards that can
+              be saved for later.
+            </p>
+            <p>
+              Keeping medication and medical-help searches together makes
+              Companion feel like one travel health resource, rather than
+              several disconnected tools
+            </p>
+          </div>
+        </section>
+        <div class="companion-flow visual">
+          <div>
+            <img
+              loading="lazy"
+              src="assets/Flow3-3.png"
+              alt="Medical help tab with nearby clinics and hospitals"
+            />
+            <p class="companion-flow-label">Browse nearby care options</p>
+          </div>
+          <div>
+            <img
+              loading="lazy"
+              src="assets/Flow3-2(1).png"
+              alt="Saved medicines and places within the Companion home experience"
+            />
+            <p class="companion-flow-label">Keep useful places nearby</p>
+          </div>
+        </div>
+        <section class="section two-col">
+          <div>
+            <span class="number">07 / Your health story, ready to share</span>
+          </div>
+          <div>
+            <h2>
+              Some information is too important to get
+              <span class="pink">lost in translation</span>
+            </h2>
+            <p>
+              The third flow is a portable health passport: a compact record of
+              medications, allergies, conditions, and emergency contacts
+              designed to be easy to show when receiving care abroad.
+            </p>
+            <p>
+              I explored a language-switching view and an Apple Wallet entry
+              point so travelers could reach their information quickly. The
+              design demonstrates the intended experience; it isn't a live
+              integration with hospitals or Apple Wallet.
+            </p>
+          </div>
+        </section>
+        <div class="passport-grid visual">
+          <figure>
+            <img
+              loading="lazy"
+              src="assets/flow3-1(1).png"
+              alt="Companion health passport shown in English"
+            />
+            <figcaption>
+              One view can switch languages depending on who needs to read it
+            </figcaption>
+          </figure>
+          <figure>
+            <img
+              loading="lazy"
+              src="assets/Flow3-1-1.png"
+              alt="Companion health passport shown in Spanish"
+            />
+            <figcaption>
+              The same information stays consistent across languages
+            </figcaption>
+          </figure>
+        </div>
+
+        <section class="section">
+          <span class="number">08 / A visual language for reassurance</span>
+          <h2>
+            Finding a
+            <span class="pink">calmer</span> experience
+          </h2>
+          <p>
+            For the interface I paired an energetic violet with a minimal white
+            and light-gray layout. I used rounded cards, clear headings,
+            familiar lists, and product photography to make unfamiliar
+            information feel easier to scan. Companion's star-shaped mark gives
+            the app a recognizable identity across the interface.
+          </p>
+          <img
+            loading="lazy"
+            class="fullimg visual"
+            src="assets/iOS app dock.png"
+            alt="Companion star logo on a mobile home-screen dock, alongside other phone app icons"
+          />
+        </section>
+        <section class="section">
+          <span class="number">09 / Exploring the prototype</span>
+          <h2>
+            From planning a trip to finding the right
+            <span class="pink">next step.</span>
+          </h2>
+          <p>
+            These previews show how the interface connects screens into a
+            continuous journey. The priority was to keep important tasks close
+            together: preparation, information, and access to care.
+          </p>
+          <div class="prototype-grid visual">
+            <figure>
+              <img
+                loading="lazy"
+                src="assets/SetUpTrip.gif"
+                alt="Animated Companion prototype preview showing the home experience"
+              />
+              <figcaption>Home and trip setup</figcaption>
+            </figure>
+            <figure>
+              <img
+                loading="lazy"
+                src="assets/SearchPlace.gif"
+                alt="Animated Companion prototype preview showing medical help browsing"
+              />
+              <figcaption>Medical help browsing</figcaption>
+            </figure>
+            <figure>
+              <img
+                loading="lazy"
+                src="assets/CompareMedecine.gif"
+                alt="Animated Companion prototype preview showing medicine comparison"
+              />
+              <figcaption>Medicine comparison</figcaption>
+            </figure>
+          </div>
+        </section>
+        <section class="section two-col">
+          <div><span class="number">10 / Final thoughts</span></div>
+          <div>
+            <h2>Confidence is part of <span class="pink">care</span></h2>
+            <p>
+              Companion pushed me to think about design as more than arranging
+              screens. A traveler might be tired, worried, in pain, or
+              communicating in a second language. In those moments, clarity
+              matters.
+            </p>
+            <p>
+              This project brings together my interest in UX, travel, and making
+              complex information more approachable. It is a design concept
+              shaped through user scenarios and prototype exploration—not a
+              released medical product, verified medicine database, or tested
+              clinical service. My next step would be usability testing with
+              travelers and validation with healthcare professionals.
+            </p>
+          </div>
+        </section>
+      </main>
+    </div>
+    <footer class="rg-footer">
+      <div class="rg-footer-top">
+        <div class="rg-footer-contact">
+          <a class="rg-contact-link" href="mailto:Marg4rg@gmail.com"
+            >Get in contact ↗</a
+          >
+          <a class="rg-email-link" href="mailto:Marg4rg@gmail.com"
+            >Marg4rg@gmail.com</a
+          >
+        </div>
+        <div aria-label="Social profiles" class="rg-footer-social">
+          <a
+            aria-label="Instagram"
+            href="https://www.instagram.com/romgod.designs/"
+            rel="noopener noreferrer"
+            target="_blank"
+            ><svg
+              aria-hidden="true"
+              fill="currentColor"
+              viewbox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                fill="none"
+                height="19"
+                rx="5.5"
+                stroke="currentColor"
+                stroke-width="1.65"
+                width="19"
+                x="2.5"
+                y="2.5"
+              ></rect>
+              <circle
+                cx="12"
+                cy="12"
+                fill="none"
+                r="4.3"
+                stroke="currentColor"
+                stroke-width="1.65"
+              ></circle>
+              <circle cx="17.6" cy="6.5" r="1.25"></circle></svg></a
+          ><a
+            aria-label="GitHub"
+            href="https://github.com/mariaromerogodoy"
+            rel="noopener noreferrer"
+            target="_blank"
+            ><svg
+              aria-hidden="true"
+              fill="currentColor"
+              viewbox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 .9a11.1 11.1 0 0 0-3.51 21.64c.56.1.76-.24.76-.53v-2.12c-3.1.67-3.76-1.32-3.76-1.32-.5-1.28-1.24-1.62-1.24-1.62-1.01-.69.08-.68.08-.68 1.12.08 1.7 1.15 1.7 1.15 1 .1.98 2.5 3.23 1.8.1-.73.39-1.23.71-1.52-2.48-.28-5.08-1.24-5.08-5.5 0-1.22.44-2.22 1.14-3-.12-.28-.49-1.42.11-2.96 0 0 .94-.3 3.06 1.14A10.7 10.7 0 0 1 12 6.3c.95 0 1.9.13 2.8.38 2.12-1.44 3.06-1.14 3.06-1.14.6 1.54.23 2.68.11 2.96.71.78 1.14 1.78 1.14 3 0 4.27-2.6 5.22-5.09 5.5.4.35.76 1.03.76 2.08v2.93c0 .29.2.64.77.53A11.1 11.1 0 0 0 12 .9Z"
+              ></path></svg></a
+          ><a
+            aria-label="LinkedIn"
+            href="https://www.linkedin.com/in/mariaromgod"
+            rel="noopener noreferrer"
+            target="_blank"
+            ><svg
+              aria-hidden="true"
+              fill="currentColor"
+              viewbox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.9 2.5a2.3 2.3 0 1 0 0 4.6 2.3 2.3 0 0 0 0-4.6ZM2 9h3.8v12H2V9Zm6.1 0h3.65v1.64h.05A4 4 0 0 1 15.4 8.7c3.84 0 4.55 2.53 4.55 5.81V21h-3.8v-5.75c0-1.37-.03-3.13-1.91-3.13-1.91 0-2.2 1.5-2.2 3.04V21H8.1V9Z"
+              ></path></svg></a
+          ><a
+            aria-label="Spotify"
+            href="https://open.spotify.com/user/4rlfytwvic0ai12sfbmx7o3oh?si=44ad739174264706"
+            rel="noopener noreferrer"
+            target="_blank"
+            ><svg
+              aria-hidden="true"
+              fill="currentColor"
+              viewbox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 1.5a10.5 10.5 0 1 0 0 21 10.5 10.5 0 0 0 0-21Zm4.8 15.1a.7.7 0 0 1-.96.23c-2.6-1.59-5.87-1.95-9.71-1.07a.7.7 0 0 1-.31-1.37c4.22-.97 7.84-.55 10.76 1.23a.7.7 0 0 1 .22.97Zm1.28-2.86a.88.88 0 0 1-1.2.28c-2.98-1.83-7.52-2.36-11.04-1.29a.88.88 0 0 1-.51-1.68c4.03-1.22 9.06-.63 12.46 1.45.41.25.54.79.29 1.24Zm.11-2.98c-3.57-2.12-9.45-2.31-12.85-1.28a1.05 1.05 0 0 1-.61-2.01c3.9-1.18 10.43-.95 14.54 1.49a1.05 1.05 0 1 1-1.08 1.8Z"
+              ></path></svg
+          ></a>
+        </div>
+      </div>
+      <div class="rg-footer-name">
+        <img alt="Maria Romero Godoy" src="romgod-name.svg" />
+      </div>
+    </footer>
+  </body>
+</html>
