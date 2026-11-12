@@ -4084,6 +4084,156 @@
         }
       }
     </style>
+
+    <style id="rg-mobile-home-footer-consistency-2026-11-12">
+      /* Keep exactly the same brand pink on every device, including Safari/iPhone. */
+      :root {
+        --rg-brand-pink: #ff00e6;
+        --rg-footer-gray: #d9d9d9;
+      }
+      html body footer.rg-footer,
+      html body .rg-footer {
+        background-color: var(--rg-footer-gray) !important;
+        color: var(--rg-brand-pink) !important;
+      }
+      html body .rg-footer .rg-footer-contact a,
+      html body .rg-footer .rg-footer-contact a:link,
+      html body .rg-footer .rg-footer-contact a:visited,
+      html body .rg-footer .rg-footer-contact a:hover,
+      html body .rg-footer .rg-footer-contact a:active,
+      html body .rg-footer .rg-footer-social a,
+      html body .rg-footer .rg-footer-social a:link,
+      html body .rg-footer .rg-footer-social a:visited,
+      html body .rg-footer .rg-footer-social a:hover {
+        color: var(--rg-brand-pink) !important;
+        -webkit-text-fill-color: var(--rg-brand-pink) !important;
+      }
+      html body .rg-footer .rg-footer-social svg {
+        color: var(--rg-brand-pink) !important;
+        fill: currentColor;
+      }
+      /* Render the SVG wordmark as an exact pink mask rather than a color-approximation filter. */
+      html body .rg-footer .rg-footer-name {
+        width: 100% !important;
+        line-height: 0 !important;
+        background: var(--rg-brand-pink) !important;
+        -webkit-mask: url("romgod-name.svg") center / contain no-repeat;
+        mask: url("romgod-name.svg") center / contain no-repeat;
+      }
+      html body .rg-footer .rg-footer-name img {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        opacity: 0 !important; /* element maintains the exact wordmark's natural aspect ratio */
+      }
+
+      @media (max-width: 700px) {
+        html,
+        body {
+          width: 100%;
+          max-width: 100%;
+          overflow-x: clip;
+        }
+        /* Restore a clean vertical rhythm; desktop choreography is unchanged. */
+        html body.rg-choreography .rg-new-hero {
+          min-height: min(660px, calc(100svh - 70px)) !important;
+          height: auto !important;
+          padding: clamp(68px, 13vh, 125px) 20px 85px !important;
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          overflow: hidden !important;
+        }
+        html body.rg-choreography .rg-new-hero .rg-hero-content {
+          width: 100% !important;
+          max-width: 100% !important;
+          transform: none !important;
+          position: relative !important;
+        }
+        html body.rg-choreography .rg-new-hero .rg-display-name {
+          width: 100% !important;
+          max-width: 100% !important;
+          overflow: visible !important;
+          margin: 0 0 28px !important;
+          line-height: 1 !important;
+        }
+        html
+          body.rg-choreography
+          .rg-new-hero
+          .rg-display-name
+          img.rg-big-logo {
+          display: block !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          margin: 0 auto !important;
+          height: auto !important;
+          transform: none !important;
+          animation: none !important;
+          clip-path: none !important;
+        }
+        html body.rg-choreography .rg-new-hero .rg-hero-sub {
+          width: 100% !important;
+          max-width: 100% !important;
+          display: flex !important;
+          flex-wrap: wrap !important;
+          align-items: center !important;
+          justify-content: flex-start !important;
+          gap: 10px 12px !important;
+          padding: 0 !important;
+        }
+        html body.rg-choreography .rg-new-hero .rg-lead {
+          font-size: 15px !important;
+          line-height: 1.4 !important;
+          max-width: 100% !important;
+          margin: 0 !important;
+        }
+        html body.rg-choreography .rg-new-hero .rg-slot {
+          max-width: 100% !important;
+          min-width: 150px !important;
+          flex-shrink: 1 !important;
+        }
+        html body #work.gallery-grid {
+          grid-template-columns: 1fr !important;
+          padding-inline: 20px !important;
+          row-gap: 42px !important;
+          max-width: 540px !important;
+        }
+        html body #work .gallery-thumbnail {
+          width: 100% !important;
+          aspect-ratio: 1.65 / 1 !important;
+        }
+        html body #work .gallery-thumbnail > img,
+        html body #work .gallery-thumbnail > video {
+          max-width: 78% !important;
+          max-height: 75% !important;
+        }
+        html body .rg-footer,
+        html body footer.rg-footer {
+          padding: 32px 20px 38px !important;
+        }
+        html body .rg-footer .rg-footer-top {
+          display: flex !important;
+          flex-direction: column !important;
+          align-items: flex-start !important;
+          gap: 26px !important;
+          margin-bottom: 28px !important;
+        }
+        html body .rg-footer .rg-footer-contact a {
+          font-size: 14px !important;
+        }
+      }
+      @media (max-width: 390px) {
+        html body.rg-choreography .rg-new-hero {
+          padding-inline: 16px !important;
+        }
+        html body.rg-choreography .rg-new-hero .rg-lead {
+          font-size: 14px !important;
+        }
+        html body #work.gallery-grid {
+          padding-inline: 16px !important;
+        }
+      }
+    </style>
   </head>
   <body>
     <!-- Reusable flower icon (swap for assets/icon.svg if you prefer your exact file) -->
