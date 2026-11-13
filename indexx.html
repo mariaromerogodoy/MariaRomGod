@@ -1,0 +1,5126 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Maria Romero Godoy — RomGod</title>
+    <link href="logo.png" rel="icon" type="image/png" />
+    <meta
+      content="Portfolio of Maria Romero Godoy: UI/UX, creative coding, branding, graphic and experimental design."
+      name="description"
+    />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --black: #000;
+        --white: #fff;
+        --pink: #ff00e6;
+        --radius-card: 28px;
+        --gutter: clamp(16px, 4vw, 56px);
+        --maxw: 1240px;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Neue Haas Grotesk Display Pro",
+          "Neue Haas Grotesk Text Pro", "Neue Haas Grotesk", Arial, Helvetica,
+          sans-serif;
+        font-weight: 400;
+        background: var(--black);
+        color: var(--black);
+        -webkit-font-smoothing: antialiased;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      h1,
+      h2 {
+        font-weight: 400;
+      }
+
+      /* White main sheet that sits on top of the black footer */
+      .sheet {
+        background: var(--white);
+        border-radius: 0 0 48px 48px;
+        padding-bottom: clamp(80px, 12vw, 160px);
+      }
+
+      /* ---------- Header ---------- */
+      .site-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 32px var(--gutter);
+      }
+      .brand {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: var(--black);
+        display: grid;
+        place-items: center;
+        color: var(--white);
+      }
+      .brand svg,
+      .brand img {
+        width: 34px;
+        height: 34px;
+        display: block;
+      }
+      /* Your flower is black with transparent petals; invert so it reads white on the black circle */
+      .brand img {
+        object-fit: contain;
+        filter: invert(1);
+      }
+
+      .nav {
+        display: flex;
+        gap: 8px;
+        background: var(--black);
+        border-radius: 999px;
+        padding: 0 12px;
+        height: 56px;
+        align-items: center;
+      }
+      .nav a {
+        color: var(--white);
+        font-size: 15px;
+        padding: 8px 16px;
+        border-radius: 999px;
+      }
+
+      /* ---------- Hero ---------- */
+      .hero {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: clamp(60px, 9vw, 120px) var(--gutter) 0;
+        text-align: center;
+      }
+      .hero-intro {
+        font-size: clamp(15px, 1.4vw, 18px);
+        letter-spacing: 0.01em;
+      }
+      .hero-intro .br {
+        white-space: pre;
+      }
+
+      .wordmark-wrap {
+        position: relative;
+        width: min(850px, 78%);
+        margin: clamp(90px, 12vw, 150px) auto clamp(140px, 22vw, 280px);
+      }
+      .wordmark {
+        display: block;
+        width: 100%;
+        height: auto;
+        user-select: none;
+      }
+      /* Text fallback if the logo image is missing */
+      .wordmark-fallback {
+        display: none;
+        font-size: clamp(72px, 16vw, 220px);
+        line-height: 1;
+        color: var(--pink);
+        -webkit-text-stroke: clamp(4px, 0.8vw, 10px) var(--black);
+        paint-order: stroke fill;
+        letter-spacing: -0.04em;
+      }
+
+      .tag-float {
+        position: absolute;
+        background: var(--black);
+        color: var(--white);
+        font-size: clamp(11px, 1.3vw, 16px);
+        padding: 0.7em 1.4em;
+        border-radius: 999px;
+        white-space: nowrap;
+      }
+      .tag-float.t1 {
+        top: -12%;
+        left: 20%;
+      } /* Experimental Design */
+      .tag-float.t2 {
+        top: 2%;
+        right: 6%;
+      } /* Branding */
+      .tag-float.t3 {
+        top: 66%;
+        left: -13%;
+      } /* Graphic Design */
+      .tag-float.t4 {
+        top: 66%;
+        right: -17%;
+      } /* Creative Coding */
+      .tag-float.t5 {
+        top: 106%;
+        left: 50%;
+        translate: -50% 0;
+      } /* UI/UX */
+
+      /* ---------- Projects ---------- */
+      .projects {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 0 var(--gutter);
+        display: grid;
+        gap: clamp(32px, 6vw, 80px);
+      }
+      .card {
+        background: var(--black);
+        color: var(--white);
+        border-radius: var(--radius-card);
+        padding: clamp(24px, 3.5vw, 44px) clamp(24px, 3.5vw, 58px);
+        display: grid;
+        grid-template-columns: 1fr 1.05fr;
+        gap: clamp(24px, 4vw, 56px);
+        align-items: stretch;
+        min-height: clamp(320px, 38vw, 430px);
+      }
+      .card-info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .card-title {
+        font-size: clamp(32px, 4.2vw, 56px);
+        font-weight: 400;
+        letter-spacing: -0.01em;
+        line-height: 1.05;
+        margin-top: clamp(0px, 1vw, 12px);
+      }
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 24px;
+      }
+      .chip {
+        background: var(--white);
+        color: var(--black);
+        font-size: 15px;
+        padding: 0.65em 1.4em;
+        border-radius: 999px;
+      }
+      .card-desc {
+        margin-top: 24px;
+        font-size: 17px;
+        line-height: 1.5;
+        max-width: 38ch;
+      }
+      .btn {
+        margin-top: auto;
+        display: inline-block;
+        background: var(--white);
+        color: var(--black);
+        font-size: 18px;
+        padding: 0.8em 1.7em;
+        border-radius: 999px;
+      }
+      .card-desc + .btn {
+        margin-top: auto;
+        padding-top: 0.8em;
+      }
+
+      .card-media {
+        background: var(--white);
+        border-radius: 20px;
+        overflow: hidden;
+        display: grid;
+        place-items: center;
+        min-height: 240px;
+      }
+      .card-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .card-media.is-contain img {
+        object-fit: contain;
+      }
+      .card-media .ph {
+        color: #999;
+        font-size: 14px;
+      }
+
+      /* ---------- Footer ---------- */
+      .site-footer {
+        padding: 40px var(--gutter) clamp(120px, 20vw, 280px);
+        display: flex;
+        gap: 20px;
+        background: var(--black);
+      }
+      .social {
+        width: 44px;
+        height: 44px;
+        border: 2px solid var(--white);
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        color: var(--white);
+      }
+      .social svg {
+        width: 22px;
+        height: 22px;
+      }
+
+      /* ---------- Responsive ---------- */
+      @media (max-width: 860px) {
+        .card {
+          grid-template-columns: 1fr;
+        }
+        .card-media {
+          order: -1;
+        }
+        .card-desc + .btn {
+          margin-top: 28px;
+        }
+        .nav a {
+          padding: 8px 10px;
+          font-size: 13px;
+        }
+        .site-header {
+          gap: 12px;
+        }
+      }
+      @media (max-width: 560px) {
+        .nav {
+          padding: 0 6px;
+        }
+        .tag-float.t3 {
+          left: -6%;
+        }
+        .tag-float.t4 {
+          right: -8%;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+
+      /* Updated project card direction — inspired by reference: refined, airy, and image-forward */
+      :root {
+        --maxw: 1180px;
+        --gutter: clamp(22px, 5vw, 72px);
+        --radius-card: 22px;
+        --soft-bg: #f3f3f3;
+        --ink: #111;
+        --muted: #666;
+        --pink: #ff2ae6;
+      }
+      .sheet {
+        border-radius: 0 0 28px 28px;
+        padding-bottom: 110px;
+      }
+      .site-header {
+        max-width: 1440px;
+        margin: auto;
+        padding-top: 25px;
+        padding-bottom: 25px;
+      }
+      .brand {
+        width: 42px;
+        height: 42px;
+      }
+      .brand img {
+        width: 27px;
+        height: 27px;
+      }
+      .nav {
+        background: transparent;
+        height: auto;
+        gap: 5px;
+      }
+      .nav a {
+        color: #242424;
+        font-size: 12px;
+        padding: 9px 13px;
+        border: 1px solid transparent;
+        transition: border-color 0.2s;
+      }
+      .nav a:hover,
+      .nav a:focus-visible {
+        border-color: #bbb;
+      }
+      .hero {
+        padding-top: clamp(75px, 10vw, 145px);
+      }
+      .hero-intro {
+        font-size: 13px;
+        letter-spacing: 0.035em;
+      }
+      .wordmark-wrap {
+        width: min(600px, 72%);
+        margin: clamp(80px, 10vw, 130px) auto clamp(120px, 15vw, 195px);
+      }
+      .tag-float {
+        font-size: clamp(9px, 0.9vw, 11px);
+        padding: 0.63em 1.1em;
+        letter-spacing: 0.02em;
+      }
+      .tag-float.t3 {
+        left: -8%;
+      }
+      .tag-float.t4 {
+        right: -12%;
+      }
+      .section-intro {
+        max-width: var(--maxw);
+        padding: 0 var(--gutter);
+        margin: 0 auto 32px;
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 26px;
+        border-bottom: 1px solid #d9d9d9;
+        padding-bottom: 20px;
+      }
+      .eyebrow {
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.17em;
+        color: #777;
+      }
+      .section-intro h2 {
+        font-size: clamp(24px, 3vw, 38px);
+        line-height: 1.15;
+        margin-top: 8px;
+        font-weight: 400;
+      }
+      .section-intro p {
+        max-width: 30ch;
+        font-size: 12px;
+        line-height: 1.6;
+        color: #666;
+      }
+      .projects {
+        gap: 26px;
+      }
+      .card {
+        position: relative;
+        background: var(--soft-bg);
+        color: var(--ink);
+        border: 2px solid var(--ink);
+        border-radius: 28px;
+        padding: clamp(26px, 3.7vw, 48px);
+        display: grid;
+        grid-template-columns: minmax(290px, 0.95fr) minmax(0, 1.08fr);
+        gap: clamp(28px, 4vw, 56px);
+        align-items: center;
+        min-height: 430px;
+      }
+      .card-info {
+        min-height: 320px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .project-number {
+        font-size: 11px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #7b7b7b;
+        margin-bottom: 22px;
+      }
+      .card-title {
+        font-size: clamp(38px, 4vw, 60px);
+        line-height: 1.04;
+        letter-spacing: -0.03em;
+        max-width: 9ch;
+      }
+      .chips {
+        margin-top: 26px;
+        gap: 14px;
+        list-style: none;
+      }
+      .chip {
+        background: transparent;
+        color: var(--pink);
+        border: 1.5px solid var(--pink);
+        font-size: 14px;
+        padding: 0.72em 1.45em;
+        border-radius: 999px;
+        letter-spacing: 0.01em;
+      }
+      .card-desc {
+        margin-top: 28px;
+        color: #1f1f1f;
+        font-size: 18px;
+        line-height: 1.55;
+        max-width: 28ch;
+      }
+      .project-note {
+        margin-top: auto;
+        padding-top: 22px;
+        font-size: 12px;
+        line-height: 1.6;
+        color: #6c6c6c;
+        max-width: 31ch;
+      }
+      .project-link {
+        margin-top: 34px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 182px;
+        min-height: 64px;
+        padding: 0 1.45em;
+        border-radius: 999px;
+        background: #000;
+        color: #fff;
+        font-size: 18px;
+        letter-spacing: -0.01em;
+      }
+      .card-media {
+        background: transparent;
+        min-height: 0;
+        height: auto;
+        padding: 0;
+        overflow: visible;
+        display: block;
+      }
+      .media-frame {
+        border: 2px solid var(--pink);
+        border-radius: 28px;
+        background: #f7f7f7;
+        overflow: hidden;
+        min-height: 374px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: clamp(14px, 2vw, 22px);
+      }
+      .media-frame img {
+        width: 92%;
+        height: auto;
+        max-height: 330px;
+        object-fit: contain;
+        display: block;
+        margin: 0 auto;
+      }
+      .card-media .ph {
+        color: #888;
+        font-size: 13px;
+        text-align: center;
+        line-height: 1.7;
+      }
+      .design-note {
+        max-width: var(--maxw);
+        margin: 28px auto 0;
+        padding: 0 var(--gutter);
+        font-size: 12px;
+        color: #777;
+        line-height: 1.6;
+      }
+      .site-footer {
+        max-width: 1440px;
+        margin: auto;
+        padding-top: 40px;
+        padding-bottom: 100px;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .footer-label {
+        color: white;
+        font-size: 12px;
+        max-width: 38ch;
+        line-height: 1.6;
+      }
+      .footer-label span {
+        display: block;
+        color: #999;
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+      .social {
+        width: 36px;
+        height: 36px;
+        border-width: 1px;
+        opacity: 0.9;
+      }
+      .social svg {
+        width: 17px;
+        height: 17px;
+      }
+      .social[href="#"] {
+        pointer-events: none;
+        opacity: 0.35;
+      }
+      @media (max-width: 980px) {
+        .card {
+          grid-template-columns: 1fr;
+          min-height: 0;
+        }
+        .card-info {
+          min-height: 0;
+        }
+        .card-title {
+          max-width: 100%;
+        }
+        .card-media {
+          order: -1;
+        }
+        .media-frame {
+          min-height: 290px;
+        }
+        .media-frame img {
+          width: 88%;
+          max-height: 250px;
+        }
+      }
+      @media (max-width: 560px) {
+        .section-intro {
+          display: block;
+        }
+        .section-intro p {
+          margin-top: 14px;
+        }
+        .wordmark-wrap {
+          width: 74%;
+          margin-bottom: 130px;
+        }
+        .tag-float {
+          font-size: 9px;
+        }
+        .tag-float.t3 {
+          left: -13%;
+        }
+        .tag-float.t4 {
+          right: -15%;
+        }
+        .card {
+          border-radius: 24px;
+          padding: 24px;
+        }
+        .card-title {
+          font-size: 32px;
+        }
+        .chips {
+          gap: 10px;
+        }
+        .chip {
+          font-size: 12px;
+        }
+        .project-link {
+          min-height: 56px;
+          font-size: 16px;
+        }
+        .media-frame {
+          min-height: 230px;
+          border-radius: 22px;
+        }
+        .site-footer {
+          flex-wrap: wrap;
+        }
+      }
+
+      /* Restored original black pill navigation */
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        background: #000;
+        border-radius: 999px;
+        padding: 6px 10px;
+        min-height: 52px;
+      }
+      .nav a {
+        color: #fff;
+        border: 1px solid transparent;
+        border-radius: 999px;
+        padding: 10px 15px;
+        font-size: 13px;
+        white-space: nowrap;
+        transition: background-color 0.2s ease, color 0.2s ease;
+      }
+      .nav a:hover,
+      .nav a:focus-visible {
+        background: #292929;
+        border-color: transparent;
+        color: #fff;
+      }
+      @media (max-width: 560px) {
+        .nav {
+          gap: 0;
+          padding: 5px;
+          min-height: 44px;
+        }
+        .nav a {
+          font-size: 10px;
+          padding: 9px 8px;
+        }
+      }
+
+      /* Hero floating labels updated to white pills with black text + outline */
+      .tag-float {
+        background: #fff;
+        color: #111;
+        border: 2px solid #111;
+        border-radius: 999px;
+        box-shadow: none;
+        font-size: clamp(12px, 1.1vw, 16px);
+        font-weight: 400;
+        padding: 0.78em 1.55em;
+        letter-spacing: -0.01em;
+      }
+      .tag-float.t1 {
+        top: 1%;
+        left: 25%;
+      }
+      .tag-float.t2 {
+        top: 8%;
+        right: 18%;
+      }
+      .tag-float.t3 {
+        left: 0;
+        top: 48%;
+      }
+      .tag-float.t4 {
+        right: -1%;
+        top: 48%;
+      }
+      .tag-float.t5 {
+        left: 43%;
+        bottom: -8%;
+      }
+      @media (max-width: 560px) {
+        .tag-float {
+          font-size: 10px;
+          padding: 0.72em 1.2em;
+        }
+        .tag-float.t1 {
+          left: 24%;
+          top: 2%;
+        }
+        .tag-float.t2 {
+          right: 8%;
+          top: 11%;
+        }
+        .tag-float.t3 {
+          left: -3%;
+          top: 46%;
+        }
+        .tag-float.t4 {
+          right: -5%;
+          top: 46%;
+        }
+        .tag-float.t5 {
+          left: 40%;
+          bottom: -10%;
+        }
+      }
+
+      /* Final minimalist palette + restored floating label positions */
+      :root {
+        --black: #000;
+        --white: #fff;
+        --pink: #ff00e6;
+        --soft-bg: #fff;
+        --ink: #000;
+        --muted: #000;
+      }
+      body,
+      .sheet {
+        background: #fff;
+        color: #000;
+      }
+      .nav,
+      .brand,
+      .project-link {
+        background: #000;
+        color: #fff;
+      }
+      .nav a:hover,
+      .nav a:focus-visible {
+        background: #ff00e6;
+        color: #000;
+      }
+      .hero-intro {
+        color: #000;
+      }
+      .tag-float {
+        background: #fff;
+        color: #000;
+        border: 1.5px solid #000;
+        box-shadow: none;
+        padding: 0.66em 1.35em;
+        font-size: clamp(11px, 1.15vw, 15px);
+      }
+      /* Positions preserved from the original RomGod hero design */
+      .tag-float.t1 {
+        top: -12%;
+        left: 20%;
+        right: auto;
+        bottom: auto;
+        translate: none;
+      }
+      .tag-float.t2 {
+        top: 2%;
+        right: 6%;
+        left: auto;
+        bottom: auto;
+        translate: none;
+      }
+      .tag-float.t3 {
+        top: 66%;
+        left: -13%;
+        right: auto;
+        bottom: auto;
+        translate: none;
+      }
+      .tag-float.t4 {
+        top: 66%;
+        right: -17%;
+        left: auto;
+        bottom: auto;
+        translate: none;
+      }
+      .tag-float.t5 {
+        top: 106%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        translate: -50% 0;
+      }
+      .section-intro {
+        border-bottom: 1px solid #000;
+        margin-bottom: 24px;
+        padding-bottom: 13px;
+      }
+      .section-intro h2 {
+        color: #000;
+      }
+      .projects {
+        gap: 20px;
+      }
+      .card {
+        background: #fff;
+        color: #000;
+        border: 1.7px solid #000;
+        min-height: 340px;
+        padding: clamp(22px, 3vw, 36px);
+        gap: clamp(24px, 3vw, 42px);
+        border-radius: 24px;
+      }
+      .card-info {
+        min-height: 240px;
+      }
+      .card-title {
+        font-size: clamp(33px, 3.4vw, 48px);
+      }
+      .chips {
+        margin-top: 19px;
+        gap: 9px;
+      }
+      .chip {
+        border: 1.4px solid #ff00e6;
+        color: #000;
+        background: #fff;
+        padding: 0.55em 1em;
+        font-size: 12px;
+      }
+      .card-desc {
+        color: #000;
+        margin-top: 18px;
+        font-size: 15px;
+      }
+      .project-link {
+        margin-top: auto;
+        min-width: 154px;
+        min-height: 49px;
+        font-size: 15px;
+        padding: 0 1.35em;
+      }
+      .project-link:hover {
+        background: #ff00e6;
+        color: #000;
+      }
+      .media-frame {
+        background: #fff;
+        border: 1.7px solid #ff00e6;
+        border-radius: 22px;
+        min-height: 265px;
+        padding: 15px;
+      }
+      .media-frame img {
+        width: 88%;
+        max-height: 247px;
+      }
+      .card-media .ph {
+        color: #000;
+      }
+      .footer-label span {
+        color: #fff;
+      }
+      @media (max-width: 980px) {
+        .card-info {
+          min-height: 0;
+        }
+        .project-link {
+          margin-top: 28px;
+        }
+      }
+      @media (max-width: 560px) {
+        .tag-float {
+          font-size: 9px;
+          padding: 0.6em 0.9em;
+        }
+        .tag-float.t1 {
+          top: -12%;
+          left: 15%;
+          right: auto;
+        }
+        .tag-float.t2 {
+          top: 2%;
+          right: 5%;
+          left: auto;
+        }
+        .tag-float.t3 {
+          top: 66%;
+          left: -13%;
+          right: auto;
+        }
+        .tag-float.t4 {
+          top: 66%;
+          right: -17%;
+          left: auto;
+        }
+        .tag-float.t5 {
+          top: 106%;
+          left: 50%;
+          right: auto;
+          translate: -50% 0;
+        }
+        .card {
+          padding: 20px;
+        }
+        .media-frame {
+          min-height: 200px;
+        }
+      }
+
+      /* Final project-card refinements */
+      .section-intro {
+        display: none;
+        border: 0;
+      }
+      .projects {
+        padding-top: 16px;
+      }
+      .chip {
+        color: #ff00e6;
+        border-color: #ff00e6;
+        background: #fff;
+      }
+      .card-info {
+        justify-content: flex-start;
+      }
+      .card-desc {
+        margin-top: 24px;
+      }
+      .project-link {
+        margin-top: 42px;
+        min-width: 0;
+        min-height: 0;
+        padding: 0.65em 1.3em;
+        font-size: 12px;
+        line-height: 1.35;
+        align-self: flex-start;
+      }
+      @media (max-width: 980px) {
+        .project-link {
+          margin-top: 36px;
+        }
+      }
+
+      /* Full-screen RomGod intro and refined finishing details */
+      html {
+        background: #000;
+      }
+      body {
+        background: #000;
+      }
+      .sheet {
+        background: #fff;
+        border-radius: 0 0 40px 40px;
+        overflow: clip;
+        padding-bottom: clamp(65px, 8vw, 115px);
+      }
+      .hero {
+        min-height: calc(100svh - 94px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: clamp(55px, 8vh, 100px) var(--gutter) clamp(120px, 15vh, 180px);
+      }
+      .hero-intro {
+        flex: none;
+      }
+      .wordmark-wrap {
+        width: min(600px, 72%);
+        margin: clamp(75px, 12vh, 130px) auto clamp(60px, 10vh, 100px);
+      }
+      .tag-float {
+        font-size: clamp(10px, 0.94vw, 12px);
+        padding: 0.58em 1.1em;
+      }
+      .card {
+        border-radius: 17px;
+      }
+      .site-footer {
+        background: #000;
+      }
+      @media (max-width: 560px) {
+        .sheet {
+          border-radius: 0 0 29px 29px;
+        }
+        .hero {
+          min-height: calc(100svh - 85px);
+          padding: 45px var(--gutter) 120px;
+        }
+        .wordmark-wrap {
+          width: 74%;
+          margin: 100px auto 75px;
+        }
+        .tag-float {
+          font-size: 8px;
+          padding: 0.55em 0.84em;
+        }
+        .card {
+          border-radius: 15px;
+        }
+      }
+
+      .hero-intro .name-accent {
+        color: #ff00e6;
+      }
+
+      /* Restrained, Rhode-inspired corner system for site navigation. */
+      .nav {
+        border-radius: 16px !important;
+      }
+      .nav a {
+        border-radius: 10px !important;
+      }
+      @media (max-width: 560px) {
+        .nav {
+          border-radius: 13px !important;
+        }
+        .nav a {
+          border-radius: 8px !important;
+        }
+      }
+
+      /* Slimmer navigation, same restrained corner treatment across pages */
+      .nav {
+        min-height: 40px !important;
+        padding: 3px 7px !important;
+        gap: 4px !important;
+        border-radius: 14px !important;
+      }
+      .nav a {
+        padding: 7px 12px !important;
+        font-size: 12px !important;
+        line-height: 1.2 !important;
+        border-radius: 9px !important;
+      }
+      @media (max-width: 560px) {
+        .nav {
+          min-height: 36px !important;
+          padding: 3px 5px !important;
+          border-radius: 12px !important;
+        }
+        .nav a {
+          padding: 6px 7px !important;
+          font-size: 10px !important;
+          border-radius: 8px !important;
+        }
+      }
+
+      /* Shared navigation: centered, sticky, white with black outline */
+      .site-header {
+        position: sticky !important;
+        top: 0;
+        z-index: 1000;
+        width: 100%;
+        max-width: none !important;
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+        align-items: center;
+        background: #fff;
+        padding: 16px var(--gutter, clamp(20px, 5vw, 72px)) !important;
+      }
+      .site-header .brand {
+        grid-column: 1;
+        justify-self: start;
+      }
+      .site-header .nav {
+        grid-column: 2;
+        justify-self: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff !important;
+        color: #000 !important;
+        border: 1px solid #000 !important;
+        border-radius: 12px !important;
+        min-height: 40px !important;
+        padding: 3px 7px !important;
+        gap: 4px !important;
+        box-shadow: none !important;
+      }
+      .site-header .nav a {
+        color: #000 !important;
+        background: #fff !important;
+        border: 1px solid transparent !important;
+        border-radius: 8px !important;
+        padding: 7px 12px !important;
+        font-size: 12px !important;
+        line-height: 1.2 !important;
+        white-space: nowrap;
+      }
+      .site-header .nav a:hover,
+      .site-header .nav a:focus-visible {
+        background: #fff !important;
+        color: #000 !important;
+        border-color: #000 !important;
+      }
+      @media (max-width: 560px) {
+        .site-header {
+          padding: 12px 12px !important;
+          gap: 6px;
+        }
+        .site-header .brand {
+          width: 33px !important;
+          height: 33px !important;
+        }
+        .site-header .brand img {
+          width: 22px !important;
+          height: 22px !important;
+        }
+        .site-header .nav {
+          padding: 3px !important;
+          gap: 0 !important;
+          min-height: 34px !important;
+          border-radius: 10px !important;
+        }
+        .site-header .nav a {
+          padding: 6px 7px !important;
+          font-size: 10px !important;
+          border-radius: 6px !important;
+        }
+      }
+
+      /* Project and Arcade gallery */
+      :root {
+        --pink: #ff00e6;
+      }
+      .gallery-grid {
+        max-width: 1240px;
+        margin: 0 auto;
+        padding: 0 clamp(22px, 5vw, 72px) 90px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: clamp(28px, 5vw, 66px);
+        row-gap: clamp(50px, 6vw, 80px);
+      }
+      .gallery-grid.arcade-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        column-gap: clamp(20px, 3vw, 35px);
+      }
+      .gallery-item {
+        min-width: 0;
+      }
+      .gallery-thumbnail {
+        width: 100%;
+        aspect-ratio: 1.56 / 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        border-radius: 16px;
+        background: #ededed;
+      }
+      .gallery-thumbnail img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+      .gallery-overlay {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.06);
+        opacity: 0;
+        transition: opacity 0.22s ease;
+      }
+      .gallery-item:hover .gallery-overlay,
+      .gallery-item:focus-within .gallery-overlay {
+        opacity: 1;
+      }
+      .gallery-readmore {
+        font-size: 12px;
+        line-height: 1;
+        border: 1.5px solid var(--pink);
+        border-radius: 999px;
+        padding: 11px 19px;
+        background: #fff;
+        color: var(--pink);
+      }
+      .gallery-name {
+        font-size: clamp(17px, 1.7vw, 22px);
+        font-weight: 400;
+        letter-spacing: -0.025em;
+        margin: 13px 0 7px;
+        line-height: 1.25;
+      }
+      .gallery-chips {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 6px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+      .gallery-chips li {
+        font-size: 11px;
+        border: 1px solid #000;
+        border-radius: 999px;
+        padding: 4px 11px;
+      }
+      .gallery-page-head {
+        max-width: 1240px;
+        margin: 0 auto;
+        padding: clamp(80px, 11vw, 140px) clamp(22px, 5vw, 72px) 44px;
+      }
+      .gallery-page-head h1 {
+        font-weight: 400;
+        font-size: clamp(32px, 5vw, 60px);
+        letter-spacing: -0.045em;
+      }
+      .gallery-page-head p {
+        margin-top: 15px;
+        font-size: 14px;
+        max-width: 56ch;
+        line-height: 1.6;
+      }
+      .gallery-placeholder {
+        font-size: 12px;
+        color: #000;
+        text-align: center;
+        padding: 24px;
+      }
+      .gallery-action {
+        display: block;
+        width: 100%;
+        text-align: left;
+        background: transparent;
+        border: 0;
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+        color: inherit;
+      }
+      .gallery-action:focus-visible {
+        outline: 2px solid var(--pink);
+        outline-offset: 4px;
+        border-radius: 16px;
+      }
+      .gallery-action .gallery-readmore {
+        display: inline-block;
+      }
+      .gallery-panel[hidden] {
+        display: none;
+      }
+      .gallery-panel {
+        margin-top: 15px;
+        padding: 16px 18px;
+        border: 1px solid #000;
+        border-radius: 12px;
+        font-size: 13px;
+        line-height: 1.6;
+      }
+      .gallery-panel p + p {
+        margin-top: 8px;
+      }
+      @media (max-width: 850px) {
+        .gallery-grid.arcade-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+      @media (max-width: 640px) {
+        .gallery-grid,
+        .gallery-grid.arcade-grid {
+          grid-template-columns: 1fr;
+          row-gap: 35px;
+        }
+        .gallery-thumbnail {
+          border-radius: 12px;
+        }
+        .gallery-page-head {
+          padding-top: 80px;
+        }
+        .gallery-overlay {
+          opacity: 1;
+          background: transparent;
+          align-items: flex-end;
+          justify-content: flex-end;
+          padding: 12px;
+        }
+        .gallery-readmore {
+          font-size: 11px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .gallery-overlay {
+          transition: none;
+        }
+      }
+    </style>
+    <style>
+      /* RomGod small black dot cursor */
+      @media (pointer: fine) {
+        html,
+        body,
+        body *,
+        a,
+        button,
+        input,
+        textarea,
+        select,
+        label {
+          cursor: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%224.5%22%20fill%3D%22%23FF00E6%22%2F%3E%3C%2Fsvg%3E")
+              8 8,
+            auto !important;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .gallery-thumbnail video {
+          transition: none;
+        }
+      }
+      .gallery-thumbnail video {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+      }
+      .gallery-item:hover .gallery-thumbnail video {
+        filter: brightness(0.95);
+      }
+      /* RomGod menu: three independent pink outline pills, consistent across all pages */
+      .site-header .nav {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+        gap: 12px !important;
+        padding: 0 !important;
+        min-height: 0 !important;
+        background: transparent !important;
+        border: 0 !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        width: max-content;
+        max-width: 100%;
+      }
+      .site-header .nav a,
+      .site-header .nav a[aria-current="page"] {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: #fff !important;
+        color: #ff00e6 !important;
+        border: 2px solid #ff00e6 !important;
+        border-radius: 999px !important;
+        box-shadow: none !important;
+        font-family: "Neue Haas Grotesk Display Pro",
+          "Neue Haas Grotesk Text Pro", "Neue Haas Grotesk", Arial, Helvetica,
+          sans-serif !important;
+        font-size: 15px !important;
+        font-weight: 400 !important;
+        line-height: 1.25 !important;
+        letter-spacing: 0 !important;
+        padding: 10px 21px !important;
+        text-decoration: none !important;
+        white-space: nowrap;
+        transition: background-color 0.18s ease, color 0.18s ease !important;
+      }
+      .site-header .nav a:hover,
+      .site-header .nav a:focus-visible {
+        color: #fff !important;
+        background: #ff00e6 !important;
+        border-color: #ff00e6 !important;
+      }
+      @media (max-width: 700px) {
+        .site-header .nav {
+          gap: 7px !important;
+        }
+        .site-header .nav a,
+        .site-header .nav a[aria-current="page"] {
+          font-size: 11px !important;
+          padding: 8px 11px !important;
+          border-width: 1.5px !important;
+        }
+      }
+      @media (max-width: 380px) {
+        .site-header .nav {
+          gap: 5px !important;
+        }
+        .site-header .nav a,
+        .site-header .nav a[aria-current="page"] {
+          font-size: 10px !important;
+          padding: 7px 8px !important;
+        }
+      }
+    </style>
+    <style>
+      /* Editorial navigation: screenshot-inspired, left aligned links and name at right */
+      .site-header {
+        position: sticky !important;
+        top: 0 !important;
+        z-index: 1000 !important;
+        background: #fff !important;
+        width: 100% !important;
+        max-width: none !important;
+        padding: 22px clamp(24px, 4.5vw, 68px) !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 24px !important;
+        transform: none !important;
+      }
+      .site-header .nav {
+        display: flex !important;
+        position: static !important;
+        transform: none !important;
+        background: transparent !important;
+        border: 0 !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        height: auto !important;
+        min-height: 0 !important;
+        gap: clamp(9px, 1.4vw, 22px) !important;
+        justify-content: flex-start !important;
+        flex-wrap: wrap !important;
+        width: auto !important;
+        border-radius: 0 !important;
+      }
+      .site-header .nav a,
+      .site-header .nav a[aria-current="page"] {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        white-space: nowrap !important;
+        min-width: 0 !important;
+        font-family: "Neue Haas Grotesk Display Pro",
+          "Neue Haas Grotesk Text Pro", "Neue Haas Grotesk", Arial, Helvetica,
+          sans-serif !important;
+        font-size: clamp(13px, 1.1vw, 16px) !important;
+        line-height: 1.25 !important;
+        color: #000 !important;
+        background: transparent !important;
+        border: 0 !important;
+        padding: 8px 17px !important;
+        border-radius: 999px !important;
+        letter-spacing: 0 !important;
+        font-weight: 400 !important;
+        text-decoration: none !important;
+        transition: background 0.2s, color 0.2s !important;
+      }
+      .site-header .nav a[aria-current="page"] {
+        color: #fff !important;
+        background: #000 !important;
+      }
+      .site-header .nav a:hover:not([aria-current="page"]),
+      .site-header .nav a:focus-visible:not([aria-current="page"]) {
+        color: #fff !important;
+        background: #000 !important;
+      }
+      .site-header .header-signature {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-shrink: 0;
+        white-space: nowrap;
+      }
+      .site-header .header-name {
+        font-size: clamp(13px, 1.05vw, 16px);
+        font-weight: 500;
+        color: #000;
+      }
+      .site-header .header-signature .brand {
+        display: flex !important;
+        position: static !important;
+        width: 29px !important;
+        height: 29px !important;
+        flex: 0 0 29px !important;
+        background: #000 !important;
+        border-radius: 50% !important;
+        align-items: center;
+        justify-content: center;
+      }
+      .site-header .header-signature .brand img {
+        width: 20px !important;
+        height: 20px !important;
+        object-fit: contain;
+      }
+      @media (max-width: 680px) {
+        .site-header {
+          padding: 15px 17px !important;
+          gap: 8px !important;
+          flex-wrap: wrap !important;
+        }
+        .site-header .nav {
+          order: 2;
+          width: 100% !important;
+          gap: 5px !important;
+          justify-content: space-between !important;
+        }
+        .site-header .nav a,
+        .site-header .nav a[aria-current="page"] {
+          font-size: 11px !important;
+          padding: 8px 11px !important;
+        }
+        .site-header .header-signature {
+          order: 1;
+          width: 100%;
+          justify-content: flex-end;
+        }
+      }
+    </style>
+    <style>
+      /* Smaller, swapped editorial navigation */
+      .site-header {
+        padding: 12px clamp(20px, 3.7vw, 55px) !important;
+        gap: 18px !important;
+      }
+      .site-header .header-signature {
+        order: 1 !important;
+        gap: 9px !important;
+      }
+      .site-header .header-signature .brand {
+        order: 0 !important;
+        width: 25px !important;
+        height: 25px !important;
+        flex-basis: 25px !important;
+      }
+      .site-header .header-signature .brand img {
+        width: 17px !important;
+        height: 17px !important;
+      }
+      .site-header .header-name {
+        order: 1 !important;
+        font-size: 12px !important;
+      }
+      .site-header .nav {
+        order: 2 !important;
+        gap: clamp(5px, 1vw, 14px) !important;
+        margin-left: auto !important;
+      }
+      .site-header .nav a,
+      .site-header .nav a[aria-current="page"] {
+        font-size: 12px !important;
+        padding: 6px 11px !important;
+      }
+      @media (max-width: 680px) {
+        .site-header {
+          padding: 10px 15px !important;
+          gap: 9px !important;
+        }
+        .site-header .header-signature {
+          order: 1 !important;
+          width: 100% !important;
+          justify-content: flex-start !important;
+        }
+        .site-header .nav {
+          order: 2 !important;
+          width: 100% !important;
+          margin-left: 0 !important;
+          justify-content: flex-start !important;
+          gap: 6px !important;
+        }
+        .site-header .nav a,
+        .site-header .nav a[aria-current="page"] {
+          font-size: 11px !important;
+          padding: 6px 9px !important;
+        }
+      }
+    </style>
+    <style>
+      a.gallery-action {
+        display: block;
+        color: inherit;
+        text-decoration: none;
+      }
+      a.gallery-action:focus-visible {
+        outline: 2px solid #ff00e6;
+        outline-offset: 5px;
+      }
+    </style>
+    <style>
+      .gallery-action[href] {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+        cursor: pointer;
+      }
+    </style>
+    <style>
+      /* RomGod streamlined editorial system */
+      html,
+      body,
+      button,
+      a,
+      input {
+        font-family: "Neue Haas Grotesk Display Pro",
+          "Neue Haas Grotesk Text Pro", "Neue Haas Grotesk", Arial, Helvetica,
+          sans-serif !important;
+      }
+      :root {
+        --pink: #000 !important;
+      }
+      .nav a.current,
+      .nav a.active,
+      .nav a:hover,
+      .nav a:focus-visible {
+        background: #000 !important;
+        color: #fff !important;
+      }
+      .gallery-readmore,
+      .gallery-chips li,
+      .chip,
+      .tag-float,
+      .cta,
+      .project-tag,
+      .pill {
+        border-color: #000 !important;
+        color: #000 !important;
+        background: #fff !important;
+      }
+      .pink,
+      .name-accent {
+        color: #000 !important;
+      }
+      .gallery-overlay .gallery-readmore {
+        background: #fff !important;
+        color: #000 !important;
+      }
+      /* Hide the desktop custom dot on mobile only */
+      @media (pointer: coarse) {
+        .cursor-dot {
+          display: none !important;
+        }
+      }
+    </style>
+    <link href="navigation.css" rel="stylesheet" />
+    <style>
+      /* Homepage identity, adapted from the provided full-screen reference */
+      .rg-new-hero {
+        position: relative !important;
+        display: flex !important;
+        align-items: center !important;
+        width: 100% !important;
+        min-height: calc(100svh - 85px) !important;
+        padding: clamp(55px, 7vw, 110px) clamp(24px, 4vw, 72px) 85px !important;
+        overflow: visible !important;
+        cursor: default !important;
+        background: #fff !important;
+      }
+      .rg-hero-content {
+        width: 100%;
+        position: relative;
+      }
+      .rg-display-name {
+        font-family: "Cooper Black", "Arial Rounded MT Bold", "Helvetica Neue",
+          Arial, sans-serif !important;
+        font-weight: 900 !important;
+        letter-spacing: -0.085em !important;
+        line-height: 0.95 !important;
+        font-size: clamp(56px, 8.3vw, 155px) !important;
+        white-space: nowrap;
+        margin: 0 0 clamp(22px, 3vw, 48px) !important;
+        color: #000 !important;
+        transform-origin: top left;
+        transition: opacity 0.15s linear;
+        max-width: 100%;
+      }
+      .rg-hero-sub {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        flex-wrap: wrap;
+        min-height: 48px;
+      }
+      .rg-lead {
+        margin: 0 !important;
+        font-size: clamp(13px, 1.18vw, 19px) !important;
+        font-weight: 600 !important;
+        letter-spacing: -0.018em;
+      }
+      .rg-slot {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 180px;
+        height: 46px;
+        overflow: hidden;
+        background: #fff;
+        color: #000;
+        border: 1.5px solid #000;
+        border-radius: 999px;
+        padding: 0 22px;
+        font-size: clamp(13px, 1vw, 16px);
+        font-weight: 400;
+        white-space: nowrap;
+      }
+      .rg-slot-text {
+        display: block;
+        will-change: transform, opacity;
+      }
+      .rg-slot-text.is-exiting {
+        animation: rg-slot-out 0.22s ease-in forwards;
+      }
+      .rg-slot-text.is-entering {
+        animation: rg-slot-in 0.3s cubic-bezier(0.2, 0.85, 0.24, 1) both;
+      }
+      @keyframes rg-slot-out {
+        to {
+          transform: translateY(-110%);
+          opacity: 0;
+        }
+      }
+      @keyframes rg-slot-in {
+        from {
+          transform: translateY(110%);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+      /* Header identity is hidden at top; visible as hero identity recedes. */
+      .rg-has-scroll-identity .site-header .header-name {
+        opacity: 0 !important;
+        transform: translateY(7px);
+        transition: opacity 0.2s, transform 0.25s;
+      }
+      .rg-has-scroll-identity.rg-identity-docked .site-header .header-name {
+        opacity: 1 !important;
+        transform: translateY(0);
+      }
+      .rg-new-hero + .gallery-grid {
+        margin-top: 0 !important;
+      }
+      @media (max-width: 900px) {
+        .rg-display-name {
+          white-space: normal;
+          font-size: clamp(56px, 10.5vw, 105px) !important;
+        }
+        .rg-new-hero {
+          min-height: calc(85svh - 70px) !important;
+        }
+      }
+      @media (max-width: 600px) {
+        .rg-new-hero {
+          min-height: calc(82svh - 100px) !important;
+          padding: 64px 22px !important;
+        }
+        .rg-display-name {
+          font-size: clamp(52px, 13vw, 85px) !important;
+          line-height: 0.97 !important;
+        }
+        .rg-hero-sub {
+          align-items: flex-start;
+          gap: 12px;
+        }
+        .rg-slot {
+          height: 39px;
+          min-width: 150px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .rg-slot-text.is-exiting,
+        .rg-slot-text.is-entering {
+          animation: none !important;
+        }
+        .rg-has-scroll-identity .site-header .header-name {
+          transition: none !important;
+        }
+      }
+    </style>
+    <style>
+      /* Accurate title asset, light introduction, immediate selected work */
+      .rg-new-hero {
+        min-height: 0 !important;
+        height: auto !important;
+        display: block !important;
+        padding: clamp(110px, 14vh, 175px) clamp(22px, 4vw, 66px)
+          clamp(130px, 16vh, 205px) !important;
+      }
+      .rg-hero-content {
+        width: 100% !important;
+      }
+      .rg-display-name {
+        font-size: unset !important;
+        font-weight: 400 !important;
+        line-height: 1 !important;
+        letter-spacing: normal !important;
+        white-space: normal !important;
+        margin: 0 0 30px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      .rg-big-logo {
+        display: block;
+        width: 100%;
+        max-width: 1266px;
+        height: auto;
+        object-fit: contain;
+      }
+      .rg-hero-sub {
+        gap: 18px !important;
+        min-height: 40px !important;
+      }
+      .rg-lead {
+        color: #000 !important;
+        opacity: 1 !important;
+        font-weight: 400 !important;
+        font-size: clamp(14px, 1.35vw, 18px) !important;
+        letter-spacing: normal !important;
+      }
+      .rg-slot {
+        color: #000 !important;
+        opacity: 1 !important;
+        min-width: 170px;
+        height: 43px;
+        font-size: 14px !important;
+      }
+      .rg-new-hero + .gallery-grid {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+      }
+      @media (max-width: 800px) {
+        .rg-new-hero {
+          padding: 90px 22px 115px !important;
+        }
+        .rg-display-name {
+          margin-bottom: 22px !important;
+        }
+        .rg-lead {
+          font-size: 14px !important;
+        }
+      }
+      @media (max-width: 550px) {
+        .rg-new-hero {
+          padding: 80px 20px 100px !important;
+        }
+        .rg-hero-sub {
+          gap: 10px !important;
+        }
+        .rg-slot {
+          height: 37px;
+          min-width: 145px;
+          font-size: 12px !important;
+        }
+      }
+    </style>
+    <style>
+      /* Slot-machine pill: paused word with a pixelated diagonal wipe on hover */
+      .rg-slot {
+        position: relative !important;
+        isolation: isolate;
+        overflow: hidden !important;
+        cursor: pointer !important;
+        transition: border-color 0.2s !important;
+      }
+      .rg-slot::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: #000;
+        z-index: 0;
+        transform: translateY(110%);
+        transition: transform 0.55s steps(14, end);
+      }
+      .rg-slot:hover::before,
+      .rg-slot:focus-within::before {
+        transform: translateY(0);
+      }
+      .rg-slot .rg-slot-text {
+        position: relative;
+        z-index: 1;
+        transition: color 0.18s;
+      }
+      .rg-slot:hover .rg-slot-text,
+      .rg-slot:focus-within .rg-slot-text {
+        color: #fff !important;
+      }
+      .rg-slot:hover {
+        border-color: #000 !important;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .rg-slot::before {
+          transition: none !important;
+        }
+      }
+    </style>
+    <style>
+      /* Reliable jet-black custom lettering: never render gray at any scroll position. */
+      .rg-display-name,
+      .rg-display-name img,
+      .rg-big-logo {
+        opacity: 1 !important;
+        filter: brightness(0) !important;
+        mix-blend-mode: normal !important;
+      }
+      .rg-display-name {
+        transition: transform 0.2s linear !important;
+      }
+      /* Sprite-mask fill based on reference: irregular black ink blooms in steps */
+      .rg-slot::before {
+        display: none !important;
+      }
+      .rg-slot {
+        position: relative !important;
+        isolation: isolate !important;
+        overflow: hidden !important;
+        background: #fff !important;
+        color: #000 !important;
+      }
+      .rg-slot .rg-slot-text {
+        color: #000 !important;
+        z-index: 1 !important;
+        transition: none !important;
+      }
+      .rg-slot:hover .rg-slot-text,
+      .rg-slot:focus-within .rg-slot-text {
+        color: #000 !important;
+      }
+      .rg-ink-overlay {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        inset: 0;
+        background: #000;
+        color: #fff;
+        z-index: 3;
+        pointer-events: none;
+        -webkit-mask-image: url("assets/ink-reveal-strip.png");
+        mask-image: url("assets/ink-reveal-strip.png");
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-size: 3100% 100%;
+        mask-size: 3100% 100%;
+        -webkit-mask-position: 0% 0%;
+        mask-position: 0% 0%;
+      }
+      .rg-ink-text {
+        color: #fff !important;
+        white-space: nowrap;
+        font: inherit;
+      }
+      .rg-slot:hover .rg-ink-overlay,
+      .rg-slot:focus-within .rg-ink-overlay {
+        animation: rg-ink-reveal 0.7s steps(30, end) forwards;
+      }
+      .rg-slot:not(:hover):not(:focus-within) .rg-ink-overlay {
+        animation: rg-ink-hide 0.7s steps(30, end) forwards;
+      }
+      @keyframes rg-ink-reveal {
+        from {
+          -webkit-mask-position: 0% 0%;
+          mask-position: 0% 0%;
+        }
+        to {
+          -webkit-mask-position: 100% 0%;
+          mask-position: 100% 0%;
+        }
+      }
+      @keyframes rg-ink-hide {
+        from {
+          -webkit-mask-position: 100% 0%;
+          mask-position: 100% 0%;
+        }
+        to {
+          -webkit-mask-position: 0% 0%;
+          mask-position: 0% 0%;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .rg-slot .rg-ink-overlay {
+          animation: none !important;
+          -webkit-mask-image: none;
+          mask-image: none;
+          opacity: 0;
+        }
+        .rg-slot:hover .rg-ink-overlay,
+        .rg-slot:focus-within .rg-ink-overlay {
+          opacity: 1;
+        }
+      }
+    </style>
+    <style>
+      /* Original CodePen pizza3 button-container-3 sprite animation (70 frames) */
+      .rg-slot {
+        position: relative !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        overflow: hidden !important;
+        isolation: isolate !important;
+        background: #fff !important;
+        color: #000 !important;
+        border: 1px solid #000 !important;
+        border-radius: 999px !important;
+        cursor: pointer !important;
+      }
+      .rg-slot::before {
+        display: none !important;
+      }
+      .rg-slot .rg-slot-text {
+        position: relative !important;
+        z-index: 1 !important;
+        color: #000 !important;
+        opacity: 1 !important;
+      }
+      .rg-slot .rg-ink-overlay {
+        position: absolute !important;
+        inset: 0 !important;
+        z-index: 2 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        pointer-events: none !important;
+        background: #000 !important;
+        color: #fff !important;
+        -webkit-mask-image: url("https://raw.githubusercontent.com/pizza3/asset/master/natureSmaller.png") !important;
+        mask-image: url("https://raw.githubusercontent.com/pizza3/asset/master/natureSmaller.png") !important;
+        -webkit-mask-size: 7100% 100% !important;
+        mask-size: 7100% 100% !important;
+        -webkit-mask-repeat: no-repeat !important;
+        mask-repeat: no-repeat !important;
+        -webkit-mask-position: 100% 0;
+        mask-position: 100% 0;
+        animation: rg-mask-out 0.7s steps(70) forwards !important;
+      }
+      .rg-slot:hover .rg-ink-overlay,
+      .rg-slot:focus-visible .rg-ink-overlay {
+        animation: rg-mask-in 0.7s steps(70) forwards !important;
+      }
+      .rg-slot .rg-ink-text {
+        color: #fff !important;
+        white-space: nowrap !important;
+        font: inherit !important;
+      }
+      @keyframes rg-mask-in {
+        from {
+          -webkit-mask-position: 0 0;
+          mask-position: 0 0;
+        }
+        to {
+          -webkit-mask-position: 100% 0;
+          mask-position: 100% 0;
+        }
+      }
+      @keyframes rg-mask-out {
+        from {
+          -webkit-mask-position: 100% 0;
+          mask-position: 100% 0;
+        }
+        to {
+          -webkit-mask-position: 0 0;
+          mask-position: 0 0;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .rg-slot .rg-ink-overlay {
+          animation: none !important;
+          opacity: 0 !important;
+        }
+        .rg-slot:hover .rg-ink-overlay,
+        .rg-slot:focus-visible .rg-ink-overlay {
+          opacity: 1 !important;
+        }
+      }
+    </style>
+    <link href="cursor.css" rel="stylesheet" />
+    <link href="mask-button.css" rel="stylesheet" />
+    <style>
+      /* Homepage project gallery: larger imagery, precise project order and backgrounds */
+      #work.gallery-grid {
+        max-width: 1480px;
+        column-gap: clamp(22px, 3vw, 48px);
+        row-gap: clamp(48px, 5vw, 76px);
+        padding-left: clamp(22px, 4vw, 64px);
+        padding-right: clamp(22px, 4vw, 64px);
+      }
+      #work .gallery-thumbnail {
+        aspect-ratio: 1.46 / 1;
+        background: #fff;
+        border-radius: 16px;
+      }
+      #work .gallery-thumbnail.rg-white-backdrop {
+        background: #fff;
+      }
+      #work .gallery-thumbnail.rg-black-backdrop {
+        background: #000;
+      }
+      #work .gallery-thumbnail > img,
+      #work .gallery-thumbnail > video {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        transform: scale(1.075);
+        transform-origin: center;
+      }
+      #work .gallery-thumbnail.rg-black-backdrop > img {
+        transform: scale(1.065);
+      }
+      @media (max-width: 640px) {
+        #work.gallery-grid {
+          row-gap: 38px;
+        }
+        #work .gallery-thumbnail {
+          aspect-ratio: 1.48 / 1;
+        }
+      }
+    </style>
+    <link href="footer.css?v=romgod-footer-2" rel="stylesheet" />
+    <style id="rg-footer-final-override">
+      /* RomGod shared footer — minimal, no icon containers or link underlines */
+      .rg-footer,
+      footer.rg-footer {
+        background: #000 !important;
+        color: #fff !important;
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: clamp(35px, 3vw, 58px) clamp(24px, 3.2vw, 66px)
+          clamp(22px, 2.5vw, 42px) !important;
+        box-sizing: border-box !important;
+        display: block !important;
+        border: none !important;
+        border-radius: 0 !important;
+      }
+      .rg-footer * {
+        box-sizing: border-box;
+      }
+
+      .rg-footer .rg-footer-top {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: flex-start !important;
+        gap: 28px !important;
+        margin: 0 0 clamp(22px, 2.4vw, 42px) !important;
+      }
+      .rg-footer .rg-footer-contact {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 9px !important;
+      }
+
+      /* No underline, smaller type, stays white in every link state */
+      .rg-footer .rg-footer-contact .rg-contact-link,
+      .rg-footer .rg-footer-contact .rg-email-link,
+      .rg-footer .rg-footer-contact .rg-contact-link:link,
+      .rg-footer .rg-footer-contact .rg-email-link:link,
+      .rg-footer .rg-footer-contact .rg-contact-link:visited,
+      .rg-footer .rg-footer-contact .rg-email-link:visited,
+      .rg-footer .rg-footer-contact .rg-contact-link:hover,
+      .rg-footer .rg-footer-contact .rg-email-link:hover,
+      .rg-footer .rg-footer-contact .rg-contact-link:focus-visible,
+      .rg-footer .rg-footer-contact .rg-email-link:focus-visible,
+      .rg-footer .rg-footer-contact .rg-contact-link:active,
+      .rg-footer .rg-footer-contact .rg-email-link:active {
+        display: inline-block !important;
+        align-self: flex-start !important;
+        color: #fff !important;
+        font-size: clamp(12px, 0.95vw, 15px) !important;
+        font-weight: 400 !important;
+        line-height: 1.35 !important;
+        text-decoration: none !important;
+        text-decoration-line: none !important;
+        text-underline-offset: initial !important;
+        border: 0 !important;
+        box-shadow: none !important;
+        background: transparent !important;
+        opacity: 1 !important;
+      }
+
+      /* Icons are naked white SVGs, never white outlined circles */
+      .rg-footer .rg-footer-social {
+        display: flex !important;
+        align-items: center !important;
+        flex-wrap: wrap !important;
+        gap: 16px !important;
+      }
+      .rg-footer .rg-footer-social a,
+      .rg-footer .rg-footer-social a:link,
+      .rg-footer .rg-footer-social a:visited,
+      .rg-footer .rg-footer-social a:hover,
+      .rg-footer .rg-footer-social a:focus,
+      .rg-footer .rg-footer-social a:focus-visible,
+      .rg-footer .rg-footer-social a:active {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        flex: 0 0 20px !important;
+        width: 20px !important;
+        height: 22px !important;
+        min-width: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        border: none !important;
+        border-width: 0 !important;
+        outline: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        background: transparent !important;
+        color: white !important;
+        opacity: 1 !important;
+        filter: none !important;
+        text-decoration: none !important;
+      }
+      .rg-footer .rg-footer-social svg {
+        display: block !important;
+        width: 18px !important;
+        height: 18px !important;
+        color: #fff !important;
+        opacity: 1 !important;
+        filter: none !important;
+      }
+
+      /* Slight spring/bounce like the top navigation */
+      @keyframes rg-footer-subtle-bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        45% {
+          transform: translateY(-5px);
+        }
+        75% {
+          transform: translateY(1px);
+        }
+      }
+      .rg-footer .rg-footer-contact .rg-contact-link:hover,
+      .rg-footer .rg-footer-contact .rg-contact-link:focus-visible,
+      .rg-footer .rg-footer-contact .rg-email-link:hover,
+      .rg-footer .rg-footer-contact .rg-email-link:focus-visible,
+      .rg-footer .rg-footer-social a:hover,
+      .rg-footer .rg-footer-social a:focus-visible {
+        animation: rg-footer-subtle-bounce 0.43s ease-out 1 !important;
+      }
+
+      .rg-footer .rg-footer-name {
+        display: block !important;
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      .rg-footer .rg-footer-name img {
+        display: block !important;
+        width: 100% !important;
+        max-width: none !important;
+        height: auto !important;
+        filter: invert(1) !important;
+        opacity: 1 !important;
+      }
+      @media (max-width: 650px) {
+        .rg-footer .rg-footer-top {
+          flex-direction: column !important;
+          gap: 28px !important;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .rg-footer .rg-footer-contact a:hover,
+        .rg-footer .rg-footer-contact a:focus-visible,
+        .rg-footer .rg-footer-social a:hover,
+        .rg-footer .rg-footer-social a:focus-visible {
+          animation: none !important;
+        }
+      }
+    </style>
+    <style>
+      /* Center the homepage opening title without modifying the work grid */
+      .rg-new-hero .rg-display-name {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        width: 100% !important;
+      }
+      .rg-new-hero .rg-big-logo {
+        display: block !important;
+        margin-inline: auto !important;
+        max-width: 100% !important;
+      }
+    </style>
+    <link href="consistent-margins.css" rel="stylesheet" />
+    <style>
+      /* Ensure the contact arrow renders as a plain text glyph on iOS. */
+      .rg-contact-link .contact-text-arrow {
+        font-family: Arial, Helvetica, sans-serif !important;
+        font-weight: 400;
+        font-variant-emoji: text;
+        display: inline;
+      }
+    </style>
+    <style>
+      /* Refined Works hover: bottom-right glass slider + subtle blur */
+      #work .gallery-thumbnail {
+        position: relative;
+        overflow: hidden;
+        isolation: isolate;
+      }
+      #work .gallery-thumbnail > img,
+      #work .gallery-thumbnail > video {
+        transition: filter 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+        will-change: filter, transform;
+      }
+      #work .gallery-overlay {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        padding: clamp(14px, 2vw, 22px) !important;
+        opacity: 0;
+        pointer-events: none;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.01) 0%,
+          rgba(255, 255, 255, 0.08) 62%,
+          rgba(255, 255, 255, 0.16) 100%
+        ) !important;
+        backdrop-filter: blur(0px) saturate(100%);
+        -webkit-backdrop-filter: blur(0px) saturate(100%);
+        transition: opacity 0.28s ease, backdrop-filter 0.28s ease,
+          -webkit-backdrop-filter 0.28s ease, background 0.28s ease;
+      }
+      #work .gallery-item:hover .gallery-overlay,
+      #work .gallery-item:focus-within .gallery-overlay {
+        opacity: 1;
+        backdrop-filter: blur(1px) saturate(102%);
+        -webkit-backdrop-filter: blur(1px) saturate(102%);
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.01) 0%,
+          rgba(255, 255, 255, 0.025) 58%,
+          rgba(255, 255, 255, 0.07) 100%
+        ) !important;
+      }
+      #work .gallery-item:hover .gallery-thumbnail > img,
+      #work .gallery-item:focus-within .gallery-thumbnail > img,
+      #work .gallery-item:hover .gallery-thumbnail > video,
+      #work .gallery-item:focus-within .gallery-thumbnail > video {
+        filter: blur(1.7px) brightness(0.99);
+        transform: scale(1.065);
+      }
+      #work .readmore-slider {
+        width: clamp(152px, 20vw, 182px);
+        height: 44px;
+        border-radius: 999px;
+        border: 1.4px solid rgba(0, 0, 0, 0.72);
+        background: rgba(255, 255, 255, 0.8);
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.045);
+        backdrop-filter: blur(7px) saturate(108%);
+        -webkit-backdrop-filter: blur(7px) saturate(108%);
+      }
+      #work .readmore-slider-label {
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-left: 18px;
+        font-size: 13px;
+        line-height: 1;
+        letter-spacing: -0.01em;
+      }
+      #work .readmore-slider-thumb {
+        top: 3px;
+        left: 3px;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: #000;
+        color: #fff;
+        font-size: 0;
+        box-shadow: none;
+      }
+      #work .readmore-slider-thumb:focus-visible {
+        outline: 2px solid #fff;
+        outline-offset: 2px;
+      }
+      #work .readmore-slider.is-complete {
+        background: rgba(255, 255, 255, 0.82);
+      }
+      @media (max-width: 640px) {
+        #work .gallery-overlay {
+          opacity: 1;
+          align-items: flex-end !important;
+          justify-content: flex-end !important;
+          background: linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.06) 68%,
+            rgba(255, 255, 255, 0.14) 100%
+          ) !important;
+        }
+        #work .readmore-slider {
+          width: 148px;
+          height: 42px;
+        }
+        #work .readmore-slider-thumb {
+          width: 36px;
+          height: 36px;
+          font-size: 0;
+        }
+        #work .readmore-slider-label {
+          font-size: 12px;
+          padding-left: 16px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        #work .gallery-thumbnail > img,
+        #work .gallery-thumbnail > video,
+        #work .gallery-overlay {
+          transition: none;
+        }
+      }
+    </style>
+    <style>
+      /* WORKS / compact slider in the center of each image */
+      #work .gallery-thumbnail {
+        position: relative;
+        overflow: hidden;
+        isolation: isolate;
+      }
+      #work .gallery-overlay,
+      #work .gallery-item:hover .gallery-overlay,
+      #work .gallery-item:focus-within .gallery-overlay {
+        inset: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 12px !important;
+        pointer-events: none;
+      }
+      #work .readmore-slider {
+        --slide: 0px;
+        box-sizing: border-box;
+        position: relative;
+        flex: 0 0 auto;
+        width: 124px !important;
+        height: 46px !important;
+        border-radius: 999px !important;
+        border: 1px solid rgba(0, 0, 0, 0.66) !important;
+        background: rgba(255, 255, 255, 0.82) !important;
+        box-shadow: 0 2px 9px rgba(0, 0, 0, 0.04) !important;
+        overflow: hidden;
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        pointer-events: auto;
+        touch-action: pan-y;
+      }
+      #work .readmore-slider-thumb {
+        box-sizing: border-box;
+        position: absolute !important;
+        top: 3px !important;
+        left: 3px !important;
+        width: 38px !important;
+        height: 38px !important;
+        background: #000 !important;
+        border-radius: 50% !important;
+        color: transparent !important;
+        font-size: 0 !important;
+        z-index: 3;
+        transform: translateX(var(--slide));
+        box-shadow: none !important;
+        cursor: grab !important;
+        touch-action: none;
+      }
+      #work .readmore-slider-label {
+        box-sizing: border-box;
+        position: absolute !important;
+        inset: 0 4px 0 45px !important;
+        width: auto !important;
+        height: 100%;
+        padding: 0 !important;
+        overflow: hidden !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        white-space: nowrap;
+        pointer-events: none;
+        font-size: 11px !important;
+        line-height: 1 !important;
+        animation: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+        -webkit-mask-image: linear-gradient(
+          90deg,
+          transparent,
+          #000 10%,
+          #000 90%,
+          transparent
+        );
+        mask-image: linear-gradient(
+          90deg,
+          transparent,
+          #000 10%,
+          #000 90%,
+          transparent
+        );
+      }
+      #work .readmore-marquee-track {
+        display: flex;
+        flex: 0 0 auto;
+        width: max-content;
+        align-items: center;
+        animation: rg-readmore-marquee 4.4s linear infinite;
+      }
+      #work .readmore-marquee-track span {
+        box-sizing: border-box;
+        display: inline-block;
+        flex: 0 0 84px;
+        width: 84px;
+        font-size: 11px;
+        text-align: left;
+        white-space: nowrap;
+      }
+      @keyframes rg-readmore-marquee {
+        from {
+          transform: translateX(-84px);
+        }
+        to {
+          transform: translateX(0);
+        }
+      }
+      #work .readmore-slider.is-resetting .readmore-slider-thumb {
+        transition: transform 0.23s ease;
+      }
+      #work .readmore-slider.is-complete {
+        background: rgba(255, 255, 255, 0.88) !important;
+      }
+      @media (max-width: 640px) {
+        #work .gallery-overlay {
+          opacity: 1;
+        }
+        #work .readmore-slider {
+          width: 124px !important;
+          height: 46px !important;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        #work .readmore-marquee-track {
+          animation: none !important;
+        }
+        #work .readmore-slider.is-resetting .readmore-slider-thumb {
+          transition: none !important;
+        }
+      }
+    </style>
+    <style>
+      /* Clear, sharp Read More control; preserve gentle image hover blur. */
+      #work .readmore-slider,
+      #work .readmore-slider.is-complete {
+        background: #fff !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        filter: none !important;
+      }
+      #work .readmore-slider-label {
+        -webkit-mask-image: none !important;
+        mask-image: none !important;
+        filter: none !important;
+      }
+      #work .readmore-marquee-track,
+      #work .readmore-marquee-track span {
+        filter: none !important;
+        text-shadow: none !important;
+        opacity: 1 !important;
+      }
+      #work .readmore-slider-thumb {
+        background: #000 !important;
+        opacity: 1 !important;
+        filter: none !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        box-shadow: none !important;
+        z-index: 5 !important;
+      }
+    </style>
+    <style id="rg-center-out-entrance">
+      /*
+       * Motion-only cover update, based on the supplied recordings:
+       * the existing black wordmark reveals out from its center.
+       * No gradient, background, color, typography or layout changes.
+       */
+      .rg-new-hero .rg-big-logo {
+        transform-origin: 50% 50%;
+        animation: rg-name-center-out 1100ms cubic-bezier(0.22, 1, 0.36, 1) both;
+      }
+      .rg-new-hero .rg-hero-sub {
+        animation: rg-subtitle-arrive 650ms cubic-bezier(0.22, 1, 0.36, 1) 460ms
+          both;
+      }
+      @keyframes rg-name-center-out {
+        0% {
+          clip-path: inset(0 50% 0 50%);
+          transform: scaleX(0.94);
+        }
+        100% {
+          clip-path: inset(0 0% 0 0%);
+          transform: scaleX(1);
+        }
+      }
+      @keyframes rg-subtitle-arrive {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .rg-new-hero .rg-big-logo,
+        .rg-new-hero .rg-hero-sub {
+          animation: none !important;
+          clip-path: none !important;
+          transform: none !important;
+        }
+      }
+    </style>
+    <style id="rg-reference-motion-v2">
+      /* Pure motion. No new colors, assets, typography, or background treatments. */
+      body.rg-choreography .site-header {
+        position: fixed !important;
+        top: var(--rg-dock-y, calc(100svh - 88px)) !important;
+        left: 0 !important;
+        right: 0 !important;
+        z-index: 1000 !important;
+        background: transparent !important;
+        transform: none !important;
+        box-shadow: none !important;
+      }
+      body.rg-choreography.rg-header-arrived .site-header {
+        background: #fff !important;
+      }
+      body.rg-choreography .site-header .header-name {
+        opacity: var(--rg-small-name-opacity, 0) !important;
+        visibility: visible !important;
+        pointer-events: auto;
+        transform: none !important;
+      }
+      /* Start with the large original name centered, as in the user's recording. */
+      body.rg-choreography .rg-new-hero {
+        min-height: 100svh !important;
+        padding: 0 clamp(22px, 4vw, 66px) !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: #fff !important;
+      }
+      body.rg-choreography .rg-hero-content {
+        width: 100% !important;
+      }
+      body.rg-choreography .rg-display-name {
+        transform: none !important;
+        transition: none !important;
+        opacity: 1 !important;
+      }
+      /* Keep requested center-out entrance animation independent of scroll. */
+      body.rg-choreography .rg-new-hero .rg-big-logo {
+        transform-origin: center center !important;
+        animation: rg-name-center-out 1100ms cubic-bezier(0.22, 1, 0.36, 1) both !important;
+      }
+      body.rg-choreography .rg-new-hero .rg-hero-sub {
+        animation: rg-subtitle-arrive 650ms cubic-bezier(0.22, 1, 0.36, 1) 460ms
+          both !important;
+      }
+      @media (max-width: 680px) {
+        body.rg-choreography .site-header {
+          padding: 10px 15px !important;
+        }
+        body.rg-choreography .rg-new-hero {
+          min-height: 100svh !important;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        body.rg-choreography .rg-new-hero .rg-big-logo,
+        body.rg-choreography .rg-new-hero .rg-hero-sub {
+          animation: none !important;
+          clip-path: none !important;
+        }
+      }
+    </style>
+    <style id="romgod-editorial-system-2026">
+      /* COLOR SYSTEM
+   #FFFFFF canvas and typography inversion; #000000 type, navigation and controls;
+   #EEEEEE project presentation stages; #D9D9D9 quiet dividers and metadata;
+   #FF00E6 small wayfinding details and interactive emphasis only.
+   Existing images/videos remain untouched.
+*/
+      :root {
+        --rg-stage: #eeeeee;
+        --rg-divider: #d9d9d9;
+        --rg-blue: #ff00e6;
+      }
+      /* Keep the existing opening/scroll choreography; only expand the name scale. */
+      body.rg-choreography .rg-new-hero {
+        padding-inline: clamp(12px, 2.2vw, 35px) !important;
+      }
+      body.rg-choreography .rg-hero-content {
+        width: 100% !important;
+        max-width: none !important;
+      }
+      body.rg-choreography .rg-display-name {
+        width: 100% !important;
+        max-width: none !important;
+        margin-bottom: clamp(18px, 3vh, 35px) !important;
+      }
+      body.rg-choreography .rg-display-name .rg-big-logo {
+        display: block !important;
+        width: 100% !important;
+        max-width: none !important;
+        height: auto !important;
+        object-fit: contain !important;
+        margin: auto;
+      }
+      /* Preserve all navigation behavior; fourth item is visible in both positions. */
+      body.rg-choreography .site-header .nav {
+        flex-wrap: nowrap !important;
+      }
+      body.rg-choreography .site-header .nav a {
+        white-space: nowrap !important;
+        transition: transform 0.26s cubic-bezier(0.2, 0.8, 0.2, 1),
+          background 0.2s ease !important;
+      }
+      body.rg-choreography .site-header .nav a:hover {
+        transform: translateY(-3px);
+      }
+      /* Full-width editorial project stages instead of two-column thumbnails. */
+      .rg-work-heading {
+        max-width: 1510px;
+        margin: 0 auto 20px;
+        padding: 0 clamp(22px, 4vw, 64px);
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.13em;
+        color: #000;
+      }
+      .rg-work-kicker {
+        color: var(--rg-blue);
+        white-space: nowrap;
+      }
+      .rg-work-rule {
+        height: 1px;
+        flex: 1;
+        background: var(--rg-divider);
+      }
+      .rg-work-count {
+        color: #777;
+        white-space: nowrap;
+      }
+      #work.gallery-grid {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) !important;
+        max-width: 1510px !important;
+        padding: 0 clamp(22px, 4vw, 64px) clamp(65px, 8vw, 115px) !important;
+        gap: clamp(54px, 7vw, 100px) !important;
+      }
+      #work .gallery-item {
+        min-width: 0;
+      }
+      #work .gallery-thumbnail,
+      #work .gallery-thumbnail.rg-white-backdrop,
+      #work .gallery-thumbnail.rg-black-backdrop {
+        width: 100%;
+        aspect-ratio: 2.48 / 1 !important;
+        min-height: 340px;
+        border-radius: 16px !important;
+        background: var(--rg-stage) !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+      #work .gallery-thumbnail > img,
+      #work .gallery-thumbnail > video,
+      #work .gallery-thumbnail.rg-black-backdrop > img {
+        display: block;
+        width: min(47%, 680px) !important;
+        height: auto !important;
+        max-height: 70% !important;
+        object-fit: contain !important;
+        transform: none !important;
+        transition: filter 0.32s ease, transform 0.32s ease !important;
+        border-radius: 8px;
+      }
+      /* Explicitly keep the subtle hover and crisp read-more slider. */
+      #work .gallery-item:hover .gallery-thumbnail > img,
+      #work .gallery-item:hover .gallery-thumbnail > video,
+      #work .gallery-item:focus-within .gallery-thumbnail > img,
+      #work .gallery-item:focus-within .gallery-thumbnail > video {
+        filter: blur(2px) !important;
+        transform: scale(1.015) !important;
+      }
+      #work .gallery-name {
+        font-size: clamp(20px, 2.1vw, 30px);
+        margin: 18px 0 11px;
+        letter-spacing: -0.035em;
+      }
+
+      #work .gallery-chips li {
+        border: 1px solid #000 !important;
+        background: #fff !important;
+        color: #000 !important;
+        font-size: 11px;
+      }
+      #work .readmore-slider {
+        background: #fff !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+      }
+      #work .readmore-slider-thumb {
+        background: #000 !important;
+        filter: none !important;
+      }
+      @media (max-width: 850px) {
+        #work .gallery-thumbnail,
+        #work .gallery-thumbnail.rg-white-backdrop,
+        #work .gallery-thumbnail.rg-black-backdrop {
+          aspect-ratio: 1.65 / 1 !important;
+          min-height: 250px;
+        }
+        #work .gallery-thumbnail > img,
+        #work .gallery-thumbnail > video,
+        #work .gallery-thumbnail.rg-black-backdrop > img {
+          width: 70% !important;
+          max-height: 75% !important;
+        }
+      }
+      @media (max-width: 680px) {
+        body.rg-choreography .site-header .nav {
+          flex-wrap: wrap !important;
+        }
+        body.rg-choreography .site-header .nav a {
+          font-size: 10px !important;
+          padding: 6px 8px !important;
+        }
+
+        .rg-work-heading {
+          font-size: 9px;
+        }
+        #work.gallery-grid {
+          gap: 48px !important;
+          padding-left: 16px !important;
+          padding-right: 16px !important;
+        }
+        #work .gallery-thumbnail,
+        #work .gallery-thumbnail.rg-white-backdrop,
+        #work .gallery-thumbnail.rg-black-backdrop {
+          aspect-ratio: 1.35 / 1 !important;
+          min-height: 215px;
+          border-radius: 12px !important;
+        }
+        #work .gallery-thumbnail > img,
+        #work .gallery-thumbnail > video,
+        #work .gallery-thumbnail.rg-black-backdrop > img {
+          width: 78% !important;
+          max-height: 76% !important;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        body.rg-choreography .site-header .nav a {
+          transition: none !important;
+        }
+      }
+    </style>
+    <style id="rg-color-existing-elements-only">
+      /* Accent system: blue only on existing functional text and controls. */
+      :root {
+        --rg-blue: #ff00e6;
+        --rg-light: #eeeeee;
+        --rg-mid: #d9d9d9;
+      }
+      body.rg-choreography .rg-hero-sub::before {
+        content: none !important;
+        display: none !important;
+      }
+      /* Retain original intro line and rotating discipline; emphasize existing words only. */
+      .rg-new-hero .rg-slot-text {
+        color: var(--rg-blue) !important;
+      }
+      /* Navigation remains black/white until hover, where electric blue is purposeful. */
+      .site-header .nav a:hover:not([aria-current="page"]),
+      .site-header .nav a:focus-visible:not([aria-current="page"]) {
+        background: var(--rg-blue) !important;
+        color: #fff !important;
+      }
+      /* Existing category chips, project titles, and Read More slider. */
+      #work .gallery-chips li {
+        border-color: var(--rg-mid) !important;
+        color: #000 !important;
+        background: #fff !important;
+      }
+      #work .gallery-item:hover .gallery-name,
+      #work .gallery-item:focus-within .gallery-name {
+        color: var(--rg-blue) !important;
+      }
+      #work .gallery-name {
+        transition: color 0.2s ease;
+      }
+      #work .readmore-slider {
+        border-color: var(--rg-blue) !important;
+      }
+      #work .readmore-slider-thumb {
+        background: var(--rg-blue) !important;
+      }
+      #work .readmore-slider-label {
+        color: #000 !important;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        #work .gallery-name {
+          transition: none;
+        }
+      }
+    </style>
+    <style id="rg-palette-controls-final">
+      /* Color rules: existing elements only; blue text, gray selection, never blue navigation fills. */
+      :root {
+        --rg-blue: #ff00e6;
+        --rg-gray: #d9d9d9;
+        --rg-pale: #eeeeee;
+      }
+      body .rg-new-hero .rg-slot,
+      body .rg-new-hero .rg-slot:hover,
+      body .rg-new-hero .rg-slot:focus-visible {
+        background: var(--rg-pale) !important;
+        border: 0 !important;
+        box-shadow: none !important;
+        color: var(--rg-blue) !important;
+        transition: background-color 0.2s ease !important;
+      }
+      body .rg-new-hero .rg-slot:hover,
+      body .rg-new-hero .rg-slot:focus-visible {
+        background: var(--rg-gray) !important;
+      }
+      body .rg-new-hero .rg-slot .rg-slot-text,
+      body .rg-new-hero .rg-slot:hover .rg-slot-text,
+      body .rg-new-hero .rg-slot:focus-visible .rg-slot-text {
+        color: var(--rg-blue) !important;
+        opacity: 1 !important;
+      }
+      /* Disable the previous black/blue ink-mask background entirely. */
+      body .rg-new-hero .rg-slot .rg-ink-overlay,
+      body .rg-new-hero .rg-slot:hover .rg-ink-overlay,
+      body .rg-new-hero .rg-slot:focus-visible .rg-ink-overlay {
+        display: none !important;
+        animation: none !important;
+      }
+      /* Selected page = gray pill and blue lettering, including on hover/focus. */
+      body .site-header .nav a[aria-current="page"],
+      body .site-header .nav a[aria-current="page"]:hover,
+      body .site-header .nav a[aria-current="page"]:focus-visible,
+      body.rg-choreography .site-header .nav a[aria-current="page"] {
+        background: var(--rg-gray) !important;
+        color: var(--rg-blue) !important;
+        border: 0 !important;
+        box-shadow: none !important;
+      }
+      /* Other navigation items: blue text on interaction, NO blue fill. */
+      body .site-header .nav a:not([aria-current="page"]),
+      body.rg-choreography .site-header .nav a:not([aria-current="page"]) {
+        color: #000 !important;
+        background: transparent !important;
+        border: 0 !important;
+        box-shadow: none !important;
+      }
+      body .site-header .nav a:not([aria-current="page"]):hover,
+      body .site-header .nav a:not([aria-current="page"]):focus-visible,
+      body .site-header .nav a:not([aria-current="page"]):active,
+      body.rg-choreography .site-header .nav a:not([aria-current="page"]):hover,
+      body.rg-choreography
+        .site-header
+        .nav
+        a:not([aria-current="page"]):focus-visible {
+        color: var(--rg-blue) !important;
+        background: transparent !important;
+        border: 0 !important;
+      }
+      /* Read More: blue filled label, gray text, no outline, no dot/slider. */
+      #work .gallery-overlay {
+        pointer-events: none !important;
+      }
+      #work .readmore-cta {
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+        min-width: 103px;
+        height: 38px;
+        padding: 0 18px;
+        border: 0 !important;
+        outline: 0 !important;
+        border-radius: 999px;
+        box-shadow: none !important;
+        background: var(--rg-blue) !important;
+        color: var(--rg-pale, #eeeeee) !important;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 1;
+        letter-spacing: 0;
+        filter: none !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        text-shadow: none !important;
+        transition: transform 0.22s ease !important;
+        user-select: none;
+      }
+      #work .gallery-item:hover .readmore-cta,
+      #work .gallery-item:focus-within .readmore-cta {
+        transform: translateY(-2px);
+      }
+      @media (max-width: 640px) {
+        #work .readmore-cta {
+          height: 36px;
+          min-width: 98px;
+          font-size: 11px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        #work .readmore-cta {
+          transition: none !important;
+        }
+      }
+    </style>
+    <style id="rg-requested-restorations-2026">
+      /* 1. Large hero name, with exact existing SVG, center-out reveal untouched. */
+      body.rg-choreography .rg-new-hero {
+        padding-inline: 8px !important;
+      }
+      body.rg-choreography .rg-display-name,
+      body.rg-choreography .rg-hero-content {
+        width: 100% !important;
+        max-width: none !important;
+      }
+      body.rg-choreography .rg-display-name .rg-big-logo {
+        width: calc(100vw - 16px) !important;
+        max-width: none !important;
+        height: auto !important;
+        margin-left: 50% !important;
+        margin-right: 0 !important;
+        translate: -50% 0;
+        object-fit: contain !important;
+      }
+      /* 2. Restore the animated ink/reveal interaction on the discipline pill.
+      Keep the new gray/blue system, not the old black hover treatment. */
+      body .rg-new-hero .rg-slot,
+      body .rg-new-hero .rg-slot:hover,
+      body .rg-new-hero .rg-slot:focus-visible {
+        position: relative !important;
+        isolation: isolate !important;
+        overflow: hidden !important;
+        background: #eeeeee !important;
+        border: 0 !important;
+        color: #ff00e6 !important;
+      }
+      body .rg-new-hero .rg-slot .rg-slot-text {
+        color: #ff00e6 !important;
+        position: relative !important;
+        z-index: 1 !important;
+      }
+      body .rg-new-hero .rg-slot .rg-ink-overlay {
+        display: flex !important;
+        position: absolute !important;
+        inset: 0 !important;
+        z-index: 2 !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: #d9d9d9 !important;
+        color: #ff00e6 !important;
+        pointer-events: none !important;
+        opacity: 1 !important;
+        -webkit-mask-image: url("https://raw.githubusercontent.com/pizza3/asset/master/natureSmaller.png") !important;
+        mask-image: url("https://raw.githubusercontent.com/pizza3/asset/master/natureSmaller.png") !important;
+        -webkit-mask-size: 7100% 100% !important;
+        mask-size: 7100% 100% !important;
+        -webkit-mask-repeat: no-repeat !important;
+        mask-repeat: no-repeat !important;
+        animation: rg-mask-out 700ms steps(70) both !important;
+      }
+      body .rg-new-hero .rg-slot .rg-ink-text {
+        color: #ff00e6 !important;
+      }
+      body .rg-new-hero .rg-slot:hover .rg-ink-overlay,
+      body .rg-new-hero .rg-slot:focus-visible .rg-ink-overlay {
+        display: flex !important;
+        animation: rg-mask-in 700ms steps(70) both !important;
+      }
+      /* 3. Selected page: BLUE background with LIGHT-GRAY lettering. */
+      body .site-header .nav a[aria-current="page"],
+      body .site-header .nav a[aria-current="page"]:hover,
+      body .site-header .nav a[aria-current="page"]:focus,
+      body .site-header .nav a[aria-current="page"]:focus-visible,
+      body .site-header .nav a[aria-current="page"]:active,
+      body.rg-choreography .site-header .nav a[aria-current="page"],
+      body.rg-choreography .site-header .nav a[aria-current="page"]:hover {
+        background: #ff00e6 !important;
+        color: #eeeeee !important;
+        border: 0 !important;
+      }
+      /* Unselected pages get blue text on hover, without a blue background. */
+      body .site-header .nav a:not([aria-current="page"]):hover,
+      body .site-header .nav a:not([aria-current="page"]):focus-visible {
+        background: transparent !important;
+        color: #ff00e6 !important;
+      }
+      /* 4. Restore constant left-to-right motion on Read More.
+      Blue fill, gray lettering, no thumb, no outline, no text blur. */
+      #work .readmore-cta {
+        width: 113px !important;
+        min-width: 113px !important;
+        height: 38px !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border: none !important;
+        outline: none !important;
+        border-radius: 999px !important;
+        background: #ff00e6 !important;
+        color: #eeeeee !important;
+        box-shadow: none !important;
+        filter: none !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        transform: none !important;
+      }
+      #work .rg-readmore-window {
+        display: block;
+        overflow: hidden;
+        width: 100%;
+        white-space: nowrap;
+      }
+      #work .rg-readmore-track {
+        display: flex;
+        align-items: center;
+        width: max-content;
+        gap: 20px;
+        white-space: nowrap;
+        animation: rg-readmore-left-to-right 5s linear infinite;
+        will-change: transform;
+      }
+      #work .rg-readmore-track span {
+        font-size: 12px;
+        color: #eeeeee !important;
+        white-space: nowrap;
+        flex: none;
+        text-shadow: none !important;
+        filter: none !important;
+        opacity: 1 !important;
+      }
+      @keyframes rg-readmore-left-to-right {
+        from {
+          transform: translateX(-50%);
+        }
+        to {
+          transform: translateX(0);
+        }
+      }
+      /* A deliberate hover pause allows the text to be read, while
+   leaving the complete project thumbnail clickable. */
+      #work .gallery-item:hover .rg-readmore-track,
+      #work .gallery-item:focus-within .rg-readmore-track {
+        animation-play-state: running;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        body .rg-new-hero .rg-slot .rg-ink-overlay,
+        body .rg-new-hero .rg-slot:hover .rg-ink-overlay,
+        body .rg-new-hero .rg-slot:focus-visible .rg-ink-overlay {
+          animation: none !important;
+          -webkit-mask-image: none !important;
+          mask-image: none !important;
+          opacity: 0 !important;
+        }
+        #work .rg-readmore-track {
+          animation: none !important;
+          transform: translateX(0) !important;
+        }
+      }
+    </style>
+    <style id="rg-final-footer-and-stage">
+      /* Final focused update: blue footer and larger project artwork. */
+      :root {
+        --rg-blue: #ff00e6;
+      }
+      html body .rg-footer,
+      html body footer.rg-footer {
+        background: #ff00e6 !important;
+        color: #fff !important;
+      }
+      html body .rg-footer .rg-footer-contact a,
+      html body .rg-footer .rg-footer-contact a:visited,
+      html body .rg-footer .rg-footer-contact a:hover,
+      html body .rg-footer .rg-footer-contact a:active,
+      html body .rg-footer .rg-footer-social a,
+      html body .rg-footer .rg-footer-social a:visited,
+      html body .rg-footer .rg-footer-social a:hover,
+      html body .rg-footer .rg-footer-social a:active {
+        color: #fff !important;
+        opacity: 1 !important;
+        background: transparent !important;
+        border: 0 !important;
+        box-shadow: none !important;
+      }
+      html body .rg-footer .rg-footer-social svg {
+        color: #fff !important;
+        opacity: 1 !important;
+      }
+      html body .rg-footer .rg-footer-name img {
+        filter: invert(1) !important;
+      }
+      /* Larger artwork within the same full-width project cards. */
+      html body #work .gallery-thumbnail,
+      html body #work .gallery-thumbnail.rg-white-backdrop,
+      html body #work .gallery-thumbnail.rg-black-backdrop {
+        position: relative;
+        isolation: isolate;
+        background: #eeeeee !important;
+      }
+      /* Plain white presentation surface behind artwork, including transparent images. */
+      html body #work .gallery-thumbnail::before {
+        content: "";
+        position: absolute;
+        z-index: 0;
+        width: 88%;
+        height: 88%;
+        left: 6%;
+        top: 6%;
+        background: #fff;
+        border-radius: 11px;
+        pointer-events: none;
+      }
+      html body #work .gallery-thumbnail > img,
+      html body #work .gallery-thumbnail > video,
+      html body #work .gallery-thumbnail.rg-black-backdrop > img {
+        position: relative;
+        z-index: 1;
+        width: 82% !important;
+        max-width: none !important;
+        height: 82% !important;
+        max-height: 82% !important;
+        object-fit: contain !important;
+        transform: none !important;
+      }
+      html body #work .gallery-overlay {
+        z-index: 2;
+      }
+      @media (max-width: 850px) {
+        html body #work .gallery-thumbnail::before {
+          width: 93%;
+          left: 3.5%;
+          height: 91%;
+          top: 4.5%;
+        }
+        html body #work .gallery-thumbnail > img,
+        html body #work .gallery-thumbnail > video,
+        html body #work .gallery-thumbnail.rg-black-backdrop > img {
+          width: 89% !important;
+          height: 86% !important;
+          max-height: 86% !important;
+        }
+      }
+      @media (max-width: 680px) {
+        html body #work .gallery-thumbnail > img,
+        html body #work .gallery-thumbnail > video,
+        html body #work .gallery-thumbnail.rg-black-backdrop > img {
+          width: 91% !important;
+          height: 89% !important;
+          max-height: 89% !important;
+        }
+      }
+    </style>
+    <style id="rg-layout-corrections-nov9">
+      /* Use the footer blue behind the rounded white sheet: no black seam. */
+      html,
+      body {
+        background-color: #ff00e6 !important;
+      }
+      .sheet {
+        background-color: #fff !important;
+      }
+
+      /* Keep the original scroll-docking navigation and center-out logo reveal.
+   Raise only the cover content, not the moving header. */
+      body.rg-choreography .rg-new-hero .rg-hero-content {
+        transform: translateY(clamp(-105px, -8vh, -45px)) !important;
+        width: 100% !important;
+      }
+      body.rg-choreography .rg-new-hero .rg-display-name {
+        margin-bottom: clamp(14px, 2.2vw, 32px) !important;
+      }
+      /* Make the introductory sentence and rotating pill one centered unit. */
+      body.rg-choreography .rg-new-hero .rg-hero-sub {
+        width: 100% !important;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: clamp(10px, 1.6vw, 22px) !important;
+      }
+      body.rg-choreography .rg-new-hero .rg-lead {
+        font-size: clamp(17px, 1.75vw, 27px) !important;
+        font-weight: 500 !important;
+        line-height: 1.2 !important;
+      }
+      body.rg-choreography .rg-new-hero .rg-slot {
+        font-size: clamp(15px, 1.22vw, 19px) !important;
+        min-width: clamp(164px, 18vw, 220px) !important;
+        height: clamp(44px, 4vw, 54px) !important;
+      }
+      /* Preserve existing slot-machine translateY animation and click/hover ink effect.
+   No transformations on .rg-slot-text are overridden here. */
+
+      /* Big GRAY stage, naturally proportioned artwork. Remove the extra
+   nested white rectangle which was stretching across the entire stage. */
+      html body #work.gallery-grid {
+        max-width: 1700px !important;
+        padding-inline: clamp(16px, 3vw, 52px) !important;
+      }
+      html body #work .gallery-thumbnail,
+      html body #work .gallery-thumbnail.rg-white-backdrop,
+      html body #work .gallery-thumbnail.rg-black-backdrop {
+        width: 100% !important;
+        aspect-ratio: 2.15 / 1 !important;
+        min-height: 390px !important;
+        background: #eeeeee !important;
+        border-radius: 18px !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        overflow: hidden !important;
+      }
+      html body #work .gallery-thumbnail::before {
+        content: none !important;
+        display: none !important;
+      }
+      html body #work .gallery-thumbnail > img,
+      html body #work .gallery-thumbnail > video,
+      html body #work .gallery-thumbnail.rg-black-backdrop > img {
+        display: block !important;
+        width: auto !important;
+        height: auto !important;
+        max-width: 82% !important;
+        max-height: 82% !important;
+        object-fit: contain !important;
+        transform: none !important;
+        border-radius: 6px;
+        background: white;
+      }
+      /* Make Me Perfect preview: blue behind the original artwork.
+   'screen' removes flat black from the visual where it overlays blue;
+   source artwork files are preserved. */
+      html body #work .gallery-thumbnail.rg-black-backdrop {
+        background: #eeeeee !important;
+      }
+      html body #work .gallery-thumbnail.rg-black-backdrop > img {
+        background: #ff00e6 !important;
+        box-shadow: 0 0 0 1px #ff00e6;
+      }
+      /* For artwork with a black matte baked into the preview, compositing the
+   image over blue replaces visually black pixels with the accent blue.
+   The original source image is not altered. */
+      html body #work .gallery-thumbnail.rg-black-backdrop::before {
+        content: "" !important;
+        display: block !important;
+        position: absolute !important;
+        inset: 9% !important;
+        z-index: 0 !important;
+        background: #ff00e6 !important;
+        border-radius: 7px !important;
+        pointer-events: none !important;
+      }
+      html body #work .gallery-thumbnail.rg-black-backdrop > img {
+        mix-blend-mode: screen !important;
+        position: relative !important;
+        z-index: 1 !important;
+      }
+      /* Keep the existing 2px hover blur and animated Read More text. */
+
+      @media (max-width: 850px) {
+        body.rg-choreography .rg-new-hero .rg-hero-content {
+          transform: translateY(-4vh) !important;
+        }
+        html body #work .gallery-thumbnail,
+        html body #work .gallery-thumbnail.rg-white-backdrop,
+        html body #work .gallery-thumbnail.rg-black-backdrop {
+          aspect-ratio: 1.65 / 1 !important;
+          min-height: 280px !important;
+        }
+        html body #work .gallery-thumbnail > img,
+        html body #work .gallery-thumbnail > video,
+        html body #work .gallery-thumbnail.rg-black-backdrop > img {
+          max-width: 88% !important;
+          max-height: 84% !important;
+        }
+      }
+      @media (max-width: 600px) {
+        body.rg-choreography .rg-new-hero .rg-hero-sub {
+          flex-direction: column !important;
+          gap: 10px !important;
+        }
+        body.rg-choreography .rg-new-hero .rg-lead {
+          font-size: clamp(16px, 4vw, 21px) !important;
+        }
+        html body #work .gallery-thumbnail,
+        html body #work .gallery-thumbnail.rg-white-backdrop,
+        html body #work .gallery-thumbnail.rg-black-backdrop {
+          aspect-ratio: 1.25 / 1 !important;
+          min-height: 245px !important;
+        }
+      }
+    </style>
+    <style id="rg-pink-cursor-override">
+      /* Pink cursor dot, original size and behavior preserved. */
+      .cursor-dot {
+        background-color: #ff00e6 !important;
+        border-color: #ff00e6 !important;
+      }
+      @media (pointer: fine) {
+        html,
+        body,
+        body *,
+        a,
+        button,
+        input,
+        textarea,
+        select,
+        label {
+          cursor: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%224.5%22%20fill%3D%22%23FF00E6%22%2F%3E%3C%2Fsvg%3E")
+              8 8,
+            auto !important;
+        }
+      }
+    </style>
+    <style id="rg-targeted-layout-fixes-2026-11-09">
+      /* Make the stage more proportional; do not stretch the actual artwork. */
+      html body #work.gallery-grid {
+        width: 100% !important;
+        max-width: 1300px !important;
+        padding-inline: clamp(20px, 4vw, 60px) !important;
+        margin-inline: auto !important;
+      }
+      html body #work .gallery-thumbnail,
+      html body #work .gallery-thumbnail.rg-black-backdrop,
+      html body #work .gallery-thumbnail.rg-white-backdrop {
+        aspect-ratio: 1.75 / 1 !important;
+        min-height: 0 !important;
+        height: auto !important;
+        width: 100% !important;
+        background: #eeeeee !important;
+        border-radius: 18px !important;
+      }
+      /* Remove pink overlays, artificial inset backdrop and image blending. */
+      html body #work .gallery-thumbnail::before,
+      html body #work .gallery-thumbnail.rg-black-backdrop::before,
+      html body #work .gallery-thumbnail.rg-white-backdrop::before {
+        content: none !important;
+        display: none !important;
+        background: none !important;
+      }
+      html body #work .gallery-thumbnail > img,
+      html body #work .gallery-thumbnail > video,
+      html body #work .gallery-thumbnail.rg-black-backdrop > img,
+      html body #work .gallery-thumbnail.rg-white-backdrop > img {
+        display: block !important;
+        width: auto !important;
+        height: auto !important;
+        max-width: 73% !important;
+        max-height: 77% !important;
+        object-fit: contain !important;
+        transform: none !important;
+        background: #fff !important;
+        box-shadow: none !important;
+        mix-blend-mode: normal !important;
+      }
+      /* The black matte visible in Make Me Perfect is baked into its preview,
+   not an added CSS frame. Leave its source untouched. */
+      /* Move the complete hero identity higher, while preserving the
+   original center-out wordmark and rotating slot-machine animations. */
+      html body.rg-choreography .rg-new-hero .rg-hero-content {
+        transform: translateY(clamp(-175px, -16vh, -90px)) !important;
+      }
+      /* Footer is light gray, typography/icons and wordmark are pink. */
+      html,
+      body {
+        background-color: #eeeeee !important;
+      }
+      html body .rg-footer,
+      html body footer.rg-footer {
+        background: #eeeeee !important;
+        color: #ff00e6 !important;
+      }
+      html body .rg-footer .rg-footer-contact a,
+      html body .rg-footer .rg-footer-contact a:link,
+      html body .rg-footer .rg-footer-contact a:visited,
+      html body .rg-footer .rg-footer-contact a:hover,
+      html body .rg-footer .rg-footer-contact a:focus-visible,
+      html body .rg-footer .rg-footer-contact a:active,
+      html body .rg-footer .rg-footer-social a,
+      html body .rg-footer .rg-footer-social a:link,
+      html body .rg-footer .rg-footer-social a:visited,
+      html body .rg-footer .rg-footer-social a:hover,
+      html body .rg-footer .rg-footer-social a:focus-visible,
+      html body .rg-footer .rg-footer-social a:active {
+        color: #ff00e6 !important;
+        background: transparent !important;
+        opacity: 1 !important;
+        border: 0 !important;
+        text-decoration: none !important;
+      }
+      html body .rg-footer .rg-footer-social svg {
+        color: #ff00e6 !important;
+        opacity: 1 !important;
+      }
+      html body .rg-footer .rg-footer-name img {
+        filter: brightness(0) saturate(100%) invert(21%) sepia(99%)
+          saturate(7379%) hue-rotate(300deg) brightness(107%) contrast(115%) !important;
+        opacity: 1 !important;
+      }
+      @media (max-width: 850px) {
+        html body #work .gallery-thumbnail,
+        html body #work .gallery-thumbnail.rg-white-backdrop,
+        html body #work .gallery-thumbnail.rg-black-backdrop {
+          aspect-ratio: 1.55 / 1 !important;
+          min-height: 0 !important;
+        }
+        html body.rg-choreography .rg-new-hero .rg-hero-content {
+          transform: translateY(-10vh) !important;
+        }
+      }
+      @media (max-width: 600px) {
+        html body #work .gallery-thumbnail,
+        html body #work .gallery-thumbnail.rg-white-backdrop,
+        html body #work .gallery-thumbnail.rg-black-backdrop {
+          aspect-ratio: 1.28 / 1 !important;
+        }
+        html body #work .gallery-thumbnail > img,
+        html body #work .gallery-thumbnail > video,
+        html body #work .gallery-thumbnail.rg-black-backdrop > img {
+          max-width: 83% !important;
+          max-height: 78% !important;
+        }
+      }
+    </style>
+    <style id="rg-wordmark-equal-and-slot-restoration">
+      /* Same EXACT horizontal sizing rule for the hero and footer wordmark. */
+      :root {
+        --rg-wordmark-gutter: clamp(24px, 3.2vw, 66px);
+      }
+      html body .rg-footer {
+        padding-left: var(--rg-wordmark-gutter) !important;
+        padding-right: var(--rg-wordmark-gutter) !important;
+      }
+      html body.rg-choreography .rg-new-hero {
+        padding-left: var(--rg-wordmark-gutter) !important;
+        padding-right: var(--rg-wordmark-gutter) !important;
+      }
+      html body.rg-choreography .rg-new-hero .rg-hero-content,
+      html body.rg-choreography .rg-new-hero .rg-display-name {
+        width: 100% !important;
+        max-width: none !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+      html body.rg-choreography .rg-new-hero .rg-display-name .rg-big-logo,
+      html body .rg-footer .rg-footer-name img {
+        display: block !important;
+        width: 100% !important;
+        max-width: none !important;
+        height: auto !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        translate: none !important;
+        object-fit: contain !important;
+      }
+
+      /* Restored 2-second vertical slot-machine roll, with ink hover intact. */
+      html body .rg-new-hero .rg-slot .rg-slot-text {
+        display: block !important;
+        opacity: 1 !important;
+        transform: translateY(0);
+        will-change: transform;
+      }
+      html body .rg-new-hero .rg-slot .rg-slot-text.is-exiting {
+        animation: rg-real-slot-out 0.24s cubic-bezier(0.45, 0, 0.8, 0.55) both !important;
+      }
+      html body .rg-new-hero .rg-slot .rg-slot-text.is-entering {
+        animation: rg-real-slot-in 0.36s cubic-bezier(0.2, 0.8, 0.2, 1) both !important;
+      }
+      @keyframes rg-real-slot-out {
+        from {
+          transform: translateY(0);
+        }
+        to {
+          transform: translateY(-125%);
+        }
+      }
+      @keyframes rg-real-slot-in {
+        from {
+          transform: translateY(125%);
+        }
+        to {
+          transform: translateY(0);
+        }
+      }
+      /* Avoid the external image mask dependency preventing the interaction. */
+      html body .rg-new-hero .rg-slot .rg-ink-overlay {
+        background-color: #d9d9d9 !important;
+        color: #ff00e6 !important;
+        -webkit-mask-image: none !important;
+        mask-image: none !important;
+        clip-path: inset(0 100% 0 0);
+        animation: rg-ink-off 0.45s ease both !important;
+        pointer-events: none !important;
+      }
+      html body .rg-new-hero .rg-slot:hover .rg-ink-overlay,
+      html body .rg-new-hero .rg-slot:focus-visible .rg-ink-overlay {
+        animation: rg-ink-on 0.48s cubic-bezier(0.22, 1, 0.36, 1) both !important;
+      }
+      @keyframes rg-ink-on {
+        from {
+          clip-path: inset(0 100% 0 0);
+        }
+        to {
+          clip-path: inset(0 0 0 0);
+        }
+      }
+      @keyframes rg-ink-off {
+        from {
+          clip-path: inset(0 0 0 0);
+        }
+        to {
+          clip-path: inset(0 100% 0 0);
+        }
+      }
+      html body .rg-new-hero .rg-slot .rg-ink-text {
+        color: #ff00e6 !important;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html body .rg-new-hero .rg-slot .rg-slot-text.is-exiting,
+        html body .rg-new-hero .rg-slot .rg-slot-text.is-entering {
+          animation: none !important;
+        }
+        html body .rg-new-hero .rg-slot .rg-ink-overlay {
+          animation: none !important;
+          clip-path: inset(0 100% 0 0);
+        }
+      }
+    </style>
+    <style id="rg-nov09-precise-refinements">
+      /* Footer: darker of the existing two grays, with pink lettering/icons. */
+      html,
+      body {
+        background-color: #d9d9d9 !important;
+      }
+      html body .rg-footer,
+      html body footer.rg-footer {
+        background: #d9d9d9 !important;
+        color: #ff00e6 !important;
+      }
+      html body .rg-footer .rg-footer-contact a,
+      html body .rg-footer .rg-footer-contact a:link,
+      html body .rg-footer .rg-footer-contact a:visited,
+      html body .rg-footer .rg-footer-contact a:hover,
+      html body .rg-footer .rg-footer-contact a:focus,
+      html body .rg-footer .rg-footer-contact a:focus-visible,
+      html body .rg-footer .rg-footer-contact a:active {
+        color: #ff00e6 !important;
+        -webkit-text-fill-color: #ff00e6 !important;
+        text-decoration: none !important;
+        opacity: 1 !important;
+        background: transparent !important;
+      }
+      html body .rg-footer .rg-footer-social a,
+      html body .rg-footer .rg-footer-social a:link,
+      html body .rg-footer .rg-footer-social a:visited,
+      html body .rg-footer .rg-footer-social a:hover,
+      html body .rg-footer .rg-footer-social a:focus-visible,
+      html body .rg-footer .rg-footer-social a:active {
+        color: #ff00e6 !important;
+        opacity: 1 !important;
+        background: transparent !important;
+        border: 0 !important;
+        box-shadow: none !important;
+        filter: none !important;
+      }
+      /* No universal SVG stroke: GitHub, LinkedIn and Spotify are filled icons. */
+      html body .rg-footer .rg-footer-social svg {
+        width: 17px !important;
+        height: 17px !important;
+        color: #ff00e6 !important;
+        opacity: 1 !important;
+        stroke: none !important;
+        stroke-width: 0 !important;
+      }
+      html body .rg-footer .rg-footer-social svg[viewBox] rect,
+      html body .rg-footer .rg-footer-social svg[viewBox] circle {
+        /* Instagram's original outline is intentionally preserved. */
+        stroke: currentColor;
+      }
+      html body .rg-footer .rg-footer-social svg[viewBox] path {
+        stroke: none !important;
+      }
+
+      /* Align the large name with header gutters; increase visible lettering
+     without changing the footer logo, text, or navigation choreography. */
+      :root {
+        --rg-hero-nav-edge: clamp(20px, 3.7vw, 55px);
+      }
+      html body.rg-choreography .rg-new-hero {
+        padding-left: var(--rg-hero-nav-edge) !important;
+        padding-right: var(--rg-hero-nav-edge) !important;
+      }
+      html body.rg-choreography .rg-new-hero .rg-hero-content,
+      html body.rg-choreography .rg-new-hero .rg-display-name {
+        width: 100% !important;
+        max-width: none !important;
+      }
+      html body.rg-choreography .rg-new-hero .rg-display-name .rg-big-logo {
+        display: block !important;
+        width: 100% !important;
+        max-width: none !important;
+        height: auto !important;
+        transform-origin: 50% 50% !important;
+        animation: rg-larger-name-center-out 1100ms
+          cubic-bezier(0.22, 1, 0.36, 1) both !important;
+      }
+      @keyframes rg-larger-name-center-out {
+        0% {
+          clip-path: inset(0 50% 0 50%);
+          transform: scaleX(1.06);
+        }
+        100% {
+          clip-path: inset(0 0 0 0);
+          transform: scaleX(1.06);
+        }
+      }
+
+      /* A little less tall, same exact width; slightly smaller preview media. */
+      html body #work .gallery-thumbnail,
+      html body #work .gallery-thumbnail.rg-white-backdrop,
+      html body #work .gallery-thumbnail.rg-black-backdrop {
+        aspect-ratio: 1.92 / 1 !important;
+        min-height: 0 !important;
+        height: auto !important;
+        background: #eeeeee !important;
+      }
+      html body #work .gallery-thumbnail > img,
+      html body #work .gallery-thumbnail > video,
+      html body #work .gallery-thumbnail.rg-white-backdrop > img,
+      html body #work .gallery-thumbnail.rg-black-backdrop > img {
+        max-width: 68% !important;
+        max-height: 72% !important;
+        object-fit: contain !important;
+      }
+      @media (max-width: 850px) {
+        html body #work .gallery-thumbnail,
+        html body #work .gallery-thumbnail.rg-white-backdrop,
+        html body #work .gallery-thumbnail.rg-black-backdrop {
+          aspect-ratio: 1.68 / 1 !important;
+        }
+      }
+      @media (max-width: 600px) {
+        html body #work .gallery-thumbnail,
+        html body #work .gallery-thumbnail.rg-white-backdrop,
+        html body #work .gallery-thumbnail.rg-black-backdrop {
+          aspect-ratio: 1.38 / 1 !important;
+        }
+        html body #work .gallery-thumbnail > img,
+        html body #work .gallery-thumbnail > video,
+        html body #work .gallery-thumbnail.rg-black-backdrop > img {
+          max-width: 77% !important;
+          max-height: 75% !important;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html body.rg-choreography .rg-new-hero .rg-display-name .rg-big-logo {
+          animation: none !important;
+          clip-path: none !important;
+          transform: scaleX(1.06) !important;
+        }
+      }
+    </style>
+    <style id="rg-hero-actual-size-fix">
+      /* Deliberately enlarge the actual SVG, rather than its container only.
+   Center the overflow symmetrically so the lettering is visibly bigger. */
+      html body.rg-choreography .rg-new-hero .rg-display-name {
+        width: 100% !important;
+        max-width: none !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        overflow: visible !important;
+      }
+      html body.rg-choreography .rg-new-hero .rg-display-name img.rg-big-logo {
+        display: block !important;
+        width: 125% !important;
+        max-width: none !important;
+        height: auto !important;
+        margin-left: -12.5% !important;
+        margin-right: 0 !important;
+        translate: none !important;
+        transform-origin: center center !important;
+        animation: rg-large-name-reveal 1100ms cubic-bezier(0.22, 1, 0.36, 1)
+          both !important;
+      }
+      @keyframes rg-large-name-reveal {
+        from {
+          clip-path: inset(0 50% 0 50%);
+          opacity: 1;
+        }
+        to {
+          clip-path: inset(0 0 0 0);
+          opacity: 1;
+        }
+      }
+      /* Smaller subordinate sentence AND smaller discipline pill typography.
+   Keep slot-machine motion and hover/click interactions untouched. */
+      html body.rg-choreography .rg-new-hero .rg-lead {
+        font-size: clamp(16px, 1.35vw, 19px) !important;
+        font-weight: 400 !important;
+        line-height: 1.3 !important;
+      }
+      html body.rg-choreography .rg-new-hero .rg-slot {
+        font-size: clamp(14px, 1.2vw, 17px) !important;
+        min-width: 165px !important;
+        height: 42px !important;
+      }
+      @media (max-width: 650px) {
+        html
+          body.rg-choreography
+          .rg-new-hero
+          .rg-display-name
+          img.rg-big-logo {
+          width: 115% !important;
+          margin-left: -7.5% !important;
+        }
+        html body.rg-choreography .rg-new-hero .rg-lead {
+          font-size: 15px !important;
+        }
+        html body.rg-choreography .rg-new-hero .rg-slot {
+          font-size: 14px !important;
+          height: 40px !important;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html
+          body.rg-choreography
+          .rg-new-hero
+          .rg-display-name
+          img.rg-big-logo {
+          animation: none !important;
+          clip-path: none !important;
+        }
+      }
+    </style>
+    <style id="rg-restore-ink-splash-click">
+      /* Restores original 70-frame organic ink wipe from the supplied recording.
+     Uses the same original mask sprite, not a plain rectangular reveal. */
+      html body .rg-new-hero .rg-slot .rg-ink-overlay {
+        display: flex !important;
+        background: #ff00e6 !important;
+        color: #fff !important;
+        opacity: 1 !important;
+        clip-path: none !important;
+        -webkit-clip-path: none !important;
+        -webkit-mask-image: url("https://raw.githubusercontent.com/pizza3/asset/master/natureSmaller.png") !important;
+        mask-image: url("https://raw.githubusercontent.com/pizza3/asset/master/natureSmaller.png") !important;
+        -webkit-mask-size: 7100% 100% !important;
+        mask-size: 7100% 100% !important;
+        -webkit-mask-repeat: no-repeat !important;
+        mask-repeat: no-repeat !important;
+        -webkit-mask-position: 0 0;
+        mask-position: 0 0;
+        animation: rg-restored-ink-out 1.2s steps(70) both !important;
+        pointer-events: none !important;
+      }
+      html body .rg-new-hero .rg-slot .rg-ink-text {
+        color: #fff !important;
+      }
+      html body .rg-new-hero .rg-slot:hover .rg-ink-overlay,
+      html body .rg-new-hero .rg-slot:focus-visible .rg-ink-overlay,
+      html body .rg-new-hero .rg-slot.is-ink-active .rg-ink-overlay {
+        animation: rg-restored-ink-in 1.2s steps(70) both !important;
+      }
+      /* After click, the effect remains while clicked/toggled. */
+      html
+        body
+        .rg-new-hero
+        .rg-slot.is-ink-active:not(:hover)
+        .rg-ink-overlay {
+        animation: rg-restored-ink-in 1.2s steps(70) both !important;
+      }
+      @keyframes rg-restored-ink-in {
+        from {
+          -webkit-mask-position: 0 0;
+          mask-position: 0 0;
+        }
+        to {
+          -webkit-mask-position: 100% 0;
+          mask-position: 100% 0;
+        }
+      }
+      @keyframes rg-restored-ink-out {
+        from {
+          -webkit-mask-position: 100% 0;
+          mask-position: 100% 0;
+        }
+        to {
+          -webkit-mask-position: 0 0;
+          mask-position: 0 0;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html body .rg-new-hero .rg-slot .rg-ink-overlay {
+          animation: none !important;
+          opacity: 0 !important;
+        }
+        html body .rg-new-hero .rg-slot:hover .rg-ink-overlay,
+        html body .rg-new-hero .rg-slot:focus-visible .rg-ink-overlay,
+        html body .rg-new-hero .rg-slot.is-ink-active .rg-ink-overlay {
+          opacity: 1 !important;
+        }
+      }
+    </style>
+    <style id="rg-cursor-pink-everywhere-final">
+      /* One cursor on every part of the page, regardless of hover state. */
+      @media (pointer: fine) {
+        :root,
+        html,
+        body,
+        body *,
+        body *:hover,
+        body *:active,
+        body *:focus,
+        body *:focus-visible,
+        body *::before,
+        body *::after {
+          cursor: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%224.5%22%20fill%3D%22%23FF00E6%22%2F%3E%3C%2Fsvg%3E")
+              8 8,
+            auto !important;
+        }
+      }
+      .cursor-dot,
+      .cursor-dot:hover,
+      .cursor-dot:active {
+        background: #ff00e6 !important;
+        background-color: #ff00e6 !important;
+        border-color: #ff00e6 !important;
+        opacity: 1 !important;
+      }
+    </style>
+    <style id="rg-tinywins-inspired-project-stages">
+      /* Reference-inspired hierarchy: a soft gray, generous outer stage and a
+     single centered project preview. No stretched white inner rectangle. */
+      html body #work.gallery-grid {
+        width: 100% !important;
+        max-width: 1530px !important;
+        margin-inline: auto !important;
+        padding-inline: clamp(20px, 3.8vw, 56px) !important;
+      }
+      html body #work .gallery-thumbnail,
+      html body #work .gallery-thumbnail.rg-white-backdrop,
+      html body #work .gallery-thumbnail.rg-black-backdrop {
+        position: relative !important;
+        aspect-ratio: 2.48 / 1 !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        border-radius: 15px !important;
+        background: #f3f3f3 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        overflow: hidden !important;
+        isolation: isolate !important;
+      }
+      html body #work .gallery-thumbnail::before,
+      html body #work .gallery-thumbnail::after {
+        content: none !important;
+        display: none !important;
+      }
+      html body #work .gallery-thumbnail > img,
+      html body #work .gallery-thumbnail > video,
+      html body #work .gallery-thumbnail.rg-white-backdrop > img,
+      html body #work .gallery-thumbnail.rg-black-backdrop > img {
+        display: block !important;
+        width: auto !important;
+        height: auto !important;
+        max-width: 47% !important;
+        max-height: 64% !important;
+        object-fit: contain !important;
+        border-radius: 15px !important;
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.025) !important;
+        background: #fff !important;
+        transform: none !important;
+        opacity: 1 !important;
+        filter: none !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        transition: filter 350ms ease, transform 350ms ease !important;
+      }
+      /* Image ONLY blurs during the click-through interaction. */
+      html body #work .gallery-thumbnail.rg-preview-opening > img,
+      html body #work .gallery-thumbnail.rg-preview-opening > video {
+        filter: blur(8px) !important;
+        transform: scale(0.985) !important;
+      }
+      /* Hover and focus must not blur the stage or the project artwork. */
+      html body #work .gallery-item:hover .gallery-thumbnail > img,
+      html body #work .gallery-item:hover .gallery-thumbnail > video,
+      html body #work .gallery-item:focus-within .gallery-thumbnail > img,
+      html body #work .gallery-item:focus-within .gallery-thumbnail > video {
+        filter: none !important;
+        transform: none !important;
+      }
+      html
+        body
+        #work
+        .gallery-item:hover
+        .gallery-thumbnail.rg-preview-opening
+        > img,
+      html
+        body
+        #work
+        .gallery-item:hover
+        .gallery-thumbnail.rg-preview-opening
+        > video,
+      html
+        body
+        #work
+        .gallery-item:focus-within
+        .gallery-thumbnail.rg-preview-opening
+        > img,
+      html
+        body
+        #work
+        .gallery-item:focus-within
+        .gallery-thumbnail.rg-preview-opening
+        > video {
+        filter: blur(8px) !important;
+        transform: scale(0.985) !important;
+      }
+      html body #work .gallery-overlay,
+      html body #work .gallery-item:hover .gallery-overlay,
+      html body #work .gallery-item:focus-within .gallery-overlay {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        background: transparent !important;
+      }
+      /* Preserve the original moving Read More and pink palette. */
+      @media (max-width: 750px) {
+        html body #work .gallery-thumbnail,
+        html body #work .gallery-thumbnail.rg-white-backdrop,
+        html body #work .gallery-thumbnail.rg-black-backdrop {
+          aspect-ratio: 1.8 / 1 !important;
+        }
+        html body #work .gallery-thumbnail > img,
+        html body #work .gallery-thumbnail > video {
+          max-width: 60% !important;
+          max-height: 68% !important;
+        }
+      }
+      @media (max-width: 480px) {
+        html body #work .gallery-thumbnail,
+        html body #work .gallery-thumbnail.rg-white-backdrop,
+        html body #work .gallery-thumbnail.rg-black-backdrop {
+          aspect-ratio: 1.4 / 1 !important;
+        }
+        html body #work .gallery-thumbnail > img,
+        html body #work .gallery-thumbnail > video {
+          max-width: 70% !important;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html body #work .gallery-thumbnail > img,
+        html body #work .gallery-thumbnail > video {
+          transition: filter 350ms ease, transform 350ms ease !important;
+        }
+      }
+    </style>
+
+    <style id="rg-mobile-home-footer-consistency-2026-11-12">
+      /* Keep exactly the same brand pink on every device, including Safari/iPhone. */
+      :root {
+        --rg-brand-pink: #ff00e6;
+        --rg-footer-gray: #d9d9d9;
+      }
+      html body footer.rg-footer,
+      html body .rg-footer {
+        background-color: var(--rg-footer-gray) !important;
+        color: var(--rg-brand-pink) !important;
+      }
+      html body .rg-footer .rg-footer-contact a,
+      html body .rg-footer .rg-footer-contact a:link,
+      html body .rg-footer .rg-footer-contact a:visited,
+      html body .rg-footer .rg-footer-contact a:hover,
+      html body .rg-footer .rg-footer-contact a:active,
+      html body .rg-footer .rg-footer-social a,
+      html body .rg-footer .rg-footer-social a:link,
+      html body .rg-footer .rg-footer-social a:visited,
+      html body .rg-footer .rg-footer-social a:hover {
+        color: var(--rg-brand-pink) !important;
+        -webkit-text-fill-color: var(--rg-brand-pink) !important;
+      }
+      html body .rg-footer .rg-footer-social svg {
+        color: var(--rg-brand-pink) !important;
+        fill: currentColor;
+      }
+      /* Render the SVG wordmark as an exact pink mask rather than a color-approximation filter. */
+      html body .rg-footer .rg-footer-name {
+        width: 100% !important;
+        line-height: 0 !important;
+        background: var(--rg-brand-pink) !important;
+        -webkit-mask: url("romgod-name.svg") center / contain no-repeat;
+        mask: url("romgod-name.svg") center / contain no-repeat;
+      }
+      html body .rg-footer .rg-footer-name img {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        opacity: 0 !important; /* element maintains the exact wordmark's natural aspect ratio */
+      }
+
+      @media (max-width: 700px) {
+        html,
+        body {
+          width: 100%;
+          max-width: 100%;
+          overflow-x: clip;
+        }
+        /* Restore a clean vertical rhythm; desktop choreography is unchanged. */
+        html body.rg-choreography .rg-new-hero {
+          min-height: min(660px, calc(100svh - 70px)) !important;
+          height: auto !important;
+          padding: clamp(68px, 13vh, 125px) 20px 85px !important;
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          overflow: hidden !important;
+        }
+        html body.rg-choreography .rg-new-hero .rg-hero-content {
+          width: 100% !important;
+          max-width: 100% !important;
+          transform: none !important;
+          position: relative !important;
+        }
+        html body.rg-choreography .rg-new-hero .rg-display-name {
+          width: 100% !important;
+          max-width: 100% !important;
+          overflow: visible !important;
+          margin: 0 0 28px !important;
+          line-height: 1 !important;
+        }
+        html
+          body.rg-choreography
+          .rg-new-hero
+          .rg-display-name
+          img.rg-big-logo {
+          display: block !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          margin: 0 auto !important;
+          height: auto !important;
+          transform: none !important;
+          animation: none !important;
+          clip-path: none !important;
+        }
+        html body.rg-choreography .rg-new-hero .rg-hero-sub {
+          width: 100% !important;
+          max-width: 100% !important;
+          display: flex !important;
+          flex-wrap: wrap !important;
+          align-items: center !important;
+          justify-content: flex-start !important;
+          gap: 10px 12px !important;
+          padding: 0 !important;
+        }
+        html body.rg-choreography .rg-new-hero .rg-lead {
+          font-size: 15px !important;
+          line-height: 1.4 !important;
+          max-width: 100% !important;
+          margin: 0 !important;
+        }
+        html body.rg-choreography .rg-new-hero .rg-slot {
+          max-width: 100% !important;
+          min-width: 150px !important;
+          flex-shrink: 1 !important;
+        }
+        html body #work.gallery-grid {
+          grid-template-columns: 1fr !important;
+          padding-inline: 20px !important;
+          row-gap: 42px !important;
+          max-width: 540px !important;
+        }
+        html body #work .gallery-thumbnail {
+          width: 100% !important;
+          aspect-ratio: 1.65 / 1 !important;
+        }
+        html body #work .gallery-thumbnail > img,
+        html body #work .gallery-thumbnail > video {
+          max-width: 78% !important;
+          max-height: 75% !important;
+        }
+        html body .rg-footer,
+        html body footer.rg-footer {
+          padding: 32px 20px 38px !important;
+        }
+        html body .rg-footer .rg-footer-top {
+          display: flex !important;
+          flex-direction: column !important;
+          align-items: flex-start !important;
+          gap: 26px !important;
+          margin-bottom: 28px !important;
+        }
+        html body .rg-footer .rg-footer-contact a {
+          font-size: 14px !important;
+        }
+      }
+      @media (max-width: 390px) {
+        html body.rg-choreography .rg-new-hero {
+          padding-inline: 16px !important;
+        }
+        html body.rg-choreography .rg-new-hero .rg-lead {
+          font-size: 14px !important;
+        }
+        html body #work.gallery-grid {
+          padding-inline: 16px !important;
+        }
+      }
+    </style>
+
+    <style id="rg-scroll-expanding-projects">
+      /* Scroll-driven portfolio: each case grows edge to edge at the viewport centre,
+   then settles back before the next project gets focus. */
+      #work.gallery-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        width: 100% !important;
+        max-width: none !important;
+        padding: 75px 0 140px !important;
+        margin: 0 !important;
+        row-gap: 0 !important;
+        column-gap: 0 !important;
+        overflow: visible !important;
+      }
+      #work .gallery-item {
+        --rg-zoom: 0;
+        width: calc(74vw + 26vw * var(--rg-zoom)) !important;
+        max-width: 100vw !important;
+        min-width: 0;
+        flex: none;
+        margin: 0 auto 16vh !important;
+        transition: none !important;
+        will-change: width;
+      }
+      #work .gallery-action {
+        width: 100%;
+        display: block;
+        text-decoration: none;
+      }
+      #work .gallery-thumbnail {
+        width: 100% !important;
+        height: calc(min(63vw, 62vh) + 18vh * var(--rg-zoom)) !important;
+        max-height: 85vh !important;
+        min-height: 360px;
+        aspect-ratio: auto !important;
+        border-radius: calc(18px - 18px * var(--rg-zoom)) !important;
+        overflow: hidden !important;
+        transition: none !important;
+      }
+      #work .gallery-thumbnail > img,
+      #work .gallery-thumbnail > video {
+        object-fit: contain !important;
+        transform: scale(calc(1.02 + 0.08 * var(--rg-zoom))) !important;
+        transition: transform 0.12s ease-out !important;
+      }
+      #work .gallery-name,
+      #work .gallery-chips {
+        max-width: 1240px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        width: calc(100% - 2 * clamp(20px, 4vw, 60px));
+      }
+      #work .gallery-name {
+        padding-top: 14px;
+        font-size: clamp(23px, 2.4vw, 37px) !important;
+        letter-spacing: -0.035em;
+      }
+      #work .gallery-chips {
+        margin-top: 9px !important;
+      }
+      #work .gallery-item:focus-within .gallery-thumbnail {
+        outline: 2px solid #ff00e6;
+        outline-offset: 3px;
+      }
+      @media (max-width: 700px) {
+        #work.gallery-grid {
+          padding-top: 35px !important;
+          padding-bottom: 70px !important;
+        }
+        #work .gallery-item {
+          width: calc(89vw + 11vw * var(--rg-zoom)) !important;
+          margin-bottom: 12vh !important;
+        }
+        #work .gallery-thumbnail {
+          height: calc(54vh + 13vh * var(--rg-zoom)) !important;
+          min-height: 260px !important;
+          max-height: 76vh !important;
+          border-radius: calc(12px - 12px * var(--rg-zoom)) !important;
+        }
+        #work .gallery-thumbnail > img,
+        #work .gallery-thumbnail > video {
+          transform: scale(calc(1 + 0.04 * var(--rg-zoom))) !important;
+        }
+        #work .gallery-name,
+        #work .gallery-chips {
+          width: calc(100% - 36px);
+        }
+        #work .gallery-name {
+          font-size: 22px !important;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        #work .gallery-item {
+          --rg-zoom: 0 !important;
+          width: min(90vw, 1200px) !important;
+          will-change: auto;
+        }
+        #work .gallery-thumbnail {
+          border-radius: 12px !important;
+          height: min(65vw, 75vh) !important;
+        }
+      }
+    </style>
+
+    <style id="rg-centered-expansion-correction">
+      /* A viewport-wide centered track prevents left/bottom anchored expansion. */
+      #work.gallery-grid {
+        position: relative !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 100vw !important;
+        max-width: 100vw !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        align-items: center !important;
+        overflow: visible !important;
+        box-sizing: border-box !important;
+      }
+      #work .gallery-item {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding: 0 !important;
+        align-self: center !important;
+        transform: none !important;
+        box-sizing: border-box !important;
+        will-change: auto !important;
+      }
+      #work .gallery-action {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+      }
+      #work .gallery-thumbnail {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        height: min(75vh, 760px) !important;
+        min-height: 350px !important;
+        transform: scale(calc(0.74 + 0.26 * var(--rg-zoom))) !important;
+        transform-origin: 50% 50% !important;
+        margin: 0 auto !important;
+        border-radius: calc(18px - 18px * var(--rg-zoom)) !important;
+        will-change: transform !important;
+        box-sizing: border-box !important;
+      }
+      #work .gallery-name,
+      #work .gallery-chips {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+      #work .gallery-name {
+        width: 100% !important;
+      }
+      #work .gallery-chips {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        width: 100% !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+      }
+      @media (max-width: 700px) {
+        #work .gallery-item {
+          width: 100vw !important;
+          max-width: 100vw !important;
+        }
+        #work .gallery-thumbnail {
+          width: 100vw !important;
+          height: min(65vh, 610px) !important;
+          min-height: 270px !important;
+          transform: scale(calc(0.88 + 0.12 * var(--rg-zoom))) !important;
+          transform-origin: center center !important;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        #work .gallery-thumbnail {
+          transform: scale(0.9) !important;
+          will-change: auto !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Reusable flower icon (swap for assets/icon.svg if you prefer your exact file) -->
+    <svg aria-hidden="true" height="0" style="position: absolute" width="0">
+      <symbol id="flower" viewbox="0 0 100 100">
+        <g
+          fill="none"
+          stroke="currentColor"
+          stroke-linejoin="round"
+          stroke-width="7"
+        >
+          <ellipse cx="50" cy="50" rx="15" ry="14"></ellipse>
+          <ellipse
+            cx="22"
+            cy="24"
+            rx="9"
+            ry="16"
+            transform="rotate(-35 22 24)"
+          ></ellipse>
+          <ellipse cx="50" cy="15" rx="6" ry="10"></ellipse>
+          <ellipse
+            cx="78"
+            cy="24"
+            rx="9"
+            ry="16"
+            transform="rotate(35 78 24)"
+          ></ellipse>
+          <ellipse cx="14" cy="50" rx="10" ry="6"></ellipse>
+          <ellipse cx="86" cy="50" rx="10" ry="6"></ellipse>
+          <ellipse
+            cx="22"
+            cy="77"
+            rx="9"
+            ry="16"
+            transform="rotate(35 22 77)"
+          ></ellipse>
+          <ellipse cx="50" cy="86" rx="6" ry="10"></ellipse>
+          <ellipse
+            cx="78"
+            cy="77"
+            rx="9"
+            ry="16"
+            transform="rotate(-35 78 77)"
+          ></ellipse>
+        </g>
+        <circle cx="50" cy="50" fill="currentColor" r="6"></circle>
+      </symbol>
+    </svg>
+    <div class="sheet">
+      <header class="site-header">
+        <div class="header-signature">
+          <a aria-label="RomGod home" class="brand" href="index.html"
+            ><img alt="RomGod flower" src="romgod-flower.png" /></a
+          ><span class="header-name"
+            ><img
+              alt="Maria Romero Godoy"
+              class="rg-nav-logo"
+              src="romgod-name.svg"
+          /></span>
+        </div>
+        <nav aria-label="Main navigation" class="nav">
+          <a aria-current="page" href="index.html#work">Selected work</a
+          ><a href="about.html">About</a><a href="arcade.html">RomGod Arcade</a
+          ><a href="mailto:Marg4rg@gmail.com">Contact</a>
+        </nav>
+      </header>
+      <main id="top">
+        <section class="hero rg-new-hero" id="about">
+          <div class="rg-hero-content">
+            <h1 class="rg-display-name" id="rg-display-name">
+              <img
+                alt="Maria Romero Godoy"
+                class="rg-big-logo"
+                src="romgod-name.svg"
+              />
+            </h1>
+            <div class="rg-hero-sub">
+              <p class="rg-lead">is a multidisciplinary designer working in</p>
+              <span aria-label="Design disciplines" class="rg-slot"
+                ><span aria-live="off" class="rg-slot-text">Graphic Design</span
+                ><span aria-hidden="true" class="rg-ink-overlay"
+                  ><span class="rg-ink-text">Graphic Design</span></span
+                ></span
+              >
+            </div>
+          </div>
+        </section>
+        <section aria-label="Selected work" class="gallery-grid" id="work">
+          <article class="gallery-item">
+            <a
+              aria-label="View Companion case study"
+              class="gallery-action"
+              href="companion.html"
+              ><div class="gallery-thumbnail rg-white-backdrop">
+                <img
+                  alt="Companion app icon in an iPhone dock"
+                  src="assets/iOS app dock.png"
+                />
+                <div class="gallery-overlay">
+                  <span aria-hidden="true" class="readmore-cta"
+                    ><span class="rg-readmore-window"
+                      ><span class="rg-readmore-track"
+                        ><span>Read More</span><span>Read More</span
+                        ><span>Read More</span><span>Read More</span></span
+                      ></span
+                    ></span
+                  >
+                </div>
+              </div>
+              <h2 class="gallery-name">Companion</h2>
+              <ul class="gallery-chips">
+                <li>UI/UX</li>
+                <li>Product Design</li>
+                <li>App Design</li>
+              </ul></a
+            >
+          </article>
+
+          <article class="gallery-item">
+            <a
+              aria-label="View NYC Sound case study"
+              class="gallery-action"
+              href="nyc-sound.html"
+              ><div class="gallery-thumbnail rg-white-backdrop">
+                <img
+                  src="assets/NYCnoise.gif"
+                  alt="NYC Sound map with noise complaint filters"
+                  loading="lazy"
+                />
+                <div class="gallery-overlay">
+                  <span aria-hidden="true" class="readmore-cta"
+                    ><span class="rg-readmore-window"
+                      ><span class="rg-readmore-track"
+                        ><span>Read More</span><span>Read More</span
+                        ><span>Read More</span><span>Read More</span></span
+                      ></span
+                    ></span
+                  >
+                </div>
+              </div>
+              <h2 class="gallery-name">NYC Sound</h2>
+              <ul class="gallery-chips">
+                <li>UI/UX</li>
+                <li>Data Visualization</li>
+                <li>Web Design</li>
+              </ul></a
+            >
+          </article>
+          <article class="gallery-item">
+            <a
+              aria-label="View Curlsmith case study"
+              class="gallery-action"
+              href="curlsmith.html"
+              ><div class="gallery-thumbnail rg-white-backdrop">
+                <video
+                  aria-label="CurlSmith video preview"
+                  autoplay=""
+                  loop=""
+                  muted=""
+                  playsinline=""
+                  poster="assets/curlsmith-poster.jpg"
+                  preload="auto"
+                  webkit-playsinline=""
+                >
+                  <source src="assets/curlsmith.mp4" type="video/mp4" />
+                </video>
+                <div class="gallery-overlay">
+                  <span aria-hidden="true" class="readmore-cta"
+                    ><span class="rg-readmore-window"
+                      ><span class="rg-readmore-track"
+                        ><span>Read More</span><span>Read More</span
+                        ><span>Read More</span><span>Read More</span></span
+                      ></span
+                    ></span
+                  >
+                </div>
+              </div>
+              <h2 class="gallery-name">CurlSmith</h2>
+              <ul class="gallery-chips">
+                <li>Packaging Design</li>
+                <li>Creative Coding</li>
+                <li>Web Design</li>
+              </ul></a
+            >
+          </article>
+          <article class="gallery-item">
+            <a class="gallery-action" href="drinkup.html"
+              ><div class="gallery-thumbnail rg-white-backdrop">
+                <img alt="DrinkUp project preview" src="assets/drinkup.png" />
+                <div class="gallery-overlay">
+                  <span aria-hidden="true" class="readmore-cta"
+                    ><span class="rg-readmore-window"
+                      ><span class="rg-readmore-track"
+                        ><span>Read More</span><span>Read More</span
+                        ><span>Read More</span><span>Read More</span></span
+                      ></span
+                    ></span
+                  >
+                </div>
+              </div>
+              <h2 class="gallery-name">DrinkUp</h2>
+              <ul class="gallery-chips">
+                <li>UI/UX</li>
+                <li>Product Design</li>
+                <li>App Design</li>
+              </ul></a
+            >
+          </article>
+          <article class="gallery-item">
+            <a class="gallery-action" href="make-me-perfect.html"
+              ><div class="gallery-thumbnail rg-black-backdrop">
+                <video
+                  aria-label="Make Me Perfect experimental book animation"
+                  autoplay=""
+                  loop=""
+                  muted=""
+                  playsinline=""
+                  preload="metadata"
+                  src="assets/make-me-perfect-new-video.mp4"
+                  webkit-playsinline=""
+                ></video>
+                <div class="gallery-overlay">
+                  <span aria-hidden="true" class="readmore-cta"
+                    ><span class="rg-readmore-window"
+                      ><span class="rg-readmore-track"
+                        ><span>Read More</span><span>Read More</span
+                        ><span>Read More</span><span>Read More</span></span
+                      ></span
+                    ></span
+                  >
+                </div>
+              </div>
+              <h2 class="gallery-name">Make Me Perfect</h2>
+              <ul class="gallery-chips">
+                <li>Print Design</li>
+                <li>Creative Coding</li>
+                <li>Experimental Design</li>
+              </ul></a
+            >
+          </article>
+          <article class="gallery-item">
+            <a
+              aria-label="View WIRED Article Illustration case study"
+              class="gallery-action"
+              href="illustration.html"
+              ><div class="gallery-thumbnail rg-white-backdrop">
+                <video
+                  aria-label="Looping preview of the WIRED Human Design illustration"
+                  autoplay=""
+                  loop=""
+                  muted=""
+                  playsinline=""
+                  poster="assets/illustration-poster.jpg"
+                  preload="metadata"
+                  webkit-playsinline=""
+                >
+                  <source
+                    src="assets/illustration-cover.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+                <div class="gallery-overlay">
+                  <span aria-hidden="true" class="readmore-cta"
+                    ><span class="rg-readmore-window"
+                      ><span class="rg-readmore-track"
+                        ><span>Read More</span><span>Read More</span
+                        ><span>Read More</span><span>Read More</span></span
+                      ></span
+                    ></span
+                  >
+                </div>
+              </div>
+              <h2 class="gallery-name">WIRED Article Illustration</h2>
+              <ul class="gallery-chips">
+                <li>Creative Coding</li>
+                <li>Illustration</li>
+                <li>Web Design</li>
+              </ul></a
+            >
+          </article>
+        </section>
+      </main>
+    </div>
+    <script>
+      document.querySelectorAll("button.gallery-action").forEach((button) => {
+        button.addEventListener("click", () => {
+          const panel = document.getElementById(
+            button.getAttribute("aria-controls")
+          );
+          if (!panel) return;
+          const open = button.getAttribute("aria-expanded") === "true";
+          button.setAttribute("aria-expanded", String(!open));
+          panel.hidden = open;
+        });
+      });
+    </script>
+    <script>
+      (() => {
+        const el = document.querySelector(".rg-slot-text");
+        const slot = document.querySelector(".rg-slot");
+        const words = [
+          "Graphic Design",
+          "UI/UX",
+          "Creative Coding",
+          "Branding",
+          "Product Design",
+          "Experimental Design",
+          "Visual Identity",
+        ];
+        let i = 0,
+          paused = false,
+          changing = false;
+        if (el && slot) {
+          slot.setAttribute("tabindex", "0");
+          slot.setAttribute(
+            "aria-label",
+            "Design discipline, hover or focus to pause rotation"
+          );
+          slot.addEventListener("pointerenter", () => {
+            paused = true;
+          });
+          slot.addEventListener("pointerleave", () => {
+            paused = false;
+          });
+          slot.addEventListener("focusin", () => {
+            paused = true;
+          });
+          slot.addEventListener("focusout", () => {
+            paused = false;
+          });
+          const inkLabel = slot.querySelector(".rg-ink-text");
+          function advanceSlot() {
+            if (changing) return;
+            changing = true;
+            const reduced = window.matchMedia(
+              "(prefers-reduced-motion: reduce)"
+            ).matches;
+            el.classList.remove("is-entering");
+            el.classList.add("is-exiting");
+            const swap = () => {
+              i = (i + 1) % words.length;
+              el.textContent = words[i];
+              if (inkLabel) inkLabel.textContent = words[i];
+              el.classList.remove("is-exiting");
+              void el.offsetWidth;
+              if (!reduced) el.classList.add("is-entering");
+              changing = false;
+            };
+            if (reduced) swap();
+            else setTimeout(swap, 240);
+          }
+          setInterval(() => {
+            if (!document.hidden && !paused) advanceSlot();
+          }, 2000);
+          // Preserve the interactive feel: clicking advances the slot as well.
+          slot.addEventListener("click", () => {
+            slot.classList.toggle("is-ink-active");
+            advanceSlot();
+          });
+          slot.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              slot.classList.toggle("is-ink-active");
+              advanceSlot();
+            }
+          });
+        }
+        // Scroll-controlled choreography: nav begins at the bottom, joins the
+        // center-revealed wordmark, and docks into the original top navigation.
+        document.body.classList.add(
+          "rg-has-scroll-identity",
+          "rg-choreography"
+        );
+        const header = document.querySelector(".site-header");
+        const heroName = document.querySelector(".rg-display-name");
+        const hero = document.querySelector(".rg-new-hero");
+        let motionFrame = 0;
+        const clamp = (v, a = 0, b = 1) => Math.max(a, Math.min(b, v));
+        const smooth = (v) => v * v * (3 - 2 * v);
+        function updateScrollChoreography() {
+          motionFrame = 0;
+          if (!header || !heroName || !hero) return;
+          const vh = window.innerHeight;
+          const h = header.offsetHeight;
+          // Let scrolling pull the hero's existing title upward naturally.
+          // The header simultaneously travels from the bottom of the screen.
+          const duration = Math.max(320, vh * 0.68);
+          const t = clamp(window.scrollY / duration);
+          const eased = smooth(t);
+          const bottom = vh - h - 18;
+          const dock = 0;
+          header.style.setProperty(
+            "--rg-dock-y",
+            (bottom + (dock - bottom) * eased).toFixed(2) + "px"
+          );
+          document.body.classList.toggle("rg-header-arrived", t >= 0.98);
+          // Hide duplicate small identity until it is near the docked position.
+          header.style.setProperty(
+            "--rg-small-name-opacity",
+            clamp((t - 0.84) / 0.16).toFixed(3)
+          );
+        }
+        function queueMotion() {
+          if (!motionFrame)
+            motionFrame = requestAnimationFrame(updateScrollChoreography);
+        }
+        window.addEventListener("scroll", queueMotion, { passive: true });
+        window.addEventListener("resize", queueMotion);
+        window.addEventListener("pageshow", queueMotion);
+        updateScrollChoreography();
+      })();
+    </script>
+    <script>
+      // Keep project previews playing inline and looping on mobile browsers.
+      (() => {
+        const previews = document.querySelectorAll(".gallery-thumbnail video");
+        const start = (video) => {
+          if (document.hidden) return;
+          video.muted = true;
+          video.defaultMuted = true;
+          video.loop = true;
+          video.autoplay = true;
+          video.playsInline = true;
+          video.setAttribute("playsinline", "");
+          video.setAttribute("webkit-playsinline", "");
+          const promise = video.play();
+          if (promise && typeof promise.catch === "function") {
+            promise.catch(() => {
+              // Mobile Low Power Mode or user settings may block autoplay.
+            });
+          }
+        };
+        previews.forEach((video) => {
+          video.addEventListener("loadeddata", () => start(video));
+          video.addEventListener("canplay", () => {
+            if (video.paused) start(video);
+          });
+          video.addEventListener("ended", () => {
+            video.currentTime = 0;
+            start(video);
+          });
+          start(video);
+        });
+        document.addEventListener("visibilitychange", () => {
+          if (!document.hidden) previews.forEach(start);
+        });
+        window.addEventListener("pageshow", () => previews.forEach(start));
+        // If autoplay is blocked, the first user interaction can unlock playback.
+        document.addEventListener(
+          "touchstart",
+          () => {
+            previews.forEach((video) => {
+              if (video.paused) start(video);
+            });
+          },
+          { passive: true, once: true }
+        );
+      })();
+    </script>
+    <footer class="rg-footer">
+      <div class="rg-footer-top">
+        <div class="rg-footer-contact">
+          <a class="rg-contact-link" href="mailto:Marg4rg@gmail.com"
+            >Get in contact
+            <span aria-hidden="true" class="contact-text-arrow">↗︎</span></a
+          >
+          <a class="rg-email-link" href="mailto:Marg4rg@gmail.com"
+            >Marg4rg@gmail.com</a
+          >
+        </div>
+        <div aria-label="Social profiles" class="rg-footer-social">
+          <a
+            aria-label="Instagram"
+            href="https://www.instagram.com/romgod.designs/"
+            rel="noopener noreferrer"
+            target="_blank"
+            ><svg
+              aria-hidden="true"
+              fill="currentColor"
+              viewbox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                fill="none"
+                height="19"
+                rx="5.5"
+                stroke="currentColor"
+                stroke-width="1.65"
+                width="19"
+                x="2.5"
+                y="2.5"
+              ></rect>
+              <circle
+                cx="12"
+                cy="12"
+                fill="none"
+                r="4.3"
+                stroke="currentColor"
+                stroke-width="1.65"
+              ></circle>
+              <circle cx="17.6" cy="6.5" r="1.25"></circle></svg
+          ></a>
+          <a
+            aria-label="GitHub"
+            href="https://github.com/mariaromerogodoy"
+            rel="noopener noreferrer"
+            target="_blank"
+            ><svg
+              aria-hidden="true"
+              fill="currentColor"
+              viewbox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 .9a11.1 11.1 0 0 0-3.51 21.64c.56.1.76-.24.76-.53v-2.12c-3.1.67-3.76-1.32-3.76-1.32-.5-1.28-1.24-1.62-1.24-1.62-1.01-.69.08-.68.08-.68 1.12.08 1.7 1.15 1.7 1.15 1 .1.98 2.5 3.23 1.8.1-.73.39-1.23.71-1.52-2.48-.28-5.08-1.24-5.08-5.5 0-1.22.44-2.22 1.14-3-.12-.28-.49-1.42.11-2.96 0 0 .94-.3 3.06 1.14A10.7 10.7 0 0 1 12 6.3c.95 0 1.9.13 2.8.38 2.12-1.44 3.06-1.14 3.06-1.14.6 1.54.23 2.68.11 2.96.71.78 1.14 1.78 1.14 3 0 4.27-2.6 5.22-5.09 5.5.4.35.76 1.03.76 2.08v2.93c0 .29.2.64.77.53A11.1 11.1 0 0 0 12 .9Z"
+              ></path></svg
+          ></a>
+          <a
+            aria-label="LinkedIn"
+            href="https://www.linkedin.com/in/mariaromgod"
+            rel="noopener noreferrer"
+            target="_blank"
+            ><svg
+              aria-hidden="true"
+              fill="currentColor"
+              viewbox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.9 2.5a2.3 2.3 0 1 0 0 4.6 2.3 2.3 0 0 0 0-4.6ZM2 9h3.8v12H2V9Zm6.1 0h3.65v1.64h.05A4 4 0 0 1 15.4 8.7c3.84 0 4.55 2.53 4.55 5.81V21h-3.8v-5.75c0-1.37-.03-3.13-1.91-3.13-1.91 0-2.2 1.5-2.2 3.04V21H8.1V9Z"
+              ></path></svg
+          ></a>
+          <a
+            aria-label="Spotify"
+            href="https://open.spotify.com/user/4rlfytwvic0ai12sfbmx7o3oh?si=44ad739174264706"
+            rel="noopener noreferrer"
+            target="_blank"
+            ><svg
+              aria-hidden="true"
+              fill="currentColor"
+              viewbox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 1.5a10.5 10.5 0 1 0 0 21 10.5 10.5 0 0 0 0-21Zm4.8 15.1a.7.7 0 0 1-.96.23c-2.6-1.59-5.87-1.95-9.71-1.07a.7.7 0 0 1-.31-1.37c4.22-.97 7.84-.55 10.76 1.23a.7.7 0 0 1 .22.97Zm1.28-2.86a.88.88 0 0 1-1.2.28c-2.98-1.83-7.52-2.36-11.04-1.29a.88.88 0 0 1-.51-1.68c4.03-1.22 9.06-.63 12.46 1.45.41.25.54.79.29 1.24Zm.11-2.98c-3.57-2.12-9.45-2.31-12.85-1.28a1.05 1.05 0 0 1-.61-2.01c3.9-1.18 10.43-.95 14.54 1.49a1.05 1.05 0 1 1-1.08 1.8Z"
+              ></path></svg
+          ></a>
+        </div>
+      </div>
+      <div class="rg-footer-name">
+        <img alt="Maria Romero Godoy" src="romgod-name.svg" />
+      </div>
+    </footer>
+    <script>
+      // Drag the handle to the right to open the existing project page.
+      document.querySelectorAll(".readmore-slider").forEach((slider) => {
+        const thumb = slider.querySelector(".readmore-slider-thumb");
+        const link = slider.closest("a.gallery-action");
+        if (!thumb || !link) return;
+        let active = false;
+        let startX = 0;
+        let startOffset = 0;
+        let offset = 0;
+        let suppressClick = false;
+        const limit = () =>
+          Math.max(0, slider.clientWidth - thumb.offsetWidth - 10);
+        const update = (value) => {
+          offset = Math.max(0, Math.min(limit(), value));
+          slider.style.setProperty("--slide", offset + "px");
+          thumb.setAttribute(
+            "aria-valuenow",
+            String(Math.round((offset / Math.max(1, limit())) * 100))
+          );
+        };
+        const reset = () => {
+          slider.classList.add("is-resetting");
+          update(0);
+          setTimeout(() => slider.classList.remove("is-resetting"), 280);
+        };
+        // The black handle starts on the left; the entire control is centered on the image.
+        update(0);
+        thumb.addEventListener("pointerdown", (event) => {
+          if (event.button !== 0) return;
+          event.preventDefault();
+          active = true;
+          suppressClick = true;
+          startX = event.clientX;
+          startOffset = offset;
+          slider.classList.remove("is-resetting");
+          thumb.setPointerCapture(event.pointerId);
+        });
+        thumb.addEventListener("pointermove", (event) => {
+          if (active) update(startOffset + event.clientX - startX);
+        });
+        const finish = (cancelled = false) => {
+          if (!active) return;
+          active = false;
+          if (!cancelled && offset >= limit() * 0.88) {
+            slider.classList.add("is-complete");
+            window.location.assign(link.href);
+          } else reset();
+        };
+        thumb.addEventListener("pointerup", () => finish());
+        thumb.addEventListener("pointercancel", () => finish(true));
+        thumb.addEventListener("lostpointercapture", () => finish(true));
+        slider.addEventListener("click", (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+        });
+        thumb.addEventListener("keydown", (event) => {
+          if (event.key === "ArrowRight") {
+            event.preventDefault();
+            update(offset + limit() / 5);
+            if (offset >= limit() * 0.88) window.location.assign(link.href);
+          } else if (event.key === "ArrowLeft") {
+            event.preventDefault();
+            update(offset - limit() / 5);
+          } else if (event.key === "End" || event.key === "Enter") {
+            event.preventDefault();
+            window.location.assign(link.href);
+          } else if (event.key === "Home" || event.key === "Escape") {
+            event.preventDefault();
+            reset();
+          }
+        });
+      });
+    </script>
+    <script id="rg-image-click-blur-only">
+      (() => {
+        document.querySelectorAll("#work .gallery-action").forEach((link) => {
+          const stage = link.querySelector(".gallery-thumbnail");
+          const media = stage?.querySelector(":scope > img, :scope > video");
+          if (!stage || !media) return;
+          let opening = false;
+
+          // The clickable stage includes the animated Read More label. Only the
+          // actual artwork blurs, never the gray card or button.
+          stage.addEventListener(
+            "click",
+            (event) => {
+              if (
+                opening ||
+                event.defaultPrevented ||
+                event.button !== 0 ||
+                event.metaKey ||
+                event.ctrlKey ||
+                event.shiftKey ||
+                event.altKey
+              )
+                return;
+              event.preventDefault();
+              event.stopPropagation();
+              opening = true;
+              stage.classList.add("rg-preview-opening");
+              // Hold long enough for the blur to be clearly visible before navigation.
+              window.setTimeout(() => window.location.assign(link.href), 650);
+            },
+            true
+          );
+        });
+      })();
+    </script>
+
+    <script id="rg-scroll-expanding-script">
+      (function () {
+        const gallery = document.getElementById("work");
+        if (!gallery) return;
+        const cards = Array.from(gallery.querySelectorAll(".gallery-item"));
+        const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+        let pending = false;
+        function update() {
+          pending = false;
+          if (reduced.matches) {
+            cards.forEach((card) => card.style.removeProperty("--rg-zoom"));
+            return;
+          }
+          const vh = window.innerHeight || 800;
+          const center = vh * 0.52;
+          // Every project independently peaks when its midpoint reaches the
+          // viewing area; it contracts as the next project moves into view.
+          cards.forEach((card) => {
+            const r = card.getBoundingClientRect();
+            const midpoint = r.top + Math.min(r.height, vh) * 0.48;
+            const distance = Math.abs(midpoint - center);
+            const t = Math.max(0, Math.min(1, 1 - distance / (vh * 0.78)));
+            const eased = t * t * (3 - 2 * t);
+            card.style.setProperty("--rg-zoom", eased.toFixed(4));
+          });
+        }
+        function request() {
+          if (!pending) {
+            pending = true;
+            requestAnimationFrame(update);
+          }
+        }
+        window.addEventListener("scroll", request, { passive: true });
+        window.addEventListener("resize", request, { passive: true });
+        reduced.addEventListener("change", request);
+        request();
+      })();
+    </script>
+  </body>
+</html>
