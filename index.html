@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <title>Maria Romero Godoy MRG</title>
+    <title>Maria Romero Godoy — RomGod</title>
     <link href="logo.png" rel="icon" type="image/png" />
     <meta
       content="Portfolio of Maria Romero Godoy: UI/UX, creative coding, branding, graphic and experimental design."
@@ -4234,6 +4234,193 @@
         }
       }
     </style>
+
+    <style id="rg-scroll-expanding-projects">
+      /* Scroll-driven portfolio: each case grows edge to edge at the viewport centre,
+   then settles back before the next project gets focus. */
+      #work.gallery-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        width: 100% !important;
+        max-width: none !important;
+        padding: 75px 0 140px !important;
+        margin: 0 !important;
+        row-gap: 0 !important;
+        column-gap: 0 !important;
+        overflow: visible !important;
+      }
+      #work .gallery-item {
+        --rg-zoom: 0;
+        width: calc(74vw + 26vw * var(--rg-zoom)) !important;
+        max-width: 100vw !important;
+        min-width: 0;
+        flex: none;
+        margin: 0 auto 16vh !important;
+        transition: none !important;
+        will-change: width;
+      }
+      #work .gallery-action {
+        width: 100%;
+        display: block;
+        text-decoration: none;
+      }
+      #work .gallery-thumbnail {
+        width: 100% !important;
+        height: calc(min(63vw, 62vh) + 18vh * var(--rg-zoom)) !important;
+        max-height: 85vh !important;
+        min-height: 360px;
+        aspect-ratio: auto !important;
+        border-radius: calc(18px - 18px * var(--rg-zoom)) !important;
+        overflow: hidden !important;
+        transition: none !important;
+      }
+      #work .gallery-thumbnail > img,
+      #work .gallery-thumbnail > video {
+        object-fit: contain !important;
+        transform: scale(calc(1.02 + 0.08 * var(--rg-zoom))) !important;
+        transition: transform 0.12s ease-out !important;
+      }
+      #work .gallery-name,
+      #work .gallery-chips {
+        max-width: 1240px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        width: calc(100% - 2 * clamp(20px, 4vw, 60px));
+      }
+      #work .gallery-name {
+        padding-top: 14px;
+        font-size: clamp(23px, 2.4vw, 37px) !important;
+        letter-spacing: -0.035em;
+      }
+      #work .gallery-chips {
+        margin-top: 9px !important;
+      }
+      #work .gallery-item:focus-within .gallery-thumbnail {
+        outline: 2px solid #ff00e6;
+        outline-offset: 3px;
+      }
+      @media (max-width: 700px) {
+        #work.gallery-grid {
+          padding-top: 35px !important;
+          padding-bottom: 70px !important;
+        }
+        #work .gallery-item {
+          width: calc(89vw + 11vw * var(--rg-zoom)) !important;
+          margin-bottom: 12vh !important;
+        }
+        #work .gallery-thumbnail {
+          height: calc(54vh + 13vh * var(--rg-zoom)) !important;
+          min-height: 260px !important;
+          max-height: 76vh !important;
+          border-radius: calc(12px - 12px * var(--rg-zoom)) !important;
+        }
+        #work .gallery-thumbnail > img,
+        #work .gallery-thumbnail > video {
+          transform: scale(calc(1 + 0.04 * var(--rg-zoom))) !important;
+        }
+        #work .gallery-name,
+        #work .gallery-chips {
+          width: calc(100% - 36px);
+        }
+        #work .gallery-name {
+          font-size: 22px !important;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        #work .gallery-item {
+          --rg-zoom: 0 !important;
+          width: min(90vw, 1200px) !important;
+          will-change: auto;
+        }
+        #work .gallery-thumbnail {
+          border-radius: 12px !important;
+          height: min(65vw, 75vh) !important;
+        }
+      }
+    </style>
+
+    <style id="rg-centered-expansion-correction">
+      /* A viewport-wide centered track prevents left/bottom anchored expansion. */
+      #work.gallery-grid {
+        position: relative !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 100vw !important;
+        max-width: 100vw !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        align-items: center !important;
+        overflow: visible !important;
+        box-sizing: border-box !important;
+      }
+      #work .gallery-item {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding: 0 !important;
+        align-self: center !important;
+        transform: none !important;
+        box-sizing: border-box !important;
+        will-change: auto !important;
+      }
+      #work .gallery-action {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+      }
+      #work .gallery-thumbnail {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        height: min(75vh, 760px) !important;
+        min-height: 350px !important;
+        transform: scale(calc(0.74 + 0.26 * var(--rg-zoom))) !important;
+        transform-origin: 50% 50% !important;
+        margin: 0 auto !important;
+        border-radius: calc(18px - 18px * var(--rg-zoom)) !important;
+        will-change: transform !important;
+        box-sizing: border-box !important;
+      }
+      #work .gallery-name,
+      #work .gallery-chips {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+      #work .gallery-name {
+        width: 100% !important;
+      }
+      #work .gallery-chips {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        width: 100% !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+      }
+      @media (max-width: 700px) {
+        #work .gallery-item {
+          width: 100vw !important;
+          max-width: 100vw !important;
+        }
+        #work .gallery-thumbnail {
+          width: 100vw !important;
+          height: min(65vh, 610px) !important;
+          min-height: 270px !important;
+          transform: scale(calc(0.88 + 0.12 * var(--rg-zoom))) !important;
+          transform-origin: center center !important;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        #work .gallery-thumbnail {
+          transform: scale(0.9) !important;
+          will-change: auto !important;
+        }
+      }
+    </style>
   </head>
   <body>
     <!-- Reusable flower icon (swap for assets/icon.svg if you prefer your exact file) -->
@@ -4894,6 +5081,45 @@
             true
           );
         });
+      })();
+    </script>
+
+    <script id="rg-scroll-expanding-script">
+      (function () {
+        const gallery = document.getElementById("work");
+        if (!gallery) return;
+        const cards = Array.from(gallery.querySelectorAll(".gallery-item"));
+        const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+        let pending = false;
+        function update() {
+          pending = false;
+          if (reduced.matches) {
+            cards.forEach((card) => card.style.removeProperty("--rg-zoom"));
+            return;
+          }
+          const vh = window.innerHeight || 800;
+          const center = vh * 0.52;
+          // Every project independently peaks when its midpoint reaches the
+          // viewing area; it contracts as the next project moves into view.
+          cards.forEach((card) => {
+            const r = card.getBoundingClientRect();
+            const midpoint = r.top + Math.min(r.height, vh) * 0.48;
+            const distance = Math.abs(midpoint - center);
+            const t = Math.max(0, Math.min(1, 1 - distance / (vh * 0.78)));
+            const eased = t * t * (3 - 2 * t);
+            card.style.setProperty("--rg-zoom", eased.toFixed(4));
+          });
+        }
+        function request() {
+          if (!pending) {
+            pending = true;
+            requestAnimationFrame(update);
+          }
+        }
+        window.addEventListener("scroll", request, { passive: true });
+        window.addEventListener("resize", request, { passive: true });
+        reduced.addEventListener("change", request);
+        request();
       })();
     </script>
   </body>
