@@ -170,11 +170,11 @@ footer.rg-footer {
 /* 2026-11-09: updated shared footer palette */
 html,
 body {
-  background-color: #eeeeee !important;
+  background-color: #000000 !important;
 }
 html body .rg-footer,
 html body footer.rg-footer {
-  background: #eeeeee !important;
+  background: #000000 !important;
   color: #ff00e6 !important;
 }
 html body .rg-footer .rg-footer-contact a,
